@@ -25,7 +25,11 @@ public class TP2_convertisseurObjet_THIEVON {
         Scanner sc;
         sc = new Scanner(System.in);
         
+        // On initialise les variables ainsi que le Scanner qui va récupérer les valeurs saisies par l'utilisateur
+        
         do {
+            
+            // On crée un boucle qui va se répeter tant que l'utilisateur ne veut pas en sortir
         
         System.out.println("Bonjour, veuillez saisir une valeure");
         nb = sc.nextFloat();
@@ -39,10 +43,10 @@ public class TP2_convertisseurObjet_THIEVON {
         System.out.println("(7) pour sortir du convertisseur");
         resp = sc.nextInt();
         
+        // On fait choisir à l'utilisateur le convertisseur souhaité dans la commande
         
         if (resp == 1) {
             c.CelciusVersKelvin(nb);
-            c.toString();
         }
         
         if (resp == 2) {
@@ -65,6 +69,8 @@ public class TP2_convertisseurObjet_THIEVON {
             c.KelvinVersFahrenheit(nb);
         }
         
+        // On appelle en fonction de la réponse de l'utilisateur le convertisseur correspondant
+        
         if (resp > 7) {
             System.out.println("Erreur de saisie");
         }
@@ -72,9 +78,18 @@ public class TP2_convertisseurObjet_THIEVON {
         if (resp < 1) {
             System.out.println("Erreur de saisie");
         }
+        
+        // On crée un message d'erreur de saisie si l'utilisateur n'a pas saisie une valeur attendue
+        
+        
         } while (resp != 7);
+        
+        // On sort de la boucle si l'utilisateur saisit 7 (ou plutot on y reste tant qu'il ne l'a pas saisi)
+        
     nbconv = c.toString();
     System.out.println(nbconv);
+    
+    // On renvoie le nombre de conversions effectuées par l'utilisateur
     }
     
 }
