@@ -23,6 +23,35 @@ public class Personne {
         nbVoitures = 0;
     }
     
+    public boolean ajouter_voiture(Voiture voiture_a_ajouter) {
+              
+        if (voiture_a_ajouter.proprietaire != null) {
+            System.out.println("La voiture " + voiture_a_ajouter.toString()+ " a ete volee !\nElle appartient deja a "+ voiture_a_ajouter.proprietaire);
+            return false;
+            
+            // Si la voiture a déjà un propriétaire, on ne fait rien car elle a été volée
+        }
+        
+        if (this.nbVoitures > 2) {  
+            System.out.println(voiture_a_ajouter.toString() + " n'a pas pu etre ajoutee car " + this + " possede deja 3 voitures");
+            return false;
+            
+            // Si le proprietaire auquel on veut ajouter une voiture en possède déjà 3, on ne fait rien
+        }   
+        
+        else {
+            this.liste_voitures[this.nbVoitures] = voiture_a_ajouter;
+            voiture_a_ajouter.proprietaire = this ;
+            this.nbVoitures += 1;
+            System.out.println("La voiture " + voiture_a_ajouter.toString()+ " a bien ete ajoutee a "+ this);
+            return true;
+            
+            // Si la voiture n'a pas de proprietaire et que le personne n'a pas déjà 3 voitures, on assimile le proprietaire de la voiture a cette personne et on rajoute la voiture à ses autres voitures
+        }
+               
+    }
+    
+    
     @Override
     public String toString () {
     return(Nom + " " + Prenom);
