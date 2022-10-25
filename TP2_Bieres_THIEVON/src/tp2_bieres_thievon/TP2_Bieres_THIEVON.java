@@ -24,6 +24,12 @@ public class TP2_Bieres_THIEVON {
         uneBiere.lireEtiquette();
         System.out.println(uneBiere);
         
+        // On crée une Nouvelle BouteilleBiere à l'aide du constructeur et la méthode sans utiliser le constructeur est en commentaire
+        // On donne la valeur de false à l'attribut ouverte
+        // On lit son etiquette avec la methode lire.etiquette()
+        // On applique la méthode Décapsuler() à la biere
+        // On affiche le ToString de l'objet
+        
         System.out.println("\n");
         
         BouteilleBiere BiereLeffe = new BouteilleBiere("Leffe", 6.6, "Abbaye de Leffe");
@@ -34,6 +40,11 @@ public class TP2_Bieres_THIEVON {
         BiereLeffe.lireEtiquette();
         BiereLeffe.Décapsuler();
         
+        // On crée une Nouvelle BouteilleBiere à l'aide du constructeur et la méthode sans utiliser le constructeur est en commentaire
+        // On donne la valeur de true à l'attribut ouverte
+        // On lit son etiquette avec la methode lire.etiquette()
+        // On applique la méthode Décapsuler() à la biere
+        
         System.out.println("\n");
         
         BouteilleBiere BiereHK = new BouteilleBiere("Heineken", 4.8, "Vogue Merry");
@@ -41,11 +52,20 @@ public class TP2_Bieres_THIEVON {
         BiereHK.Décapsuler();
         System.out.println(BiereHK);
         
+        // On crée une Nouvelle BouteilleBiere à l'aide du constructeur
+        // On lit son etiquette avec la methode lire.etiquette()
+        // On applique la méthode Décapsuler() à la biere
+        // On affiche le ToString de l'objet
+        
         System.out.println("\n");
         
         BouteilleBiere BierePF = new BouteilleBiere("Pelforth", 5.4, "Sunny");
         BierePF.lireEtiquette();
         System.out.println(BierePF);
+        
+        // On crée une Nouvelle BouteilleBiere à l'aide du constructeur
+        // On lit son etiquette avec la methode lire.etiquette()
+        // On affiche le ToString de l'objet
         
         System.out.println("\n");
         
@@ -53,6 +73,11 @@ public class TP2_Bieres_THIEVON {
         Biere1664.lireEtiquette();
         Biere1664.Décapsuler();
         System.out.println(Biere1664);
+        
+        // On crée une Nouvelle BouteilleBiere à l'aide du constructeur
+        // On lit son etiquette avec la methode lire.etiquette()
+        // On applique la méthode Décapsuler() à la biere
+        // On affiche le ToString de l'objet
     }
     
     

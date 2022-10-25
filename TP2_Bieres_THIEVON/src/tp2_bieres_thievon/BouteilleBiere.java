@@ -14,9 +14,14 @@ public class BouteilleBiere {
     String brasserie;
     Boolean ouverte;
 
+    // On initialise les attributs de BouteilleBiere
+    
 public void lireEtiquette() {
     System.out.println("Bouteille de "+ Nom + " (" + degreAlcool + " degres) \nBrasserie : " + brasserie);
 }
+
+// On crée la méthode lireEtiquette qui va afficher une chaine de caractere dans la console
+
 
 public void Décapsuler() {
     if (ouverte == true) {
@@ -29,13 +34,17 @@ public void Décapsuler() {
     }
 }
 
+// On crée la méthode Décapsuller qui ouvre la bière si elle est fermé et ne fait rien si elle est déjà ouverte a part le dire
+
 public BouteilleBiere(String unNom, double unDegre, String uneBrasserie) {
     Nom = unNom;
     degreAlcool = unDegre;
     brasserie = uneBrasserie;
     ouverte = false;
-
 }
+
+// On crée le constructeur qui va permettre de créer un objet BouteilleBiere bien plus rapidement en donnant immédiatement ses attributs
+
 @Override
 public String toString() {
     String chaine_a_retourner;
@@ -44,5 +53,6 @@ public String toString() {
     else chaine_a_retourner += "non" ;
     return chaine_a_retourner ;
 
+    // Quand on lit la Bouteille bière, cette methode va directement renvoyer une chaine de caractère correspondant et caractérisant l'objet BouteilleBiere
 }
 }
