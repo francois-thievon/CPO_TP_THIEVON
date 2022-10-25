@@ -14,8 +14,7 @@ public class Voiture {
     String Marque;
     int PuissanceCV;
     Personne proprietaire;
-    
-    
+   
     public Voiture (String unModele, String uneMarque, int unePuissance) {
         Modele = unModele;
         Marque = uneMarque;
