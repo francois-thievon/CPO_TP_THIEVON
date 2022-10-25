@@ -4,6 +4,8 @@
  */
 package tp2_convertisseurobjet_thievon;
 
+import java.util.Scanner;
+
 /**
  *
  * @author thiev
@@ -16,8 +18,11 @@ public class TP2_convertisseurObjet_THIEVON {
     public static void main(String[] args) {
         // TODO code application logic here
         
+        Convertisseur c = new Convertisseur();
+        
+        
         int resp;
-        float nb;
+        double nb;
         Scanner sc;
         sc = new Scanner(System.in);
         System.out.println("Bonjour, veuillez saisir une valeure");
@@ -30,23 +35,40 @@ public class TP2_convertisseurObjet_THIEVON {
         System.out.println("(5) pour convertir des farenheit en kelvin");
         System.out.println("(6) pour convertir des kelvin en farenheit");
         resp = sc.nextInt();
+        
+        
         if (resp == 1) {
-            CelciusVersKelvin(nb);
+            c.CelciusVersKelvin(nb);
+            c.toString();
         }
         if (resp == 2) {
-            KelvinVersCelcius(nb);
+            c.KelvinVersCelcius(nb);
+            c.toString();
         }
         if (resp == 3) {
-            FarenheitVersCelcius(nb);
+            c.FahrenheitVersCelcius(nb);
+            c.toString();
+
         }
         if (resp == 4) {
-            CelciusVersFarenheit(nb);
+            c.CelciusVersFahrenheit(nb);
+            c.toString();
         }
         if (resp == 5) {
-            FarenheitVersKelvin(nb);
+            c.FahrenheitVersKelvin(nb);
+            c.toString();
         }
         if (resp == 6) {
-            KelvinVersFarenheit(nb);
+            c.KelvinVersFahrenheit(nb);
+            c.toString();
+        }
+        
+        if (resp > 6) {
+            System.out.println("Erreur de saisie");
+        }
+        
+        if (resp < 1) {
+            System.out.println("Erreur de saisie");
         }
     }
     
