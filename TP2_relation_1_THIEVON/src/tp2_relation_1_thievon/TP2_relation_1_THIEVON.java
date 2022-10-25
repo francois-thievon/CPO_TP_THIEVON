@@ -25,7 +25,7 @@ public class TP2_relation_1_THIEVON {
         
         Personne Bob = new Personne ("Bobby", "Sixkiller");
         Personne Reno = new Personne ("Reno", "Raines");
-        System.out.println("liste des voitures disponibles :\n"+ uneClio + "\n" + uneAutreClio + "\n" + une2008 + "\n" + uneMicra ) ;
+        System.out.println("liste des voitures disponibles :\n"+ uneClio + "\n" + uneAutreClio + "\n" + une2008 + "\n" + uneMicra + "\n" ) ;
         
         // On initialise 2 personnes et on affiche la liste des voitures
         
@@ -38,8 +38,8 @@ public class TP2_relation_1_THIEVON {
         
         // On crée des relations entre Bob et 2 voitures
         
-        System.out.println("la premiere voiture de Bob est " + Bob.liste_voitures[0] ) ;
-        System.out.println("la deuxieme voiture de Bob est " + Bob.liste_voitures[1] ) ;
+        System.out.println("la premiere voiture de Bob est une" + Bob.liste_voitures[0] ) ;
+        System.out.println("la deuxieme voiture de Bob est une" + Bob.liste_voitures[1] ) ;
         
         // On affiche les voitures de Bob
         
@@ -52,10 +52,12 @@ public class TP2_relation_1_THIEVON {
         
         // On crée des relations entre Reno et 2 voitures
 
-        System.out.println("la premiere voiture de Reno est " + Reno.liste_voitures[0] ) ;
-        System.out.println("la deuxieme voiture de Reno est " + Reno.liste_voitures[1] ) ;
+        System.out.println("la premiere voiture de Reno est une" + Reno.liste_voitures[0] ) ;
+        System.out.println("la deuxieme voiture de Reno est une" + Reno.liste_voitures[1] ) ;
         
         // On affiche les voitures de Reno
+        
+        Bob.ajouter_voiture(uneAutreClio);
     }
     
 }
