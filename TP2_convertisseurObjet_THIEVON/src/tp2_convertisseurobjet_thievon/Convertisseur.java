@@ -16,44 +16,53 @@ public void Convertisseur() {
     nbConversions = 0;
 }
 
-public void CelciusVersKelvin(float nb) {
+public void CelciusVersKelvin(double nb) {
     nbConversions += 1;
-    float nb2;
+    double nb2;
     nb2 = nb - 273;
     System.out.println("La valeur " + nb + " degrés celcius vaut " + nb2 + " degrés kelvin");
     
 }
 
-public void KelvinVersCelcius(float nb) {
+public void KelvinVersCelcius(double nb) {
     nbConversions +=1;
-    float nb2;
-    nb2 = nb + 273;
+    double nb2;
+    nb2 = nb + 273.15;
     System.out.println("La valeur " + nb + " degrés kelvin vaut " + nb2 + " degrés celcius");
 }
 
-public void FarenheitVersCelcius(float) {
+public void FahrenheitVersCelcius(double nb) {
     nbConversions +=1;
-    
+    double nb2;
+    nb2 = (nb - 32) * 0.56;
+    System.out.println("La valeur " + nb + " degrés fahrenheit vaut " + nb2 + " degrés celcius");
 }
 
-public void CelciusVersFarenheit(float) {
+public void CelciusVersFahrenheit(double nb) {
     nbConversions +=1;
-    
+    double nb2;
+    nb2 = (nb * 1.8) + 32;
+    System.out.println("La valeur " + nb + " degrés celcius vaut " + nb2 + " degrés fahrenheit");
 }
 
-public void FarenheitVersKelvin(float) {
+public void FahrenheitVersKelvin(double nb) {
     nbConversions +=1;
-    
+    double nb2;
+    nb2 = ((nb - 32) * 0.56 + 273.15);
+    System.out.println("La valeur " + nb + " degrés fahrenheit vaut " + nb2 + " degrés kelvin");
 }
 
-public void KelvinVersFarenheit(float) {
+public void KelvinVersFahrenheit(double nb) {
     nbConversions +=1;
+    double nb2;
+    nb2 = ((nb - 273.15) * 1.8) + 32;
+    System.out.println("La valeur " + nb + " degrés kelvin vaut " + nb2 + " degrés fahrenheit");
     
 }
 
 @Override
 public String toString () {
- return "nb de conversions"+ nbConversions;
+ return "nombre de conversions : "+ nbConversions;
 }
 }
 
