@@ -21,7 +21,6 @@ public class TP2_convertisseurObjet_THIEVON {
         Convertisseur c = new Convertisseur();
         int resp;
         double nb;
-        String nbconv;
         Scanner sc;
         sc = new Scanner(System.in);
         
@@ -86,8 +85,7 @@ public class TP2_convertisseurObjet_THIEVON {
         
         // On sort de la boucle si l'utilisateur saisit 7 (ou plutot on y reste tant qu'il ne l'a pas saisi)
         
-    nbconv = c.toString();
-    System.out.println(nbconv);
+    System.out.println(c.toString());
     
     // On renvoie le nombre de conversions effectuées par l'utilisateur
     }
