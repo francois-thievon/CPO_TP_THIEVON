@@ -32,7 +32,7 @@ public class TP2_manip_THIEVON {
         assiette2 = assiette1;
         assiette1 = assiette3;
             
-        System.out.println("\nAprès les inversions nous avons :\n");
+        System.out.println("\nApres les inversions nous avons :\n");
         System.out.println("nb de calories de Assiette 1 : " +
         assiette1.nbCalories) ;
         System.out.println("nb de calories de Assiette 2 : " +
@@ -63,6 +63,14 @@ public class TP2_manip_THIEVON {
         tab[9] = new Moussaka(800);
         
         // Assignation des 10 cases du tableau tab à des objets Moussaka crées et dont la nbCalorie est assigné arbitrairement
+        
+        for (int i = 0; i<10; i++) {
+            tab[i] = new Moussaka((int)(Math.random()*1000));
+            System.out.println(tab[i]);
+        }
+        
+        // On crée une boucle for qui va créer un tableau de 10 moussaka et leur assigner une valeure nbCalories aléatoire comprise entre 0 et 1000
+        // Les précédentes valeurs de nbCal des Moussaka du tableau rentrées manuellements avant sont écrasées, cette partie du code est inutile vis a vis du résultat final
     }
     
 }
