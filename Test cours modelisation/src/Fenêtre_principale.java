@@ -36,6 +36,8 @@ public class Fenêtre_principale extends javax.swing.JFrame {
         Textmdp = new javax.swing.JLabel();
         TextSaisirmdp = new javax.swing.JLabel();
         TextFieldmdp = new javax.swing.JPasswordField();
+        Bouton_x2 = new javax.swing.JButton();
+        TextNombre = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -63,9 +65,9 @@ public class Fenêtre_principale extends javax.swing.JFrame {
             }
         });
 
-        TextAurevoir.setText("Au revoir");
+        TextAurevoir.setText("Votre prénom");
 
-        Textmdp.setText("Mdp");
+        Textmdp.setText("Votre mdp");
 
         TextSaisirmdp.setText("Entrez votre mdp");
 
@@ -108,41 +110,60 @@ public class Fenêtre_principale extends javax.swing.JFrame {
                     .addComponent(TextBonjour))
                 .addGap(37, 37, 37)
                 .addComponent(BoutonValider, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(TextAurevoir)
                 .addGap(18, 18, 18)
                 .addComponent(Textmdp)
                 .addGap(31, 31, 31))
         );
 
+        Bouton_x2.setText("Cliquez pour multiplier par 2 le nombre");
+        Bouton_x2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Bouton_x2ActionPerformed(evt);
+            }
+        });
+
+        TextNombre.setText("1");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(339, 339, 339)
-                        .addComponent(BoutonBatard, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(417, 417, 417)
-                        .addComponent(TextWarning)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 39, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(17, 17, 17))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(BoutonBatard, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(106, 106, 106))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(80, 80, 80)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(TextNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 760, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(Bouton_x2, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(TextWarning)
+                        .addGap(204, 204, 204))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(34, 34, 34)
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(76, 76, 76)
-                .addComponent(TextWarning)
-                .addGap(31, 31, 31)
+                .addGap(37, 37, 37)
+                .addComponent(TextNombre)
+                .addGap(28, 28, 28)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(TextWarning)
+                    .addComponent(Bouton_x2, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addComponent(BoutonBatard, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(67, 67, 67))
+                .addGap(51, 51, 51))
         );
 
         pack();
@@ -172,6 +193,14 @@ public class Fenêtre_principale extends javax.swing.JFrame {
         int a = (int)(Math.random()*5);
         TextWarning.setText(tab[a]);
     }//GEN-LAST:event_BoutonBatardActionPerformed
+int a = 1;
+    private void Bouton_x2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bouton_x2ActionPerformed
+        // TODO add your handling code here:
+        a = 2*a;
+        String b = a + "";
+        TextNombre.setText(b);
+                
+    }//GEN-LAST:event_Bouton_x2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -212,10 +241,12 @@ public class Fenêtre_principale extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BoutonBatard;
     private javax.swing.JButton BoutonValider;
+    private javax.swing.JButton Bouton_x2;
     private javax.swing.JLabel TextAurevoir;
     private javax.swing.JLabel TextBonjour;
     private javax.swing.JPasswordField TextFieldmdp;
     private javax.swing.JTextField TextFieldprénom;
+    private javax.swing.JLabel TextNombre;
     private javax.swing.JLabel TextSaisirmdp;
     private javax.swing.JLabel TextWarning;
     private javax.swing.JLabel Textmdp;
