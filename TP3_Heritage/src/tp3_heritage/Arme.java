@@ -22,7 +22,7 @@ public Arme(String unNom, int lvla) {
 @Override
 public String toString() {
     String chaine_a_retourner;
-    chaine_a_retourner = nom + " (" + lvlAttaque + "points d'attaques";
+    chaine_a_retourner = nom + " (" + lvlAttaque + " points d'attaques)";
     return chaine_a_retourner ;
 }
 }

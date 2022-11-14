@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
 package tp3_heritage;
+import java.util.ArrayList;
 
 /**
  *
@@ -20,6 +21,14 @@ public class TP3_Heritage {
         Epee Durandal = new Epee("Durandal", 4, 7);
         Baton Chêne = new Baton("Chêne", 4, 5);
         Baton Charme = new Baton("Charme", 5, 6);
+        
+        ArrayList<Arme> inventaire = new ArrayList<Arme>();
+        inventaire.add(Excalibur);
+        inventaire.add(Durandal);     
+        inventaire.add(Chêne);
+        inventaire.add(Charme);
+        
+        System.out.println(inventaire);
     }
     
 }
