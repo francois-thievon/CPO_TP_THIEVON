@@ -11,8 +11,26 @@ package tp3_heritage;
 public class Arme {
     String nom;
     int lvlAttaque;  
+    Personnage proprietaire;
     
 
+    public int getLvlAttaque() {
+        return lvlAttaque;
+    }
+
+    public void setLvlAttaque(int lvlAttaque) {
+        if (lvlAttaque < 0) {
+            this.lvlAttaque = 0;
+        }
+        else if(lvlAttaque > 100) {
+            this.lvlAttaque = 100;
+        }
+        else {
+            this.lvlAttaque = lvlAttaque;
+        }
+        
+    }
+     
 
 public Arme(String unNom, int lvla) {
     nom = unNom;

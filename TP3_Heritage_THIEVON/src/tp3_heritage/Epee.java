@@ -15,4 +15,23 @@ public class Epee extends Arme{
         super(n,i);
         finesse = a;
     }
+
+    public int getFinesse() {
+        return finesse;
+    }
+
+    public void setFinesse(int finesse) {
+        if (finesse < 0) {
+            this.finesse = 0;
+        }
+        else if(finesse > 100) {
+            this.finesse = 100;
+        }
+        else {
+            this.finesse = finesse;
+        }
+    }
+    
+    
+    
 }

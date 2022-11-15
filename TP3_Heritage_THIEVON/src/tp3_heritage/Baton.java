@@ -15,4 +15,20 @@ public class Baton extends Arme {
         super(n, i);
         age = a;
     }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        if (age < 0) {
+            this.age = 0;
+        }
+        else if(age > 100) {
+            this.age = 100;
+        }
+        else {
+            this.age = age;
+    }
+}
 }
