@@ -10,12 +10,18 @@ package tp3_heritage;
  */
 public class Guerrier extends Personnage {  
     boolean cheval;
+    public static int nbGuerriers;
     
 
     public Guerrier(String n, int i, boolean a) {
         super(n, i);
         cheval = a;
+        nbGuerriers ++;
     }
+    
+    public void finalize(){
+    nbGuerriers = nbGuerriers - 1;
+}
 
     @Override
     public String toString() {
@@ -36,6 +42,4 @@ public class Guerrier extends Personnage {
             }
         }
     }
-    
-    
 }
