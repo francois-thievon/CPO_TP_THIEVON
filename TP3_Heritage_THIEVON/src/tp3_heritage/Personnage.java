@@ -14,6 +14,7 @@ public class Personnage {
     int hp;
     ArrayList<Arme> inventaire = new ArrayList<Arme>();
     Arme Arme_en_main = null;
+    public static int nbPersos;
 
     
     public int getHp() {
@@ -27,6 +28,12 @@ public class Personnage {
     
     
     public void Ajouter_Arme(Arme Arme_a_ajouter) {
+        
+        if (Arme_a_ajouter.proprietaire != null) {
+            System.out.println(Arme_a_ajouter.nom + " appartiens déjà à " + Arme_a_ajouter.proprietaire.nom + " elle ne peut donc pas être associée à " + this.nom);
+        }
+        
+        else {
         if (inventaire.size()<5) {
             this.inventaire.add(Arme_a_ajouter);
             Arme_a_ajouter.proprietaire = this;
@@ -34,6 +41,7 @@ public class Personnage {
         }
         else {
             System.out.println(this.nom + " possède déjà 5 armes");
+        }
         }
         
     }
@@ -58,8 +66,13 @@ public class Personnage {
 public Personnage(String unNom, int nbhp) {
     nom = unNom;
     hp = nbhp;
+    nbPersos ++;
 }
 
+
+public void finalize(){
+    nbPersos = nbPersos - 1;
+}
 
 @Override
 public String toString() {

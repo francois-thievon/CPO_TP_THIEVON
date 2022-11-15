@@ -67,6 +67,10 @@ public class TP3_Heritage {
         
         // Tests pour Gandalf
         
+        
+        System.out.println("\n");
+        
+        
         Magicien Hisoka = new Magicien("Hisoka", 90, true);
         Guerrier Jotaro = new Guerrier("Jotaro", 85, false);
         Epee Carte = new Epee("Carte", 40, 1);
@@ -80,7 +84,7 @@ public class TP3_Heritage {
         
         Hisoka.Ajouter_Arme(Carte);
         Hisoka.Ajouter_Arme(Massue);
-        Hisoka.Ajouter_Arme(BatonMagique);
+        Hisoka.Ajouter_Arme(BatonMagique);;
         
         Jotaro.Ajouter_Arme(Epéeendiamant);
         Jotaro.Ajouter_Arme(Epéeenfer);
@@ -95,6 +99,20 @@ public class TP3_Heritage {
         
         System.out.println(Hisoka);
         System.out.println(Jotaro);
+        
+        // Affichage des personnages
+       
+        System.out.println(BatonMagique.proprietaire.nom);
+        Jotaro.Ajouter_Arme(Carte);
+        
+        // Tests pour les relations
+        
+        
+        System.out.println("Il y a " + Magicien.nbMagiciens + " magiciens");
+        System.out.println("Il y a " + Guerrier.nbGuerriers + " guerriers");
+        System.out.println("Il y a " + Personnage.nbPersos + " personnages");
+        
+        /// On a bien le bon nombre de magiciens, guerriers et personnages crées
     }
     
 }

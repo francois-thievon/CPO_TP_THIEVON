@@ -10,12 +10,18 @@ package tp3_heritage;
  */
 public class Magicien extends Personnage{ 
     boolean conf;
+    public static int nbMagiciens;
     
     
     public Magicien (String n, int i, boolean a) {
         super(n, i);
         conf = a;
+        nbMagiciens ++;
     }
+    
+    public void finalize(){
+    nbMagiciens = nbMagiciens - 1;
+}
 
     @Override
     public String toString() {
