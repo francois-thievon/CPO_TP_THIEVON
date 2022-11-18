@@ -85,5 +85,26 @@ public class CelluleDeGrille {
         supprimerJeton();
         supprimerTrouNoir();
     }
+    
+    @Override
+    public String toString() {
+        if (this.presenceJeton() == true) {
+            if (this.jetonCourant.lireCouleur() == "Rouge") {
+                return " R ";
+            }
+            else {
+                return " J ";
+            }
+        }
+        if (this.avoirTrouNoir == true) {
+            return "@";
+        }
+        if (this.avoirDesintegrateur == true && this.avoirTrouNoir == false) {
+            return "D";
+        }
+        else {
+            return " . ";
+        }
+    }
 }
     
