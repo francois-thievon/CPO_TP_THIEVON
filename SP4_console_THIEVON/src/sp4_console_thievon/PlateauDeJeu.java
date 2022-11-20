@@ -87,35 +87,68 @@ public class PlateauDeJeu {
     }
     
     
-    /*
     public boolean ligneGagnantePourCouleur(String a) {
-        boolean res = false;
         int cpt = 0;
-        for (int i = 0; i < 6; i++) {
-            for (int j = 0; i<7; i++) {
-                if (grille[i][j].lireCouleurDuJeton() == a){
+        boolean res = false;
+        for (int i = 0; i<6; i++) {
+            for (int j = 0; j<7; j++) {
+                if (grille[i][j].lireCouleurDuJeton() == a) {
                     cpt += 1;
+                    if (cpt == 4) {
+                        res = true;                       
+                        return res;                        
                     }
+                }
                 else {
                     cpt = 0;
                 }
-                if (cpt == 4) {
-                    res = true;
-                    return res;
-            }
             }
         }
         return res;
     }
-/*
+    
     public boolean colonneGagnantePourCouleur(String a) {
+        int cpt = 0;
+        boolean res = false;
+        for (int j = 0; j<7; j++) {
+            for (int i = 0; i<6; i++) {
+                if (grille[i][j].lireCouleurDuJeton() == a) {
+                    cpt += 1;
+                    if (cpt == 4) {
+                        res = true;                       
+                        return res;                        
+                    }
+                }
+                else {
+                    cpt = 0;
+                }
+            }
+        }
+        return res;
+
         
     }
-    
+    /*
     public boolean diagonaleMontanteGagnantePourCouleur(String a) {
-        
+        int cpt = 0;
+        int n = 7;
+        int m = 3;
+        boolean res = false;
+        for (int i = 0; i<4; i++) {
+            if (grille[n - i][m + i].lireCouleurDuJeton() == a) {
+                cpt += 1;
+                if (cpt == 4) {
+                    res = true;
+                    return res;
+                }
+            }
+            else {
+                cpt = 0;
+            }            
+        }
+        return res;
     }
-    
+    /*
     public boolean diagonaleDescendanteGagnantePourCouleur(String a) {
         
     }
