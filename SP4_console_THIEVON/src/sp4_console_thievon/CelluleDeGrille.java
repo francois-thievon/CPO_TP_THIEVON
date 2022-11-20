@@ -97,10 +97,10 @@ public class CelluleDeGrille {
             }
         }
         if (this.avoirTrouNoir == true) {
-            return "@";
+            return " @ ";
         }
         if (this.avoirDesintegrateur == true && this.avoirTrouNoir == false) {
-            return "D";
+            return " D ";
         }
         else {
             return " . ";
