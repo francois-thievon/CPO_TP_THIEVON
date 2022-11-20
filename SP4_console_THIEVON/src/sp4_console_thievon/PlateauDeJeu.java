@@ -277,6 +277,3 @@ public class PlateauDeJeu {
         return jetontmp;
     }
 }
-    
-
-
