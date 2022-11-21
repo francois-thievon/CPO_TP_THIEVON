@@ -15,6 +15,31 @@ public class Joueur {
     String couleur;
     ArrayList<Jeton> reserveJeton = new ArrayList<Jeton>();
     int nombreJetonRestants = reserveJeton.size();
-    int nbDesintegrateurs;
+    int nombreDesintegrateurs;
     
+    public Joueur(String a) {
+        nom = a;
+    }
+    
+    public void affecterCouleur(String a) {
+        couleur = a;
+    }
+    
+    public void ajouterJeton(Jeton jeton) {
+        reserveJeton.add(jeton);
+    }
+    
+    public void obtenirDesintegrateur() {
+        nombreDesintegrateurs += 1;
+    }
+    
+    public boolean utiliserDesintegrateur() {
+        if (nombreDesintegrateurs > 0) {
+            nombreDesintegrateurs -= 1;
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
 }

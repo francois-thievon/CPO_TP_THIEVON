@@ -44,21 +44,21 @@ public class PlateauDeJeu {
         return res;
     }
     
-    /*
+    
     public void viderGrille(Joueur R, Joueur J) {
         for (int i = 0; i<6 ; i++) {
             for (int j = 0; j<7; j++) {
-                Jeton jetontmp() = grille[i][j].recupererJeton();
+                Jeton jetontmp = grille[i][j].recupererJeton();
                 if (jetontmp.lireCouleur() == "Rouge") {
-                    R.ajouterJeton();
+                    R.ajouterJeton(jetontmp);
                 }
                 else {
-                    J.ajouterJeton();
+                    J.ajouterJeton(jetontmp);
                 }
             }
         }
     }
-    */
+    
     
     public static final String RED_BACKGROUND = "\u001B[41m";
     public static final String YELLOW_BACKGROUND = "\u001B[43m";
