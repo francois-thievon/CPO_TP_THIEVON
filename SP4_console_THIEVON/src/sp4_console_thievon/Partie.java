@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package sp4_console_thievon;
+import java.util.Scanner;
 
 /**
  *
@@ -30,22 +31,34 @@ public class Partie {
     }
     
     public void debuterPartie() {
+        Scanner sc = new Scanner(System.in);
         do {
             if (joueurCourant == ListeJoueurs[0]) {
                 int a = joueurCourant.reserveJeton.size() - 1;
-                grilleJeu.ajouterJetonDansColonne(joueurCourant.reserveJeton.get(a), 2);
+                System.out.println("\nRouge choisissez dans quelle colonne jouer :");
+                int n = sc.nextInt();
+                grilleJeu.ajouterJetonDansColonne(joueurCourant.reserveJeton.get(a), n);
                 joueurCourant = ListeJoueurs[1];
                 System.out.println("\n");
                 grilleJeu.afficherGrilleSurConsole();
             }
             else {
                 int b = joueurCourant.reserveJeton.size() - 1;
-                grilleJeu.ajouterJetonDansColonne(joueurCourant.reserveJeton.get(b), 1);
+                System.out.println("\nJaune choisissez dans quelle colonne jouer :");
+                int m = sc.nextInt();
+                grilleJeu.ajouterJetonDansColonne(joueurCourant.reserveJeton.get(b), m);
                 joueurCourant = ListeJoueurs[0];
                 System.out.println("\n");
                 grilleJeu.afficherGrilleSurConsole();
             }
             
         }while (grilleJeu.etreGagnantePourCouleur("Rouge") == false && grilleJeu.etreGagnantePourCouleur("Jaune") == false);
+    if (grilleJeu.etreGagnantePourCouleur("Rouge") == true) {
+        System.out.println("\n" + ListeJoueurs[0] + " (Rouge) a gagné !");
+    }
+    if (grilleJeu.etreGagnantePourCouleur("Jaune") == true) {
+        System.out.println("\n" + ListeJoueurs[1] + " (Jaune) a gagné !");
+    }
     }   
+    
 }

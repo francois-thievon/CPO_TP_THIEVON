@@ -27,6 +27,7 @@ public class SP4_console_THIEVON {
         
         partie.initialiserPartie();
         partie.debuterPartie();
+                
 
         
     }
