@@ -30,18 +30,22 @@ public class Partie {
     }
     
     public void debuterPartie() {
-        grilleJeu.afficherGrilleSurConsole();
-        while (grilleJeu.etreGagnantePourCouleur("Rouge") == false && grilleJeu.etreGagnantePourCouleur("Jaune") == false) {
+        do {
             if (joueurCourant == ListeJoueurs[0]) {
                 int a = joueurCourant.reserveJeton.size() - 1;
-                grilleJeu.ajouterJetonDansColonne(joueurCourant.reserveJeton.get(a), 1);
+                grilleJeu.ajouterJetonDansColonne(joueurCourant.reserveJeton.get(a), 2);
                 joueurCourant = ListeJoueurs[1];
+                System.out.println("\n");
+                grilleJeu.afficherGrilleSurConsole();
             }
             else {
                 int b = joueurCourant.reserveJeton.size() - 1;
                 grilleJeu.ajouterJetonDansColonne(joueurCourant.reserveJeton.get(b), 1);
                 joueurCourant = ListeJoueurs[0];
+                System.out.println("\n");
+                grilleJeu.afficherGrilleSurConsole();
             }
-        }
+            
+        }while (grilleJeu.etreGagnantePourCouleur("Rouge") == false && grilleJeu.etreGagnantePourCouleur("Jaune") == false);
     }   
 }
