@@ -81,6 +81,7 @@ public class PlateauDeJeu {
                 }
             }
         }
+        System.out.println(WHITE_BACKGROUND + "\n 1  2  3  4  5  6  7  ");
     }
 
     public boolean presenceJeton(int x, int y) {
