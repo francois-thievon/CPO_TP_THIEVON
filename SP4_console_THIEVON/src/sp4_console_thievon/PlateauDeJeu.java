@@ -49,11 +49,13 @@ public class PlateauDeJeu {
         for (int i = 0; i<6 ; i++) {
             for (int j = 0; j<7; j++) {
                 Jeton jetontmp = grille[i][j].recupererJeton();
-                if (jetontmp.lireCouleur() == "Rouge") {
-                    R.ajouterJeton(jetontmp);
-                }
-                else {
-                    J.ajouterJeton(jetontmp);
+                if (jetontmp != null) {
+                    if (jetontmp.lireCouleur() == "Rouge") {
+                        R.ajouterJeton(jetontmp);
+                    }
+                    else {
+                        J.ajouterJeton(jetontmp);
+                    }
                 }
             }
         }

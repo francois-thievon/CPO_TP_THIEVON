@@ -55,9 +55,13 @@ public class Partie {
         }while (grilleJeu.etreGagnantePourCouleur("Rouge") == false && grilleJeu.etreGagnantePourCouleur("Jaune") == false);
     if (grilleJeu.etreGagnantePourCouleur("Rouge") == true) {
         System.out.println("\n" + ListeJoueurs[0] + " (Rouge) a gagné !");
+        grilleJeu.viderGrille(ListeJoueurs[0], ListeJoueurs[1]);
+        this.debuterPartie();
     }
     if (grilleJeu.etreGagnantePourCouleur("Jaune") == true) {
         System.out.println("\n" + ListeJoueurs[1] + " (Jaune) a gagné !");
+        grilleJeu.viderGrille(ListeJoueurs[0], ListeJoueurs[1]);
+        this.debuterPartie();
     }
     }   
     
