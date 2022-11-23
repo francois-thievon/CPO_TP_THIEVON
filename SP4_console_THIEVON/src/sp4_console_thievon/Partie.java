@@ -4,6 +4,7 @@
  */
 package sp4_console_thievon;
 import java.util.Scanner;
+import java.util.Random;
 
 /**
  *
@@ -28,10 +29,39 @@ public class Partie {
             ListeJoueurs[0].ajouterJeton(jetonrouge);
             ListeJoueurs[1].ajouterJeton(jetonjaune);
         }
+        
+        int cpttn = 0;
+        int cpt = 0;
+        do {
+            int a = 1 + (int)(Math.random() * 6);
+            int b = 1 + (int)(Math.random() * 7);
+            boolean p = grilleJeu.placerTrouNoir(a, b);
+            if (p == true) {
+                cpttn +=1;
+                cpt +=1;
+                if (cpt == 1 || cpt == 2) {
+                    grilleJeu.placerDesintegrateur(a, b);
+                }
+            }
+        }while (cpttn<5);
+        
+        int cptd = 0;
+        do {
+            int c = 1 + (int)(Math.random() * 6);
+            int d = 1 + (int)(Math.random() * 7);
+            if (grilleJeu.presenceTrouNoir(c, d) == false) {
+                boolean q = grilleJeu.placerDesintegrateur(c, d);
+                if (q == true) {
+                    cptd +=1;
+                }
+            }
+        }while (cptd<3);
     }
     
     public void debuterPartie() {
+        System.out.println("\nNouvelle partie de SuperPuissance4 !");
         Scanner sc = new Scanner(System.in);
+        grilleJeu.afficherGrilleSurConsole();
         do {
             System.out.println("\n" + joueurCourant + " Choisissez :\n1 pour placer un jeton\n2 pour recupérer un jeton\n3 pour utiliser un desintegrateur\n0 pour arreter le temps");
             int rep = sc.nextInt();
@@ -43,24 +73,27 @@ public class Partie {
                 
                 if (joueurCourant == ListeJoueurs[0]) {
                 int a = joueurCourant.reserveJeton.size() - 1;
-                System.out.println("\nRouge choisissez dans quelle colonne jouer :");
+                System.out.println("\n" + joueurCourant + " (Rouge) choisissez dans quelle colonne jouer :");
                 int n = sc.nextInt();
                 if (n>0 && n<8) {
-                    grilleJeu.ajouterJetonDansColonne(joueurCourant.reserveJeton.get(a), n);
-                    joueurCourant = ListeJoueurs[1];
-                    System.out.println("\n");
-                    grilleJeu.afficherGrilleSurConsole();
+                    if (grilleJeu.colonneRemplie(n) == false) {
+                        grilleJeu.ajouterJetonDansColonne(joueurCourant.reserveJeton.get(a), n);
+                        joueurCourant = ListeJoueurs[1];
+                        System.out.println("\n");
+                        grilleJeu.afficherGrilleSurConsole();
+                    }
+                    else {
+                        System.out.println("Colonne remplie ");
+                    }
                 }
                 if (n < 1) {
-                    System.out.println("Erreure de saisie, jeton placé dans la colonne 1");
-                    grilleJeu.ajouterJetonDansColonne(joueurCourant.reserveJeton.get(a), 1);
+                    System.out.println("Erreure de saisie ");
                     joueurCourant = ListeJoueurs[1];
                     System.out.println("\n");
                     grilleJeu.afficherGrilleSurConsole();
                 }
                 if (n>7) {
-                    System.out.println("Erreure de saisie, jeton placé dans la colonne 7");
-                    grilleJeu.ajouterJetonDansColonne(joueurCourant.reserveJeton.get(a), 7);
+                    System.out.println("Erreure de saisie ");
                     joueurCourant = ListeJoueurs[1];
                     System.out.println("\n");
                     grilleJeu.afficherGrilleSurConsole();
@@ -68,24 +101,27 @@ public class Partie {
             }
             else {
                 int b = joueurCourant.reserveJeton.size() - 1;
-                System.out.println("\nJaune choisissez dans quelle colonne jouer :");
+                System.out.println("\n" + joueurCourant + " (Jaune) choisissez dans quelle colonne jouer :");
                 int m = sc.nextInt();
                 if (m>0 && m<8) {
-                    grilleJeu.ajouterJetonDansColonne(joueurCourant.reserveJeton.get(b), m);
-                    joueurCourant = ListeJoueurs[0];
-                    System.out.println("\n");
-                    grilleJeu.afficherGrilleSurConsole();
+                    if (grilleJeu.colonneRemplie(m) == false) {
+                        grilleJeu.ajouterJetonDansColonne(joueurCourant.reserveJeton.get(b), m);
+                        joueurCourant = ListeJoueurs[0];
+                        System.out.println("\n");
+                        grilleJeu.afficherGrilleSurConsole();
+                    }
+                    else {
+                        System.out.println("Colonne remplie ");
+                    }
                 }
                 if (m<1) {
-                    System.out.println("Erreure de saisie, jeton placé dans la colonne 1");
-                    grilleJeu.ajouterJetonDansColonne(joueurCourant.reserveJeton.get(b), 1);
+                    System.out.println("Erreure de saisie ");
                     joueurCourant = ListeJoueurs[0];
                     System.out.println("\n");
                     grilleJeu.afficherGrilleSurConsole();
                 }
                 if (m>7) {
-                    System.out.println("Erreure de saisie, jeton placé dans la colonne 7");
-                    grilleJeu.ajouterJetonDansColonne(joueurCourant.reserveJeton.get(b), 7);
+                    System.out.println("Erreure de saisie ");
                     joueurCourant = ListeJoueurs[0];
                     System.out.println("\n");
                     grilleJeu.afficherGrilleSurConsole();
@@ -97,6 +133,9 @@ public class Partie {
             }
             if (rep == 3) {
                 
+            }
+            if (rep >3 || rep <0) {
+                System.out.println("Erreur de saisie ");
             }
               
         }while (grilleJeu.etreGagnantePourCouleur("Rouge") == false && grilleJeu.etreGagnantePourCouleur("Jaune") == false && grilleJeu.grilleRemplie() == false);

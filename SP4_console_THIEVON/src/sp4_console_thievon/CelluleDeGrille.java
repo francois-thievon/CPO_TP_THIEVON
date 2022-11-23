@@ -47,7 +47,7 @@ public class CelluleDeGrille {
     }
     
     public void supprimerTrouNoir() {
-        avoirDesintegrateur = false;
+        avoirTrouNoir = false;
     }
     
     public boolean presenceTrouNoir() {

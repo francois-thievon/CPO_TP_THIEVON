@@ -22,14 +22,29 @@ public class PlateauDeJeu {
     
     public int ajouterJetonDansColonne(Jeton j, int a) {
         int l = 0;
-        for (int i = 0; i<6; i++) {
+        if (this.colonneRemplie(a) == false) {
+            for (int i = 0; i<6; i++) {
             if (grille[5-i][a-1].presenceJeton() == false) {
-                grille[5-i][a-1].affecterJeton(j);
-                l = 6-i;
-                return l;
+                if (grille[5-i][a-1].presenceTrouNoir() == true) {
+                    this.suppprimerTrouNoir((6-i), (a));
+                    return l;
+                }
+                else {
+                    if (grille[5-i][a-1].presenceDesintegrateur() == true) {
+                        l = 9;
+                    }
+                    grille[5-i][a-1].affecterJeton(j);
+                    l = 6-i;
+                    return l;
+                }
             }
         }
         return l;
+        }
+        else {
+            System.out.println("Colonne déjà complète");
+            return l;
+        }
     }
     
     public boolean grilleRemplie() {
@@ -250,6 +265,7 @@ public class PlateauDeJeu {
         if (grille[x-1][y-1].presenceTrouNoir() == true) {
             grille[x-1][y-1].supprimerTrouNoir();
             res = true;
+            System.out.println("Trou noir, jeton non comptabilisé");
             return res;
         }
         return res;
@@ -278,5 +294,14 @@ public class PlateauDeJeu {
     public Jeton recupererJeton(int x, int y) {
         Jeton jetontmp = grille[x-1][y-1].recupererJeton();
         return jetontmp;
+    }
+    
+    public boolean presenceTrouNoir(int x, int y) {
+        if (grille[x-1][y-1].presenceTrouNoir() == true) {
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 }
