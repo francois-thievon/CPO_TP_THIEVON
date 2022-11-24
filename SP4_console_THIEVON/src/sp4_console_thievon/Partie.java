@@ -141,8 +141,13 @@ public class Partie {
                 int lignerecup = sc.nextInt();
                 System.out.println("Saisissez le numéro de la colonne correspondante");
                 int colonnerecup = sc.nextInt();
-                grilleJeu.recupererJeton(lignerecup, colonnerecup);
-                grilleJeu.tasserLigne(colonnerecup);
+                if (grilleJeu.grille[lignerecup - 1][colonnerecup - 1].presenceJeton() == true) {
+                    grilleJeu.recupererJeton(lignerecup, colonnerecup);
+                    grilleJeu.tasserLigne(colonnerecup);
+                }
+                else {
+                    System.out.println("Erreur de saisie de ligne");
+                }
                 grilleJeu.afficherGrilleSurConsole();
             }
             if (rep == 3) {
