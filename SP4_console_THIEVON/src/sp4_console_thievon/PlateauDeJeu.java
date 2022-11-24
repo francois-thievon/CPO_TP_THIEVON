@@ -26,12 +26,24 @@ public class PlateauDeJeu {
             for (int i = 0; i<6; i++) {
             if (grille[5-i][a-1].presenceJeton() == false) {
                 if (grille[5-i][a-1].presenceTrouNoir() == true) {
-                    this.suppprimerTrouNoir((6-i), (a));
+                    System.out.println("Présence d'un trou noir, Jeton absorbé");
+                    grille[5-i][a-1].supprimerTrouNoir();
+                    grille[5-i][a-1].affecterJeton(j);
+                    if (grille[5-i][a-1].presenceDesintegrateur() == true) {
+                        grille[5-i][a-1].supprimerDesintegrateur();
+                        grille[5-i][a-1].supprimerJeton();
+                        return 999;
+                    }
+                    //this.suppprimerTrouNoir((6-i), (a));
+                    grille[5-i][a-1].supprimerJeton();
+                    l = 6-i;
                     return l;
                 }
                 else {
                     if (grille[5-i][a-1].presenceDesintegrateur() == true) {
-                        l = 9;
+                        grille[5-i][a-1].affecterJeton(j);
+                        grille[5-i][a-1].supprimerDesintegrateur();
+                        return 999;
                     }
                     grille[5-i][a-1].affecterJeton(j);
                     l = 6-i;
@@ -265,7 +277,7 @@ public class PlateauDeJeu {
         if (grille[x-1][y-1].presenceTrouNoir() == true) {
             grille[x-1][y-1].supprimerTrouNoir();
             res = true;
-            System.out.println("Trou noir, jeton non comptabilisé");
+            System.out.println("Trou noir, jeton absorbé");
             return res;
         }
         return res;

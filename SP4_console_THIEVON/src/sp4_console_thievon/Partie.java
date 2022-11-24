@@ -77,7 +77,11 @@ public class Partie {
                 int n = sc.nextInt();
                 if (n>0 && n<8) {
                     if (grilleJeu.colonneRemplie(n) == false) {
-                        grilleJeu.ajouterJetonDansColonne(joueurCourant.reserveJeton.get(a), n);
+                        int varJ = grilleJeu.ajouterJetonDansColonne(joueurCourant.reserveJeton.get(a), n);
+                        if (varJ == 999) {
+                            joueurCourant.nombreDesintegrateurs += 1;
+                            System.out.println(joueurCourant + " a obtenu un désintégrateur !");
+                        }
                         joueurCourant = ListeJoueurs[1];
                         System.out.println("\n");
                         grilleJeu.afficherGrilleSurConsole();
@@ -105,7 +109,11 @@ public class Partie {
                 int m = sc.nextInt();
                 if (m>0 && m<8) {
                     if (grilleJeu.colonneRemplie(m) == false) {
-                        grilleJeu.ajouterJetonDansColonne(joueurCourant.reserveJeton.get(b), m);
+                        int varD = grilleJeu.ajouterJetonDansColonne(joueurCourant.reserveJeton.get(b), m);
+                        if (varD == 999) {
+                            joueurCourant.nombreDesintegrateurs += 1;
+                            System.out.println(joueurCourant + " a obtenu un désintégrateur !");
+                        }
                         joueurCourant = ListeJoueurs[0];
                         System.out.println("\n");
                         grilleJeu.afficherGrilleSurConsole();
@@ -129,7 +137,13 @@ public class Partie {
             }
             }
             if (rep == 2) {
-                
+                System.out.println("Saisissez le numéro de la ligne correspondante");
+                int lignerecup = sc.nextInt();
+                System.out.println("Saisissez le numéro de la colonne correspondante");
+                int colonnerecup = sc.nextInt();
+                grilleJeu.recupererJeton(lignerecup, colonnerecup);
+                grilleJeu.tasserLigne(colonnerecup);
+                grilleJeu.afficherGrilleSurConsole();
             }
             if (rep == 3) {
                 
