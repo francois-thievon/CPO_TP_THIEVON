@@ -73,31 +73,31 @@ public class Partie {
                 
                 if (joueurCourant == ListeJoueurs[0]) {
                     int a = joueurCourant.reserveJeton.size() - 1;
-                    System.out.println("\n" + joueurCourant + " (Rouge) choisissez dans quelle colonne jouer : \n");
+                    System.out.println("\n" + joueurCourant + " (Rouge) choisissez dans quelle colonne jouer :\n");
                     int n = sc.nextInt();
                     if (n>0 && n<8) {
                         if (grilleJeu.colonneRemplie(n) == false) {
                             int varJ = grilleJeu.ajouterJetonDansColonne(joueurCourant.reserveJeton.get(a), n);
                             if (varJ == 999) {
                                 joueurCourant.nombreDesintegrateurs += 1;
-                                System.out.println(joueurCourant + " peut maintenant utiliser son stand " + joueurCourant.nombreDesintegrateurs + " fois pour detruire un jeton adverse ! \n");
+                                System.out.println("\n" + joueurCourant + " peut maintenant utiliser Star Platinium " + joueurCourant.nombreDesintegrateurs + " fois pour detruire un jeton adverse !\n");
                             }
                             joueurCourant = ListeJoueurs[1];
                             System.out.println("\n");
                             grilleJeu.afficherGrilleSurConsole();
                         }
                         else {
-                            System.out.println("Colonne remplie \n");
+                            System.out.println("La colonne est remplie\n");
                         }
                     }
                     if (n < 1) {
-                        System.out.println("Erreure de saisie \n");
+                        System.out.println("\nErreure de saisie\n");
                         joueurCourant = ListeJoueurs[1];
                         System.out.println("\n");
                         grilleJeu.afficherGrilleSurConsole();
                     }
                     if (n>7) {
-                        System.out.println("Erreure de saisie \n");
+                        System.out.println("\nErreure de saisie\n");
                         joueurCourant = ListeJoueurs[1];
                         System.out.println("\n");
                         grilleJeu.afficherGrilleSurConsole();
@@ -105,31 +105,31 @@ public class Partie {
                 }
                 else {
                     int b = joueurCourant.reserveJeton.size() - 1;
-                    System.out.println("\n" + joueurCourant + " (Jaune) choisissez dans quelle colonne jouer : \n");
+                    System.out.println("\n" + joueurCourant + " (Jaune) choisissez dans quelle colonne jouer :\n");
                     int m = sc.nextInt();
                     if (m>0 && m<8) {
                         if (grilleJeu.colonneRemplie(m) == false) {
                             int varD = grilleJeu.ajouterJetonDansColonne(joueurCourant.reserveJeton.get(b), m);
                             if (varD == 999) {
                                 joueurCourant.nombreDesintegrateurs += 1;
-                                System.out.println(joueurCourant + " peut maintenant utiliser son stand " + joueurCourant.nombreDesintegrateurs + " fois pour detruire un jeton adverse ! \n");
+                                System.out.println("\n" + joueurCourant + " peut maintenant utiliser The World " + joueurCourant.nombreDesintegrateurs + " fois pour detruire un jeton adverse !\n");
                             }
                             joueurCourant = ListeJoueurs[0];
                             System.out.println("\n");
                             grilleJeu.afficherGrilleSurConsole();
                         }
                         else {
-                            System.out.println("Colonne remplie \n");
+                            System.out.println("La colonne est remplie\n");
                         }
                     }
                     if (m<1) {
-                        System.out.println("Erreure de saisie \n");
+                        System.out.println("\nErreure de saisie\n");
                         joueurCourant = ListeJoueurs[0];
                         System.out.println("\n");
                         grilleJeu.afficherGrilleSurConsole();
                     }
                     if (m>7) {
-                        System.out.println("Erreure de saisie \n");
+                        System.out.println("\nErreure de saisie\n");
                         joueurCourant = ListeJoueurs[0];
                         System.out.println("\n");
                         grilleJeu.afficherGrilleSurConsole();
@@ -137,24 +137,24 @@ public class Partie {
                 }
             }
             if (rep == 2) {
-                System.out.println("Saisissez le numéro de la ligne correspondante \n");
+                System.out.println("\nSaisissez le numero de la ligne correspondante\n");
                 int lignerecup = sc.nextInt();
-                System.out.println("Saisissez le numéro de la colonne correspondante \n");
+                System.out.println("\nSaisissez le numero de la colonne correspondante\n");
                 int colonnerecup = sc.nextInt();
                 if (joueurCourant.couleur == "Rouge") {
                     if (grilleJeu.grille[lignerecup - 1][colonnerecup - 1].presenceJeton() == true) {
                         if (grilleJeu.grille[lignerecup - 1][colonnerecup - 1].lireCouleurDuJeton() == "Rouge") {
                             grilleJeu.recupererJeton(lignerecup, colonnerecup);
                             grilleJeu.tasserLigne(colonnerecup);
-                            System.out.println("Le jeton a bien ete recupere par " + joueurCourant + "\n");
+                            System.out.println("\nStar Platinium a bien recupere le jeton de " + joueurCourant + "\n");
                             joueurCourant = ListeJoueurs[1];
                         }
                         else {
-                            System.out.println("Ce jeton ne vous appartient pas \n");
+                            System.out.println("\nCe jeton ne vous appartient pas\n");
                         }
                     }
                     else {
-                        System.out.println("Il n'y a pas de Jeton dans cette case \n");
+                        System.out.println("\nIl n'y a pas de Jeton dans cette case\n");
                     }
                 }
                 
@@ -163,15 +163,15 @@ public class Partie {
                         if (grilleJeu.grille[lignerecup - 1][colonnerecup - 1].lireCouleurDuJeton() == "Jaune") {
                             grilleJeu.recupererJeton(lignerecup, colonnerecup);
                             grilleJeu.tasserLigne(colonnerecup);
-                            System.out.println("Le jeton a bien ete recupere par " + joueurCourant + "\n");
+                            System.out.println("\nThe World a bien recupere le jeton de " + joueurCourant + "\n");
                             joueurCourant = ListeJoueurs[0];
                         }
                         else {
-                            System.out.println("Ce jeton ne vous appartient pas \n");
+                            System.out.println("\nCe jeton ne vous appartient pas\n");
                         }
                     }
                     else {
-                        System.out.println("Il n'y a pas de Jeton dans cette case \n");
+                        System.out.println("\nIl n'y a pas de Jeton dans cette case\n");
                     }
                 }
                 
@@ -180,9 +180,9 @@ public class Partie {
             }
             if (rep == 3) {
                 if (joueurCourant.nombreDesintegrateurs > 0) {
-                    System.out.println("Saisissez le numero de la ligne correspondante \n");
+                    System.out.println("\nSaisissez le numero de la ligne correspondante\n");
                     int lignedes = sc.nextInt();
-                    System.out.println("Saisissez le numero de la colonne correspondante \n");
+                    System.out.println("\nSaisissez le numero de la colonne correspondante\n");
                     int colonnedes = sc.nextInt();
                 
                     if (joueurCourant.couleur == "Rouge") {
@@ -190,16 +190,16 @@ public class Partie {
                             if (grilleJeu.grille[lignedes - 1][colonnedes - 1].lireCouleurDuJeton() == "Jaune") {
                                 grilleJeu.supprimerJeton(lignedes, colonnedes);
                                 grilleJeu.tasserLigne(colonnedes);
-                                System.out.println("Le jeton a bien ete supprime par " + joueurCourant + "\n");
+                                System.out.println("\nORA ORA ORA\nStar Platinium a bien supprime le jeton de " + ListeJoueurs[1] + "\n");
                                 joueurCourant.nombreDesintegrateurs -= 1;
                                 joueurCourant = ListeJoueurs[1];
                             }
                             else {
-                                System.out.println("Ce jeton est a vous ne le desintégrez pas ! \n");
+                                System.out.println("\nCe jeton est a vous ne le desintegrez pas !\n");
                             }
                         }
                         else {
-                            System.out.println("Il n'y a pas de Jeton dans cette case \n");
+                            System.out.println("\nIl n'y a pas de Jeton dans cette case !\n");
                         }
                     }
                 
@@ -208,21 +208,21 @@ public class Partie {
                             if (grilleJeu.grille[lignedes - 1][colonnedes - 1].lireCouleurDuJeton() == "Rouge") {
                                 grilleJeu.supprimerJeton(lignedes, colonnedes);
                                 grilleJeu.tasserLigne(colonnedes);
-                                System.out.println("Le jeton a bien ete supprime par " + joueurCourant + "\n");
+                                System.out.println("\nMUDA MUDA MUDA\nThe World a bien supprime parlejeton de " + ListeJoueurs[0] + "\n");
                                 joueurCourant.nombreDesintegrateurs -= 1;
                                 joueurCourant = ListeJoueurs[0];
                             }
                             else {
-                                System.out.println("Ce jeton est a vous ne le desintegrez pas ! \n");
+                                System.out.println("\nCe jeton est a vous ne le desintegrez pas !\n");
                             }
                         }
                         else {
-                            System.out.println("Il n'y a pas de Jeton dans cette case \n");
+                            System.out.println("\nIl n'y a pas de Jeton dans cette case !\n");
                         }
                     }
                 }
                 else {
-                    System.out.println("Vous n'avez pas de desintegrateur \n");
+                    System.out.println("\nVous ne pouvez pas utiliser votre stand !\n");
                 }
                 
                 
@@ -231,17 +231,17 @@ public class Partie {
                 
             }
             if (rep >3 || rep <0) {
-                System.out.println("Erreur de saisie ");
+                System.out.println("\nErreur de saisie\n");
             }
               
         }while (grilleJeu.etreGagnantePourCouleur("Rouge") == false && grilleJeu.etreGagnantePourCouleur("Jaune") == false && grilleJeu.grilleRemplie() == false);
         if (grilleJeu.etreGagnantePourCouleur("Rouge") == true) {
-            System.out.println("\n" + ListeJoueurs[0] + " (Rouge) a gagné !");
+            System.out.println("\n" + ListeJoueurs[0] + " (Rouge) a gagne !");
             grilleJeu.viderGrille(ListeJoueurs[0], ListeJoueurs[1]);
             //this.debuterPartie();
         }
         if (grilleJeu.etreGagnantePourCouleur("Jaune") == true) {
-            System.out.println("\n" + ListeJoueurs[1] + " (Jaune) a gagné !");
+            System.out.println("\n" + ListeJoueurs[1] + " (Jaune) a gagne !");
             grilleJeu.viderGrille(ListeJoueurs[0], ListeJoueurs[1]);
             //this.debuterPartie();
         }

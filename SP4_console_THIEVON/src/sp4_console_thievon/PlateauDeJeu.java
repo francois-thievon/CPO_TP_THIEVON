@@ -26,7 +26,7 @@ public class PlateauDeJeu {
             for (int i = 0; i<6; i++) {
             if (grille[5-i][a-1].presenceJeton() == false) {
                 if (grille[5-i][a-1].presenceTrouNoir() == true) {
-                    System.out.println("Présence d'un trou noir, Jeton absorbé");
+                    System.out.println("\nPresence d'un trou noir, Jeton absorbe\n");
                     grille[5-i][a-1].supprimerTrouNoir();
                     grille[5-i][a-1].affecterJeton(j);
                     if (grille[5-i][a-1].presenceDesintegrateur() == true) {
@@ -54,7 +54,7 @@ public class PlateauDeJeu {
         return l;
         }
         else {
-            System.out.println("Colonne déjà complète");
+            System.out.println("Colonne deja complete");
             return l;
         }
     }
@@ -202,50 +202,14 @@ public class PlateauDeJeu {
         }
     }
     
+    
     public void tasserLigne(int a) {
-        CelluleDeGrille grilletmp = new CelluleDeGrille();
-        for (int i = 0; i<6; i++) {
+        for (int i = 0; i<5; i++) {
             if (grille[5-i][a-1].presenceJeton() == false) {
-                grille[5-i][a-1] = grilletmp;
-                if (4-i >= 0){
-                    if (grille[4-i][a-1].presenceJeton() == true){
-                        grille[5-i][a-1] = grille[4-i][a-1];
-                    }
-                }
-                if (3-i >=0) {
-                    if (grille[3-i][a-1].presenceJeton() == true) {
-                        grille[4-i][a-1] = grille[3-i][a-1];
-                    } 
-                     else {
-                        grille[4-i][a-1] = grilletmp;
-                    }
-                }
-                if (2-i >=0) {
-                    if (grille[2-i][a-1].presenceJeton() == true){
-                        grille[3-i][a-1] = grille[2-i][a-1];
-                    }
-                    else {
-                        grille[3-i][a-1] = grilletmp;
-                    }
-                }
-                if (1-i >=0) {
-                    if (grille[1-i][a-1].presenceJeton() == true) {
-                        grille[2-i][a-1] = grille[1-i][a-1];
-                    } 
-                    else {
-                        grille[2-i][a-1] = grilletmp;
-                    }
-                }
-                if (0-i >= 0) {
-                    if (grille[0-i][a-1].presenceJeton() == true){
-                        grille[1-i][a-1] = grille[0-i][a-1];
-                    }
-                    else {
-                        grille[1-i][a-1] = grilletmp;
-                    }
-                }
-                else {
-                    grille[0][a-1] = grilletmp;
+                if (grille[4-i][a-1].presenceJeton() == true) {
+                    Jeton jetontmp = new Jeton("Blanc");
+                    jetontmp = grille[4-i][a-1].recupererJeton();
+                    grille[5-i][a-1].affecterJeton(jetontmp);
                 }
             }
         }
