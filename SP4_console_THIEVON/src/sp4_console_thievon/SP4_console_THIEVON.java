@@ -32,6 +32,3 @@ public class SP4_console_THIEVON {
         
     }
 }
-
-
-// Prblm : Joueur peut recupérer le jeton de l'autre joueur + peut saisir nimporte quel nbligne et nbcolonne

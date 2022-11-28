@@ -141,13 +141,39 @@ public class Partie {
                 int lignerecup = sc.nextInt();
                 System.out.println("Saisissez le numéro de la colonne correspondante");
                 int colonnerecup = sc.nextInt();
-                if (grilleJeu.grille[lignerecup - 1][colonnerecup - 1].presenceJeton() == true) {
-                    grilleJeu.recupererJeton(lignerecup, colonnerecup);
-                    grilleJeu.tasserLigne(colonnerecup);
+                if (joueurCourant.couleur == "Rouge") {
+                    if (grilleJeu.grille[lignerecup - 1][colonnerecup - 1].presenceJeton() == true) {
+                        if (grilleJeu.grille[lignerecup - 1][colonnerecup - 1].lireCouleurDuJeton() == "Rouge") {
+                            grilleJeu.recupererJeton(lignerecup, colonnerecup);
+                            grilleJeu.tasserLigne(colonnerecup);
+                            System.out.println("Le jeton a bien été récupéré \n");
+                        }
+                        else {
+                            System.out.println("Ce jeton ne vous appartient pas \n");
+                        }
+                    }
+                    else {
+                        System.out.println("Il n'y a pas de Jeton dans cette case \n");
+                    }
                 }
-                else {
-                    System.out.println("Erreur de saisie de ligne");
+                
+                if (joueurCourant.couleur == "Jaune") {
+                    if (grilleJeu.grille[lignerecup - 1][colonnerecup - 1].presenceJeton() == true) {
+                        if (grilleJeu.grille[lignerecup - 1][colonnerecup - 1].lireCouleurDuJeton() == "Jaune") {
+                            grilleJeu.recupererJeton(lignerecup, colonnerecup);
+                            grilleJeu.tasserLigne(colonnerecup);
+                            System.out.println("Le jeton a bien été récupéré \n");
+                        }
+                        else {
+                            System.out.println("Ce jeton ne vous appartient pas \n");
+                        }
+                    }
+                    else {
+                        System.out.println("Il n'y a pas de Jeton dans cette case \n");
+                    }
                 }
+                
+                
                 grilleJeu.afficherGrilleSurConsole();
             }
             if (rep == 3) {
