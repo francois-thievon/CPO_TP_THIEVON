@@ -349,8 +349,17 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         resultatAction = grilleJeu.ajouterJetonDansColonne(joueurCourant.reserveJeton.get(joueurCourant.reserveJeton.size()-1), nbColonne);
         Panel_grilleJeu.repaint();
         
-        if (resultatAction == 999) {
+        if (resultatAction == 999 || resultatAction == 9) {
             joueurCourant.nombreDesintegrateurs += 1;
+            if (resultatAction == 999) {
+                TextMessage.setText("Vanilla ice a absorbé un jeton de " + joueurCourant + " qui a gagné une utilisation de stand !");
+            }
+            else {
+                TextMessage.setText(joueurCourant + " a gagné une utilisation de stand !");
+            }
+        }
+        if (resultatAction == 99) {
+            TextMessage.setText("Vanilla ice a absorbé un jeton de " + joueurCourant);
         }
         
         Label_SP.setText(ListeJoueurs[0].nombreDesintegrateurs + "");

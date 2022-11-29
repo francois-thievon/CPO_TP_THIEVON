@@ -36,13 +36,13 @@ public class PlateauDeJeu {
                     }
                     //this.suppprimerTrouNoir((6-i), (a));
                     grille[5-i][a-1].supprimerJeton();
-                    return 1;
+                    return 99;
                 }
                 else {
                     if (grille[5-i][a-1].presenceDesintegrateur() == true) {
                         grille[5-i][a-1].affecterJeton(j);
                         grille[5-i][a-1].supprimerDesintegrateur();
-                        return 999;
+                        return 9;
                     }
                     grille[5-i][a-1].affecterJeton(j);
                     return 1;
@@ -80,6 +80,12 @@ public class PlateauDeJeu {
                     else {
                         J.ajouterJeton(jetontmp);
                     }
+                }
+                if (grille[i][j].presenceTrouNoir() == true) {
+                    grille[i][j].supprimerTrouNoir();
+                }
+                if (grille[i][j].presenceDesintegrateur() == true) {
+                    grille[i][j].supprimerDesintegrateur();
                 }
             }
         }
