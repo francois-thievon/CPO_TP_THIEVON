@@ -13,7 +13,7 @@ import java.util.Random;
 public class Partie {
     
     Joueur[] ListeJoueurs = new Joueur[2];
-    Joueur joueurCourant = ListeJoueurs[0];
+    Joueur joueurCourant;
     PlateauDeJeu grilleJeu = new PlateauDeJeu();
     
     public void attribuerCouleursAuxJoueurs() {
@@ -145,7 +145,7 @@ public class Partie {
                     if (grilleJeu.grille[lignerecup - 1][colonnerecup - 1].presenceJeton() == true) {
                         if (grilleJeu.grille[lignerecup - 1][colonnerecup - 1].lireCouleurDuJeton() == "Rouge") {
                             grilleJeu.recupererJeton(lignerecup, colonnerecup);
-                            grilleJeu.tasserLigne(colonnerecup);
+                            grilleJeu.tasserColonne(colonnerecup);
                             System.out.println("\nStar Platinium a bien recupere le jeton de " + joueurCourant + "\n");
                             joueurCourant = ListeJoueurs[1];
                         }
@@ -162,7 +162,7 @@ public class Partie {
                     if (grilleJeu.grille[lignerecup - 1][colonnerecup - 1].presenceJeton() == true) {
                         if (grilleJeu.grille[lignerecup - 1][colonnerecup - 1].lireCouleurDuJeton() == "Jaune") {
                             grilleJeu.recupererJeton(lignerecup, colonnerecup);
-                            grilleJeu.tasserLigne(colonnerecup);
+                            grilleJeu.tasserColonne(colonnerecup);
                             System.out.println("\nThe World a bien recupere le jeton de " + joueurCourant + "\n");
                             joueurCourant = ListeJoueurs[0];
                         }
@@ -189,7 +189,7 @@ public class Partie {
                         if (grilleJeu.grille[lignedes - 1][colonnedes - 1].presenceJeton() == true) {
                             if (grilleJeu.grille[lignedes - 1][colonnedes - 1].lireCouleurDuJeton() == "Jaune") {
                                 grilleJeu.supprimerJeton(lignedes, colonnedes);
-                                grilleJeu.tasserLigne(colonnedes);
+                                grilleJeu.tasserColonne(colonnedes);
                                 System.out.println("\nORA ORA ORA\nStar Platinium a bien supprime le jeton de " + ListeJoueurs[1] + "\n");
                                 joueurCourant.nombreDesintegrateurs -= 1;
                                 joueurCourant = ListeJoueurs[1];
@@ -207,7 +207,7 @@ public class Partie {
                         if (grilleJeu.grille[lignedes - 1][colonnedes - 1].presenceJeton() == true) {
                             if (grilleJeu.grille[lignedes - 1][colonnedes - 1].lireCouleurDuJeton() == "Rouge") {
                                 grilleJeu.supprimerJeton(lignedes, colonnedes);
-                                grilleJeu.tasserLigne(colonnedes);
+                                grilleJeu.tasserColonne(colonnedes);
                                 System.out.println("\nMUDA MUDA MUDA\nThe World a bien supprime parlejeton de " + ListeJoueurs[0] + "\n");
                                 joueurCourant.nombreDesintegrateurs -= 1;
                                 joueurCourant = ListeJoueurs[0];

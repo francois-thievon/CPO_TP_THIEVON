@@ -21,7 +21,6 @@ public class PlateauDeJeu {
     }
     
     public int ajouterJetonDansColonne(Jeton j, int a) {
-        int l = 0;
         if (this.colonneRemplie(a) == false) {
             for (int i = 0; i<6; i++) {
             if (grille[5-i][a-1].presenceJeton() == false) {
@@ -30,14 +29,14 @@ public class PlateauDeJeu {
                     grille[5-i][a-1].supprimerTrouNoir();
                     grille[5-i][a-1].affecterJeton(j);
                     if (grille[5-i][a-1].presenceDesintegrateur() == true) {
+                        System.out.println("\nPresence d'un desintegrateur\n");
                         grille[5-i][a-1].supprimerDesintegrateur();
                         grille[5-i][a-1].supprimerJeton();
                         return 999;
                     }
                     //this.suppprimerTrouNoir((6-i), (a));
                     grille[5-i][a-1].supprimerJeton();
-                    l = 6-i;
-                    return l;
+                    return 1;
                 }
                 else {
                     if (grille[5-i][a-1].presenceDesintegrateur() == true) {
@@ -46,16 +45,14 @@ public class PlateauDeJeu {
                         return 999;
                     }
                     grille[5-i][a-1].affecterJeton(j);
-                    l = 6-i;
-                    return l;
+                    return 1;
                 }
             }
         }
-        return l;
+        return 0;
         }
         else {
-            System.out.println("Colonne deja complete");
-            return l;
+            return 0;
         }
     }
     
@@ -203,7 +200,7 @@ public class PlateauDeJeu {
     }
     
     
-    public void tasserLigne(int a) {
+    public void tasserColonne(int a) {
         for (int i = 0; i<5; i++) {
             if (grille[5-i][a-1].presenceJeton() == false) {
                 if (grille[4-i][a-1].presenceJeton() == true) {
@@ -212,6 +209,12 @@ public class PlateauDeJeu {
                     grille[5-i][a-1].affecterJeton(jetontmp);
                 }
             }
+        }
+    }
+    
+    public void tasserGrille() {
+        for (int i = 1; i<8; i++) {
+            tasserColonne(i);
         }
     }
     
