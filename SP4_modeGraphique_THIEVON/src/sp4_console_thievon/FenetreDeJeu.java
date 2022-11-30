@@ -3,6 +3,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package sp4_console_thievon;
+
+import java.io.File;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author thiev
@@ -115,6 +122,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         TextMessage = new javax.swing.JTextArea();
         Label_joueurCourant = new javax.swing.JLabel();
+        Bouton_Musique = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
@@ -243,14 +251,23 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         TextMessage.setRows(5);
         jScrollPane1.setViewportView(TextMessage);
 
-        Panel_infoPartie.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 390, 130));
+        Panel_infoPartie.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 390, 160));
 
         Label_joueurCourant.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
         Label_joueurCourant.setForeground(new java.awt.Color(255, 255, 255));
         Label_joueurCourant.setText("nomJoueur");
         Panel_infoPartie.add(Label_joueurCourant, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 60, -1, -1));
 
-        getContentPane().add(Panel_infoPartie, new org.netbeans.lib.awtextra.AbsoluteConstraints(1400, 520, 430, 250));
+        Bouton_Musique.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+        Bouton_Musique.setText("Musique");
+        Bouton_Musique.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Bouton_MusiqueActionPerformed(evt);
+            }
+        });
+        Panel_infoPartie.add(Bouton_Musique, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, 390, 60));
+
+        getContentPane().add(Panel_infoPartie, new org.netbeans.lib.awtextra.AbsoluteConstraints(1400, 520, 430, 360));
 
         jButton1.setText("1");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -317,7 +334,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
                 Bouton_ArreterTempsActionPerformed(evt);
             }
         });
-        getContentPane().add(Bouton_ArreterTemps, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 790, 1330, 90));
+        getContentPane().add(Bouton_ArreterTemps, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 790, 860, 90));
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 0, 1400, 920));
@@ -413,6 +430,13 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         FenetreDeJeu.super.dispose();
     }//GEN-LAST:event_Bouton_ArreterTempsActionPerformed
 
+    private void Bouton_MusiqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bouton_MusiqueActionPerformed
+        // TODO add your handling code here:
+        //JouerMusique("/images/JotaroVsDioEdit.wav");
+    }//GEN-LAST:event_Bouton_MusiqueActionPerformed
+
+    
+    
     public boolean jouerDansColonne(int nbColonne) {
         int resultatAction;
         resultatAction = grilleJeu.ajouterJetonDansColonne(joueurCourant.reserveJeton.get(joueurCourant.reserveJeton.size()-1), nbColonne);
@@ -577,6 +601,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Bouton_ArreterTemps;
     private javax.swing.JButton Bouton_LancerPartie;
+    private javax.swing.JButton Bouton_Musique;
     private javax.swing.JButton Bouton_regle;
     private javax.swing.JLabel Label_SP;
     private javax.swing.JLabel Label_TW;
