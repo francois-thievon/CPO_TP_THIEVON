@@ -4,6 +4,7 @@
  */
 package sp4_console_thievon;
 
+
 import java.io.File;
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
@@ -26,6 +27,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         Panel_infoJoueurs.setVisible(false);
         Panel_infoPartie.setVisible(false);
         Bouton_ArreterTemps.setVisible(false);
+        Bouton_Musique.setVisible(false);
         
         for (int i = 0; i<6; i++) {
             for (int j = 0; j<7; j++) {
@@ -57,6 +59,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
                             }
                         }
                         grilleJeu.tasserGrille();
+                        DebloquerBoutonColonne();
                         Panel_grilleJeu.repaint();
                         boolean victoireJotaro = grilleJeu.etreGagnantePourCouleur("Rouge");
                         boolean victoireDio = grilleJeu.etreGagnantePourCouleur("Jaune");
@@ -73,12 +76,12 @@ public class FenetreDeJeu extends javax.swing.JFrame {
                         }
                         if (victoireJotaro && victoireDio) {
                             if (joueurCourant == ListeJoueurs[0]) {
-                                FenetreFinDeJeu2 Fin = new FenetreFinDeJeu2();
+                                FenetreFinDeJeu Fin = new FenetreFinDeJeu();
                                 FenetreDeJeu.super.dispose();
                                 Fin.setVisible(true);
                             }
                             else {
-                                FenetreFinDeJeu Fin = new FenetreFinDeJeu();
+                                FenetreFinDeJeu2 Fin = new FenetreFinDeJeu2();
                                 FenetreDeJeu.super.dispose();
                                 Fin.setVisible(true);
                             }
@@ -122,7 +125,6 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         TextMessage = new javax.swing.JTextArea();
         Label_joueurCourant = new javax.swing.JLabel();
-        Bouton_Musique = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
@@ -130,21 +132,24 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
+        Photo_JotaroVsDio = new javax.swing.JLabel();
         Bouton_ArreterTemps = new javax.swing.JButton();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel13 = new javax.swing.JLabel();
+        Photo_JojoLogo = new javax.swing.JLabel();
+        Bouton_Musique = new javax.swing.JButton();
+        Panel_FondNoir = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(51, 51, 51));
         setForeground(new java.awt.Color(51, 51, 51));
-        setMaximumSize(new java.awt.Dimension(1400, 1400));
+        setMaximumSize(new java.awt.Dimension(1920, 1080));
+        setMinimumSize(new java.awt.Dimension(1920, 1080));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Panel_grilleJeu.setBackground(new java.awt.Color(255, 255, 255));
         Panel_grilleJeu.setLayout(new java.awt.GridLayout(6, 7));
-        getContentPane().add(Panel_grilleJeu, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 40, 854, 732));
+        getContentPane().add(Panel_grilleJeu, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 240, 854, 732));
 
-        Panel_infoJoueurs.setBackground(new java.awt.Color(0, 0, 204));
+        Panel_infoJoueurs.setBackground(new java.awt.Color(51, 51, 51));
         Panel_infoJoueurs.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
@@ -194,12 +199,12 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         Label_TW.setText("nbTW");
         Panel_infoJoueurs.add(Label_TW, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 230, -1, -1));
 
-        getContentPane().add(Panel_infoJoueurs, new org.netbeans.lib.awtextra.AbsoluteConstraints(1400, 210, 430, 290));
+        getContentPane().add(Panel_infoJoueurs, new org.netbeans.lib.awtextra.AbsoluteConstraints(1430, 240, 430, 290));
 
-        Panel_LancerPartie.setBackground(new java.awt.Color(0, 0, 204));
+        Panel_LancerPartie.setBackground(new java.awt.Color(51, 51, 51));
         Panel_LancerPartie.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Bouton_LancerPartie.setBackground(new java.awt.Color(204, 0, 0));
+        Bouton_LancerPartie.setBackground(new java.awt.Color(0, 0, 0));
         Bouton_LancerPartie.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         Bouton_LancerPartie.setForeground(new java.awt.Color(255, 255, 255));
         Bouton_LancerPartie.setText("Lancer partie");
@@ -208,19 +213,19 @@ public class FenetreDeJeu extends javax.swing.JFrame {
                 Bouton_LancerPartieActionPerformed(evt);
             }
         });
-        Panel_LancerPartie.add(Bouton_LancerPartie, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 170, 70));
+        Panel_LancerPartie.add(Bouton_LancerPartie, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 110, 170, 70));
 
-        jLabel10.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("Calibri", 1, 42)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setText("Jojo's Bizarre Adventure edition");
-        Panel_LancerPartie.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, -1, -1));
+        jLabel10.setText("Jojo's Bizarre Adventure Edition");
+        Panel_LancerPartie.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 60, -1, -1));
 
-        jLabel11.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
+        jLabel11.setFont(new java.awt.Font("Calibri", 1, 42)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("SuperPuissance4");
-        Panel_LancerPartie.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 10, -1, -1));
+        Panel_LancerPartie.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 10, -1, -1));
 
-        Bouton_regle.setBackground(new java.awt.Color(204, 0, 0));
+        Bouton_regle.setBackground(new java.awt.Color(0, 0, 0));
         Bouton_regle.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         Bouton_regle.setForeground(new java.awt.Color(255, 255, 255));
         Bouton_regle.setText("Règles de jeu");
@@ -229,11 +234,11 @@ public class FenetreDeJeu extends javax.swing.JFrame {
                 Bouton_regleActionPerformed(evt);
             }
         });
-        Panel_LancerPartie.add(Bouton_regle, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 70, 170, 70));
+        Panel_LancerPartie.add(Bouton_regle, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 110, 170, 70));
 
-        getContentPane().add(Panel_LancerPartie, new org.netbeans.lib.awtextra.AbsoluteConstraints(1400, 40, 430, 150));
+        getContentPane().add(Panel_LancerPartie, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 0, 760, 190));
 
-        Panel_infoPartie.setBackground(new java.awt.Color(0, 0, 204));
+        Panel_infoPartie.setBackground(new java.awt.Color(51, 51, 51));
         Panel_infoPartie.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
@@ -251,23 +256,14 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         TextMessage.setRows(5);
         jScrollPane1.setViewportView(TextMessage);
 
-        Panel_infoPartie.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 390, 160));
+        Panel_infoPartie.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 390, 130));
 
         Label_joueurCourant.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
         Label_joueurCourant.setForeground(new java.awt.Color(255, 255, 255));
         Label_joueurCourant.setText("nomJoueur");
         Panel_infoPartie.add(Label_joueurCourant, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 60, -1, -1));
 
-        Bouton_Musique.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
-        Bouton_Musique.setText("Musique");
-        Bouton_Musique.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Bouton_MusiqueActionPerformed(evt);
-            }
-        });
-        Panel_infoPartie.add(Bouton_Musique, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, 390, 60));
-
-        getContentPane().add(Panel_infoPartie, new org.netbeans.lib.awtextra.AbsoluteConstraints(1400, 520, 430, 360));
+        getContentPane().add(Panel_infoPartie, new org.netbeans.lib.awtextra.AbsoluteConstraints(1430, 550, 430, 260));
 
         jButton1.setText("1");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -275,7 +271,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 10, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 210, -1, -1));
 
         jButton2.setText("2");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -283,7 +279,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 10, -1, -1));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 210, -1, -1));
 
         jButton3.setText("3");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -291,7 +287,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 10, -1, -1));
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 210, -1, -1));
 
         jButton4.setText("4");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -299,7 +295,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
                 jButton4ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 10, -1, -1));
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 210, -1, -1));
 
         jButton5.setText("5");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -307,7 +303,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
                 jButton5ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 10, -1, -1));
+        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 210, -1, -1));
 
         jButton6.setText("6");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
@@ -315,7 +311,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
                 jButton6ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1150, 10, -1, -1));
+        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1210, 210, -1, -1));
 
         jButton7.setText("7");
         jButton7.addActionListener(new java.awt.event.ActionListener() {
@@ -323,9 +319,12 @@ public class FenetreDeJeu extends javax.swing.JFrame {
                 jButton7ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(1280, 10, -1, -1));
+        getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(1340, 210, -1, -1));
 
-        Bouton_ArreterTemps.setBackground(new java.awt.Color(0, 0, 204));
+        Photo_JotaroVsDio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/JotaroDio1080.jpg"))); // NOI18N
+        getContentPane().add(Photo_JotaroVsDio, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        Bouton_ArreterTemps.setBackground(new java.awt.Color(51, 51, 51));
         Bouton_ArreterTemps.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         Bouton_ArreterTemps.setForeground(new java.awt.Color(255, 255, 255));
         Bouton_ArreterTemps.setText("Arreter le temps !");
@@ -334,26 +333,27 @@ public class FenetreDeJeu extends javax.swing.JFrame {
                 Bouton_ArreterTempsActionPerformed(evt);
             }
         });
-        getContentPane().add(Bouton_ArreterTemps, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 790, 860, 90));
+        getContentPane().add(Bouton_ArreterTemps, new org.netbeans.lib.awtextra.AbsoluteConstraints(1430, 910, 430, 60));
 
-        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 0, 1400, 920));
+        Photo_JojoLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/JojoBonneTaille.png"))); // NOI18N
+        getContentPane().add(Photo_JojoLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(1470, 0, 370, 230));
 
-        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/JotaroDioBonneTaille.jpg"))); // NOI18N
-        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        Bouton_Musique.setBackground(new java.awt.Color(51, 51, 51));
+        Bouton_Musique.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
+        Bouton_Musique.setForeground(new java.awt.Color(255, 255, 255));
+        Bouton_Musique.setText("Musique");
+        Bouton_Musique.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Bouton_MusiqueActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Bouton_Musique, new org.netbeans.lib.awtextra.AbsoluteConstraints(1430, 830, 430, 60));
 
-        setBounds(0, 0, 1874, 927);
+        Panel_FondNoir.setBackground(new java.awt.Color(0, 0, 0));
+        getContentPane().add(Panel_FondNoir, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1920, 1080));
+
+        setBounds(0, 0, 1936, 1088);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void Bouton_LancerPartieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bouton_LancerPartieActionPerformed
-        // TODO add your handling code here:
-        Panel_infoJoueurs.setVisible(true);
-        Panel_infoPartie.setVisible(true);
-        Bouton_ArreterTemps.setVisible(true);
-        initialiserPartie();
-        Panel_grilleJeu.repaint();
-        Bouton_LancerPartie.setEnabled(false);
-    }//GEN-LAST:event_Bouton_LancerPartieActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
@@ -418,23 +418,95 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         joueurSuivant();
     }//GEN-LAST:event_jButton7ActionPerformed
 
-    private void Bouton_regleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bouton_regleActionPerformed
+    private void Bouton_MusiqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bouton_MusiqueActionPerformed
         // TODO add your handling code here:
-        RegleJeu regle = new RegleJeu();
-        regle.setVisible(true);
-        
-    }//GEN-LAST:event_Bouton_regleActionPerformed
+        String filepath = "JoJo's Bizarre Adventure Don't Stop Me Now.wav";
+        PlayMusic(filepath);
+        Bouton_Musique.setEnabled(false);
+    }//GEN-LAST:event_Bouton_MusiqueActionPerformed
 
     private void Bouton_ArreterTempsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bouton_ArreterTempsActionPerformed
         // TODO add your handling code here:
         FenetreDeJeu.super.dispose();
     }//GEN-LAST:event_Bouton_ArreterTempsActionPerformed
 
-    private void Bouton_MusiqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bouton_MusiqueActionPerformed
+    private void Bouton_regleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bouton_regleActionPerformed
         // TODO add your handling code here:
-        //JouerMusique("/images/JotaroVsDioEdit.wav");
-    }//GEN-LAST:event_Bouton_MusiqueActionPerformed
+        RegleJeu regle = new RegleJeu();
+        regle.setVisible(true);
 
+    }//GEN-LAST:event_Bouton_regleActionPerformed
+
+    private void Bouton_LancerPartieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bouton_LancerPartieActionPerformed
+        // TODO add your handling code here:
+        Panel_infoJoueurs.setVisible(true);
+        Panel_infoPartie.setVisible(true);
+        Bouton_ArreterTemps.setVisible(true);
+        Bouton_Musique.setVisible(true);
+        initialiserPartie();
+        Panel_grilleJeu.repaint();
+        Bouton_LancerPartie.setEnabled(false);
+    }//GEN-LAST:event_Bouton_LancerPartieActionPerformed
+    
+    
+    public static void PlayMusic(String location) {
+        try {
+            File musicPath = new File(location);
+            if(musicPath.exists()) {
+                AudioInputStream audioInput = AudioSystem.getAudioInputStream(musicPath);
+                Clip clip = AudioSystem.getClip();
+                clip.open(audioInput);
+                clip.start();
+            }
+            else {
+                System.out.println("Trouve pas le fichier");
+            }
+        }catch(Exception e) {
+            
+        }
+    }
+    
+    public void DebloquerBoutonColonne() {
+        for (int i = 1; i<8; i++) {
+            if (grilleJeu.colonneRemplie(i) == false) {
+                if (i == 1) {
+                    if (jButton1.isEnabled() == false) {
+                        jButton1.setEnabled(true);
+                    }
+                }
+                if (i == 2) {
+                    if (jButton2.isEnabled() == false) {
+                        jButton2.setEnabled(true);
+                    }
+                }
+                if (i == 3) {
+                    if (jButton3.isEnabled() == false) {
+                        jButton3.setEnabled(true);
+                    }
+                }
+                if (i == 4) {
+                    if (jButton4.isEnabled() == false) {
+                        jButton4.setEnabled(true);
+                    }
+                }
+                if (i == 5) {
+                    if (jButton5.isEnabled() == false) {
+                        jButton5.setEnabled(true);
+                    }
+                }
+                if (i == 6) {
+                    if (jButton6.isEnabled() == false) {
+                        jButton6.setEnabled(true);
+                    }
+                }
+                if (i == 7) {
+                    if (jButton7.isEnabled() == false) {
+                        jButton7.setEnabled(true);
+                    }
+                }
+            }
+        }
+    }
     
     
     public boolean jouerDansColonne(int nbColonne) {
@@ -606,10 +678,13 @@ public class FenetreDeJeu extends javax.swing.JFrame {
     private javax.swing.JLabel Label_SP;
     private javax.swing.JLabel Label_TW;
     private javax.swing.JLabel Label_joueurCourant;
+    private javax.swing.JPanel Panel_FondNoir;
     private javax.swing.JPanel Panel_LancerPartie;
     private javax.swing.JPanel Panel_grilleJeu;
     private javax.swing.JPanel Panel_infoJoueurs;
     private javax.swing.JPanel Panel_infoPartie;
+    private javax.swing.JLabel Photo_JojoLogo;
+    private javax.swing.JLabel Photo_JotaroVsDio;
     private javax.swing.JTextArea TextMessage;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
@@ -621,7 +696,6 @@ public class FenetreDeJeu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -630,7 +704,6 @@ public class FenetreDeJeu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     // End of variables declaration//GEN-END:variables

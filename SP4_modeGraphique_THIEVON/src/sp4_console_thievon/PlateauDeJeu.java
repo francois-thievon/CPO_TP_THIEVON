@@ -20,6 +20,7 @@ public class PlateauDeJeu {
         }
     }
     
+    
     public int ajouterJetonDansColonne(Jeton j, int a) {
         if (this.colonneRemplie(a) == false) {
             for (int i = 0; i<6; i++) {
