@@ -52,6 +52,12 @@ public class FenetreDeJeu extends javax.swing.JFrame {
                             joueurCourant.nombreDesintegrateurs -= 1;
                             Label_SP.setText(ListeJoueurs[0].nombreDesintegrateurs + "");
                             Label_TW.setText(ListeJoueurs[1].nombreDesintegrateurs + "");
+                            if (joueurCourant.toString() == "Jotaro") {
+                                PlayMusic("Star-Platinium.wav");
+                            }
+                            if (joueurCourant.toString() == "Dio") {
+                                PlayMusic("The-World.wav");
+                            }
                             joueurSuivant();
                             }
                             else {
@@ -448,7 +454,6 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         Bouton_LancerPartie.setEnabled(false);
     }//GEN-LAST:event_Bouton_LancerPartieActionPerformed
     
-    
     public static void PlayMusic(String location) {
         try {
             File musicPath = new File(location);
@@ -507,7 +512,6 @@ public class FenetreDeJeu extends javax.swing.JFrame {
             }
         }
     }
-    
     
     public boolean jouerDansColonne(int nbColonne) {
         int resultatAction;
