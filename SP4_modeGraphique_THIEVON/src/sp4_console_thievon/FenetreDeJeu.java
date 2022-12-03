@@ -364,6 +364,12 @@ public class FenetreDeJeu extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         jouerDansColonne(1);
+        if (joueurCourant.toString() == "Jotaro"){
+            PlayMusic("ORA.wav");
+        }
+        if (joueurCourant.toString() == "Dio") {
+            PlayMusic("MUDA.wav");
+        }
         if (grilleJeu.colonneRemplie(1) == true) {
             jButton1.setEnabled(false);
         }
@@ -373,6 +379,12 @@ public class FenetreDeJeu extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         jouerDansColonne(2);
+        if (joueurCourant.toString() == "Jotaro"){
+            PlayMusic("ORA.wav");
+        }
+        if (joueurCourant.toString() == "Dio") {
+            PlayMusic("MUDA.wav");
+        }
         if (grilleJeu.colonneRemplie(2) == true) {
             jButton2.setEnabled(false);
         }
@@ -382,6 +394,12 @@ public class FenetreDeJeu extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
         jouerDansColonne(3);
+        if (joueurCourant.toString() == "Jotaro"){
+            PlayMusic("ORA.wav");
+        }
+        if (joueurCourant.toString() == "Dio") {
+            PlayMusic("MUDA.wav");
+        }
         if (grilleJeu.colonneRemplie(3) == true) {
             jButton3.setEnabled(false);
         }
@@ -391,6 +409,12 @@ public class FenetreDeJeu extends javax.swing.JFrame {
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
         jouerDansColonne(4);
+        if (joueurCourant.toString() == "Jotaro"){
+            PlayMusic("ORA.wav");
+        }
+        if (joueurCourant.toString() == "Dio") {
+            PlayMusic("MUDA.wav");
+        }
         if (grilleJeu.colonneRemplie(4) == true) {
             jButton4.setEnabled(false);
         }
@@ -400,6 +424,12 @@ public class FenetreDeJeu extends javax.swing.JFrame {
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
         jouerDansColonne(5);
+        if (joueurCourant.toString() == "Jotaro"){
+            PlayMusic("ORA.wav");
+        }
+        if (joueurCourant.toString() == "Dio") {
+            PlayMusic("MUDA.wav");
+        }
         if (grilleJeu.colonneRemplie(5) == true) {
             jButton5.setEnabled(false);
         }
@@ -409,6 +439,12 @@ public class FenetreDeJeu extends javax.swing.JFrame {
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
         jouerDansColonne(6);
+        if (joueurCourant.toString() == "Jotaro"){
+            PlayMusic("ORA.wav");
+        }
+        if (joueurCourant.toString() == "Dio") {
+            PlayMusic("MUDA.wav");
+        }
         if (grilleJeu.colonneRemplie(6) == true) {
             jButton6.setEnabled(false);
         }
@@ -418,6 +454,12 @@ public class FenetreDeJeu extends javax.swing.JFrame {
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // TODO add your handling code here:
         jouerDansColonne(7);
+        if (joueurCourant.toString() == "Jotaro"){
+            PlayMusic("ORA.wav");
+        }
+        if (joueurCourant.toString() == "Dio") {
+            PlayMusic("MUDA.wav");
+        }
         if (grilleJeu.colonneRemplie(7) == true) {
             jButton7.setEnabled(false);
         }
@@ -433,6 +475,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 
     private void Bouton_ArreterTempsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bouton_ArreterTempsActionPerformed
         // TODO add your handling code here:
+        PlayMusic("TimeStop.wav");
         FenetreDeJeu.super.dispose();
     }//GEN-LAST:event_Bouton_ArreterTempsActionPerformed
 
