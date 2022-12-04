@@ -6,6 +6,8 @@ package sp4_console_thievon;
 
 
 import java.io.File;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
@@ -476,6 +478,11 @@ public class FenetreDeJeu extends javax.swing.JFrame {
     private void Bouton_ArreterTempsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bouton_ArreterTempsActionPerformed
         // TODO add your handling code here:
         PlayMusic("TimeStop.wav");
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(FenetreDeJeu.class.getName()).log(Level.SEVERE, null, ex);
+        }
         FenetreDeJeu.super.dispose();
     }//GEN-LAST:event_Bouton_ArreterTempsActionPerformed
 
