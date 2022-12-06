@@ -54,6 +54,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         });
         getContentPane().add(Bouton_Arreter, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 430, -1, -1));
 
+        Panel_PlateauDeJeu.setBackground(new java.awt.Color(102, 102, 102));
         Panel_PlateauDeJeu.setPreferredSize(new java.awt.Dimension(900, 900));
         Panel_PlateauDeJeu.setLayout(new java.awt.GridLayout(5, 5));
         getContentPane().add(Panel_PlateauDeJeu, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 60, -1, -1));
