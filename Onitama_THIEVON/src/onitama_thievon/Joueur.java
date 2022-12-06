@@ -12,13 +12,16 @@ import java.util.ArrayList;
  */
 public class Joueur {
     
-    private String nom;
+    String prenom;
+    String nom;
     private int equipe;
     ArrayList<Pion> reservePions = new ArrayList<Pion>();
     
     
-    public Joueur(String a) {
-        nom = a;
+    public Joueur(String name, String surname, int team) {
+        prenom = name;
+        nom = surname;
+        equipe = team;
     }
     
     public int avoirEquipe() {
@@ -37,7 +40,7 @@ public class Joueur {
     
     @Override
     public String toString() {
-        return nom;
+        return prenom + " " + nom;
     }
 
 }

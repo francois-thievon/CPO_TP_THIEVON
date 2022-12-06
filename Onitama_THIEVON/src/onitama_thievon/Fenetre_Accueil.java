@@ -26,76 +26,49 @@ public class Fenetre_Accueil extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        BoutonLancerPartie = new javax.swing.JToggleButton();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
+        BoutonChoixPersos = new javax.swing.JToggleButton();
         jButton9 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
-        jButton11 = new javax.swing.JButton();
-        jButton12 = new javax.swing.JButton();
+        Jojo = new javax.swing.JLabel();
+        BoutonRegle = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        BoutonLancerPartie.setText("Lancer une partie");
-        BoutonLancerPartie.addActionListener(new java.awt.event.ActionListener() {
+        BoutonChoixPersos.setText("Choix des personnages");
+        BoutonChoixPersos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BoutonLancerPartieActionPerformed(evt);
+                BoutonChoixPersosActionPerformed(evt);
             }
         });
-        getContentPane().add(BoutonLancerPartie, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 780, -1, -1));
-
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Giorno_bt.jpg"))); // NOI18N
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 400, -1, -1));
-
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Diavolo_bt.jpg"))); // NOI18N
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 50, -1, -1));
-
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Dio_bt.jpg"))); // NOI18N
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 40, -1, -1));
-
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Jolyne_bt.jpg"))); // NOI18N
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 750, -1, -1));
-
-        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Jonathan_bt.jpg"))); // NOI18N
-        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 410, -1, -1));
-
-        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Joseph_bt.jpg"))); // NOI18N
-        getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 400, -1, -1));
-
-        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Josuke_bt.jpg"))); // NOI18N
-        getContentPane().add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(1280, 400, -1, -1));
+        getContentPane().add(BoutonChoixPersos, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 490, 250, 80));
 
         jButton9.setText("jButton9");
         getContentPane().add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(1782, 1206, -1, -1));
 
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Jotaro_bt.jpg"))); // NOI18N
-        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 750, -1, -1));
+        Jojo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Jojo.png"))); // NOI18N
+        getContentPane().add(Jojo, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 60, -1, -1));
 
-        jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Kars_bt.jpg"))); // NOI18N
-        getContentPane().add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 30, -1, -1));
-
-        jButton11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Pucci_bt.jpg"))); // NOI18N
-        getContentPane().add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(1590, 50, -1, -1));
-
-        jButton12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/kira_bt.jpg"))); // NOI18N
-        getContentPane().add(jButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(1280, 40, -1, -1));
+        BoutonRegle.setText("Règles du jeu");
+        BoutonRegle.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BoutonRegleActionPerformed(evt);
+            }
+        });
+        getContentPane().add(BoutonRegle, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 620, 240, 70));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void BoutonLancerPartieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonLancerPartieActionPerformed
+    private void BoutonChoixPersosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonChoixPersosActionPerformed
         // TODO add your handling code here:
-        FenetreDeJeu jeu = new FenetreDeJeu();
-        jeu.setVisible(true);
+        Fenetre_choixJoueurs fenetre = new Fenetre_choixJoueurs();
+        fenetre.setVisible(true);
         Fenetre_Accueil.super.dispose();
-    }//GEN-LAST:event_BoutonLancerPartieActionPerformed
+    }//GEN-LAST:event_BoutonChoixPersosActionPerformed
+
+    private void BoutonRegleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonRegleActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BoutonRegleActionPerformed
 
     /**
      * @param args the command line arguments
@@ -133,18 +106,9 @@ public class Fenetre_Accueil extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JToggleButton BoutonLancerPartie;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton11;
-    private javax.swing.JButton jButton12;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
+    private javax.swing.JToggleButton BoutonChoixPersos;
+    private javax.swing.JButton BoutonRegle;
+    private javax.swing.JLabel Jojo;
     private javax.swing.JButton jButton9;
     // End of variables declaration//GEN-END:variables
 }
