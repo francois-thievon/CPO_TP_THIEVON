@@ -9,7 +9,10 @@ package onitama_thievon;
  * @author thiev
  */
 public class FenetreDeJeu extends javax.swing.JFrame {
-
+    
+    Joueur[] ListeJoueurs = new Joueur[2];
+    Joueur joueurCourant = ListeJoueurs[0];
+    PlateauDeJeu grilleJeu = new PlateauDeJeu();
     /**
      * Creates new form FenetreDeJeu
      */

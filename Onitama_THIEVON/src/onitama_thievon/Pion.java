@@ -10,4 +10,25 @@ package onitama_thievon;
  */
 public class Pion {
     
+    private int equipe;
+    private boolean etreRoi;
+    
+    
+    public Pion(int a, boolean r) {
+        equipe = a;
+        etreRoi = r;
+    }
+    
+    public int avoirEquipe() {
+        return equipe;
+    }
+    
+    public boolean etreLeRoi() {
+        if (etreRoi == true) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
 }

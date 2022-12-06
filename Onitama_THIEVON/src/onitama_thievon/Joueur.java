@@ -21,8 +21,16 @@ public class Joueur {
         nom = a;
     }
     
+    public int avoirEquipe() {
+        return equipe;
+    }
+    
     public void AffecterEquipe(int a) {
         equipe = a;
+    }
+    
+    public void recupererPion(Pion p) {
+        reservePions.add(p);
     }
     
     

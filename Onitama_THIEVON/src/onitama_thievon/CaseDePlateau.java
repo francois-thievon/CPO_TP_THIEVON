@@ -10,4 +10,48 @@ package onitama_thievon;
  */
 public class CaseDePlateau {
     
+    private Pion pionCourant;
+    
+    
+    public CaseDePlateau() {
+        pionCourant = null;
+        
+    }
+    
+    public boolean avoirPion() {
+        if (pionCourant == null) {
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
+    
+    public void affecterPion(Pion p) {
+        pionCourant = p;
+    }
+    
+    public void supprimerPion() {
+        pionCourant = null;
+    }
+    
+    public Pion renvoyerPion() {
+        return pionCourant;
+    }
+    
+    public Pion renvoyerEtSupprimerPion(){
+        Pion piontmp;
+        if (pionCourant != null) {
+            piontmp = pionCourant;
+            pionCourant = null;
+            return piontmp;
+        }
+        else {
+            return null;
+        }
+    }
+    
+    public int equipePion() {
+        return pionCourant.avoirEquipe();
+    }
 }

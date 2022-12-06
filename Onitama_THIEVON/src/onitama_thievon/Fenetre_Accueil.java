@@ -9,7 +9,7 @@ package onitama_thievon;
  * @author thiev
  */
 public class Fenetre_Accueil extends javax.swing.JFrame {
-
+    
     /**
      * Creates new form Fenetre_Accueil
      */
@@ -27,30 +27,75 @@ public class Fenetre_Accueil extends javax.swing.JFrame {
     private void initComponents() {
 
         BoutonLancerPartie = new javax.swing.JToggleButton();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
+        jButton9 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        jButton10 = new javax.swing.JButton();
+        jButton11 = new javax.swing.JButton();
+        jButton12 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         BoutonLancerPartie.setText("Lancer une partie");
+        BoutonLancerPartie.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BoutonLancerPartieActionPerformed(evt);
+            }
+        });
+        getContentPane().add(BoutonLancerPartie, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 780, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(683, 683, 683)
-                .addComponent(BoutonLancerPartie)
-                .addContainerGap(1115, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(356, 356, 356)
-                .addComponent(BoutonLancerPartie)
-                .addContainerGap(701, Short.MAX_VALUE))
-        );
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Giorno_bt.jpg"))); // NOI18N
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 400, -1, -1));
+
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Diavolo_bt.jpg"))); // NOI18N
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 50, -1, -1));
+
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Dio_bt.jpg"))); // NOI18N
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 40, -1, -1));
+
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Jolyne_bt.jpg"))); // NOI18N
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 750, -1, -1));
+
+        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Jonathan_bt.jpg"))); // NOI18N
+        getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 410, -1, -1));
+
+        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Joseph_bt.jpg"))); // NOI18N
+        getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 400, -1, -1));
+
+        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Josuke_bt.jpg"))); // NOI18N
+        getContentPane().add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(1280, 400, -1, -1));
+
+        jButton9.setText("jButton9");
+        getContentPane().add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(1782, 1206, -1, -1));
+
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Jotaro_bt.jpg"))); // NOI18N
+        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 750, -1, -1));
+
+        jButton10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Kars_bt.jpg"))); // NOI18N
+        getContentPane().add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 30, -1, -1));
+
+        jButton11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Pucci_bt.jpg"))); // NOI18N
+        getContentPane().add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(1590, 50, -1, -1));
+
+        jButton12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/kira_bt.jpg"))); // NOI18N
+        getContentPane().add(jButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(1280, 40, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void BoutonLancerPartieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonLancerPartieActionPerformed
+        // TODO add your handling code here:
+        FenetreDeJeu jeu = new FenetreDeJeu();
+        jeu.setVisible(true);
+        Fenetre_Accueil.super.dispose();
+    }//GEN-LAST:event_BoutonLancerPartieActionPerformed
 
     /**
      * @param args the command line arguments
@@ -89,5 +134,17 @@ public class Fenetre_Accueil extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton BoutonLancerPartie;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton10;
+    private javax.swing.JButton jButton11;
+    private javax.swing.JButton jButton12;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
     // End of variables declaration//GEN-END:variables
 }
