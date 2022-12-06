@@ -10,7 +10,7 @@ package onitama_thievon;
  */
 public class FenetreDeJeu extends javax.swing.JFrame {
     
-    Joueur[] ListeJoueurs = new Joueur[2];
+    static Joueur[] ListeJoueurs = new Joueur[2];
     Joueur joueurCourant = ListeJoueurs[0];
     PlateauDeJeu PlateauDeJeu = new PlateauDeJeu();
     
@@ -105,7 +105,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FenetreDeJeu().setVisible(true);
+                new FenetreDeJeu(ListeJoueurs[0], ListeJoueurs[1]).setVisible(true);
             }
         });
     }
