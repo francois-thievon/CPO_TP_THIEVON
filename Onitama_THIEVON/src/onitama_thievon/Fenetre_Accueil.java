@@ -30,10 +30,12 @@ public class Fenetre_Accueil extends javax.swing.JFrame {
         jButton9 = new javax.swing.JButton();
         Jojo = new javax.swing.JLabel();
         BoutonRegle = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        BoutonChoixPersos.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
         BoutonChoixPersos.setText("Choix des personnages");
         BoutonChoixPersos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -46,15 +48,20 @@ public class Fenetre_Accueil extends javax.swing.JFrame {
         getContentPane().add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(1782, 1206, -1, -1));
 
         Jojo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Jojo.png"))); // NOI18N
-        getContentPane().add(Jojo, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 60, -1, -1));
+        getContentPane().add(Jojo, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 110, -1, -1));
 
+        BoutonRegle.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
         BoutonRegle.setText("Règles du jeu");
         BoutonRegle.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BoutonRegleActionPerformed(evt);
             }
         });
-        getContentPane().add(BoutonRegle, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 620, 240, 70));
+        getContentPane().add(BoutonRegle, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 610, 250, 70));
+
+        jLabel1.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 48)); // NOI18N
+        jLabel1.setText("Onitama");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 20, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -110,5 +117,6 @@ public class Fenetre_Accueil extends javax.swing.JFrame {
     private javax.swing.JButton BoutonRegle;
     private javax.swing.JLabel Jojo;
     private javax.swing.JButton jButton9;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

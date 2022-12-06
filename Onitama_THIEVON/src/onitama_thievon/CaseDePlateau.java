@@ -11,11 +11,20 @@ package onitama_thievon;
 public class CaseDePlateau {
     
     private Pion pionCourant;
+    private boolean temple;
     
     
     public CaseDePlateau() {
         pionCourant = null;
         
+    }
+    
+    public void etreTemple(){
+        temple = true;
+    }
+    
+    public boolean Temple(){
+        return temple;
     }
     
     public boolean avoirPion() {
