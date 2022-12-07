@@ -44,24 +44,17 @@ public class Fenetre_choixJoueurs extends javax.swing.JFrame {
         Bouton_Kars = new javax.swing.JButton();
         Bouton_Kira = new javax.swing.JButton();
         Bouton_Diavolo = new javax.swing.JButton();
+        LabelJoueurCourant = new javax.swing.JLabel();
+        LabelJoueurCourant2 = new javax.swing.JLabel();
+        LabelNomJoueurCourant2 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         LabelJoueur1 = new javax.swing.JLabel();
         BoutonLancerPartie = new javax.swing.JToggleButton();
         LabelJoueur2 = new javax.swing.JLabel();
         LabelJ1 = new javax.swing.JLabel();
         LabelJ2 = new javax.swing.JLabel();
-        Label_Pucci = new javax.swing.JLabel();
-        Label_Jonathan = new javax.swing.JLabel();
-        Label_Joseph = new javax.swing.JLabel();
-        Label_Jotaro = new javax.swing.JLabel();
-        Label_Josuke = new javax.swing.JLabel();
-        Label_Giorno = new javax.swing.JLabel();
-        Label_Diavolo = new javax.swing.JLabel();
-        Label_Kira = new javax.swing.JLabel();
-        Label_Kars = new javax.swing.JLabel();
-        Label_Dio = new javax.swing.JLabel();
-        Label_Jolyne = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
+        LabelNomJoueurCourant = new javax.swing.JLabel();
 
         jLabel6.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
         jLabel6.setText("Jotaro Kujo");
@@ -69,93 +62,156 @@ public class Fenetre_choixJoueurs extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Bouton_Jolyne.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Jolyne_bt.jpg"))); // NOI18N
+        Bouton_Jolyne.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Jolyne_pt.jpg"))); // NOI18N
+        Bouton_Jolyne.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                Bouton_JolyneMouseEntered(evt);
+            }
+        });
         Bouton_Jolyne.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Bouton_JolyneActionPerformed(evt);
             }
         });
-        getContentPane().add(Bouton_Jolyne, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 740, -1, -1));
+        getContentPane().add(Bouton_Jolyne, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 810, -1, -1));
 
-        Bouton_Jonathan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Jonathan_bt.jpg"))); // NOI18N
+        Bouton_Jonathan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Jonathan_pt.jpg"))); // NOI18N
+        Bouton_Jonathan.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                Bouton_JonathanMouseEntered(evt);
+            }
+        });
         Bouton_Jonathan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Bouton_JonathanActionPerformed(evt);
             }
         });
-        getContentPane().add(Bouton_Jonathan, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, -1, -1));
+        getContentPane().add(Bouton_Jonathan, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 810, -1, -1));
 
-        Bouton_Joseph.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Joseph_bt.jpg"))); // NOI18N
+        Bouton_Joseph.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Joseph_pt.jpg"))); // NOI18N
+        Bouton_Joseph.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                Bouton_JosephMouseEntered(evt);
+            }
+        });
         Bouton_Joseph.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Bouton_JosephActionPerformed(evt);
             }
         });
-        getContentPane().add(Bouton_Joseph, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 40, -1, -1));
+        getContentPane().add(Bouton_Joseph, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 810, -1, -1));
 
-        Bouton_Jotaro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Jotaro_bt.jpg"))); // NOI18N
+        Bouton_Jotaro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Jotaro_pt.jpg"))); // NOI18N
+        Bouton_Jotaro.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                Bouton_JotaroMouseEntered(evt);
+            }
+        });
         Bouton_Jotaro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Bouton_JotaroActionPerformed(evt);
             }
         });
-        getContentPane().add(Bouton_Jotaro, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 40, -1, -1));
+        getContentPane().add(Bouton_Jotaro, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 810, -1, -1));
 
-        Bouton_Josuke.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Josuke_bt.jpg"))); // NOI18N
+        Bouton_Josuke.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Josuke_pt.jpg"))); // NOI18N
+        Bouton_Josuke.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                Bouton_JosukeMouseEntered(evt);
+            }
+        });
         Bouton_Josuke.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Bouton_JosukeActionPerformed(evt);
             }
         });
-        getContentPane().add(Bouton_Josuke, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 40, -1, -1));
+        getContentPane().add(Bouton_Josuke, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 810, -1, -1));
 
-        Bouton_Giorno.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Giorno_bt.jpg"))); // NOI18N
+        Bouton_Giorno.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Giorno_pt.jpg"))); // NOI18N
+        Bouton_Giorno.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                Bouton_GiornoMouseEntered(evt);
+            }
+        });
         Bouton_Giorno.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Bouton_GiornoActionPerformed(evt);
             }
         });
-        getContentPane().add(Bouton_Giorno, new org.netbeans.lib.awtextra.AbsoluteConstraints(1570, 40, -1, -1));
+        getContentPane().add(Bouton_Giorno, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 810, -1, -1));
 
-        Bouton_Pucci.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Pucci_bt.jpg"))); // NOI18N
+        Bouton_Pucci.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Pucci_pt.jpg"))); // NOI18N
+        Bouton_Pucci.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                Bouton_PucciMouseEntered(evt);
+            }
+        });
         Bouton_Pucci.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Bouton_PucciActionPerformed(evt);
             }
         });
-        getContentPane().add(Bouton_Pucci, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 740, -1, -1));
+        getContentPane().add(Bouton_Pucci, new org.netbeans.lib.awtextra.AbsoluteConstraints(1730, 810, -1, -1));
 
-        Bouton_Dio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Dio_bt.jpg"))); // NOI18N
+        Bouton_Dio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Dio_pt.jpg"))); // NOI18N
+        Bouton_Dio.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                Bouton_DioMouseEntered(evt);
+            }
+        });
         Bouton_Dio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Bouton_DioActionPerformed(evt);
             }
         });
-        getContentPane().add(Bouton_Dio, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 400, -1, -1));
+        getContentPane().add(Bouton_Dio, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 810, -1, -1));
 
-        Bouton_Kars.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Kars_bt.jpg"))); // NOI18N
+        Bouton_Kars.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Kars_pt.jpg"))); // NOI18N
+        Bouton_Kars.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                Bouton_KarsMouseEntered(evt);
+            }
+        });
         Bouton_Kars.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Bouton_KarsActionPerformed(evt);
             }
         });
-        getContentPane().add(Bouton_Kars, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 400, -1, -1));
+        getContentPane().add(Bouton_Kars, new org.netbeans.lib.awtextra.AbsoluteConstraints(1220, 810, -1, -1));
 
-        Bouton_Kira.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/kira_bt.jpg"))); // NOI18N
+        Bouton_Kira.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Kira_pt.jpg"))); // NOI18N
+        Bouton_Kira.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                Bouton_KiraMouseEntered(evt);
+            }
+        });
         Bouton_Kira.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Bouton_KiraActionPerformed(evt);
             }
         });
-        getContentPane().add(Bouton_Kira, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 400, -1, -1));
+        getContentPane().add(Bouton_Kira, new org.netbeans.lib.awtextra.AbsoluteConstraints(1390, 810, -1, -1));
 
-        Bouton_Diavolo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Diavolo_bt.jpg"))); // NOI18N
+        Bouton_Diavolo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Diavolo_pt.jpg"))); // NOI18N
+        Bouton_Diavolo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                Bouton_DiavoloMouseEntered(evt);
+            }
+        });
         Bouton_Diavolo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Bouton_DiavoloActionPerformed(evt);
             }
         });
-        getContentPane().add(Bouton_Diavolo, new org.netbeans.lib.awtextra.AbsoluteConstraints(1570, 400, -1, -1));
+        getContentPane().add(Bouton_Diavolo, new org.netbeans.lib.awtextra.AbsoluteConstraints(1560, 810, -1, -1));
+        getContentPane().add(LabelJoueurCourant, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, 719, 719));
+        getContentPane().add(LabelJoueurCourant2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1190, 70, 719, 719));
+
+        LabelNomJoueurCourant2.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 36)); // NOI18N
+        LabelNomJoueurCourant2.setForeground(new java.awt.Color(255, 255, 255));
+        getContentPane().add(LabelNomJoueurCourant2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1390, 20, 380, 40));
+
+        jPanel2.setBackground(new java.awt.Color(0, 0, 0));
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 204));
 
@@ -207,79 +263,36 @@ public class Fenetre_choixJoueurs extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(LabelJoueur2)
                     .addComponent(LabelJ2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 88, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 310, Short.MAX_VALUE)
                 .addComponent(BoutonLancerPartie, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(37, 37, 37))
         );
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 400, 380, 310));
-
-        Label_Pucci.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
-        Label_Pucci.setForeground(new java.awt.Color(255, 255, 255));
-        Label_Pucci.setText("Enrico Pucci");
-        getContentPane().add(Label_Pucci, new org.netbeans.lib.awtextra.AbsoluteConstraints(1140, 720, -1, -1));
-
-        Label_Jonathan.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
-        Label_Jonathan.setForeground(new java.awt.Color(255, 255, 255));
-        Label_Jonathan.setText("Jonathan Joestar");
-        getContentPane().add(Label_Jonathan, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 20, -1, -1));
-
-        Label_Joseph.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
-        Label_Joseph.setForeground(new java.awt.Color(255, 255, 255));
-        Label_Joseph.setText("Joseph Joestar");
-        getContentPane().add(Label_Joseph, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 20, -1, -1));
-
-        Label_Jotaro.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
-        Label_Jotaro.setForeground(new java.awt.Color(255, 255, 255));
-        Label_Jotaro.setText("Jotaro Kujo");
-        getContentPane().add(Label_Jotaro, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 20, -1, -1));
-
-        Label_Josuke.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
-        Label_Josuke.setForeground(new java.awt.Color(255, 255, 255));
-        Label_Josuke.setText("Josuke Higashikata");
-        getContentPane().add(Label_Josuke, new org.netbeans.lib.awtextra.AbsoluteConstraints(1280, 20, -1, -1));
-
-        Label_Giorno.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
-        Label_Giorno.setForeground(new java.awt.Color(255, 255, 255));
-        Label_Giorno.setText("Giorno Giovanna");
-        getContentPane().add(Label_Giorno, new org.netbeans.lib.awtextra.AbsoluteConstraints(1670, 20, -1, -1));
-
-        Label_Diavolo.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
-        Label_Diavolo.setForeground(new java.awt.Color(255, 255, 255));
-        Label_Diavolo.setText("Diavolo");
-        getContentPane().add(Label_Diavolo, new org.netbeans.lib.awtextra.AbsoluteConstraints(1700, 380, -1, -1));
-
-        Label_Kira.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
-        Label_Kira.setForeground(new java.awt.Color(255, 255, 255));
-        Label_Kira.setText("Yoshikage Kira");
-        getContentPane().add(Label_Kira, new org.netbeans.lib.awtextra.AbsoluteConstraints(1290, 380, -1, -1));
-
-        Label_Kars.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
-        Label_Kars.setForeground(new java.awt.Color(255, 255, 255));
-        Label_Kars.setText("Kars");
-        getContentPane().add(Label_Kars, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 380, -1, -1));
-
-        Label_Dio.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
-        Label_Dio.setForeground(new java.awt.Color(255, 255, 255));
-        Label_Dio.setText("Dio Brando");
-        getContentPane().add(Label_Dio, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 380, -1, -1));
-
-        Label_Jolyne.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
-        Label_Jolyne.setForeground(new java.awt.Color(255, 255, 255));
-        Label_Jolyne.setText("Jolyne Kujo");
-        getContentPane().add(Label_Jolyne, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 720, -1, -1));
-
-        jPanel2.setBackground(new java.awt.Color(0, 0, 0));
+        LabelNomJoueurCourant.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 36)); // NOI18N
+        LabelNomJoueurCourant.setForeground(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1920, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(763, 763, 763)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(249, 249, 249)
+                        .addComponent(LabelNomJoueurCourant, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(777, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1080, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addComponent(LabelNomJoueurCourant, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(160, 160, 160)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(333, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1920, 1080));
@@ -459,6 +472,138 @@ public class Fenetre_choixJoueurs extends javax.swing.JFrame {
         BloquerBoutons();
     }//GEN-LAST:event_Bouton_PucciActionPerformed
 
+    private void Bouton_JonathanMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Bouton_JonathanMouseEntered
+        // TODO add your handling code here:
+        if (cptJoueurs == 0) {
+            LabelJoueurCourant.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Jonathan_gt.jpg")));
+            LabelNomJoueurCourant.setText("Jonathan Joestar");
+        }
+        if (cptJoueurs == 1) {
+            LabelJoueurCourant2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Jonathan_gt.jpg")));
+            LabelNomJoueurCourant2.setText("Jonathan Joestar");
+        }
+    }//GEN-LAST:event_Bouton_JonathanMouseEntered
+
+    private void Bouton_JosephMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Bouton_JosephMouseEntered
+        // TODO add your handling code here:
+        if (cptJoueurs == 0) {
+            LabelJoueurCourant.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Joseph_gt.jpg")));
+            LabelNomJoueurCourant.setText("Joseph Joestar");
+        }
+        if (cptJoueurs == 1) {
+            LabelJoueurCourant2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Joseph_gt.jpg")));
+            LabelNomJoueurCourant2.setText("Joseph Joestar");
+        }
+    }//GEN-LAST:event_Bouton_JosephMouseEntered
+
+    private void Bouton_JotaroMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Bouton_JotaroMouseEntered
+        // TODO add your handling code here:
+        if (cptJoueurs == 0) {
+            LabelJoueurCourant.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Jotaro_gt.jpg")));
+            LabelNomJoueurCourant.setText("Jotaro Kujo");
+        }
+        if (cptJoueurs == 1) {
+            LabelJoueurCourant2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Jotaro_gt.jpg")));
+            LabelNomJoueurCourant2.setText("Jotaro Kujo");
+        }
+    }//GEN-LAST:event_Bouton_JotaroMouseEntered
+
+    private void Bouton_JosukeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Bouton_JosukeMouseEntered
+        // TODO add your handling code here:
+        if (cptJoueurs == 0) {
+            LabelJoueurCourant.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Josuke_gt.jpg")));
+            LabelNomJoueurCourant.setText("Josuke Higashikata");
+        }
+        if (cptJoueurs == 1) {
+            LabelJoueurCourant2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Josuke_gt.jpg")));
+            LabelNomJoueurCourant2.setText("Josuke Higashikata");
+        }
+    }//GEN-LAST:event_Bouton_JosukeMouseEntered
+
+    private void Bouton_GiornoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Bouton_GiornoMouseEntered
+        // TODO add your handling code here:
+        if (cptJoueurs == 0) {
+            LabelJoueurCourant.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Giorno_gt.jpg")));
+            LabelNomJoueurCourant.setText("Giorno Giovanna");
+        }
+        if (cptJoueurs == 1) {
+            LabelJoueurCourant2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Giorno_gt.jpg")));
+            LabelNomJoueurCourant2.setText("Giorno Giovanna");
+        }
+    }//GEN-LAST:event_Bouton_GiornoMouseEntered
+
+    private void Bouton_DioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Bouton_DioMouseEntered
+        // TODO add your handling code here:
+        if (cptJoueurs == 0) {
+            LabelJoueurCourant.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Dio_gt.jpg")));
+            LabelNomJoueurCourant.setText("Dio Brando");
+        }
+        if (cptJoueurs == 1) {
+            LabelJoueurCourant2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Dio_gt.jpg")));
+            LabelNomJoueurCourant2.setText("Dio Brando");
+        }
+    }//GEN-LAST:event_Bouton_DioMouseEntered
+
+    private void Bouton_KarsMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Bouton_KarsMouseEntered
+        // TODO add your handling code here:
+        if (cptJoueurs == 0) {
+            LabelJoueurCourant.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Kars_gt.jpg")));
+            LabelNomJoueurCourant.setText("Kars");
+        }
+        if (cptJoueurs == 1) {
+            LabelJoueurCourant2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Karsh_gt.jpg")));
+            LabelNomJoueurCourant2.setText("Kars");
+        }
+    }//GEN-LAST:event_Bouton_KarsMouseEntered
+
+    private void Bouton_KiraMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Bouton_KiraMouseEntered
+        // TODO add your handling code here:
+        if (cptJoueurs == 0) {
+            LabelJoueurCourant.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Kira_gt.jpg")));
+            LabelNomJoueurCourant.setText("Yoshikage Kira");
+        }
+        if (cptJoueurs == 1) {
+            LabelJoueurCourant2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Kira_gt.jpg")));
+            LabelNomJoueurCourant2.setText("Yoshikage Kira");
+        }
+    }//GEN-LAST:event_Bouton_KiraMouseEntered
+
+    private void Bouton_DiavoloMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Bouton_DiavoloMouseEntered
+        // TODO add your handling code here:
+        if (cptJoueurs == 0) {
+            LabelJoueurCourant.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Diavolo_gt.jpg")));
+            LabelNomJoueurCourant.setText("Diavolo");
+        }
+        if (cptJoueurs == 1) {
+            LabelJoueurCourant2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Diavolo_gt.jpg")));
+            LabelNomJoueurCourant2.setText("Diavolo");
+        }
+    }//GEN-LAST:event_Bouton_DiavoloMouseEntered
+
+    private void Bouton_JolyneMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Bouton_JolyneMouseEntered
+        // TODO add your handling code here:
+        if (cptJoueurs == 0) {
+            LabelJoueurCourant.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Jolyne_gt.jpg")));
+            LabelNomJoueurCourant.setText("Jolyne Kujo");
+        }
+        if (cptJoueurs == 1) {
+            LabelJoueurCourant2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Jolyne_gt.jpg")));
+            LabelNomJoueurCourant2.setText("Jolyne Kujo");
+        }
+    }//GEN-LAST:event_Bouton_JolyneMouseEntered
+
+    private void Bouton_PucciMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Bouton_PucciMouseEntered
+        // TODO add your handling code here:
+        if (cptJoueurs == 0) {
+            LabelJoueurCourant.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Pucci_gt.jpg")));
+            LabelNomJoueurCourant.setText("Enrico Pucci");
+        }
+        if (cptJoueurs == 1) {
+            LabelJoueurCourant2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Pucci_gt.jpg")));
+            LabelNomJoueurCourant2.setText("Enrico Pucci");
+        }
+    }//GEN-LAST:event_Bouton_PucciMouseEntered
+
     public void BloquerBoutons() {
         if (cptJoueurs >= 2) {
             Bouton_Jonathan.setEnabled(false);
@@ -530,17 +675,10 @@ public class Fenetre_choixJoueurs extends javax.swing.JFrame {
     private javax.swing.JLabel LabelJ2;
     private javax.swing.JLabel LabelJoueur1;
     private javax.swing.JLabel LabelJoueur2;
-    private javax.swing.JLabel Label_Diavolo;
-    private javax.swing.JLabel Label_Dio;
-    private javax.swing.JLabel Label_Giorno;
-    private javax.swing.JLabel Label_Jolyne;
-    private javax.swing.JLabel Label_Jonathan;
-    private javax.swing.JLabel Label_Joseph;
-    private javax.swing.JLabel Label_Josuke;
-    private javax.swing.JLabel Label_Jotaro;
-    private javax.swing.JLabel Label_Kars;
-    private javax.swing.JLabel Label_Kira;
-    private javax.swing.JLabel Label_Pucci;
+    private javax.swing.JLabel LabelJoueurCourant;
+    private javax.swing.JLabel LabelJoueurCourant2;
+    private javax.swing.JLabel LabelNomJoueurCourant;
+    private javax.swing.JLabel LabelNomJoueurCourant2;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
