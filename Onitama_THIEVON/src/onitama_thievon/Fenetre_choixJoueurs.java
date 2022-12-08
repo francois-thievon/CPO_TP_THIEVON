@@ -54,6 +54,7 @@ public class Fenetre_choixJoueurs extends javax.swing.JFrame {
         LabelGifJ1 = new javax.swing.JLabel();
         LabelGifJ2 = new javax.swing.JLabel();
         LabelNomJoueurCourant = new javax.swing.JLabel();
+        LabelVS = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         BoutonLancerPartie = new javax.swing.JToggleButton();
         LabelJoueur1 = new javax.swing.JLabel();
@@ -226,6 +227,7 @@ public class Fenetre_choixJoueurs extends javax.swing.JFrame {
         LabelNomJoueurCourant.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 36)); // NOI18N
         LabelNomJoueurCourant.setForeground(new java.awt.Color(255, 255, 255));
         getContentPane().add(LabelNomJoueurCourant, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 0, 370, 40));
+        getContentPane().add(LabelVS, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 250, -1, -1));
 
         jPanel1.setBackground(new java.awt.Color(51, 51, 51));
 
@@ -740,6 +742,7 @@ public class Fenetre_choixJoueurs extends javax.swing.JFrame {
     private javax.swing.JLabel LabelJoueurCourant2;
     private javax.swing.JLabel LabelNomJoueurCourant;
     private javax.swing.JLabel LabelNomJoueurCourant2;
+    private javax.swing.JLabel LabelVS;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
