@@ -48,7 +48,7 @@ public class Fenetre_Accueil extends javax.swing.JFrame {
         getContentPane().add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(1782, 1206, -1, -1));
 
         Jojo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Jojo.png"))); // NOI18N
-        getContentPane().add(Jojo, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 110, -1, -1));
+        getContentPane().add(Jojo, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 110, -1, -1));
 
         BoutonRegle.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
         BoutonRegle.setText("Règles du jeu");
