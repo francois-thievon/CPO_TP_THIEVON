@@ -4,7 +4,11 @@
  */
 package onitama_thievon;
 
+import java.io.File;
 import javax.accessibility.AccessibleContext;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
 import javax.swing.JRootPane;
 
 /**
@@ -317,6 +321,7 @@ public class Fenetre_choixJoueurs extends javax.swing.JFrame {
             LabelGifJ2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Jonathan.gif")));
         }
         cptJoueurs += 1;
+        PlayMusic("Jonathan_Sunlight.wav");
         BloquerBoutons();
     }//GEN-LAST:event_Bouton_JonathanActionPerformed
 
@@ -334,6 +339,7 @@ public class Fenetre_choixJoueurs extends javax.swing.JFrame {
             LabelGifJ2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Joseph.gif")));
         }
         cptJoueurs += 1;
+        PlayMusic("Joseph_HermitPurple.wav");
         BloquerBoutons();
     }//GEN-LAST:event_Bouton_JosephActionPerformed
 
@@ -351,6 +357,7 @@ public class Fenetre_choixJoueurs extends javax.swing.JFrame {
             LabelGifJ2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Jotaro.gif")));
         }
         cptJoueurs += 1;
+        PlayMusic("Jotaro_StarPlatinium.wav");
         BloquerBoutons();
     }//GEN-LAST:event_Bouton_JotaroActionPerformed
 
@@ -368,6 +375,7 @@ public class Fenetre_choixJoueurs extends javax.swing.JFrame {
             LabelGifJ2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Josuke.gif")));
         }
         cptJoueurs += 1;
+        PlayMusic("Josuke_CrazyDiamond.wav");
         BloquerBoutons();
     }//GEN-LAST:event_Bouton_JosukeActionPerformed
 
@@ -385,6 +393,7 @@ public class Fenetre_choixJoueurs extends javax.swing.JFrame {
             LabelGifJ2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Giorno.gif")));
         }
         cptJoueurs += 1;
+        PlayMusic("Giorno_GoldExperience.wav");
         BloquerBoutons();
     }//GEN-LAST:event_Bouton_GiornoActionPerformed
 
@@ -402,6 +411,7 @@ public class Fenetre_choixJoueurs extends javax.swing.JFrame {
             LabelGifJ2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Jolyne.gif")));
         }
         cptJoueurs += 1;
+        PlayMusic("Jolyne_StoneFree.wav");
         BloquerBoutons();
     }//GEN-LAST:event_Bouton_JolyneActionPerformed
 
@@ -419,6 +429,7 @@ public class Fenetre_choixJoueurs extends javax.swing.JFrame {
             LabelGifJ2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Dio_2.gif")));
         }
         cptJoueurs += 1;
+        PlayMusic("Dio_TheWorld.wav");
         BloquerBoutons();
     }//GEN-LAST:event_Bouton_DioActionPerformed
 
@@ -436,6 +447,7 @@ public class Fenetre_choixJoueurs extends javax.swing.JFrame {
             LabelGifJ2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Kars.gif")));
         }
         cptJoueurs += 1;
+        PlayMusic("Kars_Hamon.wav");
         BloquerBoutons();
     }//GEN-LAST:event_Bouton_KarsActionPerformed
 
@@ -453,6 +465,7 @@ public class Fenetre_choixJoueurs extends javax.swing.JFrame {
             LabelGifJ2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Kira.gif")));
         }
         cptJoueurs += 1;
+        PlayMusic("Kira_KillerQueen.wav");
         BloquerBoutons();
     }//GEN-LAST:event_Bouton_KiraActionPerformed
 
@@ -470,6 +483,7 @@ public class Fenetre_choixJoueurs extends javax.swing.JFrame {
             LabelGifJ2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Diavolo.gif")));
         }
         cptJoueurs += 1;
+        PlayMusic("Diavolo_KingCrimson.wav");
         BloquerBoutons();
     }//GEN-LAST:event_Bouton_DiavoloActionPerformed
 
@@ -487,6 +501,7 @@ public class Fenetre_choixJoueurs extends javax.swing.JFrame {
             LabelGifJ2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Pucci.gif")));
         }
         cptJoueurs += 1;
+        PlayMusic("Pucci_WhiteSnake.wav");
         BloquerBoutons();
     }//GEN-LAST:event_Bouton_PucciActionPerformed
 
@@ -629,6 +644,25 @@ public class Fenetre_choixJoueurs extends javax.swing.JFrame {
         Fenetre_choixJoueurs.super.dispose();
     }//GEN-LAST:event_BoutonLancerPartieActionPerformed
 
+    
+    public static void PlayMusic(String location) {
+        try {
+            File musicPath = new File(location);
+            if(musicPath.exists()) {
+                AudioInputStream audioInput = AudioSystem.getAudioInputStream(musicPath);
+                Clip clip = AudioSystem.getClip();
+                clip.open(audioInput);
+                clip.start();
+            }
+            else {
+                System.out.println("Trouve pas le fichier");
+            }
+        }catch(Exception e) {
+            
+        }
+    }
+    
+    
     public void BloquerBoutons() {
         if (cptJoueurs >= 2) {
             Bouton_Jonathan.setEnabled(false);

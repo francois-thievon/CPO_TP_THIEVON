@@ -57,7 +57,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         Panel_PlateauDeJeu.setBackground(new java.awt.Color(102, 102, 102));
         Panel_PlateauDeJeu.setPreferredSize(new java.awt.Dimension(900, 900));
         Panel_PlateauDeJeu.setLayout(new java.awt.GridLayout(5, 5));
-        getContentPane().add(Panel_PlateauDeJeu, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 60, -1, -1));
+        getContentPane().add(Panel_PlateauDeJeu, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 70, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
