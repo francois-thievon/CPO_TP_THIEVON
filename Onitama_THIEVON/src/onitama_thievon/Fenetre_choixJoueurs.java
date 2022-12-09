@@ -388,11 +388,11 @@ public class Fenetre_choixJoueurs extends javax.swing.JFrame {
         Bouton_Giorno.setEnabled(false);
         if (cptJoueurs == 0) {
             LabelJ1.setText("Giorno Giovanna");
-            LabelGifJ1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Giorno.gif")));
+            LabelGifJ1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Giorno_1.gif")));
         }
         if (cptJoueurs == 1) {
             LabelJ2.setText("Giorno Giovanna");
-            LabelGifJ2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Giorno.gif")));
+            LabelGifJ2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Giorno_1.gif")));
         }
         cptJoueurs += 1;
         PlayMusic("Giorno_GoldExperience.wav");

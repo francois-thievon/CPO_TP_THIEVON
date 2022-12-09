@@ -22,6 +22,22 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         ListeJoueurs[0] = J1;
         ListeJoueurs[1] = J2;
         initComponents();
+       
+        
+        for (int cp = 0; cp<5; cp++) {
+            Pion pionJ1 = new Pion(1, false);
+            pionJ1.affecterJoueur(J1);
+            PlateauDeJeu.Plateau[0][cp].affecterPion(pionJ1);
+            J1.reservePions.add(pionJ1);
+                    
+            Pion pionJ2 = new Pion(2, false);
+            pionJ2.affecterJoueur(J2);
+            PlateauDeJeu.Plateau[4][cp].affecterPion(pionJ2);
+            J2.reservePions.add(pionJ2);
+        }
+        
+        
+        
         
         for (int i = 0; i<5; i++) {
             for (int j = 0; j<5; j++) {

@@ -16,14 +16,15 @@ public class CaseDePlateau {
     
     public CaseDePlateau() {
         pionCourant = null;
+        temple = false;
         
     }
     
-    public void etreTemple(){
+    public void devenirTemple(){
         temple = true;
     }
     
-    public boolean Temple(){
+    public boolean avoirTemple(){
         return temple;
     }
     

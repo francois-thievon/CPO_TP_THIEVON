@@ -18,6 +18,8 @@ public class PlateauDeJeu {
                 Plateau[i][j] = new CaseDePlateau();
             }
         }
+        Plateau[0][2].devenirTemple();
+        Plateau[4][2].devenirTemple();
     }
     
     public boolean deplacerPion(int x, int y, int X, int Y) {

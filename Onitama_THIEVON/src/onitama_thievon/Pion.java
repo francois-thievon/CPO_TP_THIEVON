@@ -12,11 +12,20 @@ public class Pion {
     
     private int equipe;
     private boolean etreRoi;
+    private Joueur joueur;
     
     
     public Pion(int a, boolean r) {
         equipe = a;
         etreRoi = r;
+    }
+    
+    public void affecterJoueur(Joueur J) {
+        joueur = J;
+    }
+    
+    public Joueur renvoyerJoueur() {
+        return joueur;
     }
     
     public int avoirEquipe() {
