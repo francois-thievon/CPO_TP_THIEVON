@@ -13,30 +13,53 @@ import javax.swing.ImageIcon;
  */
 public class CaseGraphique extends JButton{
     CaseDePlateau caseAssociee;
-    ImageIcon case_vide           = new javax.swing.ImageIcon(getClass().getResource("/images/CaseOnitamMarbrea_bt.jpg"));
-    ImageIcon case_temple         = new javax.swing.ImageIcon(getClass().getResource("/images/CaseOnitamaTemple_bt.jpg"));
-    ImageIcon PionJonathan        = new javax.swing.ImageIcon(getClass().getResource("/images/CasePionJH_bt.jpg"));
-    ImageIcon PionJonathanTemple  = new javax.swing.ImageIcon(getClass().getResource("/images/CasePionJHT_bt.jpg"));
-    ImageIcon PionJoseph          = new javax.swing.ImageIcon(getClass().getResource("/images/CasePionHP_bt.jpg"));
-    ImageIcon PionJosephTemple    = new javax.swing.ImageIcon(getClass().getResource("/images/CasePionHPT_bt.jpg"));
-    ImageIcon PionJotaro          = new javax.swing.ImageIcon(getClass().getResource("/images/CasePionSP_bt.jpg"));
-    ImageIcon PionJotaroTemple    = new javax.swing.ImageIcon(getClass().getResource("/images/CasePionSPT_bt.jpg"));
-    ImageIcon PionJosuke          = new javax.swing.ImageIcon(getClass().getResource("/images/CasePionCD_bt.jpg"));
-    ImageIcon PionJosukeTemple    = new javax.swing.ImageIcon(getClass().getResource("/images/CasePionCDT_bt.jpg"));
-    ImageIcon PionGiorno          = new javax.swing.ImageIcon(getClass().getResource("/images/CasePionGE_bt.jpg"));
-    ImageIcon PionGiornoTemple    = new javax.swing.ImageIcon(getClass().getResource("/images/CasePionGET_bt.jpg"));
-    ImageIcon PionJolyne          = new javax.swing.ImageIcon(getClass().getResource("/images/CasePionSF_bt.jpg"));
-    ImageIcon PionJolyneTemple    = new javax.swing.ImageIcon(getClass().getResource("/images/CasePionSFT_bt.jpg"));
-    ImageIcon PionDio             = new javax.swing.ImageIcon(getClass().getResource("/images/CasePionTW_bt.jpg"));
-    ImageIcon PionDioTemple       = new javax.swing.ImageIcon(getClass().getResource("/images/CasePionTWT_bt.jpg"));
-    ImageIcon PionKars            = new javax.swing.ImageIcon(getClass().getResource("/images/CasePionPA_bt.jpg"));
-    ImageIcon PionKarsTemple      = new javax.swing.ImageIcon(getClass().getResource("/images/CasePionPAT_bt.jpg"));
-    ImageIcon PionKira            = new javax.swing.ImageIcon(getClass().getResource("/images/CasePionKQ_bt.jpg"));
-    ImageIcon PionKiraTemple      = new javax.swing.ImageIcon(getClass().getResource("/images/CasePionKQT_bt.jpg"));
-    ImageIcon PionDiavolo         = new javax.swing.ImageIcon(getClass().getResource("/images/CasePionKC_bt.jpg"));
-    ImageIcon PionDiavoloTemple   = new javax.swing.ImageIcon(getClass().getResource("/images/CasePionKCT_bt.jpg"));
-    ImageIcon PionPucci           = new javax.swing.ImageIcon(getClass().getResource("/images/CasePionWS_bt.jpg"));
-    ImageIcon PionPucciTemple     = new javax.swing.ImageIcon(getClass().getResource("/images/CasePionWST_bt.jpg"));
+    ImageIcon Case_vide           = new javax.swing.ImageIcon(getClass().getResource("/images/Case.jpg"));
+    ImageIcon Temple_vide         = new javax.swing.ImageIcon(getClass().getResource("/images/Temple.jpg"));
+    ImageIcon CaseJonathan        = new javax.swing.ImageIcon(getClass().getResource("/images/CaseJonathan.jpg"));
+    ImageIcon CaseRoiJonathan     = new javax.swing.ImageIcon(getClass().getResource("/images/CaseRoiJonathan.jpg"));
+    ImageIcon TempleJonathan      = new javax.swing.ImageIcon(getClass().getResource("/images/TempleJonathan.jpg"));
+    ImageIcon TempleRoiJonathan   = new javax.swing.ImageIcon(getClass().getResource("/images/TempleRoiJonathan.jpg"));
+    ImageIcon CaseJoseph          = new javax.swing.ImageIcon(getClass().getResource("/images/CaseJoseph.jpg"));
+    ImageIcon CaseRoiJoseph       = new javax.swing.ImageIcon(getClass().getResource("/images/CaseRoiJoseph.jpg"));
+    ImageIcon TempleJoseph        = new javax.swing.ImageIcon(getClass().getResource("/images/TempleJoseph.jpg"));
+    ImageIcon TempleRoiJoseph     = new javax.swing.ImageIcon(getClass().getResource("/images/TempleRoiJoseph.jpg"));
+    ImageIcon CaseJotaro          = new javax.swing.ImageIcon(getClass().getResource("/images/CaseJotaro.jpg"));
+    ImageIcon CaseRoiJotaro       = new javax.swing.ImageIcon(getClass().getResource("/images/CaseRoiJotaro.jpg"));
+    ImageIcon TempleJotaro        = new javax.swing.ImageIcon(getClass().getResource("/images/TempleJotaro.jpg"));
+    ImageIcon TempleRoiJotaro     = new javax.swing.ImageIcon(getClass().getResource("/images/TempleRoiJotaro.jpg"));
+    ImageIcon CaseJosuke          = new javax.swing.ImageIcon(getClass().getResource("/images/CaseJosuke.jpg"));
+    ImageIcon CaseRoiJosuke       = new javax.swing.ImageIcon(getClass().getResource("/images/CaseRoiJosuke.jpg"));
+    ImageIcon TempleJosuke        = new javax.swing.ImageIcon(getClass().getResource("/images/TempleJosuke.jpg"));
+    ImageIcon TempleRoiJosuke     = new javax.swing.ImageIcon(getClass().getResource("/images/TempleRoiJosuke.jpg"));
+    ImageIcon CaseGiorno          = new javax.swing.ImageIcon(getClass().getResource("/images/CaseGiorno.jpg"));
+    ImageIcon CaseRoiGiorno       = new javax.swing.ImageIcon(getClass().getResource("/images/CaseRoiGiorno.jpg"));
+    ImageIcon TempleGiorno        = new javax.swing.ImageIcon(getClass().getResource("/images/TempleGiorno.jpg"));
+    ImageIcon TempleRoiGiorno     = new javax.swing.ImageIcon(getClass().getResource("/images/TempleRoiGiorno.jpg"));
+    ImageIcon CaseJolyne          = new javax.swing.ImageIcon(getClass().getResource("/images/CaseJolyne.jpg"));
+    ImageIcon CaseRoiJolyne       = new javax.swing.ImageIcon(getClass().getResource("/images/CaseRoiJolyne.jpg"));
+    ImageIcon TempleJolyne        = new javax.swing.ImageIcon(getClass().getResource("/images/TempleJolyne.jpg"));
+    ImageIcon TempleRoiJolyne     = new javax.swing.ImageIcon(getClass().getResource("/images/TempleRoiJolyne.jpg"));
+    ImageIcon CaseDio             = new javax.swing.ImageIcon(getClass().getResource("/images/CaseDio.jpg"));
+    ImageIcon CaseRoiDio          = new javax.swing.ImageIcon(getClass().getResource("/images/CaseRoiDio.jpg"));
+    ImageIcon TempleDio           = new javax.swing.ImageIcon(getClass().getResource("/images/TempleDio.jpg"));
+    ImageIcon TempleRoiDio        = new javax.swing.ImageIcon(getClass().getResource("/images/TempleRoiDio.jpg"));
+    ImageIcon CaseKars            = new javax.swing.ImageIcon(getClass().getResource("/images/CaseKars.jpg"));
+    ImageIcon CaseRoiKars         = new javax.swing.ImageIcon(getClass().getResource("/images/CaseRoiKars.jpg"));
+    ImageIcon TempleKars          = new javax.swing.ImageIcon(getClass().getResource("/images/TempleKars.jpg"));
+    ImageIcon TempleRoiKars       = new javax.swing.ImageIcon(getClass().getResource("/images/TempleRoiKars.jpg"));
+    ImageIcon CaseKira            = new javax.swing.ImageIcon(getClass().getResource("/images/CaseKira.jpg"));
+    ImageIcon CaseRoiKira         = new javax.swing.ImageIcon(getClass().getResource("/images/CaseRoiKira.jpg"));
+    ImageIcon TempleKira          = new javax.swing.ImageIcon(getClass().getResource("/images/TempleKira.jpg"));
+    ImageIcon TempleRoiKira       = new javax.swing.ImageIcon(getClass().getResource("/images/TempleRoiKira.jpg"));
+    ImageIcon CaseDiavolo         = new javax.swing.ImageIcon(getClass().getResource("/images/CaseDiavolo.jpg"));
+    ImageIcon CaseRoiDiavolo      = new javax.swing.ImageIcon(getClass().getResource("/images/CaseRoiDiavolo.jpg"));
+    ImageIcon TempleDiavolo       = new javax.swing.ImageIcon(getClass().getResource("/images/TempleDiavolo.jpg"));
+    ImageIcon TempleRoiDiavolo    = new javax.swing.ImageIcon(getClass().getResource("/images/TempleRoiDiavolo.jpg"));
+    ImageIcon CasePucci           = new javax.swing.ImageIcon(getClass().getResource("/images/CasePucci.jpg"));
+    ImageIcon CaseRoiPucci        = new javax.swing.ImageIcon(getClass().getResource("/images/CaseRoiPucci.jpg"));
+    ImageIcon TemplePucci         = new javax.swing.ImageIcon(getClass().getResource("/images/TemplePucci.jpg"));
+    ImageIcon TempleRoiPucci      = new javax.swing.ImageIcon(getClass().getResource("/images/TempleRoiPucci.jpg"));
+
     
     public CaseGraphique(CaseDePlateau uneCase){
         caseAssociee = uneCase;
@@ -45,87 +68,164 @@ public class CaseGraphique extends JButton{
     @Override
     public void paintComponent(Graphics G) {
         super.paintComponent(G);
+        
         if (caseAssociee.avoirPion() == true) {
             if (caseAssociee.avoirTemple() == true) {
-                
-                if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Jonathan") {
-                    setIcon(PionJonathanTemple);
+                if (caseAssociee.renvoyerPion().etreLeRoi() == true) {
+                    
+                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Jonathan") {
+                    setIcon(TempleRoiJonathan);
+                    }
+                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Joseph") {
+                        setIcon(TempleRoiJoseph);
+                    }
+                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Jotaro") {
+                        setIcon(TempleRoiJotaro);
+                    }
+                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Josuke") {
+                        setIcon(TempleRoiJosuke);
+                    }
+                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Giorno") {
+                        setIcon(TempleRoiGiorno);
+                    }
+                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom== "Jolyne") {
+                        setIcon(TempleRoiJolyne);
+                    }
+                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Dio") {
+                        setIcon(TempleRoiDio);
+                    }
+                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Kars") {
+                        setIcon(TempleRoiKars);
+                    }
+                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Yoshikage") {
+                        setIcon(TempleRoiKira);
+                    }
+                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Diavolo") {
+                        setIcon(TempleRoiDiavolo);
+                    }
+                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Enrico") {
+                        setIcon(TempleRoiPucci);
+                    }
                 }
-                if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Joseph") {
-                    setIcon(PionJosephTemple);
-                }
-                if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Jotaro") {
-                    setIcon(PionJotaroTemple);
-                }
-                if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Josuke") {
-                    setIcon(PionJosukeTemple);
-                }
-                if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Giorno") {
-                    setIcon(PionGiornoTemple);
-                }
-                if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom== "Jolyne") {
-                    setIcon(PionJolyneTemple);
-                }
-                if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Dio") {
-                    setIcon(PionDioTemple);
-                }
-                if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Kars") {
-                    setIcon(PionKarsTemple);
-                }
-                if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Yoshikage") {
-                    setIcon(PionKiraTemple);
-                }
-                if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Diavolo") {
-                    setIcon(PionDiavoloTemple);
-                }
-                if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Enrico") {
-                    setIcon(PionPucciTemple);
+                if (caseAssociee.renvoyerPion().etreLeRoi() == false) {
+                    
+                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Jonathan") {
+                    setIcon(TempleJonathan);
+                    }
+                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Joseph") {
+                        setIcon(TempleJoseph);
+                    }
+                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Jotaro") {
+                        setIcon(TempleJotaro);
+                    }
+                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Josuke") {
+                        setIcon(TempleJosuke);
+                    }
+                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Giorno") {
+                        setIcon(TempleGiorno);
+                    }
+                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom== "Jolyne") {
+                        setIcon(TempleJolyne);
+                    }
+                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Dio") {
+                        setIcon(TempleDio);
+                    }
+                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Kars") {
+                        setIcon(TempleKars);
+                    }
+                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Yoshikage") {
+                        setIcon(TempleKira);
+                    }
+                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Diavolo") {
+                        setIcon(TempleDiavolo);
+                    }
+                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Enrico") {
+                        setIcon(TemplePucci);
+                    }
                 }
             }
             if (caseAssociee.avoirTemple() == false) {
-                
-                if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Jonathan") {
-                    setIcon(PionJonathan);
+                if (caseAssociee.renvoyerPion().etreLeRoi() == true) {
+                    
+                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Jonathan") {
+                    setIcon(CaseRoiJonathan);
+                    }
+                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Joseph") {
+                        setIcon(CaseRoiJoseph);
+                    }
+                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Jotaro") {
+                        setIcon(CaseRoiJotaro);
+                    }
+                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Josuke") {
+                        setIcon(CaseRoiJosuke);
+                    }
+                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Giorno") {
+                        setIcon(CaseRoiGiorno);
+                    }
+                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom== "Jolyne") {
+                        setIcon(CaseRoiJolyne);
+                    }
+                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Dio") {
+                        setIcon(CaseRoiDio);
+                    }
+                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Kars") {
+                        setIcon(CaseRoiKars);
+                    }
+                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Yoshikage") {
+                        setIcon(CaseRoiKira);
+                    }
+                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Diavolo") {
+                        setIcon(CaseRoiDiavolo);
+                    }
+                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Enrico") {
+                        setIcon(CaseRoiPucci);
+                    }
                 }
-                if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Joseph") {
-                    setIcon(PionJoseph);
-                }
-                if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Jotaro") {
-                    setIcon(PionJotaro);
-                }
-                if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Josuke") {
-                    setIcon(PionJosuke);
-                }
-                if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Giorno") {
-                    setIcon(PionGiorno);
-                }
-                if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Jolyne") {
-                    setIcon(PionJolyne);
-                }
-                if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Dio") {
-                    setIcon(PionDio);
-                }
-                if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Kars") {
-                    setIcon(PionKars);
-                }
-                if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Yoshikage") {
-                    setIcon(PionKira);
-                }
-                if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Diavolo") {
-                    setIcon(PionDiavolo);
-                }
-                if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Enrico") {
-                    setIcon(PionPucci);
+                if (caseAssociee.renvoyerPion().etreLeRoi() == false) {
+                    
+                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Jonathan") {
+                    setIcon(CaseJonathan);
+                    }
+                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Joseph") {
+                        setIcon(CaseJoseph);
+                    }
+                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Jotaro") {
+                        setIcon(CaseJotaro);
+                    }
+                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Josuke") {
+                        setIcon(CaseJosuke);
+                    }
+                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Giorno") {
+                        setIcon(CaseGiorno);
+                    }
+                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom== "Jolyne") {
+                        setIcon(CaseJolyne);
+                    }
+                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Dio") {
+                        setIcon(CaseDio);
+                    }
+                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Kars") {
+                        setIcon(CaseKars);
+                    }
+                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Yoshikage") {
+                        setIcon(CaseKira);
+                    }
+                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Diavolo") {
+                        setIcon(CaseDiavolo);
+                    }
+                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Enrico") {
+                        setIcon(CasePucci);
+                    }
                 }
             }
         }
         else {
             if (caseAssociee.avoirTemple() == true) {
-                setIcon(case_temple);
+                setIcon(Temple_vide);
             }
-            else {
-                setIcon(case_vide);
+            if (caseAssociee.avoirTemple() == false) {
+                setIcon(Case_vide);
             }
         }
-    }
+    }         
 }
