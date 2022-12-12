@@ -24,9 +24,9 @@ public class PlateauDeJeu {
     
     public boolean deplacerPion(int x, int y, int X, int Y) {
         Pion piontmp = new Pion(1, false);
-        if (Plateau[x][y].avoirPion() == true) {
-            piontmp = Plateau[x][y].renvoyerEtSupprimerPion();
-            Plateau[X][Y].affecterPion(piontmp);
+        if (Plateau[y][x].avoirPion() == true) {
+            piontmp = Plateau[y][x].renvoyerEtSupprimerPion();
+            Plateau[y + Y][x + X].affecterPion(piontmp);
             return true;
         }
         else {

@@ -120,12 +120,13 @@ public class FenetreDeJeu extends javax.swing.JFrame {
             }      
         }
         
-        for (int i = 0; i<5; i++) {
+        for (int i = 4; i>=0; i--) {
             for (int j = 0; j<5; j++) {
                 CaseGraphique caseGraph = new CaseGraphique(PlateauDeJeu.Plateau[i][j]);
                 Panel_PlateauDeJeu.add(caseGraph);
             }
         }
+        
     }
 
     /**
