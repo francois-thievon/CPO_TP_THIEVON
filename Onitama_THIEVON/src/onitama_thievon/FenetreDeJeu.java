@@ -123,6 +123,18 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         for (int i = 4; i>=0; i--) {
             for (int j = 0; j<5; j++) {
                 CaseGraphique caseGraph = new CaseGraphique(PlateauDeJeu.Plateau[i][j]);
+                
+                caseGraph.addActionListener(new java.awt.event.ActionListener() {
+                    public void actionPerformed(java.awt.event.ActionEvent evt){
+                        CaseDePlateau c = caseGraph.caseAssociee;
+                        if (c.avoirPion() == true){
+                            System.out.println("Pion");
+                        }
+                        else {
+                        System.out.println("Rien");
+                        }
+                    }
+                });
                 Panel_PlateauDeJeu.add(caseGraph);
             }
         }
