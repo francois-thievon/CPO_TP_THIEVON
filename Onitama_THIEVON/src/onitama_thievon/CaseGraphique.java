@@ -59,6 +59,26 @@ public class CaseGraphique extends JButton{
     ImageIcon CaseRoiPucci        = new javax.swing.ImageIcon(getClass().getResource("/images/CaseRoiPucci.jpg"));
     ImageIcon TemplePucci         = new javax.swing.ImageIcon(getClass().getResource("/images/TemplePucci.jpg"));
     ImageIcon TempleRoiPucci      = new javax.swing.ImageIcon(getClass().getResource("/images/TempleRoiPucci.jpg"));
+    ImageIcon CaseCesear          = new javax.swing.ImageIcon(getClass().getResource("/images/CaseCesear.jpg"));
+    ImageIcon CaseRoiCesear       = new javax.swing.ImageIcon(getClass().getResource("/images/CaseRoiCesear.jpg"));
+    ImageIcon TempleCesear        = new javax.swing.ImageIcon(getClass().getResource("/images/TempleCesear.jpg"));
+    ImageIcon TempleRoiCesear     = new javax.swing.ImageIcon(getClass().getResource("/images/TempleRoiCesear.jpg"));
+    ImageIcon CasePolnareff       = new javax.swing.ImageIcon(getClass().getResource("/images/CasePolnareff.jpg"));
+    ImageIcon CaseRoiPolnareff    = new javax.swing.ImageIcon(getClass().getResource("/images/CaseRoiPolnareff.jpg"));
+    ImageIcon TemplePolnareff     = new javax.swing.ImageIcon(getClass().getResource("/images/TemplePolnareff.jpg"));
+    ImageIcon TempleRoiPolnareff  = new javax.swing.ImageIcon(getClass().getResource("/images/TempleRoiPolnareff.jpg"));
+    ImageIcon CaseKoichi          = new javax.swing.ImageIcon(getClass().getResource("/images/CaseKoichi.jpg"));
+    ImageIcon CaseRoiKoichi       = new javax.swing.ImageIcon(getClass().getResource("/images/CaseRoiKoichi.jpg"));
+    ImageIcon TempleKoichi        = new javax.swing.ImageIcon(getClass().getResource("/images/TempleKoichi.jpg"));
+    ImageIcon TempleRoiKoichi     = new javax.swing.ImageIcon(getClass().getResource("/images/TempleRoiKoichi.jpg"));
+    ImageIcon CaseBucciarati      = new javax.swing.ImageIcon(getClass().getResource("/images/CaseBruno.jpg"));
+    ImageIcon CaseRoiBucciarati   = new javax.swing.ImageIcon(getClass().getResource("/images/CaseRoiBruno.jpg"));
+    ImageIcon TempleBucciarati    = new javax.swing.ImageIcon(getClass().getResource("/images/TempleBruno.jpg"));
+    ImageIcon TempleRoiBucciarati = new javax.swing.ImageIcon(getClass().getResource("/images/TempleRoiBruno.jpg"));
+    ImageIcon CaseErmes           = new javax.swing.ImageIcon(getClass().getResource("/images/CaseErmes.jpg"));
+    ImageIcon CaseRoiErmes        = new javax.swing.ImageIcon(getClass().getResource("/images/CaseRoiErmes.jpg"));
+    ImageIcon TempleErmes         = new javax.swing.ImageIcon(getClass().getResource("/images/TempleErmes.jpg"));
+    ImageIcon TempleRoiErmes      = new javax.swing.ImageIcon(getClass().getResource("/images/TempleRoiErmes.jpg"));
 
     
     public CaseGraphique(CaseDePlateau uneCase){
@@ -106,6 +126,21 @@ public class CaseGraphique extends JButton{
                     if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Enrico") {
                         setIcon(TempleRoiPucci);
                     }
+                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Cesear") {
+                        setIcon(TempleRoiCesear);
+                    }
+                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Jean-Pierre") {
+                        setIcon(TempleRoiPolnareff);
+                    }
+                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Koichi") {
+                        setIcon(TempleRoiKoichi);
+                    }
+                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Bruno") {
+                        setIcon(TempleRoiBucciarati);
+                    }
+                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Ermes") {
+                        setIcon(TempleRoiErmes);
+                    }
                 }
                 if (caseAssociee.renvoyerPion().etreLeRoi() == false) {
                     
@@ -141,6 +176,21 @@ public class CaseGraphique extends JButton{
                     }
                     if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Enrico") {
                         setIcon(TemplePucci);
+                    }
+                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Cesear") {
+                        setIcon(TempleCesear);
+                    }
+                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Jean-Pierre") {
+                        setIcon(TemplePolnareff);
+                    }
+                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Koichi") {
+                        setIcon(TempleKoichi);
+                    }
+                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Bruno") {
+                        setIcon(TempleBucciarati);
+                    }
+                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Ermes") {
+                        setIcon(TempleErmes);
                     }
                 }
             }
@@ -180,6 +230,21 @@ public class CaseGraphique extends JButton{
                     if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Enrico") {
                         setIcon(CaseRoiPucci);
                     }
+                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Cesear") {
+                        setIcon(CaseRoiCesear);
+                    }
+                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Jean-Pierre") {
+                        setIcon(CaseRoiPolnareff);
+                    }
+                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Koichi") {
+                        setIcon(CaseRoiKoichi);
+                    }
+                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Bruno") {
+                        setIcon(CaseRoiBucciarati);
+                    }
+                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Ermes") {
+                        setIcon(CaseRoiErmes);
+                    }
                 }
                 if (caseAssociee.renvoyerPion().etreLeRoi() == false) {
                     
@@ -215,6 +280,21 @@ public class CaseGraphique extends JButton{
                     }
                     if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Enrico") {
                         setIcon(CasePucci);
+                    }
+                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Cesear") {
+                        setIcon(CaseCesear);
+                    }
+                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Jean-Pierre") {
+                        setIcon(CasePolnareff);
+                    }
+                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Koichi") {
+                        setIcon(CaseKoichi);
+                    }
+                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Bruno") {
+                        setIcon(CaseBucciarati);
+                    }
+                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Ermes") {
+                        setIcon(CaseErmes);
                     }
                 }
             }
