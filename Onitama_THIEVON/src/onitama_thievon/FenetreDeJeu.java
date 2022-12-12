@@ -13,7 +13,23 @@ public class FenetreDeJeu extends javax.swing.JFrame {
     static Joueur[] ListeJoueurs = new Joueur[2];
     Joueur joueurCourant = ListeJoueurs[0];
     PlateauDeJeu PlateauDeJeu = new PlateauDeJeu();
-    
+    Carte carteStarPlatinium     = new Carte("Star Platinium"  , 1, 1, 0, 0, 0, 0, 0, 0);
+    Carte carteCrazyDiamond      = new Carte("Crazy Diamond"   , 1, 1, 0, 0, 0, 0, 0, 0);
+    Carte carteGoldExperience    = new Carte("Gold Experience" , 1, 1, 0, 0, 0, 0, 0, 0);
+    Carte carteStoneFree         = new Carte("Stone Free"      , 1, 1, 0, 0, 0, 0, 0, 0);
+    Carte carteTheWorld          = new Carte("The World"       , 1, 1, 0, 0, 0, 0, 0, 0);
+    Carte carteKillerQueen       = new Carte("Killer Queen"    , 1, 1, 0, 0, 0, 0, 0, 0);
+    Carte carteKingCrimson       = new Carte("King Crimson"    , 1, 1, 0, 0, 0, 0, 0, 0);
+    Carte carteWhiteSnake        = new Carte("White Snake"     , 1, 1, 0, 0, 0, 0, 0, 0);
+    Carte carteSilverChariot     = new Carte("Silver Chariot"  , 1, 1, 0, 0, 0, 0, 0, 0);
+    Carte carteEchoesAct3        = new Carte("Echoes Act3"     , 1, 1, 0, 0, 0, 0, 0, 0);
+    Carte carteStickyFingers     = new Carte("Sticky Fingers"  , 1, 1, 0, 0, 0, 0, 0, 0);
+    Carte carteKiss              = new Carte("Kiss"            , 1, 1, 0, 0, 0, 0, 0, 0);
+    Carte carteEpeePluck         = new Carte("Epée pluck"      , 1, 1, 0, 0, 0, 0, 0, 0);
+    Carte carteHermitPurple      = new Carte("Hermit purple"   , 1, 1, 0, 0, 0, 0, 0, 0);
+    Carte carteSavonLauncher     = new Carte("Savon Launcher"  , 1, 1, 0, 0, 0, 0, 0, 0);
+    Carte carteMasquePierre      = new Carte("Masque de pierre", 1, 1, 0, 0, 0, 0, 0, 0);
+  
     
     /**
      * Creates new form FenetreDeJeu
