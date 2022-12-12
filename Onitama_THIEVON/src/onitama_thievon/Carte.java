@@ -10,7 +10,7 @@ package onitama_thievon;
  */
 public class Carte {
     
-    private String nom;
+    String nom;
     int d1X;
     int d1Y;
     int d2X;

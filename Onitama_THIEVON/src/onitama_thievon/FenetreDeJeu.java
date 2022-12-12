@@ -12,23 +12,34 @@ public class FenetreDeJeu extends javax.swing.JFrame {
     
     static Joueur[] ListeJoueurs = new Joueur[2];
     Joueur joueurCourant = ListeJoueurs[0];
+    
     PlateauDeJeu PlateauDeJeu = new PlateauDeJeu();
-    Carte carteStarPlatinium     = new Carte("Star Platinium"  , 1, 1, 0, 0, 0, 0, 0, 0);
-    Carte carteCrazyDiamond      = new Carte("Crazy Diamond"   , 1, 1, 0, 0, 0, 0, 0, 0);
-    Carte carteGoldExperience    = new Carte("Gold Experience" , 1, 1, 0, 0, 0, 0, 0, 0);
-    Carte carteStoneFree         = new Carte("Stone Free"      , 1, 1, 0, 0, 0, 0, 0, 0);
-    Carte carteTheWorld          = new Carte("The World"       , 1, 1, 0, 0, 0, 0, 0, 0);
-    Carte carteKillerQueen       = new Carte("Killer Queen"    , 1, 1, 0, 0, 0, 0, 0, 0);
-    Carte carteKingCrimson       = new Carte("King Crimson"    , 1, 1, 0, 0, 0, 0, 0, 0);
-    Carte carteWhiteSnake        = new Carte("White Snake"     , 1, 1, 0, 0, 0, 0, 0, 0);
-    Carte carteSilverChariot     = new Carte("Silver Chariot"  , 1, 1, 0, 0, 0, 0, 0, 0);
-    Carte carteEchoesAct3        = new Carte("Echoes Act3"     , 1, 1, 0, 0, 0, 0, 0, 0);
-    Carte carteStickyFingers     = new Carte("Sticky Fingers"  , 1, 1, 0, 0, 0, 0, 0, 0);
-    Carte carteKiss              = new Carte("Kiss"            , 1, 1, 0, 0, 0, 0, 0, 0);
-    Carte carteEpeePluck         = new Carte("Epée pluck"      , 1, 1, 0, 0, 0, 0, 0, 0);
-    Carte carteHermitPurple      = new Carte("Hermit purple"   , 1, 1, 0, 0, 0, 0, 0, 0);
-    Carte carteSavonLauncher     = new Carte("Savon Launcher"  , 1, 1, 0, 0, 0, 0, 0, 0);
-    Carte carteMasquePierre      = new Carte("Masque de pierre", 1, 1, 0, 0, 0, 0, 0, 0);
+    
+    Carte carteJ1nb1;
+    Carte carteJ1nb2;
+    Carte carteJ2nb1;
+    Carte carteJ2nb2;
+    Carte carteFlottante;
+            
+    Carte carteStarPlatinium     = new Carte("Star Platinium"  , 2,  1,  -2, 1,  1,  -1, -1, -1);
+    Carte carteCrazyDiamond      = new Carte("Crazy Diamond"   , 1,  1,  1,  0,  -1, 0,  -1, -1);
+    Carte carteGoldExperience    = new Carte("Gold Experience" , 1,  0,  1,  -1, -1, 0,  -1, 1);
+    Carte carteStoneFree         = new Carte("Stone Free"      , 0,  1,  -1, 0,  0,  -1, 0,  0);
+    Carte carteTheWorld          = new Carte("The World"       , 1,  1,  1,  -1, -1, -1, -1, 1);
+    Carte carteKillerQueen       = new Carte("Killer Queen"    , 1,  1,  -1, 1,  0,  -1, 0,  0);
+    Carte carteKingCrimson       = new Carte("King Crimson"    , 1,  1,  1,  0,  -1, 1,  -1, 0);
+    Carte carteWhiteSnake        = new Carte("White Snake"     , 1,  0,  -1, 1,  -1, -1, 0,  0);
+    Carte carteSilverChariot     = new Carte("Silver Chariot"  , 1,  -1, -1, 1,  -2, 0,  0,  0);
+    Carte carteEchoesAct3        = new Carte("Echoes Act3"     , 1,  0,  0,  1,  0,  -1, 0,  0);
+    Carte carteStickyFingers     = new Carte("Sticky Fingers"  , 1,  1,  2,  0,  -1, -1, 0,  0);
+    Carte carteKiss              = new Carte("Kiss"            , 1,  1,  1,  -1, -1, 0,  0,  0);
+    Carte carteEpeePluck         = new Carte("Epée pluck"      , 0,  1,  1,  -1, -1, -1, 0,  0);
+    Carte carteHermitPurple      = new Carte("Hermit purple"   , 0,  1,  2,  0,  -2, 0,  0,  0);
+    Carte carteSavonLauncher     = new Carte("Savon Launcher"  , 0,  -1, 0,  2,  0,  0,  0,  0);
+    Carte carteMasquePierre      = new Carte("Masque de pierre", 0,  1,  1,  0,  -1, 0,  0,  0);
+    
+    Carte[] listeCartes = new Carte[16];
+    
   
     
     /**
@@ -38,6 +49,50 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         ListeJoueurs[0] = J1;
         ListeJoueurs[1] = J2;
         initComponents();
+        
+        listeCartes[0]  = carteStarPlatinium;
+        listeCartes[1]  = carteCrazyDiamond;
+        listeCartes[2]  = carteGoldExperience;
+        listeCartes[3]  = carteStoneFree;
+        listeCartes[4]  = carteTheWorld;
+        listeCartes[5]  = carteKillerQueen;
+        listeCartes[6]  = carteKingCrimson;
+        listeCartes[7]  = carteWhiteSnake;
+        listeCartes[8]  = carteSilverChariot;
+        listeCartes[9]  = carteEchoesAct3;
+        listeCartes[10] = carteStickyFingers;
+        listeCartes[11] = carteKiss;
+        listeCartes[12] = carteEpeePluck;
+        listeCartes[13] = carteHermitPurple;
+        listeCartes[14] = carteSavonLauncher;
+        listeCartes[15] = carteMasquePierre;
+        
+        
+        int rdm1;
+        int rdm2;
+        int rdm3;
+        int rdm4;
+        int rdm5;
+        boolean z = false;
+        do {
+            rdm1 = (int)(Math.random()*16);
+            rdm2 = (int)(Math.random()*16);
+            rdm3 = (int)(Math.random()*16);
+            rdm4 = (int)(Math.random()*16);
+            rdm5 = (int)(Math.random()*16);
+            if (rdm1 != rdm2 && rdm1 != rdm3 && rdm1 != rdm4 && rdm1 != rdm5 && rdm2 != rdm3 && rdm2 != rdm4 && rdm2 != rdm5 && rdm3 != rdm4 && rdm3 != rdm5 && rdm4 != rdm5) {
+                z = true;
+        }
+        }while(z == false);
+        
+
+        carteJ1nb1 = listeCartes[rdm1];
+        carteJ1nb2 = listeCartes[rdm2];
+        carteJ2nb1 = listeCartes[rdm3];
+        carteJ2nb2 = listeCartes[rdm4];
+        carteFlottante = listeCartes[rdm5];
+
+        
        
         
         for (int cp = 0; cp<5; cp++) {
@@ -94,12 +149,12 @@ public class FenetreDeJeu extends javax.swing.JFrame {
                 Bouton_ArreterActionPerformed(evt);
             }
         });
-        getContentPane().add(Bouton_Arreter, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 430, -1, -1));
+        getContentPane().add(Bouton_Arreter, new org.netbeans.lib.awtextra.AbsoluteConstraints(1680, 990, -1, -1));
 
         Panel_PlateauDeJeu.setBackground(new java.awt.Color(102, 102, 102));
         Panel_PlateauDeJeu.setPreferredSize(new java.awt.Dimension(900, 900));
         Panel_PlateauDeJeu.setLayout(new java.awt.GridLayout(5, 5));
-        getContentPane().add(Panel_PlateauDeJeu, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 70, -1, -1));
+        getContentPane().add(Panel_PlateauDeJeu, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 60, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -109,6 +164,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         FenetreDeJeu.super.dispose();
     }//GEN-LAST:event_Bouton_ArreterActionPerformed
 
+    
     public void changerJoueurCourant() {
         if (joueurCourant == ListeJoueurs[0]) {
             joueurCourant = ListeJoueurs[1];
