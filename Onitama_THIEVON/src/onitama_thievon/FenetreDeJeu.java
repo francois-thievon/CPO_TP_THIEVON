@@ -11,7 +11,7 @@ package onitama_thievon;
 public class FenetreDeJeu extends javax.swing.JFrame {
     
     static Joueur[] ListeJoueurs = new Joueur[2];
-    Joueur joueurCourant = ListeJoueurs[0];
+    Joueur joueurCourant;
     
     PlateauDeJeu PlateauDeJeu = new PlateauDeJeu();
     
@@ -20,6 +20,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
     Carte carteJ2nb1;
     Carte carteJ2nb2;
     Carte carteFlottante;
+    Pion p = null;
             
     Carte carteStarPlatinium     = new Carte("Star Platinium"  , 2,  1,  -2, 1,  1,  -1, -1, -1);
     Carte carteCrazyDiamond      = new Carte("Crazy Diamond"   , 1,  1,  1,  0,  -1, 0,  -1, -1);
@@ -49,6 +50,12 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         ListeJoueurs[0] = J1;
         ListeJoueurs[1] = J2;
         initComponents();
+        
+        ListeJoueurs[0].AffecterEquipe(1);
+        ListeJoueurs[1].AffecterEquipe(2);
+        
+        int a = (int)(Math.random()*2);
+        joueurCourant = ListeJoueurs[a];
         
         listeCartes[0]  = carteStarPlatinium;
         listeCartes[1]  = carteCrazyDiamond;
@@ -126,12 +133,32 @@ public class FenetreDeJeu extends javax.swing.JFrame {
                 
                 caseGraph.addActionListener(new java.awt.event.ActionListener() {
                     public void actionPerformed(java.awt.event.ActionEvent evt){
+                        
                         CaseDePlateau c = caseGraph.caseAssociee;
                         if (c.avoirPion() == true){
-                            System.out.println("Pion");
+                            if (p == null) {
+                                if (joueurCourant.avoirEquipe() == c.renvoyerPion().avoirEquipe()) {
+                                    p = c.renvoyerEtSupprimerPion();
+                                    Panel_PlateauDeJeu.repaint();
+                                }
+                            }
+                            if (p != null) {
+                                if (joueurCourant.avoirEquipe() != c.renvoyerPion().avoirEquipe()) {
+                                    c.supprimerPion();
+                                    c.affecterPion(p);
+                                    p = null;
+                                    Panel_PlateauDeJeu.repaint();
+                                    changerJoueurCourant();
+                                }
+                            }
                         }
                         else {
-                        System.out.println("Rien");
+                            if (p != null) {
+                            c.affecterPion(p);
+                            p = null;
+                            Panel_PlateauDeJeu.repaint();
+                            changerJoueurCourant();
+                            }
                         }
                     }
                 });
@@ -182,7 +209,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         if (joueurCourant == ListeJoueurs[0]) {
             joueurCourant = ListeJoueurs[1];
         }
-        if (joueurCourant == ListeJoueurs[1]) {
+        else {
             joueurCourant = ListeJoueurs[0];
         }
     }
