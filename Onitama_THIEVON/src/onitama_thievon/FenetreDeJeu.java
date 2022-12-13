@@ -51,11 +51,16 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         ListeJoueurs[1] = J2;
         initComponents();
         
-        ListeJoueurs[0].AffecterEquipe(1);
-        ListeJoueurs[1].AffecterEquipe(2);
-        
         int a = (int)(Math.random()*2);
         joueurCourant = ListeJoueurs[a];
+        
+        LabelJ1.setText(J1.toString());
+        LabelJ2.setText(J2.toString());
+        LabelJC.setText(joueurCourant.toString());
+        
+        
+        ListeJoueurs[0].AffecterEquipe(1);
+        ListeJoueurs[1].AffecterEquipe(2);
         
         listeCartes[0]  = carteStarPlatinium;
         listeCartes[1]  = carteCrazyDiamond;
@@ -142,22 +147,38 @@ public class FenetreDeJeu extends javax.swing.JFrame {
                                     Panel_PlateauDeJeu.repaint();
                                 }
                             }
-                            if (p != null) {
+                            else if (p != null) {
                                 if (joueurCourant.avoirEquipe() != c.renvoyerPion().avoirEquipe()) {
                                     c.supprimerPion();
                                     c.affecterPion(p);
                                     p = null;
                                     Panel_PlateauDeJeu.repaint();
                                     changerJoueurCourant();
+                                    if (PlateauDeJeu.plateauGagnantPourEquipe1() == true) {
+                                        System.out.println("Victoire J1");
+                                        FenetreDeJeu.super.dispose();
+                                    }
+                                    if (PlateauDeJeu.plateauGagnantPourEquipe2() == true) {
+                                        System.out.println("Victoire J2");
+                                        FenetreDeJeu.super.dispose();
+                                    }
                                 }
                             }
                         }
                         else {
                             if (p != null) {
-                            c.affecterPion(p);
-                            p = null;
-                            Panel_PlateauDeJeu.repaint();
-                            changerJoueurCourant();
+                                c.affecterPion(p);
+                                p = null;
+                                Panel_PlateauDeJeu.repaint();
+                                changerJoueurCourant();
+                                if (PlateauDeJeu.plateauGagnantPourEquipe1() == true) {
+                                    System.out.println("Victoire J1");
+                                    FenetreDeJeu.super.dispose();
+                                }
+                                if (PlateauDeJeu.plateauGagnantPourEquipe2() == true) {
+                                    System.out.println("Victoire J2");
+                                    FenetreDeJeu.super.dispose();
+                                }
                             }
                         }
                     }
@@ -179,6 +200,12 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 
         Bouton_Arreter = new javax.swing.JButton();
         Panel_PlateauDeJeu = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        LabelJ1 = new javax.swing.JLabel();
+        LabelJ2 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        LabelJC = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -189,12 +216,36 @@ public class FenetreDeJeu extends javax.swing.JFrame {
                 Bouton_ArreterActionPerformed(evt);
             }
         });
-        getContentPane().add(Bouton_Arreter, new org.netbeans.lib.awtextra.AbsoluteConstraints(1680, 990, -1, -1));
+        getContentPane().add(Bouton_Arreter, new org.netbeans.lib.awtextra.AbsoluteConstraints(1680, 820, -1, -1));
 
         Panel_PlateauDeJeu.setBackground(new java.awt.Color(102, 102, 102));
         Panel_PlateauDeJeu.setPreferredSize(new java.awt.Dimension(900, 900));
         Panel_PlateauDeJeu.setLayout(new java.awt.GridLayout(5, 5));
-        getContentPane().add(Panel_PlateauDeJeu, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 60, -1, -1));
+        getContentPane().add(Panel_PlateauDeJeu, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 50, -1, -1));
+
+        jLabel1.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
+        jLabel1.setText("Joueur  1:");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 180, -1, -1));
+
+        jLabel2.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
+        jLabel2.setText("Joueur 2:");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 230, -1, -1));
+
+        LabelJ1.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
+        LabelJ1.setText("jLabel3");
+        getContentPane().add(LabelJ1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 180, -1, -1));
+
+        LabelJ2.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
+        LabelJ2.setText("jLabel4");
+        getContentPane().add(LabelJ2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 230, -1, -1));
+
+        jLabel5.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
+        jLabel5.setText("Joueur courant :");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 300, -1, -1));
+
+        LabelJC.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
+        LabelJC.setText("jLabel3");
+        getContentPane().add(LabelJC, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 300, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -212,6 +263,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         else {
             joueurCourant = ListeJoueurs[0];
         }
+        LabelJC.setText(joueurCourant.toString());
     }
     
     /**
@@ -251,6 +303,12 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Bouton_Arreter;
+    private javax.swing.JLabel LabelJ1;
+    private javax.swing.JLabel LabelJ2;
+    private javax.swing.JLabel LabelJC;
     private javax.swing.JPanel Panel_PlateauDeJeu;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel5;
     // End of variables declaration//GEN-END:variables
 }

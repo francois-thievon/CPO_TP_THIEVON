@@ -886,6 +886,11 @@ public class Fenetre_choixJoueurs extends javax.swing.JFrame {
             Bouton_Kira.setEnabled(false);
             Bouton_Diavolo.setEnabled(false);
             Bouton_Pucci.setEnabled(false);
+            Bouton_Cesear.setEnabled(false);
+            Bouton_Polnareff.setEnabled(false);
+            Bouton_Koichi.setEnabled(false);
+            Bouton_Bucciarati.setEnabled(false);
+            Bouton_Ermes.setEnabled(false);
             BoutonLancerPartie.setEnabled(true);
         }
     }

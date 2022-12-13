@@ -31,6 +31,7 @@ public class Fenetre_Accueil extends javax.swing.JFrame {
         Jojo = new javax.swing.JLabel();
         BoutonRegle = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        BoutonMusique = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -63,6 +64,15 @@ public class Fenetre_Accueil extends javax.swing.JFrame {
         jLabel1.setText("Onitama");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 20, -1, -1));
 
+        BoutonMusique.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
+        BoutonMusique.setText("Musiques");
+        BoutonMusique.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BoutonMusiqueActionPerformed(evt);
+            }
+        });
+        getContentPane().add(BoutonMusique, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 730, 250, 70));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -77,6 +87,14 @@ public class Fenetre_Accueil extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_BoutonRegleActionPerformed
 
+    private void BoutonMusiqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonMusiqueActionPerformed
+        // TODO add your handling code here:
+        FenetreMusique musique = new FenetreMusique();
+        musique.setVisible(true);
+    }//GEN-LAST:event_BoutonMusiqueActionPerformed
+
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -114,6 +132,7 @@ public class Fenetre_Accueil extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton BoutonChoixPersos;
+    private javax.swing.JButton BoutonMusique;
     private javax.swing.JButton BoutonRegle;
     private javax.swing.JLabel Jojo;
     private javax.swing.JButton jButton9;

@@ -12,12 +12,21 @@ public class CaseDePlateau {
     
     private Pion pionCourant;
     private boolean temple;
+    boolean cible;
     
     
     public CaseDePlateau() {
         pionCourant = null;
         temple = false;
         
+    }
+    
+    public void enleverCible() {
+        cible = false;
+    }
+    
+    public void devenirCible() {
+        cible = true;
     }
     
     public void devenirTemple(){

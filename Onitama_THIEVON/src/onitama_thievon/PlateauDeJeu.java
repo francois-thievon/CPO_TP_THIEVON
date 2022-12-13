@@ -22,6 +22,10 @@ public class PlateauDeJeu {
         Plateau[4][2].devenirTemple();
     }
     
+    public void affecterPion(Pion p, int x, int y) {
+        Plateau[y][x].affecterPion(p);
+    }
+    
     public boolean deplacerPion(int x, int y, int X, int Y) {
         Pion piontmp = new Pion(1, false);
         if (Plateau[y][x].avoirPion() == true) {
@@ -63,9 +67,11 @@ public class PlateauDeJeu {
     public boolean RoiEquipe1mort() {
         for (int i = 0; i<5; i++) {
             for (int j = 0; j<5; j++) {
-                if (Plateau[i][j].renvoyerPion().avoirEquipe() == 1) {
-                    if (Plateau[i][j].renvoyerPion().etreLeRoi() == true) {
-                        return false;
+                if (Plateau[i][j].avoirPion() == true) {
+                    if (Plateau[i][j].renvoyerPion().avoirEquipe() == 1) {
+                        if (Plateau[i][j].renvoyerPion().etreLeRoi() == true) {
+                            return false;
+                        }
                     }
                 }
             }
@@ -76,13 +82,52 @@ public class PlateauDeJeu {
     public boolean RoiEquipe2mort() {
         for (int i = 0; i<5; i++) {
             for (int j = 0; j<5; j++) {
-                if (Plateau[i][j].renvoyerPion().avoirEquipe() == 2) {
-                    if (Plateau[i][j].renvoyerPion().etreLeRoi() == true) {
-                        return false;
+                if (Plateau[i][j].avoirPion() == true) {
+                    if (Plateau[i][j].renvoyerPion().avoirEquipe() == 2) {
+                        if (Plateau[i][j].renvoyerPion().etreLeRoi() == true) {
+                            return false;
+                        }
                     }
                 }
             }
         }
         return true;
     }
+    
+    public boolean PionEquipe1surTemple2() {
+        if (Plateau[4][2].avoirPion() == true) {
+            if (Plateau[4][2].renvoyerPion().avoirEquipe() == 1) {
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    public boolean PionEquipe2surTemple1() {
+        if (Plateau[0][2].avoirPion() == true) {
+            if (Plateau[0][2].renvoyerPion().avoirEquipe() == 2) {
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    public boolean plateauGagnantPourEquipe1() {
+        if (RoiEquipe2mort() == true || PionEquipe1surTemple2() == true) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+    
+    public boolean plateauGagnantPourEquipe2() {
+        if (RoiEquipe1mort() == true || PionEquipe2surTemple1() == true) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+    
 }
