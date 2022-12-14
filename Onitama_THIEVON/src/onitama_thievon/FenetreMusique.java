@@ -60,6 +60,7 @@ public class FenetreMusique extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
+        BtnQuitter = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -235,6 +236,14 @@ public class FenetreMusique extends javax.swing.JFrame {
         jLabel12.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
         jLabel12.setText("Jojo's Bizarre Adventure OST");
 
+        BtnQuitter.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
+        BtnQuitter.setText("Quitter");
+        BtnQuitter.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnQuitterActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -258,9 +267,6 @@ public class FenetreMusique extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel11)
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel10)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel5)
@@ -280,7 +286,12 @@ public class FenetreMusique extends javax.swing.JFrame {
                             .addComponent(BtnThemeJoseph)
                             .addComponent(BtnThemeJonathan)
                             .addComponent(BtnThemeJosuke))
-                        .addGap(347, 347, 347))))
+                        .addGap(347, 347, 347))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel10)
+                        .addGap(311, 311, 311)
+                        .addComponent(BtnQuitter)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
             .addGroup(layout.createSequentialGroup()
                 .addGap(428, 428, 428)
                 .addComponent(jLabel12)
@@ -352,15 +363,16 @@ public class FenetreMusique extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BtnOP9)
                     .addComponent(jLabel9))
-                .addGap(48, 48, 48)
+                .addGap(53, 53, 53)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BtnOP10)
-                    .addComponent(jLabel10))
+                    .addComponent(jLabel10)
+                    .addComponent(BtnQuitter))
                 .addGap(41, 41, 41)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(jLabel11))
-                .addContainerGap(42, Short.MAX_VALUE))
+                .addContainerGap(37, Short.MAX_VALUE))
         );
 
         pack();
@@ -451,6 +463,11 @@ public class FenetreMusique extends javax.swing.JFrame {
         PlayMusic("Heaven's falling down.wav");
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void BtnQuitterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnQuitterActionPerformed
+        // TODO add your handling code here:
+        FenetreMusique.super.dispose();
+    }//GEN-LAST:event_BtnQuitterActionPerformed
+
     
     public static void PlayMusic(String location) {
         try {
@@ -516,6 +533,7 @@ public class FenetreMusique extends javax.swing.JFrame {
     private javax.swing.JButton BtnOP7;
     private javax.swing.JButton BtnOP8;
     private javax.swing.JButton BtnOP9;
+    private javax.swing.JButton BtnQuitter;
     private javax.swing.JButton BtnThemeGiorno;
     private javax.swing.JButton BtnThemeJolyne;
     private javax.swing.JButton BtnThemeJonathan;

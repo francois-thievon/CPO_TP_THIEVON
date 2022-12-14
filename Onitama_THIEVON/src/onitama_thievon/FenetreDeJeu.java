@@ -4,6 +4,8 @@
  */
 package onitama_thievon;
 
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author thiev
@@ -98,11 +100,30 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         }while(z == false);
         
 
-        carteJ1nb1 = listeCartes[rdm1];
+        carteJ1nb1 = listeCartes[12];
         carteJ1nb2 = listeCartes[rdm2];
         carteJ2nb1 = listeCartes[rdm3];
         carteJ2nb2 = listeCartes[rdm4];
         carteFlottante = listeCartes[rdm5];
+        
+        /*
+        ImageIcon Carte_EP  = new javax.swing.ImageIcon(getClass().getResource("/images/Carte_EP.JPG"));
+        ImageIcon Carte_HP  = new javax.swing.ImageIcon(getClass().getResource("/images/Carte_HP.JPG"));
+        ImageIcon Carte_SL  = new javax.swing.ImageIcon(getClass().getResource("/images/CarteSC.JPG"));
+        ImageIcon Carte_SP  = new javax.swing.ImageIcon(getClass().getResource("/images/Carte_SP.JPG"));
+        ImageIcon Carte_SC  = new javax.swing.ImageIcon(getClass().getResource("/images/Carte_SC.JPG"));
+        ImageIcon Carte_CD  = new javax.swing.ImageIcon(getClass().getResource("/images/Carte_CD.JPG"));
+        ImageIcon Carte_A3  = new javax.swing.ImageIcon(getClass().getResource("/images/Carte_A3.JPG"));
+        ImageIcon Carte_GE  = new javax.swing.ImageIcon(getClass().getResource("/images/Carte_GE.JPG"));
+        ImageIcon Carte_StF = new javax.swing.ImageIcon(getClass().getResource("/images/Carte_StF.JPG"));
+        ImageIcon Carte_SF  = new javax.swing.ImageIcon(getClass().getResource("/images/Carte_SF.JPG"));
+        ImageIcon Carte_K   = new javax.swing.ImageIcon(getClass().getResource("/images/Carte_K.JPG"));
+        ImageIcon Carte_MP  = new javax.swing.ImageIcon(getClass().getResource("/images/Carte_MP.JPG"));
+        ImageIcon Carte_TW  = new javax.swing.ImageIcon(getClass().getResource("/images/Carte_TW.JPG"));
+        ImageIcon Carte_KQ  = new javax.swing.ImageIcon(getClass().getResource("/images/Carte_KQ.JPG"));
+        ImageIcon Carte_KC  = new javax.swing.ImageIcon(getClass().getResource("/images/Carte_KC.JPG"));
+        ImageIcon Carte_WS  = new javax.swing.ImageIcon(getClass().getResource("/images/Carte_WS.jpg"));
+        */
 
         
        
@@ -134,7 +155,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         
         for (int i = 4; i>=0; i--) {
             for (int j = 0; j<5; j++) {
-                CaseGraphique caseGraph = new CaseGraphique(PlateauDeJeu.Plateau[i][j]);
+                CaseGraphique caseGraph = new CaseGraphique(PlateauDeJeu.Plateau[i][j], i, j);
                 
                 caseGraph.addActionListener(new java.awt.event.ActionListener() {
                     public void actionPerformed(java.awt.event.ActionEvent evt){
@@ -206,6 +227,10 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         LabelJ2 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         LabelJC = new javax.swing.JLabel();
+        Carte1J1 = new javax.swing.JLabel();
+        Carte2J1 = new javax.swing.JLabel();
+        Carte1J2 = new javax.swing.JLabel();
+        Carte2J2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -246,6 +271,12 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         LabelJC.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
         LabelJC.setText("jLabel3");
         getContentPane().add(LabelJC, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 300, -1, -1));
+
+        Carte1J1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/CarteStF.JPG"))); // NOI18N
+        getContentPane().add(Carte1J1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 410, -1, -1));
+        getContentPane().add(Carte2J1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 690, -1, -1));
+        getContentPane().add(Carte1J2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1630, 220, -1, -1));
+        getContentPane().add(Carte2J2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1620, 550, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -303,6 +334,10 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Bouton_Arreter;
+    private javax.swing.JLabel Carte1J1;
+    private javax.swing.JLabel Carte1J2;
+    private javax.swing.JLabel Carte2J1;
+    private javax.swing.JLabel Carte2J2;
     private javax.swing.JLabel LabelJ1;
     private javax.swing.JLabel LabelJ2;
     private javax.swing.JLabel LabelJC;

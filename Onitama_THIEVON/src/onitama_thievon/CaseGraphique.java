@@ -12,6 +12,10 @@ import javax.swing.ImageIcon;
  * @author thiev
  */
 public class CaseGraphique extends JButton{
+    
+    int X;
+    int Y;
+    
     CaseDePlateau caseAssociee;
     ImageIcon Case_vide           = new javax.swing.ImageIcon(getClass().getResource("/images/Case.jpg"));
     ImageIcon Temple_vide         = new javax.swing.ImageIcon(getClass().getResource("/images/Temple.jpg"));
@@ -81,7 +85,11 @@ public class CaseGraphique extends JButton{
     ImageIcon TempleRoiErmes      = new javax.swing.ImageIcon(getClass().getResource("/images/TempleRoiErmes.jpg"));
 
     
-    public CaseGraphique(CaseDePlateau uneCase){
+    public CaseGraphique(CaseDePlateau uneCase, int px, int py){
+        
+        X = px;
+        Y = py;
+        
         caseAssociee = uneCase;
     }
     
@@ -307,5 +315,7 @@ public class CaseGraphique extends JButton{
                 setIcon(Case_vide);
             }
         }
-    }         
+    }
+    
+    
 }
