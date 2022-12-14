@@ -69,7 +69,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         initComponents();
         
         int a = (int)(Math.random()*2);
-        joueurCourant = ListeJoueurs[0];
+        joueurCourant = ListeJoueurs[a];
         
         LabelJ1.setText(J1.toString());
         LabelJ2.setText(J2.toString());
@@ -173,7 +173,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
                                         y3 = cartetmp.d3Y;
                                         x4 = cartetmp.d4X;
                                         y4 = cartetmp.d4Y;
-                                        piontmp = c.renvoyerEtSupprimerPion();
+                                        piontmp = c.renvoyerPion();
                                         Panel_PlateauDeJeu.repaint();
                                         deplacer = true;
                                         
@@ -195,7 +195,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
                                         y3 = -cartetmp.d3Y;
                                         x4 = -cartetmp.d4X;
                                         y4 = -cartetmp.d4Y;
-                                        piontmp = c.renvoyerEtSupprimerPion();
+                                        piontmp = c.renvoyerPion();
                                         Panel_PlateauDeJeu.repaint();
                                         deplacer = true;
                                         
@@ -210,28 +210,50 @@ public class FenetreDeJeu extends javax.swing.JFrame {
                         else {
                             if (caseGraph.X == (Xtmp + y1) && caseGraph.Y == (Ytmp + x1)) {
                                 c.affecterPion(piontmp);
+                                PlateauDeJeu.Plateau[Xtmp][Ytmp].supprimerPion();
                                 Panel_PlateauDeJeu.repaint();
+                                deplacer = false;
+                                changerJoueurCourant();
+                                changerCarte(cartetmp);
+                                cartetmp = null;
 
                             }
                             if (caseGraph.X == (Xtmp + y2) && caseGraph.Y == (Ytmp + x2)) {
                                 c.affecterPion(piontmp);
+                                PlateauDeJeu.Plateau[Xtmp][Ytmp].supprimerPion();
                                 Panel_PlateauDeJeu.repaint();
+                                deplacer = false;
+                                changerJoueurCourant();
+                                changerCarte(cartetmp);
+                                cartetmp = null;
 
                             }
                             if (caseGraph.X == (Xtmp + y3) && caseGraph.Y == (Ytmp + x3)) {
                                 c.affecterPion(piontmp);
+                                PlateauDeJeu.Plateau[Xtmp][Ytmp].supprimerPion();
                                 Panel_PlateauDeJeu.repaint();
+                                deplacer = false;
+                                changerJoueurCourant();
+                                changerCarte(cartetmp);
+                                cartetmp = null;
 
                             }
                             if (caseGraph.X == (Xtmp + y4) && caseGraph.Y == (Ytmp + x4)) {
                                 c.affecterPion(piontmp);
+                                PlateauDeJeu.Plateau[Xtmp][Ytmp].supprimerPion();
                                 Panel_PlateauDeJeu.repaint();
+                                deplacer = false;
+                                changerJoueurCourant();
+                                changerCarte(cartetmp);
+                                cartetmp = null;
 
                             }
-                            deplacer = false;
-                            changerJoueurCourant();
-                            changerCarte(cartetmp);
-                            cartetmp = null;
+                            if (PlateauDeJeu.plateauGagnantPourEquipe1() == true) {
+                                FenetreDeJeu.super.dispose();
+                            }
+                            if (PlateauDeJeu.plateauGagnantPourEquipe2() == true) {
+                                FenetreDeJeu.super.dispose();
+                            }
                         }
                         
                         
@@ -280,71 +302,71 @@ public class FenetreDeJeu extends javax.swing.JFrame {
                 Bouton_ArreterActionPerformed(evt);
             }
         });
-        getContentPane().add(Bouton_Arreter, new org.netbeans.lib.awtextra.AbsoluteConstraints(1770, 980, -1, -1));
+        getContentPane().add(Bouton_Arreter, new org.netbeans.lib.awtextra.AbsoluteConstraints(1700, 1010, -1, -1));
 
         Panel_PlateauDeJeu.setBackground(new java.awt.Color(102, 102, 102));
         Panel_PlateauDeJeu.setPreferredSize(new java.awt.Dimension(900, 900));
         Panel_PlateauDeJeu.setLayout(new java.awt.GridLayout(5, 5));
-        getContentPane().add(Panel_PlateauDeJeu, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 60, -1, -1));
+        getContentPane().add(Panel_PlateauDeJeu, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 80, -1, -1));
 
         jLabel1.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
         jLabel1.setText("Joueur  1:");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 180, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 90, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
         jLabel2.setText("Joueur 2:");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 230, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1730, 80, -1, -1));
 
         LabelJ1.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
         LabelJ1.setText("jLabel3");
-        getContentPane().add(LabelJ1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 180, -1, -1));
+        getContentPane().add(LabelJ1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 140, -1, -1));
 
         LabelJ2.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
         LabelJ2.setText("jLabel4");
-        getContentPane().add(LabelJ2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 230, -1, -1));
+        getContentPane().add(LabelJ2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1730, 130, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
         jLabel5.setText("Joueur courant :");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 300, -1, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1370, 50, -1, -1));
 
         LabelJC.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
         LabelJC.setText("jLabel3");
-        getContentPane().add(LabelJC, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 300, -1, -1));
+        getContentPane().add(LabelJC, new org.netbeans.lib.awtextra.AbsoluteConstraints(1430, 100, -1, -1));
 
         Carte1J1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Carte1J1ActionPerformed(evt);
             }
         });
-        getContentPane().add(Carte1J1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 430, 435, 250));
+        getContentPane().add(Carte1J1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 190, 435, 250));
 
         Carte2J1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Carte2J1ActionPerformed(evt);
             }
         });
-        getContentPane().add(Carte2J1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 710, 435, 250));
+        getContentPane().add(Carte2J1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 450, 435, 250));
 
         Carte1J2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Carte1J2ActionPerformed(evt);
             }
         });
-        getContentPane().add(Carte1J2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1440, 460, 435, 250));
+        getContentPane().add(Carte1J2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1480, 190, 435, 250));
 
         Carte2J2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Carte2J2ActionPerformed(evt);
             }
         });
-        getContentPane().add(Carte2J2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1440, 730, 435, 250));
+        getContentPane().add(Carte2J2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1480, 450, 435, 250));
 
         CartePioche.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CartePiocheActionPerformed(evt);
             }
         });
-        getContentPane().add(CartePioche, new org.netbeans.lib.awtextra.AbsoluteConstraints(1430, 130, 416, 234));
+        getContentPane().add(CartePioche, new org.netbeans.lib.awtextra.AbsoluteConstraints(1260, 720, 416, 234));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -396,7 +418,9 @@ public class FenetreDeJeu extends javax.swing.JFrame {
     }//GEN-LAST:event_CartePiocheActionPerformed
 
     
-    
+    public void retournerPlateau() {
+
+    }
     
     public void changerCarte(Carte c) {
         if (c == carteJ1nb1) {
