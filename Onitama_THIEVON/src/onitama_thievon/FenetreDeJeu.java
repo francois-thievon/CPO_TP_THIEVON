@@ -4,7 +4,9 @@
  */
 package onitama_thievon;
 
-import javax.swing.ImageIcon;
+import java.awt.Color;
+
+
 
 /**
  *
@@ -22,7 +24,20 @@ public class FenetreDeJeu extends javax.swing.JFrame {
     Carte carteJ2nb1;
     Carte carteJ2nb2;
     Carte carteFlottante;
-    Pion p = null;
+    
+    boolean deplacer = false;
+    Pion piontmp = null;
+    Carte cartetmp = null;
+    int Xtmp;
+    int Ytmp;
+    int x1;
+    int y1;
+    int x2;
+    int y2;
+    int x3;
+    int y3;
+    int x4;
+    int y4;
             
     Carte carteStarPlatinium     = new Carte("Star Platinium"  , 2,  1,  -2, 1,  1,  -1, -1, -1);
     Carte carteCrazyDiamond      = new Carte("Crazy Diamond"   , 1,  1,  1,  0,  -1, 0,  -1, -1);
@@ -54,7 +69,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         initComponents();
         
         int a = (int)(Math.random()*2);
-        joueurCourant = ListeJoueurs[a];
+        joueurCourant = ListeJoueurs[0];
         
         LabelJ1.setText(J1.toString());
         LabelJ2.setText(J2.toString());
@@ -100,31 +115,13 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         }while(z == false);
         
 
-        carteJ1nb1 = listeCartes[12];
+        carteJ1nb1 = listeCartes[rdm1];
         carteJ1nb2 = listeCartes[rdm2];
         carteJ2nb1 = listeCartes[rdm3];
         carteJ2nb2 = listeCartes[rdm4];
         carteFlottante = listeCartes[rdm5];
         
-        /*
-        ImageIcon Carte_EP  = new javax.swing.ImageIcon(getClass().getResource("/images/Carte_EP.JPG"));
-        ImageIcon Carte_HP  = new javax.swing.ImageIcon(getClass().getResource("/images/Carte_HP.JPG"));
-        ImageIcon Carte_SL  = new javax.swing.ImageIcon(getClass().getResource("/images/CarteSC.JPG"));
-        ImageIcon Carte_SP  = new javax.swing.ImageIcon(getClass().getResource("/images/Carte_SP.JPG"));
-        ImageIcon Carte_SC  = new javax.swing.ImageIcon(getClass().getResource("/images/Carte_SC.JPG"));
-        ImageIcon Carte_CD  = new javax.swing.ImageIcon(getClass().getResource("/images/Carte_CD.JPG"));
-        ImageIcon Carte_A3  = new javax.swing.ImageIcon(getClass().getResource("/images/Carte_A3.JPG"));
-        ImageIcon Carte_GE  = new javax.swing.ImageIcon(getClass().getResource("/images/Carte_GE.JPG"));
-        ImageIcon Carte_StF = new javax.swing.ImageIcon(getClass().getResource("/images/Carte_StF.JPG"));
-        ImageIcon Carte_SF  = new javax.swing.ImageIcon(getClass().getResource("/images/Carte_SF.JPG"));
-        ImageIcon Carte_K   = new javax.swing.ImageIcon(getClass().getResource("/images/Carte_K.JPG"));
-        ImageIcon Carte_MP  = new javax.swing.ImageIcon(getClass().getResource("/images/Carte_MP.JPG"));
-        ImageIcon Carte_TW  = new javax.swing.ImageIcon(getClass().getResource("/images/Carte_TW.JPG"));
-        ImageIcon Carte_KQ  = new javax.swing.ImageIcon(getClass().getResource("/images/Carte_KQ.JPG"));
-        ImageIcon Carte_KC  = new javax.swing.ImageIcon(getClass().getResource("/images/Carte_KC.JPG"));
-        ImageIcon Carte_WS  = new javax.swing.ImageIcon(getClass().getResource("/images/Carte_WS.jpg"));
-        */
-
+        afficherCartes();
         
        
         
@@ -161,47 +158,87 @@ public class FenetreDeJeu extends javax.swing.JFrame {
                     public void actionPerformed(java.awt.event.ActionEvent evt){
                         
                         CaseDePlateau c = caseGraph.caseAssociee;
-                        if (c.avoirPion() == true){
-                            if (p == null) {
-                                if (joueurCourant.avoirEquipe() == c.renvoyerPion().avoirEquipe()) {
-                                    p = c.renvoyerEtSupprimerPion();
-                                    Panel_PlateauDeJeu.repaint();
-                                }
-                            }
-                            else if (p != null) {
-                                if (joueurCourant.avoirEquipe() != c.renvoyerPion().avoirEquipe()) {
-                                    c.supprimerPion();
-                                    c.affecterPion(p);
-                                    p = null;
-                                    Panel_PlateauDeJeu.repaint();
-                                    changerJoueurCourant();
-                                    if (PlateauDeJeu.plateauGagnantPourEquipe1() == true) {
-                                        System.out.println("Victoire J1");
-                                        FenetreDeJeu.super.dispose();
+                                                
+                        if (deplacer == false) {
+                            if (c.avoirPion() == true) {
+                                if (c.renvoyerPion().renvoyerJoueur() == J1) {
+                                    if (cartetmp != null) {
+                                        Xtmp = caseGraph.X;
+                                        Ytmp = caseGraph.Y;
+                                        x1 = cartetmp.d1X;
+                                        y1 = cartetmp.d1Y;
+                                        x2 = cartetmp.d2X;
+                                        y2 = cartetmp.d2Y;
+                                        x3 = cartetmp.d3X;
+                                        y3 = cartetmp.d3Y;
+                                        x4 = cartetmp.d4X;
+                                        y4 = cartetmp.d4Y;
+                                        piontmp = c.renvoyerEtSupprimerPion();
+                                        Panel_PlateauDeJeu.repaint();
+                                        deplacer = true;
+                                        
                                     }
-                                    if (PlateauDeJeu.plateauGagnantPourEquipe2() == true) {
-                                        System.out.println("Victoire J2");
-                                        FenetreDeJeu.super.dispose();
+                                    else {
+                                        System.out.println("saisissez d'abord une carte");
+                                    }
+                                    
+                                }
+                                else if (c.renvoyerPion().renvoyerJoueur() == J2) {
+                                    if (cartetmp != null) {
+                                        Xtmp = caseGraph.X;
+                                        Ytmp = caseGraph.Y;
+                                        x1 = -cartetmp.d1X;
+                                        y1 = -cartetmp.d1Y;
+                                        x2 = -cartetmp.d2X;
+                                        y2 = -cartetmp.d2Y;
+                                        x3 = -cartetmp.d3X;
+                                        y3 = -cartetmp.d3Y;
+                                        x4 = -cartetmp.d4X;
+                                        y4 = -cartetmp.d4Y;
+                                        piontmp = c.renvoyerEtSupprimerPion();
+                                        Panel_PlateauDeJeu.repaint();
+                                        deplacer = true;
+                                        
+                                    }
+                                    else {
+                                        System.out.println("saisissez d'abord une carte");
                                     }
                                 }
+                                
                             }
                         }
                         else {
-                            if (p != null) {
-                                c.affecterPion(p);
-                                p = null;
+                            if (caseGraph.X == (Xtmp + y1) && caseGraph.Y == (Ytmp + x1)) {
+                                c.affecterPion(piontmp);
                                 Panel_PlateauDeJeu.repaint();
-                                changerJoueurCourant();
-                                if (PlateauDeJeu.plateauGagnantPourEquipe1() == true) {
-                                    System.out.println("Victoire J1");
-                                    FenetreDeJeu.super.dispose();
-                                }
-                                if (PlateauDeJeu.plateauGagnantPourEquipe2() == true) {
-                                    System.out.println("Victoire J2");
-                                    FenetreDeJeu.super.dispose();
-                                }
+
                             }
+                            if (caseGraph.X == (Xtmp + y2) && caseGraph.Y == (Ytmp + x2)) {
+                                c.affecterPion(piontmp);
+                                Panel_PlateauDeJeu.repaint();
+
+                            }
+                            if (caseGraph.X == (Xtmp + y3) && caseGraph.Y == (Ytmp + x3)) {
+                                c.affecterPion(piontmp);
+                                Panel_PlateauDeJeu.repaint();
+
+                            }
+                            if (caseGraph.X == (Xtmp + y4) && caseGraph.Y == (Ytmp + x4)) {
+                                c.affecterPion(piontmp);
+                                Panel_PlateauDeJeu.repaint();
+
+                            }
+                            deplacer = false;
+                            changerJoueurCourant();
+                            changerCarte(cartetmp);
+                            cartetmp = null;
                         }
+                        
+                        
+                        
+                        
+                        
+                        
                     }
                 });
                 Panel_PlateauDeJeu.add(caseGraph);
@@ -209,6 +246,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         }
         
     }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -227,10 +265,11 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         LabelJ2 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         LabelJC = new javax.swing.JLabel();
-        Carte1J1 = new javax.swing.JLabel();
-        Carte2J1 = new javax.swing.JLabel();
-        Carte1J2 = new javax.swing.JLabel();
-        Carte2J2 = new javax.swing.JLabel();
+        Carte1J1 = new javax.swing.JButton();
+        Carte2J1 = new javax.swing.JButton();
+        Carte1J2 = new javax.swing.JButton();
+        Carte2J2 = new javax.swing.JButton();
+        CartePioche = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -241,12 +280,12 @@ public class FenetreDeJeu extends javax.swing.JFrame {
                 Bouton_ArreterActionPerformed(evt);
             }
         });
-        getContentPane().add(Bouton_Arreter, new org.netbeans.lib.awtextra.AbsoluteConstraints(1680, 820, -1, -1));
+        getContentPane().add(Bouton_Arreter, new org.netbeans.lib.awtextra.AbsoluteConstraints(1770, 980, -1, -1));
 
         Panel_PlateauDeJeu.setBackground(new java.awt.Color(102, 102, 102));
         Panel_PlateauDeJeu.setPreferredSize(new java.awt.Dimension(900, 900));
         Panel_PlateauDeJeu.setLayout(new java.awt.GridLayout(5, 5));
-        getContentPane().add(Panel_PlateauDeJeu, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 50, -1, -1));
+        getContentPane().add(Panel_PlateauDeJeu, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 60, -1, -1));
 
         jLabel1.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
         jLabel1.setText("Joueur  1:");
@@ -272,11 +311,40 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         LabelJC.setText("jLabel3");
         getContentPane().add(LabelJC, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 300, -1, -1));
 
-        Carte1J1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/CarteStF.JPG"))); // NOI18N
-        getContentPane().add(Carte1J1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 410, -1, -1));
-        getContentPane().add(Carte2J1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 690, -1, -1));
-        getContentPane().add(Carte1J2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1630, 220, -1, -1));
-        getContentPane().add(Carte2J2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1620, 550, -1, -1));
+        Carte1J1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Carte1J1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Carte1J1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 430, 435, 250));
+
+        Carte2J1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Carte2J1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Carte2J1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 710, 435, 250));
+
+        Carte1J2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Carte1J2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Carte1J2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1440, 460, 435, 250));
+
+        Carte2J2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Carte2J2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Carte2J2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1440, 730, 435, 250));
+
+        CartePioche.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CartePiocheActionPerformed(evt);
+            }
+        });
+        getContentPane().add(CartePioche, new org.netbeans.lib.awtextra.AbsoluteConstraints(1430, 130, 416, 234));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -286,6 +354,337 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         FenetreDeJeu.super.dispose();
     }//GEN-LAST:event_Bouton_ArreterActionPerformed
 
+    private void Carte1J1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Carte1J1ActionPerformed
+        // TODO add your handling code here:
+        if (joueurCourant.avoirEquipe() == 1) {
+            cartetmp = carteJ1nb1;
+            Carte1J1.setBackground(Color.CYAN);
+            Carte2J1.setBackground(Color.WHITE);
+            
+        }
+    }//GEN-LAST:event_Carte1J1ActionPerformed
+
+    private void Carte2J1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Carte2J1ActionPerformed
+        // TODO add your handling code here:
+        if (joueurCourant.avoirEquipe() == 1) {
+            cartetmp = carteJ1nb2;
+            Carte2J1.setBackground(Color.CYAN);
+            Carte1J1.setBackground(Color.WHITE);
+        }
+    }//GEN-LAST:event_Carte2J1ActionPerformed
+
+    private void Carte1J2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Carte1J2ActionPerformed
+        // TODO add your handling code here:
+        if (joueurCourant.avoirEquipe() == 2) {
+            cartetmp = carteJ2nb1;
+            Carte1J2.setBackground(Color.CYAN);
+            Carte2J2.setBackground(Color.WHITE);
+        }
+    }//GEN-LAST:event_Carte1J2ActionPerformed
+
+    private void Carte2J2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Carte2J2ActionPerformed
+        // TODO add your handling code here:
+        if (joueurCourant.avoirEquipe() == 2) {
+            cartetmp = carteJ2nb2;
+            Carte2J2.setBackground(Color.CYAN);
+            Carte1J2.setBackground(Color.WHITE);
+        }
+    }//GEN-LAST:event_Carte2J2ActionPerformed
+
+    private void CartePiocheActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CartePiocheActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CartePiocheActionPerformed
+
+    
+    
+    
+    public void changerCarte(Carte c) {
+        if (c == carteJ1nb1) {
+            Carte cartetmp = carteFlottante;
+            carteFlottante = carteJ1nb1;
+            carteJ1nb1 = cartetmp;
+            afficherCartes();
+        }
+        if (c == carteJ1nb2) {
+            Carte cartetmp = carteFlottante;
+            carteFlottante = carteJ1nb2;
+            carteJ1nb2 = cartetmp;
+            afficherCartes();
+        }
+        if (c == carteJ2nb1) {
+            Carte cartetmp = carteFlottante;
+            carteFlottante = carteJ2nb1;
+            carteJ2nb1 = cartetmp;
+            afficherCartes();
+        }
+        if (c == carteJ2nb2) {
+            Carte cartetmp = carteFlottante;
+            carteFlottante = carteJ2nb2;
+            carteJ2nb2 = cartetmp;
+            afficherCartes();
+        }
+        Carte1J1.setBackground(Color.WHITE);
+        Carte2J1.setBackground(Color.WHITE);
+        Carte1J2.setBackground(Color.WHITE);
+        Carte2J2.setBackground(Color.WHITE);
+    }
+    
+    
+    public void afficherCartes() {
+        if (carteJ1nb1 == carteStarPlatinium) {
+            Carte1J1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_SP.JPG")));
+        }
+        if (carteJ1nb1 == carteCrazyDiamond) {
+            Carte1J1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_CD.JPG")));
+        }
+        if (carteJ1nb1 == carteGoldExperience) {
+            Carte1J1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_GE.JPG")));
+        }
+        if (carteJ1nb1 == carteStoneFree) {
+            Carte1J1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_SF.JPG")));
+        }
+        if (carteJ1nb1 == carteTheWorld) {
+            Carte1J1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_TW.JPG")));
+        }
+        if (carteJ1nb1 == carteKillerQueen) {
+            Carte1J1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_KQ.JPG")));
+        }
+        if (carteJ1nb1 == carteKingCrimson) {
+            Carte1J1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_KC.JPG")));
+        }
+        if (carteJ1nb1 == carteWhiteSnake) {
+            Carte1J1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_WS.jpg")));
+        }
+        if (carteJ1nb1 == carteSilverChariot) {
+            Carte1J1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_SC.JPG")));
+        }
+        if (carteJ1nb1 == carteEchoesAct3) {
+            Carte1J1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_A3.JPG")));
+        }
+        if (carteJ1nb1 == carteStickyFingers) {
+            Carte1J1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/CarteStF.JPG")));
+        }
+        if (carteJ1nb1 == carteKiss) {
+            Carte1J1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_K.JPG")));
+        }
+        if (carteJ1nb1 == carteEpeePluck) {
+            Carte1J1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_EP.JPG")));
+        }
+        if (carteJ1nb1 == carteHermitPurple) {
+            Carte1J1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_HP.JPG")));
+        }
+        if (carteJ1nb1 == carteSavonLauncher) {
+            Carte1J1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/CarteSC.JPG")));
+        }
+        if (carteJ1nb1 == carteMasquePierre) {
+            Carte1J1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_MP.JPG")));
+        }
+        
+        
+        
+        if (carteJ1nb2 == carteStarPlatinium) {
+            Carte2J1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_SP.JPG")));
+        }
+        if (carteJ1nb2 == carteCrazyDiamond) {
+            Carte2J1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_CD.JPG")));
+        }
+        if (carteJ1nb2 == carteGoldExperience) {
+            Carte2J1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_GE.JPG")));
+        }
+        if (carteJ1nb2 == carteStoneFree) {
+            Carte2J1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_SF.JPG")));
+        }
+        if (carteJ1nb2 == carteTheWorld) {
+            Carte2J1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_TW.JPG")));
+        }
+        if (carteJ1nb2 == carteKillerQueen) {
+            Carte2J1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_KQ.JPG")));
+        }
+        if (carteJ1nb2 == carteKingCrimson) {
+            Carte2J1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_KC.JPG")));
+        }
+        if (carteJ1nb2 == carteWhiteSnake) {
+            Carte2J1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_WS.jpg")));
+        }
+        if (carteJ1nb2 == carteSilverChariot) {
+            Carte2J1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_SC.JPG")));
+        }
+        if (carteJ1nb2 == carteEchoesAct3) {
+            Carte2J1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_A3.JPG")));
+        }
+        if (carteJ1nb2 == carteStickyFingers) {
+            Carte2J1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/CarteStF.JPG")));
+        }
+        if (carteJ1nb2 == carteKiss) {
+            Carte2J1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_K.JPG")));
+        }
+        if (carteJ1nb2 == carteEpeePluck) {
+            Carte2J1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_EP.JPG")));
+        }
+        if (carteJ1nb2 == carteHermitPurple) {
+            Carte2J1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_HP.JPG")));
+        }
+        if (carteJ1nb2 == carteSavonLauncher) {
+            Carte2J1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/CarteSC.JPG")));
+        }
+        if (carteJ1nb2 == carteMasquePierre) {
+            Carte2J1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_MP.JPG")));
+        }
+        
+        
+        
+        if (carteJ2nb1 == carteStarPlatinium) {
+            Carte1J2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_SP.JPG")));
+        }
+        if (carteJ2nb1 == carteCrazyDiamond) {
+            Carte1J2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_CD.JPG")));
+        }
+        if (carteJ2nb1 == carteGoldExperience) {
+            Carte1J2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_GE.JPG")));
+        }
+        if (carteJ2nb1 == carteStoneFree) {
+            Carte1J2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_SF.JPG")));
+        }
+        if (carteJ2nb1 == carteTheWorld) {
+            Carte1J2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_TW.JPG")));
+        }
+        if (carteJ2nb1 == carteKillerQueen) {
+            Carte1J2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_KQ.JPG")));
+        }
+        if (carteJ2nb1 == carteKingCrimson) {
+            Carte1J2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_KC.JPG")));
+        }
+        if (carteJ2nb1 == carteWhiteSnake) {
+            Carte1J2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_WS.jpg")));
+        }
+        if (carteJ2nb1 == carteSilverChariot) {
+            Carte1J2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_SC.JPG")));
+        }
+        if (carteJ2nb1 == carteEchoesAct3) {
+            Carte1J2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_A3.JPG")));
+        }
+        if (carteJ2nb1 == carteStickyFingers) {
+            Carte1J2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/CarteStF.JPG")));
+        }
+        if (carteJ2nb1 == carteKiss) {
+            Carte1J2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_K.JPG")));
+        }
+        if (carteJ2nb1 == carteEpeePluck) {
+            Carte1J2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_EP.JPG")));
+        }
+        if (carteJ2nb1 == carteHermitPurple) {
+            Carte1J2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_HP.JPG")));
+        }
+        if (carteJ2nb1 == carteSavonLauncher) {
+            Carte1J2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/CarteSC.JPG")));
+        }
+        if (carteJ2nb1 == carteMasquePierre) {
+            Carte1J2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_MP.JPG")));
+        }
+        
+        
+        
+        if (carteJ2nb2 == carteStarPlatinium) {
+            Carte2J2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_SP.JPG")));
+        }
+        if (carteJ2nb2 == carteCrazyDiamond) {
+            Carte2J2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_CD.JPG")));
+        }
+        if (carteJ2nb2 == carteGoldExperience) {
+            Carte2J2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_GE.JPG")));
+        }
+        if (carteJ2nb2 == carteStoneFree) {
+            Carte2J2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_SF.JPG")));
+        }
+        if (carteJ2nb2 == carteTheWorld) {
+            Carte2J2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_TW.JPG")));
+        }
+        if (carteJ2nb2 == carteKillerQueen) {
+            Carte2J2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_KQ.JPG")));
+        }
+        if (carteJ2nb2 == carteKingCrimson) {
+            Carte2J2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_KC.JPG")));
+        }
+        if (carteJ2nb2 == carteWhiteSnake) {
+            Carte2J2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_WS.jpg")));
+        }
+        if (carteJ2nb2 == carteSilverChariot) {
+            Carte2J2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_SC.JPG")));
+        }
+        if (carteJ2nb2 == carteEchoesAct3) {
+            Carte2J2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_A3.JPG")));
+        }
+        if (carteJ2nb2 == carteStickyFingers) {
+            Carte2J2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/CarteStF.JPG")));
+        }
+        if (carteJ2nb2 == carteKiss) {
+            Carte2J2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_K.JPG")));
+        }
+        if (carteJ2nb2 == carteEpeePluck) {
+            Carte2J2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_EP.JPG")));
+        }
+        if (carteJ2nb2 == carteHermitPurple) {
+            Carte2J2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_HP.JPG")));
+        }
+        if (carteJ2nb2 == carteSavonLauncher) {
+            Carte2J2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/CarteSC.JPG")));
+        }
+        if (carteJ2nb2 == carteMasquePierre) {
+            Carte2J2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_MP.JPG")));
+        }
+        
+        
+        
+        if (carteFlottante == carteStarPlatinium) {
+            CartePioche.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_SP.JPG")));
+        }
+        if (carteFlottante == carteCrazyDiamond) {
+            CartePioche.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_CD.JPG")));
+        }
+        if (carteFlottante == carteGoldExperience) {
+            CartePioche.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_GE.JPG")));
+        }
+        if (carteFlottante == carteStoneFree) {
+            CartePioche.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_SF.JPG")));
+        }
+        if (carteFlottante == carteTheWorld) {
+            CartePioche.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_TW.JPG")));
+        }
+        if (carteFlottante == carteKillerQueen) {
+            CartePioche.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_KQ.JPG")));
+        }
+        if (carteFlottante == carteKingCrimson) {
+            CartePioche.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_KC.JPG")));
+        }
+        if (carteFlottante == carteWhiteSnake) {
+            CartePioche.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_WS.jpg")));
+        }
+        if (carteFlottante == carteSilverChariot) {
+            CartePioche.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_SC.JPG")));
+        }
+        if (carteFlottante == carteEchoesAct3) {
+            CartePioche.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_A3.JPG")));
+        }
+        if (carteFlottante == carteStickyFingers) {
+            CartePioche.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/CarteStF.JPG")));
+        }
+        if (carteFlottante == carteKiss) {
+            CartePioche.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_K.JPG")));
+        }
+        if (carteFlottante == carteEpeePluck) {
+            CartePioche.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_EP.JPG")));
+        }
+        if (carteFlottante == carteHermitPurple) {
+            CartePioche.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_HP.JPG")));
+        }
+        if (carteFlottante == carteSavonLauncher) {
+            CartePioche.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/CarteSC.JPG")));
+        }
+        if (carteFlottante == carteMasquePierre) {
+            CartePioche.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_MP.JPG")));
+        }
+    }
+    
     
     public void changerJoueurCourant() {
         if (joueurCourant == ListeJoueurs[0]) {
@@ -334,10 +733,11 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Bouton_Arreter;
-    private javax.swing.JLabel Carte1J1;
-    private javax.swing.JLabel Carte1J2;
-    private javax.swing.JLabel Carte2J1;
-    private javax.swing.JLabel Carte2J2;
+    private javax.swing.JButton Carte1J1;
+    private javax.swing.JButton Carte1J2;
+    private javax.swing.JButton Carte2J1;
+    private javax.swing.JButton Carte2J2;
+    private javax.swing.JButton CartePioche;
     private javax.swing.JLabel LabelJ1;
     private javax.swing.JLabel LabelJ2;
     private javax.swing.JLabel LabelJC;
