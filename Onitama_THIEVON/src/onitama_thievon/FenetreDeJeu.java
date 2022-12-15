@@ -42,19 +42,19 @@ public class FenetreDeJeu extends javax.swing.JFrame {
     Carte carteStarPlatinium     = new Carte("Star Platinium"  , 2,  1,  -2, 1,  1,  -1, -1, -1);
     Carte carteCrazyDiamond      = new Carte("Crazy Diamond"   , 1,  1,  1,  0,  -1, 0,  -1, -1);
     Carte carteGoldExperience    = new Carte("Gold Experience" , 1,  0,  1,  -1, -1, 0,  -1, 1);
-    Carte carteStoneFree         = new Carte("Stone Free"      , 0,  1,  -1, 0,  0,  -1, 0,  0);
+    Carte carteStoneFree         = new Carte("Stone Free"      , 0,  1,  -1, 0,  0,  -1, 9,  9);
     Carte carteTheWorld          = new Carte("The World"       , 1,  1,  1,  -1, -1, -1, -1, 1);
-    Carte carteKillerQueen       = new Carte("Killer Queen"    , 1,  1,  -1, 1,  0,  -1, 0,  0);
+    Carte carteKillerQueen       = new Carte("Killer Queen"    , 1,  1,  -1, 1,  0,  -1, 0,  9);
     Carte carteKingCrimson       = new Carte("King Crimson"    , 1,  1,  1,  0,  -1, 1,  -1, 0);
-    Carte carteWhiteSnake        = new Carte("White Snake"     , 1,  0,  -1, 1,  -1, -1, 0,  0);
-    Carte carteSilverChariot     = new Carte("Silver Chariot"  , 1,  -1, -1, 1,  -2, 0,  0,  0);
-    Carte carteEchoesAct3        = new Carte("Echoes Act3"     , 1,  0,  0,  1,  0,  -1, 0,  0);
-    Carte carteStickyFingers     = new Carte("Sticky Fingers"  , 1,  1,  2,  0,  -1, -1, 0,  0);
-    Carte carteKiss              = new Carte("Kiss"            , 1,  1,  1,  -1, -1, 0,  0,  0);
-    Carte carteEpeePluck         = new Carte("Epée pluck"      , 0,  1,  1,  -1, -1, -1, 0,  0);
-    Carte carteHermitPurple      = new Carte("Hermit purple"   , 0,  1,  2,  0,  -2, 0,  0,  0);
-    Carte carteSavonLauncher     = new Carte("Savon Launcher"  , 0,  -1, 0,  2,  0,  0,  0,  0);
-    Carte carteMasquePierre      = new Carte("Masque de pierre", 0,  1,  1,  0,  -1, 0,  0,  0);
+    Carte carteWhiteSnake        = new Carte("White Snake"     , 1,  0,  -1, 1,  -1, -1, 9,  9);
+    Carte carteSilverChariot     = new Carte("Silver Chariot"  , 1,  -1, -1, 1,  -2, 0,  9,  9);
+    Carte carteEchoesAct3        = new Carte("Echoes Act3"     , 1,  0,  0,  1,  0,  -1, 9,  9);
+    Carte carteStickyFingers     = new Carte("Sticky Fingers"  , 1,  1,  2,  0,  -1, -1, 9,  9);
+    Carte carteKiss              = new Carte("Kiss"            , 1,  1,  1,  -1, -1, 0,  9,  9);
+    Carte carteEpeePluck         = new Carte("Epée pluck"      , 0,  1,  1,  -1, -1, -1, 9,  9);
+    Carte carteHermitPurple      = new Carte("Hermit purple"   , 0,  1,  2,  0,  -2, 0,  9,  9);
+    Carte carteSavonLauncher     = new Carte("Savon Launcher"  , 0,  -1, 0,  2,  9,  9,  9,  9);
+    Carte carteMasquePierre      = new Carte("Masque de pierre", 0,  1,  1,  0,  -1, 0,  9,  9);
     
     Carte[] listeCartes = new Carte[16];
     
@@ -158,6 +158,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
                     public void actionPerformed(java.awt.event.ActionEvent evt){
                         
                         CaseDePlateau c = caseGraph.caseAssociee;
+
                                                 
                         if (deplacer == false) {
                             if (c.avoirPion() == true) {
@@ -174,12 +175,55 @@ public class FenetreDeJeu extends javax.swing.JFrame {
                                         x4 = cartetmp.d4X;
                                         y4 = cartetmp.d4Y;
                                         piontmp = c.renvoyerPion();
+                                        c.cible = true;
+                                        
+                                        if ((Xtmp + y1) < 5 && (Ytmp + x1) < 5 && (Xtmp + y1)>= 0 && (Ytmp + x1) >= 0) {
+                                            if (PlateauDeJeu.Plateau[Xtmp + y1][Ytmp + x1].avoirPion() == true) {
+                                                if (PlateauDeJeu.Plateau[Xtmp + y1][Ytmp + x1].renvoyerPion().avoirEquipe() == 2) {
+                                                    PlateauDeJeu.Plateau[Xtmp + y1][Ytmp + x1].viser = true;
+                                                }
+                                            }
+                                            else {
+                                                PlateauDeJeu.Plateau[Xtmp + y1][Ytmp + x1].viser = true;
+                                            }
+                                        }
+                                        if ((Xtmp + y2) < 5 && (Ytmp + x2) < 5 && (Xtmp + y2)>= 0 && (Ytmp + x2) >= 0) {
+                                            if (PlateauDeJeu.Plateau[Xtmp + y2][Ytmp + x2].avoirPion() == true) {
+                                                if (PlateauDeJeu.Plateau[Xtmp + y2][Ytmp + x2].renvoyerPion().avoirEquipe() == 2) {
+                                                    PlateauDeJeu.Plateau[Xtmp + y2][Ytmp + x2].viser = true;
+                                                }
+                                            }
+                                            else {
+                                                PlateauDeJeu.Plateau[Xtmp + y2][Ytmp + x2].viser = true;
+                                            }
+                                        }
+                                        if ((Xtmp + y3) < 5 && (Ytmp + x3) < 5 && (Xtmp + y3)>= 0 && (Ytmp + x3) >= 0) {
+                                            if (PlateauDeJeu.Plateau[Xtmp + y3][Ytmp + x3].avoirPion() == true) {
+                                                if (PlateauDeJeu.Plateau[Xtmp + y3][Ytmp + x3].renvoyerPion().avoirEquipe() == 2) {
+                                                    PlateauDeJeu.Plateau[Xtmp + y3][Ytmp + x3].viser = true;
+                                                }
+                                            }
+                                            else {
+                                                PlateauDeJeu.Plateau[Xtmp + y3][Ytmp + x3].viser = true;
+                                            }
+                                        }
+                                        if ((Xtmp + y4) < 5 && (Ytmp + x4) < 5 && (Xtmp + y4)>= 0 && (Ytmp + x4) >= 0) {
+                                            if (PlateauDeJeu.Plateau[Xtmp + y4][Ytmp + x4].avoirPion() == true) {
+                                                if (PlateauDeJeu.Plateau[Xtmp + y4][Ytmp + x4].renvoyerPion().avoirEquipe() == 2) {
+                                                    PlateauDeJeu.Plateau[Xtmp + y4][Ytmp + x4].viser = true;
+                                                }
+                                            }
+                                            else {
+                                                PlateauDeJeu.Plateau[Xtmp + y4][Ytmp + x4].viser = true;
+                                            }
+                                        }
+
                                         Panel_PlateauDeJeu.repaint();
                                         deplacer = true;
                                         
                                     }
                                     else {
-                                        System.out.println("saisissez d'abord une carte");
+                                        InfoPartie.setText("Saisissez d'abord une carte de mouvement");
                                     }
                                     
                                 }
@@ -196,12 +240,55 @@ public class FenetreDeJeu extends javax.swing.JFrame {
                                         x4 = -cartetmp.d4X;
                                         y4 = -cartetmp.d4Y;
                                         piontmp = c.renvoyerPion();
+                                        c.cible = true;
+                                        
+                                        if ((Xtmp + y1) < 5 && (Ytmp + x1) < 5 && (Xtmp + y1)>= 0 && (Ytmp + x1) >= 0) {
+                                            if (PlateauDeJeu.Plateau[Xtmp + y1][Ytmp + x1].avoirPion() == true) {
+                                                if (PlateauDeJeu.Plateau[Xtmp + y1][Ytmp + x1].renvoyerPion().avoirEquipe() == 1) {
+                                                    PlateauDeJeu.Plateau[Xtmp + y1][Ytmp + x1].viser = true;
+                                                }
+                                            }
+                                            else {
+                                                PlateauDeJeu.Plateau[Xtmp + y1][Ytmp + x1].viser = true;
+                                            }
+                                        }
+                                        if ((Xtmp + y2) < 5 && (Ytmp + x2) < 5 && (Xtmp + y2)>= 0 && (Ytmp + x2) >= 0) {
+                                            if (PlateauDeJeu.Plateau[Xtmp + y2][Ytmp + x2].avoirPion() == true) {
+                                                if (PlateauDeJeu.Plateau[Xtmp + y2][Ytmp + x2].renvoyerPion().avoirEquipe() == 1) {
+                                                    PlateauDeJeu.Plateau[Xtmp + y2][Ytmp + x2].viser = true;
+                                                }
+                                            }
+                                            else {
+                                                PlateauDeJeu.Plateau[Xtmp + y2][Ytmp + x2].viser = true;
+                                            }
+                                        }
+                                        if ((Xtmp + y3) < 5 && (Ytmp + x3) < 5 && (Xtmp + y3)>= 0 && (Ytmp + x3) >= 0) {
+                                            if (PlateauDeJeu.Plateau[Xtmp + y3][Ytmp + x3].avoirPion() == true) {
+                                                if (PlateauDeJeu.Plateau[Xtmp + y3][Ytmp + x3].renvoyerPion().avoirEquipe() == 1) {
+                                                    PlateauDeJeu.Plateau[Xtmp + y3][Ytmp + x3].viser = true;
+                                                }
+                                            }
+                                            else {
+                                                PlateauDeJeu.Plateau[Xtmp + y3][Ytmp + x3].viser = true;
+                                            }
+                                        }
+                                        if ((Xtmp + y4) < 5 && (Ytmp + x4) < 5 && (Xtmp + y4)>= 0 && (Ytmp + x4) >= 0) {
+                                            if (PlateauDeJeu.Plateau[Xtmp + y4][Ytmp + x4].avoirPion() == true) {
+                                                if (PlateauDeJeu.Plateau[Xtmp + y4][Ytmp + x4].renvoyerPion().avoirEquipe() == 1) {
+                                                    PlateauDeJeu.Plateau[Xtmp + y4][Ytmp + x4].viser = true;
+                                                }
+                                            }
+                                            else {
+                                                PlateauDeJeu.Plateau[Xtmp + y4][Ytmp + x4].viser = true;
+                                            }
+                                        }
+                                        
                                         Panel_PlateauDeJeu.repaint();
                                         deplacer = true;
                                         
                                     }
                                     else {
-                                        System.out.println("saisissez d'abord une carte");
+                                        InfoPartie.setText("Saisissez d'abord une carte de mouvement");
                                     }
                                 }
                                 
@@ -213,6 +300,8 @@ public class FenetreDeJeu extends javax.swing.JFrame {
                                 PlateauDeJeu.Plateau[Xtmp][Ytmp].supprimerPion();
                                 Panel_PlateauDeJeu.repaint();
                                 deplacer = false;
+                                PlateauDeJeu.Plateau[Xtmp][Ytmp].cible = false;
+                                PlateauDeJeu.supprimerViser();
                                 changerJoueurCourant();
                                 changerCarte(cartetmp);
                                 cartetmp = null;
@@ -223,6 +312,8 @@ public class FenetreDeJeu extends javax.swing.JFrame {
                                 PlateauDeJeu.Plateau[Xtmp][Ytmp].supprimerPion();
                                 Panel_PlateauDeJeu.repaint();
                                 deplacer = false;
+                                PlateauDeJeu.Plateau[Xtmp][Ytmp].cible = false;
+                                PlateauDeJeu.supprimerViser();
                                 changerJoueurCourant();
                                 changerCarte(cartetmp);
                                 cartetmp = null;
@@ -233,6 +324,8 @@ public class FenetreDeJeu extends javax.swing.JFrame {
                                 PlateauDeJeu.Plateau[Xtmp][Ytmp].supprimerPion();
                                 Panel_PlateauDeJeu.repaint();
                                 deplacer = false;
+                                PlateauDeJeu.Plateau[Xtmp][Ytmp].cible = false;
+                                PlateauDeJeu.supprimerViser();
                                 changerJoueurCourant();
                                 changerCarte(cartetmp);
                                 cartetmp = null;
@@ -243,6 +336,8 @@ public class FenetreDeJeu extends javax.swing.JFrame {
                                 PlateauDeJeu.Plateau[Xtmp][Ytmp].supprimerPion();
                                 Panel_PlateauDeJeu.repaint();
                                 deplacer = false;
+                                PlateauDeJeu.Plateau[Xtmp][Ytmp].cible = false;
+                                PlateauDeJeu.supprimerViser();
                                 changerJoueurCourant();
                                 changerCarte(cartetmp);
                                 cartetmp = null;
@@ -292,6 +387,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         Carte1J2 = new javax.swing.JButton();
         Carte2J2 = new javax.swing.JButton();
         CartePioche = new javax.swing.JButton();
+        InfoPartie = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -368,6 +464,9 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         });
         getContentPane().add(CartePioche, new org.netbeans.lib.awtextra.AbsoluteConstraints(1260, 720, 416, 234));
 
+        InfoPartie.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
+        getContentPane().add(InfoPartie, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 30, -1, -1));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -382,6 +481,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
             cartetmp = carteJ1nb1;
             Carte1J1.setBackground(Color.CYAN);
             Carte2J1.setBackground(Color.WHITE);
+            InfoPartie.setText("");
             
         }
     }//GEN-LAST:event_Carte1J1ActionPerformed
@@ -392,6 +492,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
             cartetmp = carteJ1nb2;
             Carte2J1.setBackground(Color.CYAN);
             Carte1J1.setBackground(Color.WHITE);
+            InfoPartie.setText("");
         }
     }//GEN-LAST:event_Carte2J1ActionPerformed
 
@@ -401,6 +502,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
             cartetmp = carteJ2nb1;
             Carte1J2.setBackground(Color.CYAN);
             Carte2J2.setBackground(Color.WHITE);
+            InfoPartie.setText("");
         }
     }//GEN-LAST:event_Carte1J2ActionPerformed
 
@@ -410,6 +512,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
             cartetmp = carteJ2nb2;
             Carte2J2.setBackground(Color.CYAN);
             Carte1J2.setBackground(Color.WHITE);
+            InfoPartie.setText("");
         }
     }//GEN-LAST:event_Carte2J2ActionPerformed
 
@@ -720,6 +823,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         LabelJC.setText(joueurCourant.toString());
     }
     
+    
     /**
      * @param args the command line arguments
      */
@@ -762,6 +866,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
     private javax.swing.JButton Carte2J1;
     private javax.swing.JButton Carte2J2;
     private javax.swing.JButton CartePioche;
+    private javax.swing.JLabel InfoPartie;
     private javax.swing.JLabel LabelJ1;
     private javax.swing.JLabel LabelJ2;
     private javax.swing.JLabel LabelJC;

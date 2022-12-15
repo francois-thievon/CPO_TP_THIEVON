@@ -5,6 +5,7 @@
 package onitama_thievon;
 import java.awt.Graphics;
 import java.awt.Image;
+import java.io.File;
 import javax.imageio.ImageIO;
 import javax.swing.JButton;
 import javax.swing.ImageIcon;
@@ -86,6 +87,7 @@ public class CaseGraphique extends JButton{
     ImageIcon TempleErmes         = new javax.swing.ImageIcon(getClass().getResource("/images/TempleErmes.jpg"));
     ImageIcon TempleRoiErmes      = new javax.swing.ImageIcon(getClass().getResource("/images/TempleRoiErmes.jpg"));
 
+    
 
     
     public CaseGraphique(CaseDePlateau uneCase, int px, int py){
@@ -316,6 +318,21 @@ public class CaseGraphique extends JButton{
             }
             if (caseAssociee.avoirTemple() == false) {
                 setIcon(Case_vide);
+            }
+        }
+        if (caseAssociee.cible == true) {
+            try {
+                Image img = ImageIO.read(new File("Cercle_Bleu.png"));
+                G.drawImage(img, 0, 0, this);
+            }catch(Exception e){ 
+            }
+        }
+        
+        if (caseAssociee.viser == true) {
+            try {
+                Image img = ImageIO.read(new File("Cible_bug.png"));
+                G.drawImage(img, 0, 0, this);
+            }catch(Exception e){ 
             }
         }
     }

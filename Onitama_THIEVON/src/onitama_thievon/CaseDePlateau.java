@@ -13,6 +13,7 @@ public class CaseDePlateau {
     private Pion pionCourant;
     private boolean temple;
     boolean cible;
+    boolean viser;
     
     
     public CaseDePlateau() {
