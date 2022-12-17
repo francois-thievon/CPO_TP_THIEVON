@@ -20,8 +20,8 @@ public class CaseGraphique extends JButton{
     int Y;
     
     CaseDePlateau caseAssociee;
-    ImageIcon Case_vide           = new javax.swing.ImageIcon(getClass().getResource("/images/Case.jpg"));
-    ImageIcon Temple_vide         = new javax.swing.ImageIcon(getClass().getResource("/images/Temple.jpg"));
+    ImageIcon Case_vide           = new javax.swing.ImageIcon(getClass().getResource("/images/Case.png"));
+    ImageIcon Temple_vide         = new javax.swing.ImageIcon(getClass().getResource("/images/Temple.png"));
     ImageIcon CaseJonathan        = new javax.swing.ImageIcon(getClass().getResource("/images/CaseJonathan.jpg"));
     ImageIcon CaseRoiJonathan     = new javax.swing.ImageIcon(getClass().getResource("/images/CaseRoiJonathan.jpg"));
     ImageIcon TempleJonathan      = new javax.swing.ImageIcon(getClass().getResource("/images/TempleJonathan.jpg"));
@@ -102,224 +102,277 @@ public class CaseGraphique extends JButton{
     public void paintComponent(Graphics G) {
         super.paintComponent(G);
         
+        if (caseAssociee.avoirTemple() == true) {
+            setIcon(Temple_vide);
+        }
+        
+        if (caseAssociee.avoirTemple() == false) {
+            setIcon(Case_vide);
+        }
+        
         if (caseAssociee.avoirPion() == true) {
-            if (caseAssociee.avoirTemple() == true) {
-                if (caseAssociee.renvoyerPion().etreLeRoi() == true) {
-                    
-                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Jonathan") {
-                    setIcon(TempleRoiJonathan);
-                    }
-                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Joseph") {
-                        setIcon(TempleRoiJoseph);
-                    }
-                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Jotaro") {
-                        setIcon(TempleRoiJotaro);
-                    }
-                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Josuke") {
-                        setIcon(TempleRoiJosuke);
-                    }
-                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Giorno") {
-                        setIcon(TempleRoiGiorno);
-                    }
-                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom== "Jolyne") {
-                        setIcon(TempleRoiJolyne);
-                    }
-                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Dio") {
-                        setIcon(TempleRoiDio);
-                    }
-                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Kars") {
-                        setIcon(TempleRoiKars);
-                    }
-                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Yoshikage") {
-                        setIcon(TempleRoiKira);
-                    }
-                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Diavolo") {
-                        setIcon(TempleRoiDiavolo);
-                    }
-                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Enrico") {
-                        setIcon(TempleRoiPucci);
-                    }
-                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Cesear") {
-                        setIcon(TempleRoiCesear);
-                    }
-                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Jean-Pierre") {
-                        setIcon(TempleRoiPolnareff);
-                    }
-                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Koichi") {
-                        setIcon(TempleRoiKoichi);
-                    }
-                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Bruno") {
-                        setIcon(TempleRoiBucciarati);
-                    }
-                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Ermes") {
-                        setIcon(TempleRoiErmes);
+        
+            if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Jonathan") {
+                if (caseAssociee.avoirTemple() == true) {
+                    try {
+                    Image img = ImageIO.read(new File("Jonathan.png"));
+                    G.drawImage(img, 20, 6, this);
+                    }catch(Exception e){ 
                     }
                 }
-                if (caseAssociee.renvoyerPion().etreLeRoi() == false) {
-                    
-                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Jonathan") {
-                    setIcon(TempleJonathan);
-                    }
-                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Joseph") {
-                        setIcon(TempleJoseph);
-                    }
-                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Jotaro") {
-                        setIcon(TempleJotaro);
-                    }
-                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Josuke") {
-                        setIcon(TempleJosuke);
-                    }
-                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Giorno") {
-                        setIcon(TempleGiorno);
-                    }
-                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom== "Jolyne") {
-                        setIcon(TempleJolyne);
-                    }
-                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Dio") {
-                        setIcon(TempleDio);
-                    }
-                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Kars") {
-                        setIcon(TempleKars);
-                    }
-                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Yoshikage") {
-                        setIcon(TempleKira);
-                    }
-                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Diavolo") {
-                        setIcon(TempleDiavolo);
-                    }
-                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Enrico") {
-                        setIcon(TemplePucci);
-                    }
-                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Cesear") {
-                        setIcon(TempleCesear);
-                    }
-                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Jean-Pierre") {
-                        setIcon(TemplePolnareff);
-                    }
-                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Koichi") {
-                        setIcon(TempleKoichi);
-                    }
-                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Bruno") {
-                        setIcon(TempleBucciarati);
-                    }
-                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Ermes") {
-                        setIcon(TempleErmes);
+                else {
+                    try {
+                    Image img = ImageIO.read(new File("Punch.png"));
+                    G.drawImage(img, 25, 6, this);
+                    }catch(Exception e){ 
                     }
                 }
             }
-            if (caseAssociee.avoirTemple() == false) {
-                if (caseAssociee.renvoyerPion().etreLeRoi() == true) {
-                    
-                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Jonathan") {
-                    setIcon(CaseRoiJonathan);
-                    }
-                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Joseph") {
-                        setIcon(CaseRoiJoseph);
-                    }
-                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Jotaro") {
-                        setIcon(CaseRoiJotaro);
-                    }
-                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Josuke") {
-                        setIcon(CaseRoiJosuke);
-                    }
-                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Giorno") {
-                        setIcon(CaseRoiGiorno);
-                    }
-                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom== "Jolyne") {
-                        setIcon(CaseRoiJolyne);
-                    }
-                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Dio") {
-                        setIcon(CaseRoiDio);
-                    }
-                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Kars") {
-                        setIcon(CaseRoiKars);
-                    }
-                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Yoshikage") {
-                        setIcon(CaseRoiKira);
-                    }
-                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Diavolo") {
-                        setIcon(CaseRoiDiavolo);
-                    }
-                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Enrico") {
-                        setIcon(CaseRoiPucci);
-                    }
-                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Cesear") {
-                        setIcon(CaseRoiCesear);
-                    }
-                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Jean-Pierre") {
-                        setIcon(CaseRoiPolnareff);
-                    }
-                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Koichi") {
-                        setIcon(CaseRoiKoichi);
-                    }
-                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Bruno") {
-                        setIcon(CaseRoiBucciarati);
-                    }
-                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Ermes") {
-                        setIcon(CaseRoiErmes);
+            
+            if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Joseph") {
+                if (caseAssociee.avoirTemple() == true) {
+                    try {
+                    Image img = ImageIO.read(new File("Joseph.png"));
+                    G.drawImage(img, 25, 6, this);
+                    }catch(Exception e){ 
                     }
                 }
-                if (caseAssociee.renvoyerPion().etreLeRoi() == false) {
-                    
-                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Jonathan") {
-                    setIcon(CaseJonathan);
-                    }
-                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Joseph") {
-                        setIcon(CaseJoseph);
-                    }
-                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Jotaro") {
-                        setIcon(CaseJotaro);
-                    }
-                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Josuke") {
-                        setIcon(CaseJosuke);
-                    }
-                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Giorno") {
-                        setIcon(CaseGiorno);
-                    }
-                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom== "Jolyne") {
-                        setIcon(CaseJolyne);
-                    }
-                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Dio") {
-                        setIcon(CaseDio);
-                    }
-                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Kars") {
-                        setIcon(CaseKars);
-                    }
-                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Yoshikage") {
-                        setIcon(CaseKira);
-                    }
-                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Diavolo") {
-                        setIcon(CaseDiavolo);
-                    }
-                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Enrico") {
-                        setIcon(CasePucci);
-                    }
-                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Cesear") {
-                        setIcon(CaseCesear);
-                    }
-                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Jean-Pierre") {
-                        setIcon(CasePolnareff);
-                    }
-                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Koichi") {
-                        setIcon(CaseKoichi);
-                    }
-                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Bruno") {
-                        setIcon(CaseBucciarati);
-                    }
-                    if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Ermes") {
-                        setIcon(CaseErmes);
+                else {
+                    try {
+                    Image img = ImageIO.read(new File("HermitPurple.png"));
+                    G.drawImage(img, 25, 6, this);
+                    }catch(Exception e){ 
                     }
                 }
             }
+            if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Jotaro") {
+                if (caseAssociee.avoirTemple() == true) {
+                    try {
+                    Image img = ImageIO.read(new File("Jotaro.png"));
+                    G.drawImage(img, 30, 6, this);
+                    }catch(Exception e){ 
+                    }
+                }
+                else {
+                    try {
+                    Image img = ImageIO.read(new File("StarPlatinium.png"));
+                    G.drawImage(img, 20, 6, this);
+                    }catch(Exception e){ 
+                    }
+                }
+            }
+            if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Josuke") {
+                if (caseAssociee.avoirTemple() == true) {
+                    try {
+                    Image img = ImageIO.read(new File("Josuke.png"));
+                    G.drawImage(img, 30, 6, this);
+                    }catch(Exception e){ 
+                    }
+                }
+                else {
+                    try {
+                    Image img = ImageIO.read(new File("CrazyDiamond.png"));
+                    G.drawImage(img, 35, 6, this);
+                    }catch(Exception e){ 
+                    }
+                }
+            }
+            if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Giorno") {
+                if (caseAssociee.avoirTemple() == true) {
+                    try {
+                    Image img = ImageIO.read(new File("Giorno.png"));
+                    G.drawImage(img, 13, 6, this);
+                    }catch(Exception e){ 
+                    }
+                }
+                else {
+                    try {
+                    Image img = ImageIO.read(new File("GoldExperience.png"));
+                    G.drawImage(img, 27, 6, this);
+                    }catch(Exception e){ 
+                    }
+                }
+            }
+            if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Jolyne") {
+                if (caseAssociee.avoirTemple() == true) {
+                    try {
+                    Image img = ImageIO.read(new File("Jolyne.png"));
+                    G.drawImage(img, 18, 6, this);
+                    }catch(Exception e){ 
+                    }
+                }
+                else {
+                    try {
+                    Image img = ImageIO.read(new File("StoneFree.png"));
+                    G.drawImage(img, 35, 6, this);
+                    }catch(Exception e){ 
+                    }
+                }
+            }
+            if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Kars") {
+                if (caseAssociee.avoirTemple() == true) {
+                    try {
+                    Image img = ImageIO.read(new File("Kars.png"));
+                    G.drawImage(img, 17, 6, this);
+                    }catch(Exception e){ 
+                    }
+                }
+                else {
+                    try {
+                    Image img = ImageIO.read(new File("PierreAja.png"));
+                    G.drawImage(img, 30, 6, this);
+                    }catch(Exception e){ 
+                    }
+                }
+            }
+            if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Dio") {
+                if (caseAssociee.avoirTemple() == true) {
+                    try {
+                    Image img = ImageIO.read(new File("Dio.png"));
+                    G.drawImage(img, 25, 6, this);
+                    }catch(Exception e){ 
+                    }
+                }
+                else {
+                    try {
+                    Image img = ImageIO.read(new File("TheWorld.png"));
+                    G.drawImage(img, 33, 6, this);
+                    }catch(Exception e){ 
+                    }
+                }
+            }
+            if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Yoshikage") {
+                if (caseAssociee.avoirTemple() == true) {
+                    try {
+                    Image img = ImageIO.read(new File("Kira.png"));
+                    G.drawImage(img, 20, 6, this);
+                    }catch(Exception e){ 
+                    }
+                }
+                else {
+                    try {
+                    Image img = ImageIO.read(new File("KillerQueen.png"));
+                    G.drawImage(img, 42, 6, this);
+                    }catch(Exception e){ 
+                    }
+                }
+            }
+            if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Diavolo") {
+                if (caseAssociee.avoirTemple() == true) {
+                    try {
+                    Image img = ImageIO.read(new File("Diavolo.png"));
+                    G.drawImage(img, 25, 6, this);
+                    }catch(Exception e){ 
+                    }
+                }
+                else {
+                    try {
+                    Image img = ImageIO.read(new File("KingCrimson.png"));
+                    G.drawImage(img, 37, 6, this);
+                    }catch(Exception e){ 
+                    }
+                }
+            }
+            if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Enrico") {
+                if (caseAssociee.avoirTemple() == true) {
+                    try {
+                    Image img = ImageIO.read(new File("Pucci.png"));
+                    G.drawImage(img, 35, 6, this);
+                    }catch(Exception e){ 
+                    }
+                }
+                else {
+                    try {
+                    Image img = ImageIO.read(new File("WhiteSnake.png"));
+                    G.drawImage(img, 40, 6, this);
+                    }catch(Exception e){ 
+                    }
+                }
+            }
+            if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Cesear") {
+                if (caseAssociee.avoirTemple() == true) {
+                    try {
+                    Image img = ImageIO.read(new File("Cesear.png"));
+                    G.drawImage(img, 20, 6, this);
+                    }catch(Exception e){ 
+                    }
+                }
+                else {
+                    try {
+                    Image img = ImageIO.read(new File("SavonLauncher.png"));
+                    G.drawImage(img, 20, 6, this);
+                    }catch(Exception e){ 
+                    }
+                }
+            }
+            if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Jean-Pierre") {
+                if (caseAssociee.avoirTemple() == true) {
+                    try {
+                    Image img = ImageIO.read(new File("Polnareff.png"));
+                    G.drawImage(img, 47, 6, this);
+                    }catch(Exception e){ 
+                    }
+                }
+                else {
+                    try {
+                    Image img = ImageIO.read(new File("SilverChariot.png"));
+                    G.drawImage(img, 35, 6, this);
+                    }catch(Exception e){ 
+                    }
+                }
+            }
+            if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Koichi") {
+                if (caseAssociee.avoirTemple() == true) {
+                    try {
+                    Image img = ImageIO.read(new File("Koichi.png"));
+                    G.drawImage(img, 32, 6, this);
+                    }catch(Exception e){ 
+                    }
+                }
+                else {
+                    try {
+                    Image img = ImageIO.read(new File("Echoes.png"));
+                    G.drawImage(img, 25, 6, this);
+                    }catch(Exception e){ 
+                    }
+                }
+            }
+            if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Bruno") {
+                if (caseAssociee.avoirTemple() == true) {
+                    try {
+                    Image img = ImageIO.read(new File("Bucciarati.png"));
+                    G.drawImage(img, 31, 6, this);
+                    }catch(Exception e){ 
+                    }
+                }
+                else {
+                    try {
+                    Image img = ImageIO.read(new File("StickyFingers.png"));
+                    G.drawImage(img, 42, 6, this);
+                    }catch(Exception e){ 
+                    }
+                }
+            }
+            if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Ermes") {
+                if (caseAssociee.avoirTemple() == true) {
+                    try {
+                    Image img = ImageIO.read(new File("Ermes.png"));
+                    G.drawImage(img, 32, 6, this);
+                    }catch(Exception e){ 
+                    }
+                }
+                else {
+                    try {
+                    Image img = ImageIO.read(new File("Kiss.png"));
+                    G.drawImage(img, 37, 6, this);
+                    }catch(Exception e){ 
+                    }
+                }
+            }
+
         }
-        else {
-            if (caseAssociee.avoirTemple() == true) {
-                setIcon(Temple_vide);
-            }
-            if (caseAssociee.avoirTemple() == false) {
-                setIcon(Case_vide);
-            }
-        }
+
+        
         if (caseAssociee.cible == true) {
             try {
                 Image img = ImageIO.read(new File("Cercle_Bleu.png"));

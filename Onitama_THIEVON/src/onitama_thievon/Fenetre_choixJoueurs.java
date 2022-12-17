@@ -708,7 +708,6 @@ public class Fenetre_choixJoueurs extends javax.swing.JFrame {
         // TODO add your handling code here:
         Joueur Cesear = new Joueur("Cesear","Zepelli",cptJoueurs);
         ListeJoueurs[cptJoueurs] = Cesear;
-        Bouton_Pucci.setEnabled(false);
         if (cptJoueurs == 0) {
             LabelJ1.setText("Cesear Zepelli");
             LabelGifJ1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Cesear.gif")));
@@ -726,7 +725,6 @@ public class Fenetre_choixJoueurs extends javax.swing.JFrame {
         // TODO add your handling code here:
         Joueur Polnareff = new Joueur("Jean-Pierre","Polnareff",cptJoueurs);
         ListeJoueurs[cptJoueurs] = Polnareff;
-        Bouton_Pucci.setEnabled(false);
         if (cptJoueurs == 0) {
             LabelJ1.setText("Jean-Pierre Polnareff");
             LabelGifJ1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Polnareff.gif")));
@@ -744,7 +742,6 @@ public class Fenetre_choixJoueurs extends javax.swing.JFrame {
         // TODO add your handling code here:
         Joueur Koichi = new Joueur("Koichi","Hirose",cptJoueurs);
         ListeJoueurs[cptJoueurs] = Koichi;
-        Bouton_Pucci.setEnabled(false);
         if (cptJoueurs == 0) {
             LabelJ1.setText("Koichi Hirose");
             LabelGifJ1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Koichi.gif")));
@@ -762,7 +759,6 @@ public class Fenetre_choixJoueurs extends javax.swing.JFrame {
         // TODO add your handling code here:
         Joueur Bucciarati = new Joueur("Bruno","Bucciarati",cptJoueurs);
         ListeJoueurs[cptJoueurs] = Bucciarati;
-        Bouton_Pucci.setEnabled(false);
         if (cptJoueurs == 0) {
             LabelJ1.setText("Bruno Bucciarati");
             LabelGifJ1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Bucciarati.gif")));
@@ -780,7 +776,6 @@ public class Fenetre_choixJoueurs extends javax.swing.JFrame {
         // TODO add your handling code here:
         Joueur Ermes = new Joueur("Ermes","Costello",cptJoueurs);
         ListeJoueurs[cptJoueurs] = Ermes;
-        Bouton_Pucci.setEnabled(false);
         if (cptJoueurs == 0) {
             LabelJ1.setText("Ermes Costello");
             LabelGifJ1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Ermes.gif")));
