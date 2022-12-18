@@ -25,6 +25,8 @@ public class FenetreDeJeu extends javax.swing.JFrame {
     Carte carteJ2nb2;
     Carte carteFlottante;
     
+    boolean reverse;
+    
     boolean deplacer = false;
     Pion piontmp = null;
     Carte cartetmp = null;
@@ -158,22 +160,36 @@ public class FenetreDeJeu extends javax.swing.JFrame {
                     public void actionPerformed(java.awt.event.ActionEvent evt){
                         
                         CaseDePlateau c = caseGraph.caseAssociee;
-
-                                                
+                        Panel_PlateauDeJeu.repaint();
+                        
                         if (deplacer == false) {
                             if (c.avoirPion() == true) {
-                                if (c.renvoyerPion().renvoyerJoueur() == J1) {
+                                if (c.renvoyerPion().renvoyerJoueur() == J1 && joueurCourant == J1) {
                                     if (cartetmp != null) {
-                                        Xtmp = caseGraph.X;
-                                        Ytmp = caseGraph.Y;
-                                        x1 = cartetmp.d1X;
-                                        y1 = cartetmp.d1Y;
-                                        x2 = cartetmp.d2X;
-                                        y2 = cartetmp.d2Y;
-                                        x3 = cartetmp.d3X;
-                                        y3 = cartetmp.d3Y;
-                                        x4 = cartetmp.d4X;
-                                        y4 = cartetmp.d4Y;
+                                        if (reverse == false) {
+                                            Xtmp = caseGraph.X;
+                                            Ytmp = caseGraph.Y;
+                                            x1 = cartetmp.d1X;
+                                            y1 = cartetmp.d1Y;
+                                            x2 = cartetmp.d2X;
+                                            y2 = cartetmp.d2Y;
+                                            x3 = cartetmp.d3X;
+                                            y3 = cartetmp.d3Y;
+                                            x4 = cartetmp.d4X;
+                                            y4 = cartetmp.d4Y;
+                                        }
+                                        else {
+                                            Xtmp = caseGraph.X;
+                                            Ytmp = caseGraph.Y;
+                                            x1 = -cartetmp.d1X;
+                                            y1 = -cartetmp.d1Y;
+                                            x2 = -cartetmp.d2X;
+                                            y2 = -cartetmp.d2Y;
+                                            x3 = -cartetmp.d3X;
+                                            y3 = -cartetmp.d3Y;
+                                            x4 = -cartetmp.d4X;
+                                            y4 = -cartetmp.d4Y;
+                                        }
                                         piontmp = c.renvoyerPion();
                                         c.cible = true;
                                         
@@ -227,18 +243,32 @@ public class FenetreDeJeu extends javax.swing.JFrame {
                                     }
                                     
                                 }
-                                else if (c.renvoyerPion().renvoyerJoueur() == J2) {
+                                else if (c.renvoyerPion().renvoyerJoueur() == J2 && joueurCourant == J2) {
                                     if (cartetmp != null) {
-                                        Xtmp = caseGraph.X;
-                                        Ytmp = caseGraph.Y;
-                                        x1 = -cartetmp.d1X;
-                                        y1 = -cartetmp.d1Y;
-                                        x2 = -cartetmp.d2X;
-                                        y2 = -cartetmp.d2Y;
-                                        x3 = -cartetmp.d3X;
-                                        y3 = -cartetmp.d3Y;
-                                        x4 = -cartetmp.d4X;
-                                        y4 = -cartetmp.d4Y;
+                                        if (reverse == false) {
+                                            Xtmp = caseGraph.X;
+                                            Ytmp = caseGraph.Y;
+                                            x1 = -cartetmp.d1X;
+                                            y1 = -cartetmp.d1Y;
+                                            x2 = -cartetmp.d2X;
+                                            y2 = -cartetmp.d2Y;
+                                            x3 = -cartetmp.d3X;
+                                            y3 = -cartetmp.d3Y;
+                                            x4 = -cartetmp.d4X;
+                                            y4 = -cartetmp.d4Y;
+                                        }
+                                        else {
+                                            Xtmp = caseGraph.X;
+                                            Ytmp = caseGraph.Y;
+                                            x1 = cartetmp.d1X;
+                                            y1 = cartetmp.d1Y;
+                                            x2 = cartetmp.d2X;
+                                            y2 = cartetmp.d2Y;
+                                            x3 = cartetmp.d3X;
+                                            y3 = cartetmp.d3Y;
+                                            x4 = cartetmp.d4X;
+                                            y4 = cartetmp.d4Y;
+                                        }
                                         piontmp = c.renvoyerPion();
                                         c.cible = true;
                                         
@@ -295,67 +325,183 @@ public class FenetreDeJeu extends javax.swing.JFrame {
                             }
                         }
                         else {
-                            if (caseGraph.X == (Xtmp + y1) && caseGraph.Y == (Ytmp + x1)) {
+                            
+                            if (c.avoirPion() == true && c.renvoyerPion().renvoyerJoueur() == joueurCourant) {
+                                PlateauDeJeu.supprimerCibles();
+                                PlateauDeJeu.supprimerViser();
+                                if (c.renvoyerPion().renvoyerJoueur() == J1 && joueurCourant == J1) {
+                                    if (cartetmp != null) {
+                                        if (reverse == false) {
+                                            Xtmp = caseGraph.X;
+                                            Ytmp = caseGraph.Y;
+                                            x1 = cartetmp.d1X;
+                                            y1 = cartetmp.d1Y;
+                                            x2 = cartetmp.d2X;
+                                            y2 = cartetmp.d2Y;
+                                            x3 = cartetmp.d3X;
+                                            y3 = cartetmp.d3Y;
+                                            x4 = cartetmp.d4X;
+                                            y4 = cartetmp.d4Y;
+                                        }
+                                        else {
+                                            Xtmp = caseGraph.X;
+                                            Ytmp = caseGraph.Y;
+                                            x1 = -cartetmp.d1X;
+                                            y1 = -cartetmp.d1Y;
+                                            x2 = -cartetmp.d2X;
+                                            y2 = -cartetmp.d2Y;
+                                            x3 = -cartetmp.d3X;
+                                            y3 = -cartetmp.d3Y;
+                                            x4 = -cartetmp.d4X;
+                                            y4 = -cartetmp.d4Y;
+                                        }
+                                        piontmp = c.renvoyerPion();
+                                        c.cible = true;
+                                        
+                                        if ((Xtmp + y1) < 5 && (Ytmp + x1) < 5 && (Xtmp + y1)>= 0 && (Ytmp + x1) >= 0) {
+                                            if (PlateauDeJeu.Plateau[Xtmp + y1][Ytmp + x1].avoirPion() == true) {
+                                                if (PlateauDeJeu.Plateau[Xtmp + y1][Ytmp + x1].renvoyerPion().avoirEquipe() == 2) {
+                                                    PlateauDeJeu.Plateau[Xtmp + y1][Ytmp + x1].viser = true;
+                                                }
+                                            }
+                                            else {
+                                                PlateauDeJeu.Plateau[Xtmp + y1][Ytmp + x1].viser = true;
+                                            }
+                                        }
+                                        if ((Xtmp + y2) < 5 && (Ytmp + x2) < 5 && (Xtmp + y2)>= 0 && (Ytmp + x2) >= 0) {
+                                            if (PlateauDeJeu.Plateau[Xtmp + y2][Ytmp + x2].avoirPion() == true) {
+                                                if (PlateauDeJeu.Plateau[Xtmp + y2][Ytmp + x2].renvoyerPion().avoirEquipe() == 2) {
+                                                    PlateauDeJeu.Plateau[Xtmp + y2][Ytmp + x2].viser = true;
+                                                }
+                                            }
+                                            else {
+                                                PlateauDeJeu.Plateau[Xtmp + y2][Ytmp + x2].viser = true;
+                                            }
+                                        }
+                                        if ((Xtmp + y3) < 5 && (Ytmp + x3) < 5 && (Xtmp + y3)>= 0 && (Ytmp + x3) >= 0) {
+                                            if (PlateauDeJeu.Plateau[Xtmp + y3][Ytmp + x3].avoirPion() == true) {
+                                                if (PlateauDeJeu.Plateau[Xtmp + y3][Ytmp + x3].renvoyerPion().avoirEquipe() == 2) {
+                                                    PlateauDeJeu.Plateau[Xtmp + y3][Ytmp + x3].viser = true;
+                                                }
+                                            }
+                                            else {
+                                                PlateauDeJeu.Plateau[Xtmp + y3][Ytmp + x3].viser = true;
+                                            }
+                                        }
+                                        if ((Xtmp + y4) < 5 && (Ytmp + x4) < 5 && (Xtmp + y4)>= 0 && (Ytmp + x4) >= 0) {
+                                            if (PlateauDeJeu.Plateau[Xtmp + y4][Ytmp + x4].avoirPion() == true) {
+                                                if (PlateauDeJeu.Plateau[Xtmp + y4][Ytmp + x4].renvoyerPion().avoirEquipe() == 2) {
+                                                    PlateauDeJeu.Plateau[Xtmp + y4][Ytmp + x4].viser = true;
+                                                }
+                                            }
+                                            else {
+                                                PlateauDeJeu.Plateau[Xtmp + y4][Ytmp + x4].viser = true;
+                                            }
+                                        }
+
+                                        Panel_PlateauDeJeu.repaint();
+                                        deplacer = true;
+                                        
+                                    }
+                                    else {
+                                        InfoPartie.setText("Saisissez d'abord une carte de mouvement");
+                                    }
+                                    
+                                }
+                                else if (c.renvoyerPion().renvoyerJoueur() == J2 && joueurCourant == J2) {
+                                    if (cartetmp != null) {
+                                        if (reverse == false) {
+                                            Xtmp = caseGraph.X;
+                                            Ytmp = caseGraph.Y;
+                                            x1 = -cartetmp.d1X;
+                                            y1 = -cartetmp.d1Y;
+                                            x2 = -cartetmp.d2X;
+                                            y2 = -cartetmp.d2Y;
+                                            x3 = -cartetmp.d3X;
+                                            y3 = -cartetmp.d3Y;
+                                            x4 = -cartetmp.d4X;
+                                            y4 = -cartetmp.d4Y;
+                                        }
+                                        else {
+                                            Xtmp = caseGraph.X;
+                                            Ytmp = caseGraph.Y;
+                                            x1 = cartetmp.d1X;
+                                            y1 = cartetmp.d1Y;
+                                            x2 = cartetmp.d2X;
+                                            y2 = cartetmp.d2Y;
+                                            x3 = cartetmp.d3X;
+                                            y3 = cartetmp.d3Y;
+                                            x4 = cartetmp.d4X;
+                                            y4 = cartetmp.d4Y;
+                                        }
+                                        piontmp = c.renvoyerPion();
+                                        c.cible = true;
+                                        
+                                        if ((Xtmp + y1) < 5 && (Ytmp + x1) < 5 && (Xtmp + y1)>= 0 && (Ytmp + x1) >= 0) {
+                                            if (PlateauDeJeu.Plateau[Xtmp + y1][Ytmp + x1].avoirPion() == true) {
+                                                if (PlateauDeJeu.Plateau[Xtmp + y1][Ytmp + x1].renvoyerPion().avoirEquipe() == 1) {
+                                                    PlateauDeJeu.Plateau[Xtmp + y1][Ytmp + x1].viser = true;
+                                                }
+                                            }
+                                            else {
+                                                PlateauDeJeu.Plateau[Xtmp + y1][Ytmp + x1].viser = true;
+                                            }
+                                        }
+                                        if ((Xtmp + y2) < 5 && (Ytmp + x2) < 5 && (Xtmp + y2)>= 0 && (Ytmp + x2) >= 0) {
+                                            if (PlateauDeJeu.Plateau[Xtmp + y2][Ytmp + x2].avoirPion() == true) {
+                                                if (PlateauDeJeu.Plateau[Xtmp + y2][Ytmp + x2].renvoyerPion().avoirEquipe() == 1) {
+                                                    PlateauDeJeu.Plateau[Xtmp + y2][Ytmp + x2].viser = true;
+                                                }
+                                            }
+                                            else {
+                                                PlateauDeJeu.Plateau[Xtmp + y2][Ytmp + x2].viser = true;
+                                            }
+                                        }
+                                        if ((Xtmp + y3) < 5 && (Ytmp + x3) < 5 && (Xtmp + y3)>= 0 && (Ytmp + x3) >= 0) {
+                                            if (PlateauDeJeu.Plateau[Xtmp + y3][Ytmp + x3].avoirPion() == true) {
+                                                if (PlateauDeJeu.Plateau[Xtmp + y3][Ytmp + x3].renvoyerPion().avoirEquipe() == 1) {
+                                                    PlateauDeJeu.Plateau[Xtmp + y3][Ytmp + x3].viser = true;
+                                                }
+                                            }
+                                            else {
+                                                PlateauDeJeu.Plateau[Xtmp + y3][Ytmp + x3].viser = true;
+                                            }
+                                        }
+                                        if ((Xtmp + y4) < 5 && (Ytmp + x4) < 5 && (Xtmp + y4)>= 0 && (Ytmp + x4) >= 0) {
+                                            if (PlateauDeJeu.Plateau[Xtmp + y4][Ytmp + x4].avoirPion() == true) {
+                                                if (PlateauDeJeu.Plateau[Xtmp + y4][Ytmp + x4].renvoyerPion().avoirEquipe() == 1) {
+                                                    PlateauDeJeu.Plateau[Xtmp + y4][Ytmp + x4].viser = true;
+                                                }
+                                            }
+                                            else {
+                                                PlateauDeJeu.Plateau[Xtmp + y4][Ytmp + x4].viser = true;
+                                            }
+                                        }
+                                        
+                                        Panel_PlateauDeJeu.repaint();
+                                        deplacer = true;
+                                        
+                                    }
+                                    else {
+                                        InfoPartie.setText("Saisissez d'abord une carte de mouvement");
+                                    }
+                                }
+                                
+                            }
+
+                            if (c.viser == true) {
                                 c.affecterPion(piontmp);
                                 PlateauDeJeu.Plateau[Xtmp][Ytmp].supprimerPion();
                                 Panel_PlateauDeJeu.repaint();
                                 deplacer = false;
-                                PlateauDeJeu.Plateau[Xtmp][Ytmp].cible = false;
-                                PlateauDeJeu.supprimerViser();
                                 changerJoueurCourant();
                                 changerCarte(cartetmp);
                                 cartetmp = null;
-
-                            }
-                            if (caseGraph.X == (Xtmp + y2) && caseGraph.Y == (Ytmp + x2)) {
-                                c.affecterPion(piontmp);
-                                PlateauDeJeu.Plateau[Xtmp][Ytmp].supprimerPion();
-                                Panel_PlateauDeJeu.repaint();
-                                deplacer = false;
-                                PlateauDeJeu.Plateau[Xtmp][Ytmp].cible = false;
+                                PlateauDeJeu.supprimerCibles();
                                 PlateauDeJeu.supprimerViser();
-                                changerJoueurCourant();
-                                changerCarte(cartetmp);
-                                cartetmp = null;
-
                             }
-                            if (caseGraph.X == (Xtmp + y3) && caseGraph.Y == (Ytmp + x3)) {
-                                c.affecterPion(piontmp);
-                                PlateauDeJeu.Plateau[Xtmp][Ytmp].supprimerPion();
-                                Panel_PlateauDeJeu.repaint();
-                                deplacer = false;
-                                PlateauDeJeu.Plateau[Xtmp][Ytmp].cible = false;
-                                PlateauDeJeu.supprimerViser();
-                                changerJoueurCourant();
-                                changerCarte(cartetmp);
-                                cartetmp = null;
-
-                            }
-                            if (caseGraph.X == (Xtmp + y4) && caseGraph.Y == (Ytmp + x4)) {
-                                c.affecterPion(piontmp);
-                                PlateauDeJeu.Plateau[Xtmp][Ytmp].supprimerPion();
-                                Panel_PlateauDeJeu.repaint();
-                                deplacer = false;
-                                PlateauDeJeu.Plateau[Xtmp][Ytmp].cible = false;
-                                PlateauDeJeu.supprimerViser();
-                                changerJoueurCourant();
-                                changerCarte(cartetmp);
-                                cartetmp = null;
-
-                            }
-                            if (PlateauDeJeu.plateauGagnantPourEquipe1() == true) {
-                                FenetreDeJeu.super.dispose();
-                            }
-                            if (PlateauDeJeu.plateauGagnantPourEquipe2() == true) {
-                                FenetreDeJeu.super.dispose();
-                            }
-                        }
-                        
-                        
-                        
-                        
-                        
-                        
+                            Victoire(reverse);
+                        }                        
                     }
                 });
                 Panel_PlateauDeJeu.add(caseGraph);
@@ -388,6 +534,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         Carte2J2 = new javax.swing.JButton();
         CartePioche = new javax.swing.JButton();
         InfoPartie = new javax.swing.JLabel();
+        Bouton_retournerPlateau = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -401,7 +548,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         getContentPane().add(Bouton_Arreter, new org.netbeans.lib.awtextra.AbsoluteConstraints(1700, 1010, -1, -1));
 
         Panel_PlateauDeJeu.setBackground(new java.awt.Color(102, 102, 102));
-        Panel_PlateauDeJeu.setPreferredSize(new java.awt.Dimension(810, 810));
+        Panel_PlateauDeJeu.setPreferredSize(new java.awt.Dimension(820, 820));
         Panel_PlateauDeJeu.setLayout(new java.awt.GridLayout(5, 5));
         getContentPane().add(Panel_PlateauDeJeu, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 80, -1, -1));
 
@@ -467,6 +614,14 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         InfoPartie.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
         getContentPane().add(InfoPartie, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 30, -1, -1));
 
+        Bouton_retournerPlateau.setText("Retourner le plateau");
+        Bouton_retournerPlateau.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Bouton_retournerPlateauActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Bouton_retournerPlateau, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 20, -1, -1));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -482,6 +637,9 @@ public class FenetreDeJeu extends javax.swing.JFrame {
             Carte1J1.setBackground(Color.CYAN);
             Carte2J1.setBackground(Color.WHITE);
             InfoPartie.setText("");
+            PlateauDeJeu.supprimerCibles();
+            PlateauDeJeu.supprimerViser();
+            Panel_PlateauDeJeu.repaint();
             
         }
     }//GEN-LAST:event_Carte1J1ActionPerformed
@@ -493,6 +651,9 @@ public class FenetreDeJeu extends javax.swing.JFrame {
             Carte2J1.setBackground(Color.CYAN);
             Carte1J1.setBackground(Color.WHITE);
             InfoPartie.setText("");
+            PlateauDeJeu.supprimerCibles();
+            PlateauDeJeu.supprimerViser();
+            Panel_PlateauDeJeu.repaint();
         }
     }//GEN-LAST:event_Carte2J1ActionPerformed
 
@@ -503,6 +664,9 @@ public class FenetreDeJeu extends javax.swing.JFrame {
             Carte1J2.setBackground(Color.CYAN);
             Carte2J2.setBackground(Color.WHITE);
             InfoPartie.setText("");
+            PlateauDeJeu.supprimerCibles();
+            PlateauDeJeu.supprimerViser();
+            Panel_PlateauDeJeu.repaint();
         }
     }//GEN-LAST:event_Carte1J2ActionPerformed
 
@@ -513,6 +677,9 @@ public class FenetreDeJeu extends javax.swing.JFrame {
             Carte2J2.setBackground(Color.CYAN);
             Carte1J2.setBackground(Color.WHITE);
             InfoPartie.setText("");
+            PlateauDeJeu.supprimerCibles();
+            PlateauDeJeu.supprimerViser();
+            Panel_PlateauDeJeu.repaint();
         }
     }//GEN-LAST:event_Carte2J2ActionPerformed
 
@@ -520,8 +687,50 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_CartePiocheActionPerformed
 
+    private void Bouton_retournerPlateauActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bouton_retournerPlateauActionPerformed
+        // TODO add your handling code here:
+        retournerPlateau(); 
+    }//GEN-LAST:event_Bouton_retournerPlateauActionPerformed
+
+    
+    public void Victoire(boolean reverse) {
+        if (PlateauDeJeu.plateauGagnantPourEquipe1(reverse) == true) {
+            FenetreDeJeu.super.dispose();
+        }
+        if (PlateauDeJeu.plateauGagnantPourEquipe2(reverse) == true) {
+            FenetreDeJeu.super.dispose();
+        }
+    }
+    
     
     public void retournerPlateau() {
+        PlateauDeJeu plateautmp = new PlateauDeJeu();
+        PlateauDeJeu.supprimerCibles();
+        PlateauDeJeu.supprimerViser();
+        
+        for (int i = 0; i<5; i++) {
+            for (int j = 0; j<5; j++) {
+                if (PlateauDeJeu.Plateau[i][j].avoirPion() == true) {
+                    plateautmp.Plateau[4-i][4-j].affecterPion(PlateauDeJeu.Plateau[i][j].renvoyerEtSupprimerPion());
+                }
+            }
+        }
+        
+        for (int i = 0; i<5; i++) {
+            for (int j = 0; j<5; j++) {
+                if (plateautmp.Plateau[i][j].avoirPion() == true) {
+                    PlateauDeJeu.Plateau[i][j].affecterPion(plateautmp.Plateau[i][j].renvoyerEtSupprimerPion());
+                }
+            }
+        }
+        
+        if (reverse == true) {
+            reverse = false;
+        }
+        else {
+            reverse = true;
+        }       
+        Panel_PlateauDeJeu.repaint();
 
     }
     
@@ -861,6 +1070,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Bouton_Arreter;
+    private javax.swing.JButton Bouton_retournerPlateau;
     private javax.swing.JButton Carte1J1;
     private javax.swing.JButton Carte1J2;
     private javax.swing.JButton Carte2J1;

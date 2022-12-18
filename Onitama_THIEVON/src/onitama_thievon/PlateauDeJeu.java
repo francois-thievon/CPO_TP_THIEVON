@@ -26,6 +26,22 @@ public class PlateauDeJeu {
         Plateau[y][x].affecterPion(p);
     }
     
+    public void supprimerCibles() {
+        for (int i = 0; i<5; i++) {
+            for (int j = 0; j<5; j++) {
+                Plateau[i][j].cible = false;
+            }
+        }
+    }
+    
+    public void supprimerViser() {
+        for (int i = 0; i<5; i++) {
+            for (int j = 0; j<5; j++) {
+                Plateau[i][j].viser = false;
+            }
+        }
+    }
+    
     public boolean deplacerPion(int x, int y, int X, int Y) {
         Pion piontmp = new Pion(1, false);
         if (Plateau[y][x].avoirPion() == true) {
@@ -94,26 +110,44 @@ public class PlateauDeJeu {
         return true;
     }
     
-    public boolean PionEquipe1surTemple2() {
-        if (Plateau[4][2].avoirPion() == true) {
-            if (Plateau[4][2].renvoyerPion().avoirEquipe() == 1) {
-                return true;
+    public boolean PionEquipe1surTemple2(boolean reverse) {
+        if (reverse == false) {
+            if (Plateau[4][2].avoirPion() == true) {
+                if (Plateau[4][2].renvoyerPion().avoirEquipe() == 1) {
+                    return true;
+                }
+            }
+        }
+        else {
+            if (Plateau[0][2].avoirPion() == true) {
+                if (Plateau[0][2].renvoyerPion().avoirEquipe() == 1) {
+                    return true;
+                }
             }
         }
         return false;
     }
     
-    public boolean PionEquipe2surTemple1() {
-        if (Plateau[0][2].avoirPion() == true) {
-            if (Plateau[0][2].renvoyerPion().avoirEquipe() == 2) {
-                return true;
+    public boolean PionEquipe2surTemple1(boolean reverse) {
+        if (reverse == false) {
+            if (Plateau[0][2].avoirPion() == true) {
+                if (Plateau[0][2].renvoyerPion().avoirEquipe() == 2) {
+                    return true;
+                }
+            }
+        }
+        else {
+            if (Plateau[4][2].avoirPion() == true) {
+                if (Plateau[4][2].renvoyerPion().avoirEquipe() == 2) {
+                    return true;
+                }
             }
         }
         return false;
     }
     
-    public boolean plateauGagnantPourEquipe1() {
-        if (RoiEquipe2mort() == true || PionEquipe1surTemple2() == true) {
+    public boolean plateauGagnantPourEquipe1(boolean reverse) {
+        if (RoiEquipe2mort() == true || PionEquipe1surTemple2(reverse) == true) {
             return true;
         }
         else {
@@ -121,8 +155,8 @@ public class PlateauDeJeu {
         }
     }
     
-    public boolean plateauGagnantPourEquipe2() {
-        if (RoiEquipe1mort() == true || PionEquipe2surTemple1() == true) {
+    public boolean plateauGagnantPourEquipe2(boolean reverse) {
+        if (RoiEquipe1mort() == true || PionEquipe2surTemple1(reverse) == true) {
             return true;
         }
         else {
@@ -130,12 +164,5 @@ public class PlateauDeJeu {
         }
     }
     
-    public void supprimerViser(){
-        for (int i = 0; i<5; i++) {
-            for (int j = 0; j<5; j++) {
-                Plateau[i][j].viser = false;
-            }
-        }
-    }
     
 }

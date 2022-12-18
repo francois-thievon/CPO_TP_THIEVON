@@ -20,8 +20,8 @@ public class CaseGraphique extends JButton{
     int Y;
     
     CaseDePlateau caseAssociee;
-    ImageIcon Case           = new javax.swing.ImageIcon(getClass().getResource("/images/Case.png"));
-    ImageIcon Temple         = new javax.swing.ImageIcon(getClass().getResource("/images/Temple.png"));
+    ImageIcon Case           = new javax.swing.ImageIcon(getClass().getResource("/images/Casev2.JPG"));
+    ImageIcon Temple         = new javax.swing.ImageIcon(getClass().getResource("/images/Templev2.JPG"));
     
 
     
@@ -48,7 +48,7 @@ public class CaseGraphique extends JButton{
         if (caseAssociee.avoirPion() == true) {
         
             if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Jonathan") {
-                if (caseAssociee.avoirTemple() == true) {
+                if (caseAssociee.renvoyerPion().etreLeRoi() == true) {
                     try {
                     Image img = ImageIO.read(new File("Jonathan.png"));
                     G.drawImage(img, 20, 6, this);
@@ -65,7 +65,7 @@ public class CaseGraphique extends JButton{
             }
             
             if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Joseph") {
-                if (caseAssociee.avoirTemple() == true) {
+                if (caseAssociee.renvoyerPion().etreLeRoi() == true) {
                     try {
                     Image img = ImageIO.read(new File("Joseph.png"));
                     G.drawImage(img, 25, 6, this);
@@ -81,7 +81,7 @@ public class CaseGraphique extends JButton{
                 }
             }
             if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Jotaro") {
-                if (caseAssociee.avoirTemple() == true) {
+                if (caseAssociee.renvoyerPion().etreLeRoi() == true) {
                     try {
                     Image img = ImageIO.read(new File("Jotaro.png"));
                     G.drawImage(img, 30, 6, this);
@@ -97,7 +97,7 @@ public class CaseGraphique extends JButton{
                 }
             }
             if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Josuke") {
-                if (caseAssociee.avoirTemple() == true) {
+                if (caseAssociee.renvoyerPion().etreLeRoi() == true) {
                     try {
                     Image img = ImageIO.read(new File("Josuke.png"));
                     G.drawImage(img, 30, 6, this);
@@ -113,7 +113,7 @@ public class CaseGraphique extends JButton{
                 }
             }
             if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Giorno") {
-                if (caseAssociee.avoirTemple() == true) {
+                if (caseAssociee.renvoyerPion().etreLeRoi() == true) {
                     try {
                     Image img = ImageIO.read(new File("Giorno.png"));
                     G.drawImage(img, 13, 6, this);
@@ -129,7 +129,7 @@ public class CaseGraphique extends JButton{
                 }
             }
             if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Jolyne") {
-                if (caseAssociee.avoirTemple() == true) {
+                if (caseAssociee.renvoyerPion().etreLeRoi() == true) {
                     try {
                     Image img = ImageIO.read(new File("Jolyne.png"));
                     G.drawImage(img, 18, 6, this);
@@ -145,7 +145,7 @@ public class CaseGraphique extends JButton{
                 }
             }
             if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Kars") {
-                if (caseAssociee.avoirTemple() == true) {
+                if (caseAssociee.renvoyerPion().etreLeRoi() == true) {
                     try {
                     Image img = ImageIO.read(new File("Kars.png"));
                     G.drawImage(img, 17, 6, this);
@@ -161,7 +161,7 @@ public class CaseGraphique extends JButton{
                 }
             }
             if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Dio") {
-                if (caseAssociee.avoirTemple() == true) {
+                if (caseAssociee.renvoyerPion().etreLeRoi() == true) {
                     try {
                     Image img = ImageIO.read(new File("Dio.png"));
                     G.drawImage(img, 25, 6, this);
@@ -177,7 +177,7 @@ public class CaseGraphique extends JButton{
                 }
             }
             if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Yoshikage") {
-                if (caseAssociee.avoirTemple() == true) {
+                if (caseAssociee.renvoyerPion().etreLeRoi() == true) {
                     try {
                     Image img = ImageIO.read(new File("Kira.png"));
                     G.drawImage(img, 20, 6, this);
@@ -193,7 +193,7 @@ public class CaseGraphique extends JButton{
                 }
             }
             if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Diavolo") {
-                if (caseAssociee.avoirTemple() == true) {
+                if (caseAssociee.renvoyerPion().etreLeRoi() == true) {
                     try {
                     Image img = ImageIO.read(new File("Diavolo.png"));
                     G.drawImage(img, 25, 6, this);
@@ -209,7 +209,7 @@ public class CaseGraphique extends JButton{
                 }
             }
             if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Enrico") {
-                if (caseAssociee.avoirTemple() == true) {
+                if (caseAssociee.renvoyerPion().etreLeRoi() == true) {
                     try {
                     Image img = ImageIO.read(new File("Pucci.png"));
                     G.drawImage(img, 35, 6, this);
@@ -225,7 +225,7 @@ public class CaseGraphique extends JButton{
                 }
             }
             if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Cesear") {
-                if (caseAssociee.avoirTemple() == true) {
+                if (caseAssociee.renvoyerPion().etreLeRoi() == true) {
                     try {
                     Image img = ImageIO.read(new File("Cesear.png"));
                     G.drawImage(img, 20, 6, this);
@@ -241,7 +241,7 @@ public class CaseGraphique extends JButton{
                 }
             }
             if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Jean-Pierre") {
-                if (caseAssociee.avoirTemple() == true) {
+                if (caseAssociee.renvoyerPion().etreLeRoi() == true) {
                     try {
                     Image img = ImageIO.read(new File("Polnareff.png"));
                     G.drawImage(img, 47, 6, this);
@@ -257,7 +257,7 @@ public class CaseGraphique extends JButton{
                 }
             }
             if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Koichi") {
-                if (caseAssociee.avoirTemple() == true) {
+                if (caseAssociee.renvoyerPion().etreLeRoi() == true) {
                     try {
                     Image img = ImageIO.read(new File("Koichi.png"));
                     G.drawImage(img, 32, 6, this);
@@ -273,7 +273,7 @@ public class CaseGraphique extends JButton{
                 }
             }
             if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Bruno") {
-                if (caseAssociee.avoirTemple() == true) {
+                if (caseAssociee.renvoyerPion().etreLeRoi() == true) {
                     try {
                     Image img = ImageIO.read(new File("Bucciarati.png"));
                     G.drawImage(img, 31, 6, this);
@@ -289,7 +289,7 @@ public class CaseGraphique extends JButton{
                 }
             }
             if (caseAssociee.renvoyerPion().renvoyerJoueur().prenom == "Ermes") {
-                if (caseAssociee.avoirTemple() == true) {
+                if (caseAssociee.renvoyerPion().etreLeRoi() == true) {
                     try {
                     Image img = ImageIO.read(new File("Ermes.png"));
                     G.drawImage(img, 32, 6, this);
@@ -311,7 +311,7 @@ public class CaseGraphique extends JButton{
         if (caseAssociee.cible == true) {
             try {
                 Image img = ImageIO.read(new File("Cercle_Bleu.png"));
-                G.drawImage(img, 0, 0, this);
+                G.drawImage(img, 8, 8, this);
             }catch(Exception e){ 
             }
         }
@@ -319,7 +319,7 @@ public class CaseGraphique extends JButton{
         if (caseAssociee.viser == true) {
             try {
                 Image img = ImageIO.read(new File("Cible_bug.png"));
-                G.drawImage(img, 0, 0, this);
+                G.drawImage(img, 10, 10, this);
             }catch(Exception e){ 
             }
         }
