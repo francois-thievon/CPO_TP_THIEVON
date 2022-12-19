@@ -643,15 +643,20 @@ public class FenetreDeJeu extends javax.swing.JFrame {
                                 
                                 labeltmp = new javax.swing.JLabel();
                                 labeltmp.setIcon(Icontmp);
+                                labeltmp.setBounds(100, 500, 150, 150);
                                 
+
                                 getContentPane().add(labeltmp);
+                                getContentPane().setComponentZOrder(labeltmp, 0);
                                 
                                 
-                                labeltmp.setBounds(10, 10, 150, 150);
+                                
+                                
+                                
                                 
                                 Kensoft animate = new Kensoft();
-                                animate.jLabelXRight(10, 200, 5, 1, labeltmp);
-                                animate.jLabelYDown(10, 200, 5, 1, labeltmp);
+                                animate.jLabelXRight(100, 900, 5, 1, labeltmp);
+                                animate.jLabelYDown(500, 1000, 5, 1, labeltmp);
                                 
                                 
                                 
