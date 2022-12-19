@@ -34,6 +34,7 @@ public class Fenetre_Accueil extends javax.swing.JFrame {
         BoutonMusique = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1920, 1080));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         BoutonChoixPersos.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N

@@ -362,7 +362,7 @@ public class Fenetre_choixJoueurs extends javax.swing.JFrame {
         getContentPane().add(Bouton_Polnareff, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 740, 155, 155));
 
         Wallpaper.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Wallpaper jojo.jpg"))); // NOI18N
-        getContentPane().add(Wallpaper, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        getContentPane().add(Wallpaper, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1920, 1080));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
