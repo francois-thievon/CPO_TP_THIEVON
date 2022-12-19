@@ -545,82 +545,83 @@ public class FenetreDeJeu extends javax.swing.JFrame {
                 Bouton_ArreterActionPerformed(evt);
             }
         });
-        getContentPane().add(Bouton_Arreter, new org.netbeans.lib.awtextra.AbsoluteConstraints(1700, 1010, -1, -1));
+        getContentPane().add(Bouton_Arreter, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 830, -1, -1));
 
         Panel_PlateauDeJeu.setBackground(new java.awt.Color(102, 102, 102));
         Panel_PlateauDeJeu.setPreferredSize(new java.awt.Dimension(820, 820));
         Panel_PlateauDeJeu.setLayout(new java.awt.GridLayout(5, 5));
-        getContentPane().add(Panel_PlateauDeJeu, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 80, -1, -1));
+        getContentPane().add(Panel_PlateauDeJeu, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 90, -1, -1));
 
         jLabel1.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
         jLabel1.setText("Joueur  1:");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 90, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 100, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
         jLabel2.setText("Joueur 2:");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1730, 80, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 150, -1, -1));
 
         LabelJ1.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
         LabelJ1.setText("jLabel3");
-        getContentPane().add(LabelJ1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 140, -1, -1));
+        getContentPane().add(LabelJ1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 100, -1, -1));
 
         LabelJ2.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
         LabelJ2.setText("jLabel4");
-        getContentPane().add(LabelJ2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1730, 130, -1, -1));
+        getContentPane().add(LabelJ2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 150, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
         jLabel5.setText("Joueur courant :");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1370, 50, -1, -1));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, -1, -1));
 
         LabelJC.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
         LabelJC.setText("jLabel3");
-        getContentPane().add(LabelJC, new org.netbeans.lib.awtextra.AbsoluteConstraints(1430, 100, -1, -1));
+        getContentPane().add(LabelJC, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 40, -1, -1));
 
         Carte1J1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Carte1J1ActionPerformed(evt);
             }
         });
-        getContentPane().add(Carte1J1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 190, 435, 250));
+        getContentPane().add(Carte1J1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 240, 390, 225));
 
         Carte2J1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Carte2J1ActionPerformed(evt);
             }
         });
-        getContentPane().add(Carte2J1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 450, 435, 250));
+        getContentPane().add(Carte2J1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 520, 390, 225));
 
         Carte1J2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Carte1J2ActionPerformed(evt);
             }
         });
-        getContentPane().add(Carte1J2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1480, 190, 435, 250));
+        getContentPane().add(Carte1J2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1430, 90, 390, 225));
 
         Carte2J2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Carte2J2ActionPerformed(evt);
             }
         });
-        getContentPane().add(Carte2J2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1480, 450, 435, 250));
+        getContentPane().add(Carte2J2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1430, 400, 390, 225));
 
         CartePioche.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CartePiocheActionPerformed(evt);
             }
         });
-        getContentPane().add(CartePioche, new org.netbeans.lib.awtextra.AbsoluteConstraints(1260, 720, 416, 234));
+        getContentPane().add(CartePioche, new org.netbeans.lib.awtextra.AbsoluteConstraints(1450, 670, 374, 211));
 
         InfoPartie.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
         getContentPane().add(InfoPartie, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 30, -1, -1));
 
+        Bouton_retournerPlateau.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
         Bouton_retournerPlateau.setText("Retourner le plateau");
         Bouton_retournerPlateau.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Bouton_retournerPlateauActionPerformed(evt);
             }
         });
-        getContentPane().add(Bouton_retournerPlateau, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 20, -1, -1));
+        getContentPane().add(Bouton_retournerPlateau, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 820, 230, 60));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -768,256 +769,256 @@ public class FenetreDeJeu extends javax.swing.JFrame {
     
     public void afficherCartes() {
         if (carteJ1nb1 == carteStarPlatinium) {
-            Carte1J1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_SP.JPG")));
+            Carte1J1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte StarPlatinium.png")));
         }
         if (carteJ1nb1 == carteCrazyDiamond) {
-            Carte1J1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_CD.JPG")));
+            Carte1J1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte CrazyDiamond.png")));
         }
         if (carteJ1nb1 == carteGoldExperience) {
-            Carte1J1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_GE.JPG")));
+            Carte1J1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte GoldExperience.png")));
         }
         if (carteJ1nb1 == carteStoneFree) {
-            Carte1J1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_SF.JPG")));
+            Carte1J1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte StoneFree.png")));
         }
         if (carteJ1nb1 == carteTheWorld) {
-            Carte1J1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_TW.JPG")));
+            Carte1J1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte TheWorld.png")));
         }
         if (carteJ1nb1 == carteKillerQueen) {
-            Carte1J1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_KQ.JPG")));
+            Carte1J1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte KillerQueen.png")));
         }
         if (carteJ1nb1 == carteKingCrimson) {
-            Carte1J1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_KC.JPG")));
+            Carte1J1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte KingCrimson.png")));
         }
         if (carteJ1nb1 == carteWhiteSnake) {
-            Carte1J1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_WS.jpg")));
+            Carte1J1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte WhiteSnake.png")));
         }
         if (carteJ1nb1 == carteSilverChariot) {
-            Carte1J1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_SC.JPG")));
+            Carte1J1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte SilverChariot.png")));
         }
         if (carteJ1nb1 == carteEchoesAct3) {
-            Carte1J1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_A3.JPG")));
+            Carte1J1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte EchoesAct3.png")));
         }
         if (carteJ1nb1 == carteStickyFingers) {
-            Carte1J1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/CarteStF.JPG")));
+            Carte1J1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte StickyFingers.png")));
         }
         if (carteJ1nb1 == carteKiss) {
-            Carte1J1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_K.JPG")));
+            Carte1J1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte Kiss.png")));
         }
         if (carteJ1nb1 == carteEpeePluck) {
-            Carte1J1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_EP.JPG")));
+            Carte1J1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte EpeePluck.png")));
         }
         if (carteJ1nb1 == carteHermitPurple) {
-            Carte1J1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_HP.JPG")));
+            Carte1J1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte HermitPurple.png")));
         }
         if (carteJ1nb1 == carteSavonLauncher) {
-            Carte1J1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/CarteSC.JPG")));
+            Carte1J1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte SavonLauncher.png")));
         }
         if (carteJ1nb1 == carteMasquePierre) {
-            Carte1J1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_MP.JPG")));
+            Carte1J1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte MasquePierre.png")));
         }
         
         
         
         if (carteJ1nb2 == carteStarPlatinium) {
-            Carte2J1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_SP.JPG")));
+            Carte2J1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte StarPlatinium.png")));
         }
         if (carteJ1nb2 == carteCrazyDiamond) {
-            Carte2J1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_CD.JPG")));
+            Carte2J1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte CrazyDiamond.png")));
         }
         if (carteJ1nb2 == carteGoldExperience) {
-            Carte2J1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_GE.JPG")));
+            Carte2J1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte GoldExperience.png")));
         }
         if (carteJ1nb2 == carteStoneFree) {
-            Carte2J1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_SF.JPG")));
+            Carte2J1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte StoneFree.png")));
         }
         if (carteJ1nb2 == carteTheWorld) {
-            Carte2J1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_TW.JPG")));
+            Carte2J1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte TheWorld.png")));
         }
         if (carteJ1nb2 == carteKillerQueen) {
-            Carte2J1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_KQ.JPG")));
+            Carte2J1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte KillerQueen.png")));
         }
         if (carteJ1nb2 == carteKingCrimson) {
-            Carte2J1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_KC.JPG")));
+            Carte2J1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte KingCrimson.png")));
         }
         if (carteJ1nb2 == carteWhiteSnake) {
-            Carte2J1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_WS.jpg")));
+            Carte2J1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte WhiteSnake.png")));
         }
         if (carteJ1nb2 == carteSilverChariot) {
-            Carte2J1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_SC.JPG")));
+            Carte2J1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte SilverChariot.png")));
         }
         if (carteJ1nb2 == carteEchoesAct3) {
-            Carte2J1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_A3.JPG")));
+            Carte2J1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte EchoesAct3.png")));
         }
         if (carteJ1nb2 == carteStickyFingers) {
-            Carte2J1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/CarteStF.JPG")));
+            Carte2J1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte StickyFingers.png")));
         }
         if (carteJ1nb2 == carteKiss) {
-            Carte2J1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_K.JPG")));
+            Carte2J1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte Kiss.png")));
         }
         if (carteJ1nb2 == carteEpeePluck) {
-            Carte2J1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_EP.JPG")));
+            Carte2J1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte EpeePluck.png")));
         }
         if (carteJ1nb2 == carteHermitPurple) {
-            Carte2J1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_HP.JPG")));
+            Carte2J1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte HermitPurple.png")));
         }
         if (carteJ1nb2 == carteSavonLauncher) {
-            Carte2J1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/CarteSC.JPG")));
+            Carte2J1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte SavonLauncher.png")));
         }
         if (carteJ1nb2 == carteMasquePierre) {
-            Carte2J1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_MP.JPG")));
+            Carte2J1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte MasquePierre.png")));
         }
         
         
         
         if (carteJ2nb1 == carteStarPlatinium) {
-            Carte1J2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_SP.JPG")));
+            Carte1J2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte StarPlatinium.png")));
         }
         if (carteJ2nb1 == carteCrazyDiamond) {
-            Carte1J2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_CD.JPG")));
+            Carte1J2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte CrazyDiamond.png")));
         }
         if (carteJ2nb1 == carteGoldExperience) {
-            Carte1J2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_GE.JPG")));
+            Carte1J2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte GoldExperience.png")));
         }
         if (carteJ2nb1 == carteStoneFree) {
-            Carte1J2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_SF.JPG")));
+            Carte1J2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte StoneFree.png")));
         }
         if (carteJ2nb1 == carteTheWorld) {
-            Carte1J2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_TW.JPG")));
+            Carte1J2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte TheWorld.png")));
         }
         if (carteJ2nb1 == carteKillerQueen) {
-            Carte1J2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_KQ.JPG")));
+            Carte1J2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte KillerQueen.png")));
         }
         if (carteJ2nb1 == carteKingCrimson) {
-            Carte1J2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_KC.JPG")));
+            Carte1J2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte KingCrimson.png")));
         }
         if (carteJ2nb1 == carteWhiteSnake) {
-            Carte1J2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_WS.jpg")));
+            Carte1J2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte WhiteSnake.png")));
         }
         if (carteJ2nb1 == carteSilverChariot) {
-            Carte1J2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_SC.JPG")));
+            Carte1J2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte SilverChariot.png")));
         }
         if (carteJ2nb1 == carteEchoesAct3) {
-            Carte1J2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_A3.JPG")));
+            Carte1J2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte EchoesAct3.png")));
         }
         if (carteJ2nb1 == carteStickyFingers) {
-            Carte1J2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/CarteStF.JPG")));
+            Carte1J2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte StickyFingers.png")));
         }
         if (carteJ2nb1 == carteKiss) {
-            Carte1J2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_K.JPG")));
+            Carte1J2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte Kiss.png")));
         }
         if (carteJ2nb1 == carteEpeePluck) {
-            Carte1J2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_EP.JPG")));
+            Carte1J2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte EpeePluck.png")));
         }
         if (carteJ2nb1 == carteHermitPurple) {
-            Carte1J2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_HP.JPG")));
+            Carte1J2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte HermitPurple.png")));
         }
         if (carteJ2nb1 == carteSavonLauncher) {
-            Carte1J2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/CarteSC.JPG")));
+            Carte1J2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte SavonLauncher.png")));
         }
         if (carteJ2nb1 == carteMasquePierre) {
-            Carte1J2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_MP.JPG")));
+            Carte1J2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte MasquePierre.png")));
         }
         
         
         
         if (carteJ2nb2 == carteStarPlatinium) {
-            Carte2J2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_SP.JPG")));
+            Carte2J2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte StarPlatinium.png")));
         }
         if (carteJ2nb2 == carteCrazyDiamond) {
-            Carte2J2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_CD.JPG")));
+            Carte2J2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte CrazyDiamond.png")));
         }
         if (carteJ2nb2 == carteGoldExperience) {
-            Carte2J2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_GE.JPG")));
+            Carte2J2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte GoldExperience.png")));
         }
         if (carteJ2nb2 == carteStoneFree) {
-            Carte2J2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_SF.JPG")));
+            Carte2J2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte StoneFree.png")));
         }
         if (carteJ2nb2 == carteTheWorld) {
-            Carte2J2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_TW.JPG")));
+            Carte2J2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte TheWorld.png")));
         }
         if (carteJ2nb2 == carteKillerQueen) {
-            Carte2J2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_KQ.JPG")));
+            Carte2J2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte KillerQueen.png")));
         }
         if (carteJ2nb2 == carteKingCrimson) {
-            Carte2J2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_KC.JPG")));
+            Carte2J2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte KingCrimson.png")));
         }
         if (carteJ2nb2 == carteWhiteSnake) {
-            Carte2J2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_WS.jpg")));
+            Carte2J2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte WhiteSnake.png")));
         }
         if (carteJ2nb2 == carteSilverChariot) {
-            Carte2J2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_SC.JPG")));
+            Carte2J2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte SilverChariot.png")));
         }
         if (carteJ2nb2 == carteEchoesAct3) {
-            Carte2J2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_A3.JPG")));
+            Carte2J2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte EchoesAct3.png")));
         }
         if (carteJ2nb2 == carteStickyFingers) {
-            Carte2J2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/CarteStF.JPG")));
+            Carte2J2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte StickyFingers.png")));
         }
         if (carteJ2nb2 == carteKiss) {
-            Carte2J2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_K.JPG")));
+            Carte2J2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte Kiss.png")));
         }
         if (carteJ2nb2 == carteEpeePluck) {
-            Carte2J2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_EP.JPG")));
+            Carte2J2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte EpeePluck.png")));
         }
         if (carteJ2nb2 == carteHermitPurple) {
-            Carte2J2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_HP.JPG")));
+            Carte2J2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte HermitPurple.png")));
         }
         if (carteJ2nb2 == carteSavonLauncher) {
-            Carte2J2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/CarteSC.JPG")));
+            Carte2J2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte SavonLauncher.png")));
         }
         if (carteJ2nb2 == carteMasquePierre) {
-            Carte2J2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_MP.JPG")));
+            Carte2J2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte MasquePierre.png")));
         }
         
         
         
         if (carteFlottante == carteStarPlatinium) {
-            CartePioche.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_SP.JPG")));
+            CartePioche.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte StarPlatinium.png")));
         }
         if (carteFlottante == carteCrazyDiamond) {
-            CartePioche.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_CD.JPG")));
+            CartePioche.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte CrazyDiamond.png")));
         }
         if (carteFlottante == carteGoldExperience) {
-            CartePioche.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_GE.JPG")));
+            CartePioche.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte GoldExperience.png")));
         }
         if (carteFlottante == carteStoneFree) {
-            CartePioche.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_SF.JPG")));
+            CartePioche.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte StoneFree.png")));
         }
         if (carteFlottante == carteTheWorld) {
-            CartePioche.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_TW.JPG")));
+            CartePioche.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte TheWorld.png")));
         }
         if (carteFlottante == carteKillerQueen) {
-            CartePioche.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_KQ.JPG")));
+            CartePioche.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte KillerQueen.png")));
         }
         if (carteFlottante == carteKingCrimson) {
-            CartePioche.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_KC.JPG")));
+            CartePioche.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte KingCrimson.png")));
         }
         if (carteFlottante == carteWhiteSnake) {
-            CartePioche.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_WS.jpg")));
+            CartePioche.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte WhiteSnake.png")));
         }
         if (carteFlottante == carteSilverChariot) {
-            CartePioche.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_SC.JPG")));
+            CartePioche.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte SilverChariot.png")));
         }
         if (carteFlottante == carteEchoesAct3) {
-            CartePioche.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_A3.JPG")));
+            CartePioche.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte EchoesAct3.png")));
         }
         if (carteFlottante == carteStickyFingers) {
-            CartePioche.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/CarteStF.JPG")));
+            CartePioche.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte StickyFingers.png")));
         }
         if (carteFlottante == carteKiss) {
-            CartePioche.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_K.JPG")));
+            CartePioche.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte Kiss.png")));
         }
         if (carteFlottante == carteEpeePluck) {
-            CartePioche.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_EP.JPG")));
+            CartePioche.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte EpeePluck.png")));
         }
         if (carteFlottante == carteHermitPurple) {
-            CartePioche.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_HP.JPG")));
+            CartePioche.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte HermitPurple.png")));
         }
         if (carteFlottante == carteSavonLauncher) {
-            CartePioche.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/CarteSC.JPG")));
+            CartePioche.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte SavonLauncher.png")));
         }
         if (carteFlottante == carteMasquePierre) {
-            CartePioche.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte_MP.JPG")));
+            CartePioche.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Carte MasquePierre.png")));
         }
     }
     

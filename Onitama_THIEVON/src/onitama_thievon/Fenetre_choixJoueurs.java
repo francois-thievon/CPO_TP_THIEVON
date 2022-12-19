@@ -85,7 +85,7 @@ public class Fenetre_choixJoueurs extends javax.swing.JFrame {
                 Bouton_JolyneActionPerformed(evt);
             }
         });
-        getContentPane().add(Bouton_Jolyne, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 910, -1, -1));
+        getContentPane().add(Bouton_Jolyne, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 910, 155, 155));
 
         Bouton_Jonathan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Jonathan_pt.jpg"))); // NOI18N
         Bouton_Jonathan.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -98,7 +98,7 @@ public class Fenetre_choixJoueurs extends javax.swing.JFrame {
                 Bouton_JonathanActionPerformed(evt);
             }
         });
-        getContentPane().add(Bouton_Jonathan, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 740, -1, -1));
+        getContentPane().add(Bouton_Jonathan, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 740, 155, 155));
 
         Bouton_Joseph.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Joseph_pt.jpg"))); // NOI18N
         Bouton_Joseph.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -111,7 +111,7 @@ public class Fenetre_choixJoueurs extends javax.swing.JFrame {
                 Bouton_JosephActionPerformed(evt);
             }
         });
-        getContentPane().add(Bouton_Joseph, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 740, -1, -1));
+        getContentPane().add(Bouton_Joseph, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 740, 155, 155));
 
         Bouton_Jotaro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Jotaro_pt.jpg"))); // NOI18N
         Bouton_Jotaro.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -124,7 +124,7 @@ public class Fenetre_choixJoueurs extends javax.swing.JFrame {
                 Bouton_JotaroActionPerformed(evt);
             }
         });
-        getContentPane().add(Bouton_Jotaro, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 740, -1, -1));
+        getContentPane().add(Bouton_Jotaro, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 740, 155, 155));
 
         Bouton_Josuke.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Josuke_pt.jpg"))); // NOI18N
         Bouton_Josuke.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -137,7 +137,7 @@ public class Fenetre_choixJoueurs extends javax.swing.JFrame {
                 Bouton_JosukeActionPerformed(evt);
             }
         });
-        getContentPane().add(Bouton_Josuke, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 740, -1, -1));
+        getContentPane().add(Bouton_Josuke, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 740, 155, 155));
 
         Bouton_Giorno.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Giorno_pt.jpg"))); // NOI18N
         Bouton_Giorno.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -150,7 +150,7 @@ public class Fenetre_choixJoueurs extends javax.swing.JFrame {
                 Bouton_GiornoActionPerformed(evt);
             }
         });
-        getContentPane().add(Bouton_Giorno, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 910, -1, -1));
+        getContentPane().add(Bouton_Giorno, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 910, 155, 155));
 
         Bouton_Pucci.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Pucci_pt.jpg"))); // NOI18N
         Bouton_Pucci.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -163,7 +163,7 @@ public class Fenetre_choixJoueurs extends javax.swing.JFrame {
                 Bouton_PucciActionPerformed(evt);
             }
         });
-        getContentPane().add(Bouton_Pucci, new org.netbeans.lib.awtextra.AbsoluteConstraints(1410, 910, -1, -1));
+        getContentPane().add(Bouton_Pucci, new org.netbeans.lib.awtextra.AbsoluteConstraints(1410, 910, 155, 155));
 
         Bouton_Dio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Dio_pt.jpg"))); // NOI18N
         Bouton_Dio.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -176,7 +176,7 @@ public class Fenetre_choixJoueurs extends javax.swing.JFrame {
                 Bouton_DioActionPerformed(evt);
             }
         });
-        getContentPane().add(Bouton_Dio, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 910, -1, -1));
+        getContentPane().add(Bouton_Dio, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 910, 155, 155));
 
         Bouton_Kars.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Kars_pt.jpg"))); // NOI18N
         Bouton_Kars.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -189,7 +189,7 @@ public class Fenetre_choixJoueurs extends javax.swing.JFrame {
                 Bouton_KarsActionPerformed(evt);
             }
         });
-        getContentPane().add(Bouton_Kars, new org.netbeans.lib.awtextra.AbsoluteConstraints(1620, 910, -1, -1));
+        getContentPane().add(Bouton_Kars, new org.netbeans.lib.awtextra.AbsoluteConstraints(1620, 910, 155, 155));
 
         Bouton_Kira.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Kira_pt.jpg"))); // NOI18N
         Bouton_Kira.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -202,7 +202,7 @@ public class Fenetre_choixJoueurs extends javax.swing.JFrame {
                 Bouton_KiraActionPerformed(evt);
             }
         });
-        getContentPane().add(Bouton_Kira, new org.netbeans.lib.awtextra.AbsoluteConstraints(1620, 740, -1, -1));
+        getContentPane().add(Bouton_Kira, new org.netbeans.lib.awtextra.AbsoluteConstraints(1620, 740, 155, 155));
 
         Bouton_Diavolo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Diavolo_pt.jpg"))); // NOI18N
         Bouton_Diavolo.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -215,7 +215,7 @@ public class Fenetre_choixJoueurs extends javax.swing.JFrame {
                 Bouton_DiavoloActionPerformed(evt);
             }
         });
-        getContentPane().add(Bouton_Diavolo, new org.netbeans.lib.awtextra.AbsoluteConstraints(1410, 740, -1, -1));
+        getContentPane().add(Bouton_Diavolo, new org.netbeans.lib.awtextra.AbsoluteConstraints(1410, 740, 155, 155));
 
         LabelJoueurCourant.setForeground(new java.awt.Color(255, 255, 255));
         getContentPane().add(LabelJoueurCourant, new org.netbeans.lib.awtextra.AbsoluteConstraints(1, 50, 720, 690));
@@ -307,7 +307,7 @@ public class Fenetre_choixJoueurs extends javax.swing.JFrame {
                 Bouton_BucciaratiActionPerformed(evt);
             }
         });
-        getContentPane().add(Bouton_Bucciarati, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 910, -1, -1));
+        getContentPane().add(Bouton_Bucciarati, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 910, 155, 155));
 
         Bouton_Cesear.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Cesear_pt.jpg"))); // NOI18N
         Bouton_Cesear.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -320,7 +320,7 @@ public class Fenetre_choixJoueurs extends javax.swing.JFrame {
                 Bouton_CesearActionPerformed(evt);
             }
         });
-        getContentPane().add(Bouton_Cesear, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 740, -1, -1));
+        getContentPane().add(Bouton_Cesear, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 740, 155, 155));
 
         Bouton_Ermes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Ermes_pt.jpg"))); // NOI18N
         Bouton_Ermes.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -333,7 +333,7 @@ public class Fenetre_choixJoueurs extends javax.swing.JFrame {
                 Bouton_ErmesActionPerformed(evt);
             }
         });
-        getContentPane().add(Bouton_Ermes, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 910, -1, -1));
+        getContentPane().add(Bouton_Ermes, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 910, 155, 155));
 
         Bouton_Koichi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Koichi_pt.jpg"))); // NOI18N
         Bouton_Koichi.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -346,7 +346,7 @@ public class Fenetre_choixJoueurs extends javax.swing.JFrame {
                 Bouton_KoichiActionPerformed(evt);
             }
         });
-        getContentPane().add(Bouton_Koichi, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 910, -1, -1));
+        getContentPane().add(Bouton_Koichi, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 910, 155, 155));
 
         Bouton_Polnareff.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Polnareff_pt.jpg"))); // NOI18N
         Bouton_Polnareff.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -359,7 +359,7 @@ public class Fenetre_choixJoueurs extends javax.swing.JFrame {
                 Bouton_PolnareffActionPerformed(evt);
             }
         });
-        getContentPane().add(Bouton_Polnareff, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 740, -1, -1));
+        getContentPane().add(Bouton_Polnareff, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 740, 155, 155));
 
         Wallpaper.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Wallpaper jojo.jpg"))); // NOI18N
         getContentPane().add(Wallpaper, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
