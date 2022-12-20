@@ -20,8 +20,8 @@ public class CaseGraphique extends JButton{
     int Y;
     
     CaseDePlateau caseAssociee;
-    ImageIcon Case           = new javax.swing.ImageIcon(getClass().getResource("/images/Casev2.JPG"));
-    ImageIcon Temple         = new javax.swing.ImageIcon(getClass().getResource("/images/Templev2.JPG"));
+    ImageIcon Case           = new javax.swing.ImageIcon(getClass().getResource("/images/Casev4.png"));
+    ImageIcon Temple         = new javax.swing.ImageIcon(getClass().getResource("/images/Templev4.png"));
     
 
     

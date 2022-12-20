@@ -44,6 +44,26 @@ public class FenetreDeJeu extends javax.swing.JFrame {
     int y3;
     int x4;
     int y4;
+    
+    int x;
+    int y;
+    
+    int X;
+    int Y;
+    
+    int X2;
+    int Y2;
+    
+    int Xi;
+    int Yi;
+    
+    int Xf;
+    int Yf;
+    
+    int Xtmp2;
+    int Ytmp2;
+    
+    ImageIcon Icontmp = new javax.swing.ImageIcon();
             
     Carte carteStarPlatinium     = new Carte("Star Platinium"  , 2,  1,  -2, 1,  1,  -1, -1, -1);
     Carte carteCrazyDiamond      = new Carte("Crazy Diamond"   , 1,  1,  1,  0,  -1, 0,  -1, -1);
@@ -64,10 +84,6 @@ public class FenetreDeJeu extends javax.swing.JFrame {
     
     Carte[] listeCartes = new Carte[16];
     
-    int Ax = 300;
-    int Ay = 300;
-    int Bx = 900;
-    int By = 900;
     
   
     
@@ -167,7 +183,6 @@ public class FenetreDeJeu extends javax.swing.JFrame {
                 
                 caseGraph.addActionListener(new java.awt.event.ActionListener() {
                     public void actionPerformed(java.awt.event.ActionEvent evt){
-                        
                         CaseDePlateau c = caseGraph.caseAssociee;
                         Panel_PlateauDeJeu.repaint();
                         
@@ -501,167 +516,324 @@ public class FenetreDeJeu extends javax.swing.JFrame {
                             if (c.viser == true) {
 
                                 PlateauDeJeu.Plateau[Xtmp][Ytmp].supprimerPion();
-                                int k;
-                                
-                                ImageIcon Icontmp = new javax.swing.ImageIcon();
-                                
+                                Panel_PlateauDeJeu.repaint();
+
                                 
                                 if (joueurCourant.prenom == "Jonathan" && piontmp.etreLeRoi() == true) {
                                     ImageIcon Icontmp1 = new javax.swing.ImageIcon(getClass().getResource("/images/Jonathan.png"));
                                     Icontmp = Icontmp1;
+                                    x = 20;
+                                    y = 6;
                                 }
                                 else if (joueurCourant.prenom == "Joseph" && piontmp.etreLeRoi() == true) {
                                     ImageIcon Icontmp2 = new javax.swing.ImageIcon(getClass().getResource("/images/Joseph.png"));
                                     Icontmp = Icontmp2;
+                                    x = 25;
+                                    y = 6;
                                 }
                                 else if (joueurCourant.prenom == "Jotaro" && piontmp.etreLeRoi() == true) {
                                     ImageIcon Icontmp3 = new javax.swing.ImageIcon(getClass().getResource("/images/Jotaro.png"));
                                     Icontmp = Icontmp3;
+                                    x = 30;
+                                    y = 6;
                                 }
                                 else if (joueurCourant.prenom == "Josuke" && piontmp.etreLeRoi() == true) {
                                     ImageIcon Icontmp4 = new javax.swing.ImageIcon(getClass().getResource("/images/Josuke.png"));
                                     Icontmp = Icontmp4;
+                                    x = 30;
+                                    y = 6;
                                 }
                                 else if (joueurCourant.prenom == "Giorno" && piontmp.etreLeRoi() == true) {
                                     ImageIcon Icontmp5 = new javax.swing.ImageIcon(getClass().getResource("/images/Giorno.png"));
                                     Icontmp = Icontmp5;
+                                    x = 13;
+                                    y = 6;
                                 }
                                 else if (joueurCourant.prenom == "Jolyne" && piontmp.etreLeRoi() == true) {
                                     ImageIcon Icontmp6 = new javax.swing.ImageIcon(getClass().getResource("/images/Jolyne.png"));
                                     Icontmp = Icontmp6;
+                                    x = 18;
+                                    y = 6;
                                 }
                                 else if (joueurCourant.prenom == "Kars" && piontmp.etreLeRoi() == true) {
                                     ImageIcon Icontmp7 = new javax.swing.ImageIcon(getClass().getResource("/images/Kars.png"));
                                     Icontmp = Icontmp7;
+                                    x = 17;
+                                    y = 6;
                                 }
                                 else if (joueurCourant.prenom == "Dio" && piontmp.etreLeRoi() == true) {
                                     ImageIcon Icontmp8 = new javax.swing.ImageIcon(getClass().getResource("/images/Dio.png"));
                                     Icontmp = Icontmp8;
+                                    x = 25;
+                                    y = 6;
                                 }
                                 else if (joueurCourant.prenom == "Yoshikage" && piontmp.etreLeRoi() == true) {
                                     ImageIcon Icontmp9 = new javax.swing.ImageIcon(getClass().getResource("/images/Kira.png"));
                                     Icontmp = Icontmp9;
+                                    x = 20;
+                                    y = 6;
                                 }
                                 else if (joueurCourant.prenom == "Diavolo" && piontmp.etreLeRoi() == true) {
                                     ImageIcon Icontmp10 = new javax.swing.ImageIcon(getClass().getResource("/images/Diavolo.png"));
                                     Icontmp = Icontmp10;
+                                    x = 25;
+                                    y = 6;
                                 }
                                 else if (joueurCourant.prenom == "Enrico" && piontmp.etreLeRoi() == true) {
                                     ImageIcon Icontmp11 = new javax.swing.ImageIcon(getClass().getResource("/images/Pucci.png"));
                                     Icontmp = Icontmp11;
+                                    x = 35;
+                                    y = 6;
                                 }
                                 else if (joueurCourant.prenom == "Cesear" && piontmp.etreLeRoi() == true) {
                                     ImageIcon Icontmp12 = new javax.swing.ImageIcon(getClass().getResource("/images/Cesear.png"));
                                     Icontmp = Icontmp12;
+                                    x = 20;
+                                    y = 6;
                                 }
                                 else if (joueurCourant.prenom == "Jean-Pierre" && piontmp.etreLeRoi() == true) {
                                     ImageIcon Icontmp13 = new javax.swing.ImageIcon(getClass().getResource("/images/Polnareff.png"));
                                     Icontmp = Icontmp13;
+                                    x = 47;
+                                    y = 6;
                                 }
                                 else if (joueurCourant.prenom == "Koichi" && piontmp.etreLeRoi() == true) {
                                     ImageIcon Icontmp14 = new javax.swing.ImageIcon(getClass().getResource("/images/Koichi.png"));
                                     Icontmp = Icontmp14;
+                                    x = 32;
+                                    y = 6;
                                 }
                                 else if (joueurCourant.prenom == "Bruno" && piontmp.etreLeRoi() == true) {
                                     ImageIcon Icontmp15 = new javax.swing.ImageIcon(getClass().getResource("/images/Bucciarati.png"));
                                     Icontmp = Icontmp15;
+                                    x = 31;
+                                    y = 6;
                                 }
                                 else if (joueurCourant.prenom == "Ermes" && piontmp.etreLeRoi() == true) {
                                     ImageIcon Icontmp16 = new javax.swing.ImageIcon(getClass().getResource("/images/Ermes.png"));
                                     Icontmp = Icontmp16;
+                                    x = 32;
+                                    y = 6;
                                 }
                                 
                                 else if (joueurCourant.prenom == "Jonathan" && piontmp.etreLeRoi() != true) {
                                     ImageIcon Icontmp17 = new javax.swing.ImageIcon(getClass().getResource("/images/Punch.png"));
                                     Icontmp = Icontmp17;
+                                    x = 25;
+                                    y = 6;
                                 }
                                 else if (joueurCourant.prenom == "Joseph" && piontmp.etreLeRoi() != true) {
                                     ImageIcon Icontmp18 = new javax.swing.ImageIcon(getClass().getResource("/images/HermitPurple.png"));
                                     Icontmp = Icontmp18;
+                                    x = 25;
+                                    y = 6;
                                 }
                                 else if (joueurCourant.prenom == "Jotaro" && piontmp.etreLeRoi() != true) {
                                     ImageIcon Icontmp19 = new javax.swing.ImageIcon(getClass().getResource("/images/StarPlatinium.png"));
                                     Icontmp = Icontmp19;
+                                    x = 20;
+                                    y = 6;
                                 }
                                 else if (joueurCourant.prenom == "Josuke" && piontmp.etreLeRoi() != true) {
                                     ImageIcon Icontmp20 = new javax.swing.ImageIcon(getClass().getResource("/images/CrazyDiamond.png"));
                                     Icontmp = Icontmp20;
+                                    x = 35;
+                                    y = 6;
                                 }
                                 else if (joueurCourant.prenom == "Giorno" && piontmp.etreLeRoi() != true) {
                                     ImageIcon Icontmp21 = new javax.swing.ImageIcon(getClass().getResource("/images/GoldExperience.png"));
                                     Icontmp = Icontmp21;
+                                    x = 27;
+                                    y = 6;
                                 }
                                 else if (joueurCourant.prenom == "Jolyne" && piontmp.etreLeRoi() != true) {
                                     ImageIcon Icontmp22 = new javax.swing.ImageIcon(getClass().getResource("/images/StoneFree.png"));
                                     Icontmp = Icontmp22;
+                                    x = 35;
+                                    y = 6;
                                 }
                                 else if (joueurCourant.prenom == "Kars" && piontmp.etreLeRoi() != true) {
                                     ImageIcon Icontmp23 = new javax.swing.ImageIcon(getClass().getResource("/images/PierreAja.png"));
                                     Icontmp = Icontmp23;
+                                    x = 30;
+                                    y = 6;
                                 }
                                 else if (joueurCourant.prenom == "Dio" && piontmp.etreLeRoi() != true) {
                                     ImageIcon Icontmp24 = new javax.swing.ImageIcon(getClass().getResource("/images/TheWorld.png"));
                                     Icontmp = Icontmp24;
+                                    x = 33;
+                                    y = 6;
                                 }
                                 else if (joueurCourant.prenom == "Yoshikage" && piontmp.etreLeRoi() != true) {
                                     ImageIcon Icontmp25 = new javax.swing.ImageIcon(getClass().getResource("/images/KillerQueen.png"));
                                     Icontmp = Icontmp25;
+                                    x = 42;
+                                    y = 6;
                                 }
                                 else if (joueurCourant.prenom == "Diavolo" && piontmp.etreLeRoi() != true) {
                                     ImageIcon Icontmp26 = new javax.swing.ImageIcon(getClass().getResource("/images/KingCrimson.png"));
                                     Icontmp = Icontmp26;
+                                    x = 37;
+                                    y = 6;
                                 }
                                 else if (joueurCourant.prenom == "Enrico" && piontmp.etreLeRoi() != true) {
                                     ImageIcon Icontmp27 = new javax.swing.ImageIcon(getClass().getResource("/images/WhiteSnake.png"));
                                     Icontmp = Icontmp27;
+                                    x = 40;
+                                    y = 6;
                                 }
                                 else if (joueurCourant.prenom == "Cesear" && piontmp.etreLeRoi() != true) {
                                     ImageIcon Icontmp28 = new javax.swing.ImageIcon(getClass().getResource("/images/SavonLauncher.png"));
                                     Icontmp = Icontmp28;
+                                    x = 20;
+                                    y = 6;
                                 }
                                 else if (joueurCourant.prenom == "Jean-Pierre" && piontmp.etreLeRoi() != true) {
                                     ImageIcon Icontmp29 = new javax.swing.ImageIcon(getClass().getResource("/images/SilverChariot.png"));
                                     Icontmp = Icontmp29;
+                                    x = 35;
+                                    y = 6;
                                 }
                                 else if (joueurCourant.prenom == "Koichi" && piontmp.etreLeRoi() != true) {
                                     ImageIcon Icontmp30 = new javax.swing.ImageIcon(getClass().getResource("/images/Echoes.png"));
                                     Icontmp = Icontmp30;
+                                    x = 25;
+                                    y = 6;
                                 }
                                 else if (joueurCourant.prenom == "Bruno" && piontmp.etreLeRoi() != true) {
                                     ImageIcon Icontmp31 = new javax.swing.ImageIcon(getClass().getResource("/images/StickyFingers.png"));
                                     Icontmp = Icontmp31;
+                                    x = 42;
+                                    y = 6;
                                 }
                                 else if (joueurCourant.prenom == "Ermes" && piontmp.etreLeRoi() != true) {
                                     ImageIcon Icontmp32 = new javax.swing.ImageIcon(getClass().getResource("/images/Kiss.png"));
                                     Icontmp = Icontmp32;
+                                    x = 37;
+                                    y = 6;
                                 }
                                 
+                                if (Xtmp == 0) {
+                                    Y = 756;
+                                }
+                                if (Xtmp == 1) {
+                                    Y = 592;
+                                }
+                                if (Xtmp == 2) {
+                                    Y = 428;
+                                }
+                                if (Xtmp == 3) {
+                                    Y = 264;
+                                }
+                                if (Xtmp == 4) {
+                                    Y = 100;
+                                }
                                 
+                                if (Ytmp == 0) {
+                                    X = 500;
+                                }
+                                if (Ytmp == 1) {
+                                    X = 664;
+                                }
+                                if (Ytmp == 2) {
+                                    X = 828;
+                                }
+                                if (Ytmp == 3) {
+                                    X = 992;
+                                }
+                                if (Ytmp == 4) {
+                                    X = 1156;
+                                }
                                 
+                                Xi = x + X;
+                                Yi = y + Y;
                                 
+                                if (caseGraph.X == 0) {
+                                    Y2 = 756;
+                                }
+                                if (caseGraph.X == 1) {
+                                    Y2 = 592;
+                                }
+                                if (caseGraph.X == 2) {
+                                    Y2 = 428;
+                                }
+                                if (caseGraph.X == 3) {
+                                    Y2 = 264;
+                                }
+                                if (caseGraph.X == 4) {
+                                    Y2 = 100;
+                                }
+                                
+                                if (caseGraph.Y == 0) {
+                                    X2 = 500;
+                                }
+                                if (caseGraph.Y == 1) {
+                                    X2 = 664;
+                                }
+                                if (caseGraph.Y == 2) {
+                                    X2 = 828;
+                                }
+                                if (caseGraph.Y == 3) {
+                                    X2 = 992;
+                                }
+                                if (caseGraph.Y == 4) {
+                                    X2 = 1156;
+                                }
+                                
+                                Xf = x + X2;
+                                Yf = y + Y2;
                                 
                                 
                                 labeltmp = new javax.swing.JLabel();
                                 labeltmp.setIcon(Icontmp);
-                                labeltmp.setBounds(100, 500, 150, 150);
+                                labeltmp.setBounds(Xi, Yi, 150, 150);
                                 
 
                                 getContentPane().add(labeltmp);
                                 getContentPane().setComponentZOrder(labeltmp, 0);
-                                
-                                
-                                
-                                
-                                
-                                
                                 Kensoft animate = new Kensoft();
-                                animate.jLabelXRight(100, 900, 5, 1, labeltmp);
-                                animate.jLabelYDown(500, 1000, 5, 1, labeltmp);
                                 
+                                if (Xf > Xi && Yf > Yi) {
+                                    animate.jLabelXRight(Xi, Xf, 1, 1, labeltmp);
+                                    animate.jLabelYDown(Yi, Yf, 1, 1, labeltmp);
+                                }
                                 
+                                if (Xf < Xi && Yf > Yi) {
+                                    animate.jLabelXLeft(Xi, Xf, 1, 1, labeltmp);
+                                    animate.jLabelYDown(Yi, Yf, 1, 1, labeltmp);
+                                }
                                 
+                                if (Xf < Xi && Yf < Yi) {
+                                    animate.jLabelXLeft(Xi, Xf, 1, 1, labeltmp);
+                                    animate.jLabelYUp(Yi, Yf, 1, 1, labeltmp);
+                                }
                                 
-                                c.affecterPion(piontmp);                                
+                                if (Xf > Xi && Yf < Yi) {
+                                    animate.jLabelXRight(Xi, Xf, 1, 1, labeltmp);
+                                    animate.jLabelYUp(Yi, Yf, 1, 1, labeltmp);
+                                }
+                                
+                                if (Xf == Xi && Yf > Yi) {
+                                    animate.jLabelYDown(Yi, Yf, 1, 1, labeltmp);
+                                }
+                                
+                                if (Xf == Xi && Yf < Yi) {
+                                    animate.jLabelYUp(Yi, Yf, 1, 1, labeltmp);
+                                }
+                                
+                                if (Xf > Xi && Yf == Yi) {
+                                    animate.jLabelXRight(Xi, Xf, 1, 1, labeltmp);
+                                }
+                                
+                                if (Xf < Xi && Yf == Yi) {
+                                    animate.jLabelXLeft(Xi, Xf, 1, 1, labeltmp);
+                                }
+
+
+                                c.affecterPion(piontmp);  
+                                Xtmp2 = caseGraph.X;
+                                Ytmp2 = caseGraph.Y;
+                                
                                 Panel_PlateauDeJeu.repaint();
                                 deplacer = false;
                                 changerJoueurCourant();
@@ -706,6 +878,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         InfoPartie = new javax.swing.JLabel();
         Bouton_retournerPlateau = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(1920, 1080));
@@ -725,7 +898,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         Panel_PlateauDeJeu.setPreferredSize(new java.awt.Dimension(820, 820));
         Panel_PlateauDeJeu.setLayout(new java.awt.GridLayout(5, 5));
         getContentPane().add(Panel_PlateauDeJeu);
-        Panel_PlateauDeJeu.setBounds(470, 100, 820, 820);
+        Panel_PlateauDeJeu.setBounds(500, 100, 820, 820);
 
         jLabel1.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(204, 204, 204));
@@ -785,7 +958,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Carte1J2);
-        Carte1J2.setBounds(1320, 100, 390, 225);
+        Carte1J2.setBounds(1460, 120, 390, 225);
 
         Carte2J2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -793,7 +966,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Carte2J2);
-        Carte2J2.setBounds(1320, 360, 390, 225);
+        Carte2J2.setBounds(1450, 380, 390, 225);
 
         CartePioche.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -801,7 +974,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
             }
         });
         getContentPane().add(CartePioche);
-        CartePioche.setBounds(1320, 630, 374, 211);
+        CartePioche.setBounds(1460, 670, 374, 211);
 
         InfoPartie.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
         getContentPane().add(InfoPartie);
@@ -825,6 +998,10 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         });
         getContentPane().add(jButton1);
         jButton1.setBounds(560, 20, 75, 23);
+
+        jPanel1.setBackground(new java.awt.Color(51, 51, 51));
+        getContentPane().add(jPanel1);
+        jPanel1.setBounds(0, 0, 1920, 1080);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -902,6 +1079,13 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         animate.jButtonXRight(560, 900, 5, 1, jButton1);
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    
+    public void nettoyerPlateau() {
+        if (labeltmp != null) {
+            labeltmp.setEnabled(false);
+        }
+    }
+    
     
     public void Victoire(boolean reverse) {
         if (PlateauDeJeu.plateauGagnantPourEquipe1(reverse) == true) {
@@ -1296,5 +1480,6 @@ public class FenetreDeJeu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
