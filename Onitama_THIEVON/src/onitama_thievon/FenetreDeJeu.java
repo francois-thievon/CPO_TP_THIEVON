@@ -6,6 +6,7 @@ package onitama_thievon;
 
 import java.awt.Color;
 import KentHipos.Kensoft;
+import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
@@ -183,6 +184,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
                 
                 caseGraph.addActionListener(new java.awt.event.ActionListener() {
                     public void actionPerformed(java.awt.event.ActionEvent evt){
+                        nettoyerPlateau();
                         CaseDePlateau c = caseGraph.caseAssociee;
                         Panel_PlateauDeJeu.repaint();
                         
@@ -1013,6 +1015,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 
     private void Carte1J1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Carte1J1ActionPerformed
         // TODO add your handling code here:
+        nettoyerPlateau();
         if (joueurCourant.avoirEquipe() == 1) {
             cartetmp = carteJ1nb1;
             Carte1J1.setBackground(Color.CYAN);
@@ -1027,6 +1030,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 
     private void Carte2J1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Carte2J1ActionPerformed
         // TODO add your handling code here:
+        nettoyerPlateau();
         if (joueurCourant.avoirEquipe() == 1) {
             cartetmp = carteJ1nb2;
             Carte2J1.setBackground(Color.CYAN);
@@ -1040,6 +1044,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 
     private void Carte1J2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Carte1J2ActionPerformed
         // TODO add your handling code here:
+        nettoyerPlateau();
         if (joueurCourant.avoirEquipe() == 2) {
             cartetmp = carteJ2nb1;
             Carte1J2.setBackground(Color.CYAN);
@@ -1053,6 +1058,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 
     private void Carte2J2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Carte2J2ActionPerformed
         // TODO add your handling code here:
+        nettoyerPlateau();
         if (joueurCourant.avoirEquipe() == 2) {
             cartetmp = carteJ2nb2;
             Carte2J2.setBackground(Color.CYAN);
@@ -1070,6 +1076,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 
     private void Bouton_retournerPlateauActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bouton_retournerPlateauActionPerformed
         // TODO add your handling code here:
+        nettoyerPlateau();
         retournerPlateau(); 
     }//GEN-LAST:event_Bouton_retournerPlateauActionPerformed
 
@@ -1082,8 +1089,9 @@ public class FenetreDeJeu extends javax.swing.JFrame {
     
     public void nettoyerPlateau() {
         if (labeltmp != null) {
-            labeltmp.setEnabled(false);
+            labeltmp.setVisible(false);
         }
+        Panel_PlateauDeJeu.repaint();
     }
     
     
@@ -1127,6 +1135,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         Panel_PlateauDeJeu.repaint();
 
     }
+    
     
     public void changerCarte(Carte c) {
         if (c == carteJ1nb1) {
