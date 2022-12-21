@@ -879,14 +879,15 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         CartePioche = new javax.swing.JButton();
         InfoPartie = new javax.swing.JLabel();
         Bouton_retournerPlateau = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jPanel1 = new javax.swing.JPanel();
+        BoutonMusique = new javax.swing.JButton();
+        FondEcran = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(1920, 1080));
         setSize(new java.awt.Dimension(1920, 1080));
         getContentPane().setLayout(null);
 
+        Bouton_Arreter.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
         Bouton_Arreter.setText("Arreter la partie");
         Bouton_Arreter.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -894,7 +895,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Bouton_Arreter);
-        Bouton_Arreter.setBounds(330, 830, 111, 23);
+        Bouton_Arreter.setBounds(130, 860, 230, 60);
 
         Panel_PlateauDeJeu.setBackground(new java.awt.Color(102, 102, 102));
         Panel_PlateauDeJeu.setPreferredSize(new java.awt.Dimension(820, 820));
@@ -903,40 +904,40 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         Panel_PlateauDeJeu.setBounds(500, 100, 820, 820);
 
         jLabel1.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Joueur  1:");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(60, 100, 118, 29);
+        jLabel1.setBounds(50, 100, 118, 29);
 
         jLabel2.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Joueur 2:");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(60, 150, 112, 29);
+        jLabel2.setBounds(1380, 100, 112, 29);
 
         LabelJ1.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
-        LabelJ1.setForeground(new java.awt.Color(204, 204, 204));
+        LabelJ1.setForeground(new java.awt.Color(255, 255, 255));
         LabelJ1.setText("J1");
         getContentPane().add(LabelJ1);
-        LabelJ1.setBounds(210, 100, 250, 29);
+        LabelJ1.setBounds(180, 100, 320, 29);
 
         LabelJ2.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
-        LabelJ2.setForeground(new java.awt.Color(204, 204, 204));
+        LabelJ2.setForeground(new java.awt.Color(255, 255, 255));
         LabelJ2.setText("J2");
         getContentPane().add(LabelJ2);
-        LabelJ2.setBounds(210, 150, 250, 29);
+        LabelJ2.setBounds(1510, 100, 250, 29);
 
         jLabel5.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel5.setText("Joueur courant :");
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("A toi de jouer :");
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(60, 40, 197, 29);
+        jLabel5.setBounds(710, 40, 197, 29);
 
         LabelJC.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
-        LabelJC.setForeground(new java.awt.Color(204, 204, 204));
+        LabelJC.setForeground(new java.awt.Color(255, 255, 255));
         LabelJC.setText("JC");
         getContentPane().add(LabelJC);
-        LabelJC.setBounds(270, 40, 230, 29);
+        LabelJC.setBounds(910, 40, 350, 29);
 
         Carte1J1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -944,7 +945,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Carte1J1);
-        Carte1J1.setBounds(20, 240, 390, 225);
+        Carte1J1.setBounds(50, 160, 390, 225);
 
         Carte2J1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -952,7 +953,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Carte2J1);
-        Carte2J1.setBounds(30, 520, 390, 225);
+        Carte2J1.setBounds(50, 430, 390, 225);
 
         Carte1J2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -960,7 +961,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Carte1J2);
-        Carte1J2.setBounds(1460, 120, 390, 225);
+        Carte1J2.setBounds(1390, 160, 390, 225);
 
         Carte2J2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -968,7 +969,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Carte2J2);
-        Carte2J2.setBounds(1450, 380, 390, 225);
+        Carte2J2.setBounds(1390, 430, 390, 225);
 
         CartePioche.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -976,7 +977,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
             }
         });
         getContentPane().add(CartePioche);
-        CartePioche.setBounds(1460, 670, 374, 211);
+        CartePioche.setBounds(1400, 720, 374, 211);
 
         InfoPartie.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
         getContentPane().add(InfoPartie);
@@ -990,20 +991,16 @@ public class FenetreDeJeu extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Bouton_retournerPlateau);
-        Bouton_retournerPlateau.setBounds(80, 820, 230, 60);
+        Bouton_retournerPlateau.setBounds(130, 700, 230, 60);
 
-        jButton1.setText("jButton1");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton1);
-        jButton1.setBounds(560, 20, 75, 23);
+        BoutonMusique.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
+        BoutonMusique.setText("Musique");
+        getContentPane().add(BoutonMusique);
+        BoutonMusique.setBounds(130, 780, 230, 60);
 
-        jPanel1.setBackground(new java.awt.Color(51, 51, 51));
-        getContentPane().add(jPanel1);
-        jPanel1.setBounds(0, 0, 1920, 1080);
+        FondEcran.setBackground(new java.awt.Color(0, 0, 0));
+        getContentPane().add(FondEcran);
+        FondEcran.setBounds(0, 0, 1920, 1080);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -1079,12 +1076,6 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         nettoyerPlateau();
         retournerPlateau(); 
     }//GEN-LAST:event_Bouton_retournerPlateauActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        Kensoft animate = new Kensoft();
-        animate.jButtonXRight(560, 900, 5, 1, jButton1);
-    }//GEN-LAST:event_jButton1ActionPerformed
 
     
     public void nettoyerPlateau() {
@@ -1473,6 +1464,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 
     private javax.swing.JLabel labeltmp;
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BoutonMusique;
     private javax.swing.JButton Bouton_Arreter;
     private javax.swing.JButton Bouton_retournerPlateau;
     private javax.swing.JButton Carte1J1;
@@ -1480,15 +1472,14 @@ public class FenetreDeJeu extends javax.swing.JFrame {
     private javax.swing.JButton Carte2J1;
     private javax.swing.JButton Carte2J2;
     private javax.swing.JButton CartePioche;
+    private javax.swing.JPanel FondEcran;
     private javax.swing.JLabel InfoPartie;
     private javax.swing.JLabel LabelJ1;
     private javax.swing.JLabel LabelJ2;
     private javax.swing.JLabel LabelJC;
     private javax.swing.JPanel Panel_PlateauDeJeu;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
