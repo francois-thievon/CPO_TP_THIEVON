@@ -1088,7 +1088,9 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(1920, 1080));
         getContentPane().setLayout(null);
 
+        Bouton_Arreter.setBackground(new java.awt.Color(0, 0, 0));
         Bouton_Arreter.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
+        Bouton_Arreter.setForeground(new java.awt.Color(255, 255, 255));
         Bouton_Arreter.setText("Arreter la partie");
         Bouton_Arreter.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1140,6 +1142,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         getContentPane().add(LabelJC);
         LabelJC.setBounds(910, 40, 350, 29);
 
+        Carte1J1.setBackground(new java.awt.Color(0, 0, 0));
         Carte1J1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Carte1J1ActionPerformed(evt);
@@ -1148,6 +1151,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         getContentPane().add(Carte1J1);
         Carte1J1.setBounds(50, 160, 390, 225);
 
+        Carte2J1.setBackground(new java.awt.Color(0, 0, 0));
         Carte2J1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Carte2J1ActionPerformed(evt);
@@ -1156,6 +1160,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         getContentPane().add(Carte2J1);
         Carte2J1.setBounds(50, 430, 390, 225);
 
+        Carte1J2.setBackground(new java.awt.Color(0, 0, 0));
         Carte1J2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Carte1J2ActionPerformed(evt);
@@ -1164,6 +1169,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         getContentPane().add(Carte1J2);
         Carte1J2.setBounds(1390, 160, 390, 225);
 
+        Carte2J2.setBackground(new java.awt.Color(0, 0, 0));
         Carte2J2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Carte2J2ActionPerformed(evt);
@@ -1184,7 +1190,9 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         getContentPane().add(InfoPartie);
         InfoPartie.setBounds(150, 30, 0, 0);
 
+        Bouton_retournerPlateau.setBackground(new java.awt.Color(0, 0, 0));
         Bouton_retournerPlateau.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
+        Bouton_retournerPlateau.setForeground(new java.awt.Color(255, 255, 255));
         Bouton_retournerPlateau.setText("Retourner le plateau");
         Bouton_retournerPlateau.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1194,7 +1202,9 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         getContentPane().add(Bouton_retournerPlateau);
         Bouton_retournerPlateau.setBounds(130, 700, 230, 60);
 
+        BoutonMusique.setBackground(new java.awt.Color(0, 0, 0));
         BoutonMusique.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
+        BoutonMusique.setForeground(new java.awt.Color(255, 255, 255));
         BoutonMusique.setText("Musique");
         BoutonMusique.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1238,7 +1248,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         if (joueurCourant.avoirEquipe() == 1) {
             cartetmp = carteJ1nb1;
             Carte1J1.setBackground(Color.CYAN);
-            Carte2J1.setBackground(Color.WHITE);
+            Carte2J1.setBackground(Color.BLACK);
             InfoPartie.setText("");
             PlateauDeJeu.supprimerCibles();
             PlateauDeJeu.supprimerViser();
@@ -1255,7 +1265,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         if (joueurCourant.avoirEquipe() == 1) {
             cartetmp = carteJ1nb2;
             Carte2J1.setBackground(Color.CYAN);
-            Carte1J1.setBackground(Color.WHITE);
+            Carte1J1.setBackground(Color.BLACK);
             InfoPartie.setText("");
             PlateauDeJeu.supprimerCibles();
             PlateauDeJeu.supprimerViser();
@@ -1272,7 +1282,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         if (joueurCourant.avoirEquipe() == 2) {
             cartetmp = carteJ2nb1;
             Carte1J2.setBackground(Color.CYAN);
-            Carte2J2.setBackground(Color.WHITE);
+            Carte2J2.setBackground(Color.BLACK);
             InfoPartie.setText("");
             PlateauDeJeu.supprimerCibles();
             PlateauDeJeu.supprimerViser();
@@ -1289,7 +1299,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         if (joueurCourant.avoirEquipe() == 2) {
             cartetmp = carteJ2nb2;
             Carte2J2.setBackground(Color.CYAN);
-            Carte1J2.setBackground(Color.WHITE);
+            Carte1J2.setBackground(Color.BLACK);
             InfoPartie.setText("");
             PlateauDeJeu.supprimerCibles();
             PlateauDeJeu.supprimerViser();
@@ -1521,10 +1531,10 @@ public class FenetreDeJeu extends javax.swing.JFrame {
             carteJ2nb2 = cartetmp;
             afficherCartes();
         }
-        Carte1J1.setBackground(Color.WHITE);
-        Carte2J1.setBackground(Color.WHITE);
-        Carte1J2.setBackground(Color.WHITE);
-        Carte2J2.setBackground(Color.WHITE);
+        Carte1J1.setBackground(Color.BLACK);
+        Carte2J1.setBackground(Color.BLACK);
+        Carte1J2.setBackground(Color.BLACK);
+        Carte2J2.setBackground(Color.BLACK);
     }
     
     

@@ -235,11 +235,13 @@ public class Fenetre_choixJoueurs extends javax.swing.JFrame {
         getContentPane().add(LabelNomJoueurCourant, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 0, 500, 40));
         getContentPane().add(LabelVS, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 250, -1, -1));
 
-        jPanel1.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        BoutonLancerPartie.setBackground(new java.awt.Color(0, 0, 0));
         BoutonLancerPartie.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
+        BoutonLancerPartie.setForeground(new java.awt.Color(255, 255, 255));
         BoutonLancerPartie.setText("Lancer une partie");
         BoutonLancerPartie.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -251,20 +253,20 @@ public class Fenetre_choixJoueurs extends javax.swing.JFrame {
         LabelJoueur1.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
         LabelJoueur1.setForeground(new java.awt.Color(255, 255, 255));
         LabelJoueur1.setText("Joueur 1 :");
-        jPanel1.add(LabelJoueur1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
+        jPanel1.add(LabelJoueur1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, -1, -1));
 
         LabelJoueur2.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
         LabelJoueur2.setForeground(new java.awt.Color(255, 255, 255));
         LabelJoueur2.setText("Joueur 2 :");
-        jPanel1.add(LabelJoueur2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, -1, -1));
+        jPanel1.add(LabelJoueur2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 60, -1, -1));
 
         LabelJ1.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
         LabelJ1.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(LabelJ1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 20, -1, -1));
+        jPanel1.add(LabelJ1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 20, -1, -1));
 
         LabelJ2.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
         LabelJ2.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(LabelJ2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 70, -1, -1));
+        jPanel1.add(LabelJ2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 60, -1, -1));
 
         buttonGroup1.add(Btn1min);
         Btn1min.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N

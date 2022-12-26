@@ -45,10 +45,12 @@ public class Fenetre_Accueil extends javax.swing.JFrame {
         Jojo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Jojo.png"))); // NOI18N
         getContentPane().add(Jojo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        jPanel1.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        BoutonMusique.setBackground(new java.awt.Color(0, 0, 0));
         BoutonMusique.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
+        BoutonMusique.setForeground(new java.awt.Color(255, 255, 255));
         BoutonMusique.setText("Musiques");
         BoutonMusique.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -57,7 +59,9 @@ public class Fenetre_Accueil extends javax.swing.JFrame {
         });
         jPanel1.add(BoutonMusique, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 180, 180, 80));
 
+        BoutonChoixPersos.setBackground(new java.awt.Color(0, 0, 0));
         BoutonChoixPersos.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
+        BoutonChoixPersos.setForeground(new java.awt.Color(255, 255, 255));
         BoutonChoixPersos.setText("Choix des personnages");
         BoutonChoixPersos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -66,7 +70,9 @@ public class Fenetre_Accueil extends javax.swing.JFrame {
         });
         jPanel1.add(BoutonChoixPersos, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 390, 86));
 
+        BoutonRegle.setBackground(new java.awt.Color(0, 0, 0));
         BoutonRegle.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
+        BoutonRegle.setForeground(new java.awt.Color(255, 255, 255));
         BoutonRegle.setText("Règles");
         BoutonRegle.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
