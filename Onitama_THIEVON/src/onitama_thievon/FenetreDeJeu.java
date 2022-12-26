@@ -86,14 +86,17 @@ public class FenetreDeJeu extends javax.swing.JFrame {
     Carte[] listeCartes = new Carte[16];
     
     
+    static int Timer;
+    
   
     
     /**
      * Creates new form FenetreDeJeu
      */
-    public FenetreDeJeu(Joueur J1, Joueur J2) {
+    public FenetreDeJeu(Joueur J1, Joueur J2, int timer) {
         ListeJoueurs[0] = J1;
         ListeJoueurs[1] = J2;
+        Timer = timer;
         initComponents();
         
         int a = (int)(Math.random()*2);
@@ -996,6 +999,11 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 
         BoutonMusique.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
         BoutonMusique.setText("Musique");
+        BoutonMusique.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BoutonMusiqueActionPerformed(evt);
+            }
+        });
         getContentPane().add(BoutonMusique);
         BoutonMusique.setBounds(130, 780, 230, 60);
 
@@ -1077,6 +1085,12 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         nettoyerPlateau();
         retournerPlateau(); 
     }//GEN-LAST:event_Bouton_retournerPlateauActionPerformed
+
+    private void BoutonMusiqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonMusiqueActionPerformed
+        // TODO add your handling code here:
+        FenetreMusique musique = new FenetreMusique();
+        musique.setVisible(true);
+    }//GEN-LAST:event_BoutonMusiqueActionPerformed
 
     
     public void nettoyerPlateau() {
@@ -1587,7 +1601,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FenetreDeJeu(ListeJoueurs[0], ListeJoueurs[1]).setVisible(true);
+                new FenetreDeJeu(ListeJoueurs[0], ListeJoueurs[1], Timer).setVisible(true);
             }
         });
     }

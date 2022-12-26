@@ -36,7 +36,7 @@ public class Fenetre_choixJoueurs extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel6 = new javax.swing.JLabel();
+        buttonGroup1 = new javax.swing.ButtonGroup();
         Bouton_Jolyne = new javax.swing.JButton();
         Bouton_Jonathan = new javax.swing.JButton();
         Bouton_Joseph = new javax.swing.JButton();
@@ -61,15 +61,16 @@ public class Fenetre_choixJoueurs extends javax.swing.JFrame {
         LabelJoueur2 = new javax.swing.JLabel();
         LabelJ1 = new javax.swing.JLabel();
         LabelJ2 = new javax.swing.JLabel();
+        Btn1min = new javax.swing.JRadioButton();
+        Btn5min = new javax.swing.JRadioButton();
+        BtnInfini = new javax.swing.JRadioButton();
+        LabelIndication = new javax.swing.JLabel();
         Bouton_Bucciarati = new javax.swing.JButton();
         Bouton_Cesear = new javax.swing.JButton();
         Bouton_Ermes = new javax.swing.JButton();
         Bouton_Koichi = new javax.swing.JButton();
         Bouton_Polnareff = new javax.swing.JButton();
         Wallpaper = new javax.swing.JLabel();
-
-        jLabel6.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 14)); // NOI18N
-        jLabel6.setText("Jotaro Kujo");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -235,6 +236,8 @@ public class Fenetre_choixJoueurs extends javax.swing.JFrame {
         getContentPane().add(LabelVS, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 250, -1, -1));
 
         jPanel1.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel1.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         BoutonLancerPartie.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
         BoutonLancerPartie.setText("Lancer une partie");
@@ -243,56 +246,47 @@ public class Fenetre_choixJoueurs extends javax.swing.JFrame {
                 BoutonLancerPartieActionPerformed(evt);
             }
         });
+        jPanel1.add(BoutonLancerPartie, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 120, 243, 53));
 
         LabelJoueur1.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
         LabelJoueur1.setForeground(new java.awt.Color(255, 255, 255));
         LabelJoueur1.setText("Joueur 1 :");
+        jPanel1.add(LabelJoueur1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
 
         LabelJoueur2.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
         LabelJoueur2.setForeground(new java.awt.Color(255, 255, 255));
         LabelJoueur2.setText("Joueur 2 :");
+        jPanel1.add(LabelJoueur2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, -1, -1));
 
         LabelJ1.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
         LabelJ1.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel1.add(LabelJ1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 20, -1, -1));
 
         LabelJ2.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
         LabelJ2.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel1.add(LabelJ2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 70, -1, -1));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(42, 42, 42)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(LabelJoueur1)
-                            .addComponent(LabelJoueur2))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(LabelJ2)
-                            .addComponent(LabelJ1)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(101, 101, 101)
-                        .addComponent(BoutonLancerPartie, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(136, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(LabelJoueur1)
-                    .addComponent(LabelJ1))
-                .addGap(30, 30, 30)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(LabelJoueur2)
-                    .addComponent(LabelJ2))
-                .addGap(18, 18, 18)
-                .addComponent(BoutonLancerPartie, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(14, Short.MAX_VALUE))
-        );
+        buttonGroup1.add(Btn1min);
+        Btn1min.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
+        Btn1min.setForeground(new java.awt.Color(255, 255, 255));
+        Btn1min.setText(" 1 min");
+        jPanel1.add(Btn1min, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, -1, -1));
+
+        buttonGroup1.add(Btn5min);
+        Btn5min.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
+        Btn5min.setForeground(new java.awt.Color(255, 255, 255));
+        Btn5min.setText(" 5 min");
+        jPanel1.add(Btn5min, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 120, -1, -1));
+
+        buttonGroup1.add(BtnInfini);
+        BtnInfini.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
+        BtnInfini.setForeground(new java.awt.Color(255, 255, 255));
+        BtnInfini.setText(" Infini");
+        jPanel1.add(BtnInfini, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 150, -1, -1));
+
+        LabelIndication.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
+        LabelIndication.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel1.add(LabelIndication, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 90, 220, 30));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 550, 480, 190));
 
@@ -699,9 +693,24 @@ public class Fenetre_choixJoueurs extends javax.swing.JFrame {
 
     private void BoutonLancerPartieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonLancerPartieActionPerformed
         // TODO add your handling code here:
-        FenetreDeJeu jeu = new FenetreDeJeu(ListeJoueurs[0], ListeJoueurs[1]);
-        jeu.setVisible(true);
-        Fenetre_choixJoueurs.super.dispose();
+        int a = 0;
+        if (Btn1min.isSelected() == true) {
+            a = 60;
+        }
+        if (Btn5min.isSelected() == true) {
+            a = 300;
+        }
+        if (BtnInfini.isSelected() == true) {
+            a = 999;
+        }
+        if (a == 0) {
+            LabelIndication.setText("Veuillez saisir un timer");
+        }
+        if (a != 0) {
+            FenetreDeJeu jeu = new FenetreDeJeu(ListeJoueurs[0], ListeJoueurs[1], a);
+            jeu.setVisible(true);
+            Fenetre_choixJoueurs.super.dispose();
+        }
     }//GEN-LAST:event_BoutonLancerPartieActionPerformed
 
     private void Bouton_CesearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bouton_CesearActionPerformed
@@ -945,8 +954,12 @@ public class Fenetre_choixJoueurs extends javax.swing.JFrame {
     private javax.swing.JButton Bouton_Koichi;
     private javax.swing.JButton Bouton_Polnareff;
     private javax.swing.JButton Bouton_Pucci;
+    private javax.swing.JRadioButton Btn1min;
+    private javax.swing.JRadioButton Btn5min;
+    private javax.swing.JRadioButton BtnInfini;
     private javax.swing.JLabel LabelGifJ1;
     private javax.swing.JLabel LabelGifJ2;
+    private javax.swing.JLabel LabelIndication;
     private javax.swing.JLabel LabelJ1;
     private javax.swing.JLabel LabelJ2;
     private javax.swing.JLabel LabelJoueur1;
@@ -957,7 +970,7 @@ public class Fenetre_choixJoueurs extends javax.swing.JFrame {
     private javax.swing.JLabel LabelNomJoueurCourant2;
     private javax.swing.JLabel LabelVS;
     private javax.swing.JLabel Wallpaper;
-    private javax.swing.JLabel jLabel6;
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

@@ -55,7 +55,7 @@ public class Fenetre_Accueil extends javax.swing.JFrame {
                 BoutonMusiqueActionPerformed(evt);
             }
         });
-        jPanel1.add(BoutonMusique, new org.netbeans.lib.awtextra.AbsoluteConstraints(216, 153, 180, 80));
+        jPanel1.add(BoutonMusique, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 180, 180, 80));
 
         BoutonChoixPersos.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
         BoutonChoixPersos.setText("Choix des personnages");
@@ -64,7 +64,7 @@ public class Fenetre_Accueil extends javax.swing.JFrame {
                 BoutonChoixPersosActionPerformed(evt);
             }
         });
-        jPanel1.add(BoutonChoixPersos, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 49, 321, 86));
+        jPanel1.add(BoutonChoixPersos, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 390, 86));
 
         BoutonRegle.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
         BoutonRegle.setText("Règles");
@@ -73,14 +73,14 @@ public class Fenetre_Accueil extends javax.swing.JFrame {
                 BoutonRegleActionPerformed(evt);
             }
         });
-        jPanel1.add(BoutonRegle, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 153, 180, 80));
+        jPanel1.add(BoutonRegle, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 180, 80));
 
         jLabel2.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 36)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Jojo'nitama");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 0, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 10, -1, -1));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 500, 420, 270));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 580, 450, 290));
 
         FondEcran.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Wallpaper jojo.jpg"))); // NOI18N
         getContentPane().add(FondEcran, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
