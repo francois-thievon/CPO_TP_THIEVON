@@ -838,13 +838,14 @@ public class FenetreDeJeu extends javax.swing.JFrame {
                                 
                                 Panel_PlateauDeJeu.repaint();
                                 deplacer = false;
+                                Victoire(reverse);
                                 changerJoueurCourant();
                                 changerCarte(cartetmp);
                                 cartetmp = null;
                                 PlateauDeJeu.supprimerCibles();
                                 PlateauDeJeu.supprimerViser();
                             }
-                            Victoire(reverse);
+                            //Victoire(reverse);
                         }                        
                     }
                 });
@@ -1088,9 +1089,138 @@ public class FenetreDeJeu extends javax.swing.JFrame {
     
     public void Victoire(boolean reverse) {
         if (PlateauDeJeu.plateauGagnantPourEquipe1(reverse) == true) {
+            if (joueurCourant.prenom == "Jonathan") {
+                VictoireJonathan fenetre = new VictoireJonathan();
+                fenetre.setVisible(true);
+            }
+            if (joueurCourant.prenom == "Joseph") {
+                VictoireJoseph fenetre = new VictoireJoseph();
+                fenetre.setVisible(true);
+            }
+            if (joueurCourant.prenom == "Jotaro") {
+                VictoireJotaro fenetre = new VictoireJotaro();
+                fenetre.setVisible(true);
+            }
+            if (joueurCourant.prenom == "Josuke") {
+                VictoireJosuke fenetre = new VictoireJosuke();
+                fenetre.setVisible(true);
+            }
+            if (joueurCourant.prenom == "Giorno") {
+                VictoireGiorno fenetre = new VictoireGiorno();
+                fenetre.setVisible(true);
+            }
+            if (joueurCourant.prenom == "Jolyne") {
+                VictoireJolyne fenetre = new VictoireJolyne();
+                fenetre.setVisible(true);
+            }
+            if (joueurCourant.prenom == "Kars") {
+                VictoireKars fenetre = new VictoireKars();
+                fenetre.setVisible(true);
+            }
+            if (joueurCourant.prenom == "Dio") {
+                VictoireDio fenetre = new VictoireDio();
+                fenetre.setVisible(true);
+            }
+            if (joueurCourant.prenom == "Yoshikage") {
+                VictoireKira fenetre = new VictoireKira();
+                fenetre.setVisible(true);
+            }
+            if (joueurCourant.prenom == "Diavolo") {
+                VictoireDiavolo fenetre = new VictoireDiavolo();
+                fenetre.setVisible(true);
+            }
+            if (joueurCourant.prenom == "Enrico") {
+                VictoirePucci fenetre = new VictoirePucci();
+                fenetre.setVisible(true);
+            }
+            if (joueurCourant.prenom == "Cesear") {
+                VictoireCesear fenetre = new VictoireCesear();
+                fenetre.setVisible(true);
+            }
+            if (joueurCourant.prenom == "Jean-Pierre") {
+                VictoirePolnareff fenetre = new VictoirePolnareff();
+                fenetre.setVisible(true);
+            }
+            if (joueurCourant.prenom == "Koichi") {
+                VictoireKoichi fenetre = new VictoireKoichi();
+                fenetre.setVisible(true);
+            }
+            if (joueurCourant.prenom == "Bruno") {
+                VictoireBucciarati fenetre = new VictoireBucciarati();
+                fenetre.setVisible(true);
+            }
+            if (joueurCourant.prenom == "Ermes") {
+                VictoireErmes fenetre = new VictoireErmes();
+                fenetre.setVisible(true);
+            }
             FenetreDeJeu.super.dispose();
         }
+        
         if (PlateauDeJeu.plateauGagnantPourEquipe2(reverse) == true) {
+            if (joueurCourant.prenom == "Jonathan") {
+                VictoireJonathan fenetre = new VictoireJonathan();
+                fenetre.setVisible(true);
+            }
+            if (joueurCourant.prenom == "Joseph") {
+                VictoireJoseph fenetre = new VictoireJoseph();
+                fenetre.setVisible(true);
+            }
+            if (joueurCourant.prenom == "Jotaro") {
+                VictoireJotaro fenetre = new VictoireJotaro();
+                fenetre.setVisible(true);
+            }
+            if (joueurCourant.prenom == "Josuke") {
+                VictoireJosuke fenetre = new VictoireJosuke();
+                fenetre.setVisible(true);
+            }
+            if (joueurCourant.prenom == "Giorno") {
+                VictoireGiorno fenetre = new VictoireGiorno();
+                fenetre.setVisible(true);
+            }
+            if (joueurCourant.prenom == "Jolyne") {
+                VictoireJolyne fenetre = new VictoireJolyne();
+                fenetre.setVisible(true);
+            }
+            if (joueurCourant.prenom == "Kars") {
+                VictoireKars fenetre = new VictoireKars();
+                fenetre.setVisible(true);
+            }
+            if (joueurCourant.prenom == "Dio") {
+                VictoireDio fenetre = new VictoireDio();
+                fenetre.setVisible(true);
+            }
+            if (joueurCourant.prenom == "Yoshikage") {
+                VictoireKira fenetre = new VictoireKira();
+                fenetre.setVisible(true);
+            }
+            if (joueurCourant.prenom == "Diavolo") {
+                VictoireDiavolo fenetre = new VictoireDiavolo();
+                fenetre.setVisible(true);
+            }
+            if (joueurCourant.prenom == "Enrico") {
+                VictoirePucci fenetre = new VictoirePucci();
+                fenetre.setVisible(true);
+            }
+            if (joueurCourant.prenom == "Cesear") {
+                VictoireCesear fenetre = new VictoireCesear();
+                fenetre.setVisible(true);
+            }
+            if (joueurCourant.prenom == "Jean-Pierre") {
+                VictoirePolnareff fenetre = new VictoirePolnareff();
+                fenetre.setVisible(true);
+            }
+            if (joueurCourant.prenom == "Koichi") {
+                VictoireKoichi fenetre = new VictoireKoichi();
+                fenetre.setVisible(true);
+            }
+            if (joueurCourant.prenom == "Bruno") {
+                VictoireBucciarati fenetre = new VictoireBucciarati();
+                fenetre.setVisible(true);
+            }
+            if (joueurCourant.prenom == "Ermes") {
+                VictoireErmes fenetre = new VictoireErmes();
+                fenetre.setVisible(true);
+            }
             FenetreDeJeu.super.dispose();
         }
     }
