@@ -270,18 +270,33 @@ public class Fenetre_choixJoueurs extends javax.swing.JFrame {
         Btn1min.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
         Btn1min.setForeground(new java.awt.Color(255, 255, 255));
         Btn1min.setText(" 1 min");
+        Btn1min.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn1minActionPerformed(evt);
+            }
+        });
         jPanel1.add(Btn1min, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, -1, -1));
 
         buttonGroup1.add(Btn5min);
         Btn5min.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
         Btn5min.setForeground(new java.awt.Color(255, 255, 255));
         Btn5min.setText(" 5 min");
+        Btn5min.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn5minActionPerformed(evt);
+            }
+        });
         jPanel1.add(Btn5min, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 120, -1, -1));
 
         buttonGroup1.add(BtnInfini);
         BtnInfini.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
         BtnInfini.setForeground(new java.awt.Color(255, 255, 255));
         BtnInfini.setText(" Infini");
+        BtnInfini.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnInfiniActionPerformed(evt);
+            }
+        });
         jPanel1.add(BtnInfini, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 150, -1, -1));
 
         LabelIndication.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
@@ -857,6 +872,18 @@ public class Fenetre_choixJoueurs extends javax.swing.JFrame {
             LabelNomJoueurCourant2.setText("Ermes Costello");
         }
     }//GEN-LAST:event_Bouton_ErmesMouseEntered
+
+    private void Btn1minActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn1minActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Btn1minActionPerformed
+
+    private void Btn5minActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn5minActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Btn5minActionPerformed
+
+    private void BtnInfiniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnInfiniActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BtnInfiniActionPerformed
 
     
     public static void PlayMusic(String location) {

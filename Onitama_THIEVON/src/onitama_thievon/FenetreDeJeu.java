@@ -6,10 +6,17 @@ package onitama_thievon;
 
 import java.awt.Color;
 import KentHipos.Kensoft;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.File;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
 import javax.swing.ImageIcon;
+import javax.swing.Timer;
 
 
 /**
@@ -86,18 +93,206 @@ public class FenetreDeJeu extends javax.swing.JFrame {
     Carte[] listeCartes = new Carte[16];
     
     
-    static int Timer;
+    static int timer;
+    
+    Timer ChronoJ1;
+    Timer ChronoJ2;
+    
+    int timerJ1;
+    int timerJ2;
     
   
     
     /**
      * Creates new form FenetreDeJeu
      */
-    public FenetreDeJeu(Joueur J1, Joueur J2, int timer) {
+    public FenetreDeJeu(Joueur J1, Joueur J2, int unTimer) {
+        
         ListeJoueurs[0] = J1;
         ListeJoueurs[1] = J2;
-        Timer = timer;
+        timer = unTimer;
+        timerJ1 = unTimer;
+        timerJ2 = unTimer;
+        
         initComponents();
+        
+        
+        ActionListener tache_recurJ1 = new ActionListener() {
+            int timeJ1 = timerJ1;
+            
+            @Override
+            public void actionPerformed(ActionEvent e1) {
+                
+                if (timeJ1 == 0) {
+                    ChronoJ1.stop();
+                    changerJoueurCourant();
+                    if (joueurCourant.prenom == "Jonathan") {
+                        VictoireJonathan fenetre = new VictoireJonathan();
+                        fenetre.setVisible(true);
+                    }
+                    if (joueurCourant.prenom == "Joseph") {
+                        VictoireJoseph fenetre = new VictoireJoseph();
+                        fenetre.setVisible(true);
+                    }
+                    if (joueurCourant.prenom == "Jotaro") {
+                        VictoireJotaro fenetre = new VictoireJotaro();
+                        fenetre.setVisible(true);
+                    }
+                    if (joueurCourant.prenom == "Josuke") {
+                        VictoireJosuke fenetre = new VictoireJosuke();
+                        fenetre.setVisible(true);
+                    }
+                    if (joueurCourant.prenom == "Giorno") {
+                        VictoireGiorno fenetre = new VictoireGiorno();
+                        fenetre.setVisible(true);
+                    }
+                    if (joueurCourant.prenom == "Jolyne") {
+                        VictoireJolyne fenetre = new VictoireJolyne();
+                        fenetre.setVisible(true);
+                    }
+                    if (joueurCourant.prenom == "Kars") {
+                        VictoireKars fenetre = new VictoireKars();
+                        fenetre.setVisible(true);
+                    }
+                    if (joueurCourant.prenom == "Dio") {
+                        VictoireDio fenetre = new VictoireDio();
+                        fenetre.setVisible(true);
+                    }
+                    if (joueurCourant.prenom == "Yoshikage") {
+                        VictoireKira fenetre = new VictoireKira();
+                        fenetre.setVisible(true);
+                    }
+                    if (joueurCourant.prenom == "Diavolo") {
+                        VictoireDiavolo fenetre = new VictoireDiavolo();
+                        fenetre.setVisible(true);
+                    }
+                    if (joueurCourant.prenom == "Enrico") {
+                        VictoirePucci fenetre = new VictoirePucci();
+                        fenetre.setVisible(true);
+                    }
+                    if (joueurCourant.prenom == "Cesear") {
+                        VictoireCesear fenetre = new VictoireCesear();
+                        fenetre.setVisible(true);
+                    }
+                    if (joueurCourant.prenom == "Jean-Pierre") {
+                        VictoirePolnareff fenetre = new VictoirePolnareff();
+                        fenetre.setVisible(true);
+                    }
+                    if (joueurCourant.prenom == "Koichi") {
+                        VictoireKoichi fenetre = new VictoireKoichi();
+                        fenetre.setVisible(true);
+                    }
+                    if (joueurCourant.prenom == "Bruno") {
+                        VictoireBucciarati fenetre = new VictoireBucciarati();
+                        fenetre.setVisible(true);
+                    }
+                    if (joueurCourant.prenom == "Ermes") {
+                        VictoireErmes fenetre = new VictoireErmes();
+                        fenetre.setVisible(true);
+                    }
+                    FenetreDeJeu.super.dispose();
+                }
+                
+                else{
+                    timeJ1 --;
+                    LabelTimeJ1.setText(timeJ1 + "");
+                }
+                
+            }
+        ;};
+        
+        ActionListener tache_recurJ2 = new ActionListener() {
+            int timeJ2 = timerJ2;
+            
+            @Override
+            public void actionPerformed(ActionEvent e1) {
+                
+                if (timeJ2 == 0) {
+                    ChronoJ2.stop();
+                    changerJoueurCourant();
+                    if (joueurCourant.prenom == "Jonathan") {
+                        VictoireJonathan fenetre = new VictoireJonathan();
+                        fenetre.setVisible(true);
+                    }
+                    if (joueurCourant.prenom == "Joseph") {
+                        VictoireJoseph fenetre = new VictoireJoseph();
+                        fenetre.setVisible(true);
+                    }
+                    if (joueurCourant.prenom == "Jotaro") {
+                        VictoireJotaro fenetre = new VictoireJotaro();
+                        fenetre.setVisible(true);
+                    }
+                    if (joueurCourant.prenom == "Josuke") {
+                        VictoireJosuke fenetre = new VictoireJosuke();
+                        fenetre.setVisible(true);
+                    }
+                    if (joueurCourant.prenom == "Giorno") {
+                        VictoireGiorno fenetre = new VictoireGiorno();
+                        fenetre.setVisible(true);
+                    }
+                    if (joueurCourant.prenom == "Jolyne") {
+                        VictoireJolyne fenetre = new VictoireJolyne();
+                        fenetre.setVisible(true);
+                    }
+                    if (joueurCourant.prenom == "Kars") {
+                        VictoireKars fenetre = new VictoireKars();
+                        fenetre.setVisible(true);
+                    }
+                    if (joueurCourant.prenom == "Dio") {
+                        VictoireDio fenetre = new VictoireDio();
+                        fenetre.setVisible(true);
+                    }
+                    if (joueurCourant.prenom == "Yoshikage") {
+                        VictoireKira fenetre = new VictoireKira();
+                        fenetre.setVisible(true);
+                    }
+                    if (joueurCourant.prenom == "Diavolo") {
+                        VictoireDiavolo fenetre = new VictoireDiavolo();
+                        fenetre.setVisible(true);
+                    }
+                    if (joueurCourant.prenom == "Enrico") {
+                        VictoirePucci fenetre = new VictoirePucci();
+                        fenetre.setVisible(true);
+                    }
+                    if (joueurCourant.prenom == "Cesear") {
+                        VictoireCesear fenetre = new VictoireCesear();
+                        fenetre.setVisible(true);
+                    }
+                    if (joueurCourant.prenom == "Jean-Pierre") {
+                        VictoirePolnareff fenetre = new VictoirePolnareff();
+                        fenetre.setVisible(true);
+                    }
+                    if (joueurCourant.prenom == "Koichi") {
+                        VictoireKoichi fenetre = new VictoireKoichi();
+                        fenetre.setVisible(true);
+                    }
+                    if (joueurCourant.prenom == "Bruno") {
+                        VictoireBucciarati fenetre = new VictoireBucciarati();
+                        fenetre.setVisible(true);
+                    }
+                    if (joueurCourant.prenom == "Ermes") {
+                        VictoireErmes fenetre = new VictoireErmes();
+                        fenetre.setVisible(true);
+                    }
+                    FenetreDeJeu.super.dispose();
+                }
+                
+                else{
+                    timeJ2 --;
+                    LabelTimeJ2.setText(timeJ2 + "");
+                }
+                
+            }
+        ;};
+       
+        if (timer != 999) {
+            ChronoJ1 = new Timer(1000, tache_recurJ1);
+            ChronoJ2 = new Timer(1000, tache_recurJ2);
+        }
+        
+
+        
+
         
         int a = (int)(Math.random()*2);
         joueurCourant = ListeJoueurs[a];
@@ -884,7 +1079,9 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         InfoPartie = new javax.swing.JLabel();
         Bouton_retournerPlateau = new javax.swing.JButton();
         BoutonMusique = new javax.swing.JButton();
-        FondEcran = new javax.swing.JPanel();
+        LabelTimeJ1 = new javax.swing.JLabel();
+        LabelTimeJ2 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(1920, 1080));
@@ -917,7 +1114,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Joueur 2:");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(1380, 100, 112, 29);
+        jLabel2.setBounds(1420, 100, 112, 29);
 
         LabelJ1.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
         LabelJ1.setForeground(new java.awt.Color(255, 255, 255));
@@ -929,7 +1126,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         LabelJ2.setForeground(new java.awt.Color(255, 255, 255));
         LabelJ2.setText("J2");
         getContentPane().add(LabelJ2);
-        LabelJ2.setBounds(1510, 100, 250, 29);
+        LabelJ2.setBounds(1550, 100, 250, 29);
 
         jLabel5.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
@@ -1007,16 +1204,32 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         getContentPane().add(BoutonMusique);
         BoutonMusique.setBounds(130, 780, 230, 60);
 
-        FondEcran.setBackground(new java.awt.Color(0, 0, 0));
-        getContentPane().add(FondEcran);
-        FondEcran.setBounds(0, 0, 1920, 1080);
+        LabelTimeJ1.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
+        LabelTimeJ1.setForeground(new java.awt.Color(255, 255, 255));
+        getContentPane().add(LabelTimeJ1);
+        LabelTimeJ1.setBounds(440, 100, 50, 40);
+
+        LabelTimeJ2.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
+        LabelTimeJ2.setForeground(new java.awt.Color(255, 255, 255));
+        getContentPane().add(LabelTimeJ2);
+        LabelTimeJ2.setBounds(1330, 100, 50, 40);
+
+        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
+        getContentPane().add(jPanel1);
+        jPanel1.setBounds(0, 0, 1920, 1080);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void Bouton_ArreterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bouton_ArreterActionPerformed
         // TODO add your handling code here:
+        PlayMusic("TimeStop.wav");
         FenetreDeJeu.super.dispose();
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(FenetreDeJeu.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_Bouton_ArreterActionPerformed
 
     private void Carte1J1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Carte1J1ActionPerformed
@@ -1030,7 +1243,9 @@ public class FenetreDeJeu extends javax.swing.JFrame {
             PlateauDeJeu.supprimerCibles();
             PlateauDeJeu.supprimerViser();
             Panel_PlateauDeJeu.repaint();
-            
+            if (timer != 999) {
+                ChronoJ1.start();
+            }
         }
     }//GEN-LAST:event_Carte1J1ActionPerformed
 
@@ -1045,6 +1260,9 @@ public class FenetreDeJeu extends javax.swing.JFrame {
             PlateauDeJeu.supprimerCibles();
             PlateauDeJeu.supprimerViser();
             Panel_PlateauDeJeu.repaint();
+            if (timer != 999) {
+                ChronoJ1.start();
+            }
         }
     }//GEN-LAST:event_Carte2J1ActionPerformed
 
@@ -1059,6 +1277,9 @@ public class FenetreDeJeu extends javax.swing.JFrame {
             PlateauDeJeu.supprimerCibles();
             PlateauDeJeu.supprimerViser();
             Panel_PlateauDeJeu.repaint();
+            if (timer != 999) {
+                ChronoJ2.start();
+            }
         }
     }//GEN-LAST:event_Carte1J2ActionPerformed
 
@@ -1073,6 +1294,9 @@ public class FenetreDeJeu extends javax.swing.JFrame {
             PlateauDeJeu.supprimerCibles();
             PlateauDeJeu.supprimerViser();
             Panel_PlateauDeJeu.repaint();
+            if (timer != 999) {
+                ChronoJ2.start();
+            }
         }
     }//GEN-LAST:event_Carte2J2ActionPerformed
 
@@ -1560,12 +1784,38 @@ public class FenetreDeJeu extends javax.swing.JFrame {
     }
     
     
+    public static void PlayMusic(String location) {
+        try {
+            File musicPath = new File(location);
+            if(musicPath.exists()) {
+                AudioInputStream audioInput = AudioSystem.getAudioInputStream(musicPath);
+                Clip clip = AudioSystem.getClip();
+                clip.open(audioInput);
+                clip.start();
+            }
+            else {
+                System.out.println("Trouve pas le fichier");
+            }
+        }catch(Exception e) {
+            
+        }
+    }
+    
+    
     public void changerJoueurCourant() {
         if (joueurCourant == ListeJoueurs[0]) {
             joueurCourant = ListeJoueurs[1];
+            if (timer != 999) {
+                ChronoJ1.stop();
+                ChronoJ2.start();
+            }
         }
         else {
             joueurCourant = ListeJoueurs[0];
+            if (timer != 999) {
+                ChronoJ2.stop();
+                ChronoJ1.start();
+            }
         }
         LabelJC.setText(joueurCourant.toString());
     }
@@ -1601,7 +1851,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FenetreDeJeu(ListeJoueurs[0], ListeJoueurs[1], Timer).setVisible(true);
+                new FenetreDeJeu(ListeJoueurs[0], ListeJoueurs[1], timer).setVisible(true);
             }
         });
     }
@@ -1616,14 +1866,16 @@ public class FenetreDeJeu extends javax.swing.JFrame {
     private javax.swing.JButton Carte2J1;
     private javax.swing.JButton Carte2J2;
     private javax.swing.JButton CartePioche;
-    private javax.swing.JPanel FondEcran;
     private javax.swing.JLabel InfoPartie;
     private javax.swing.JLabel LabelJ1;
     private javax.swing.JLabel LabelJ2;
     private javax.swing.JLabel LabelJC;
+    private javax.swing.JLabel LabelTimeJ1;
+    private javax.swing.JLabel LabelTimeJ2;
     private javax.swing.JPanel Panel_PlateauDeJeu;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

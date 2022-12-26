@@ -62,8 +62,15 @@ public class FenetreMusique extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         BtnQuitter = new javax.swing.JButton();
+        BtnThemeDio = new javax.swing.JButton();
+        BtnThemeKars = new javax.swing.JButton();
+        BtnThemeKira = new javax.swing.JButton();
+        BtnThemeDiavolo = new javax.swing.JButton();
+        BtnThemePucci = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1200, 1000));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         BtnOP1.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
         BtnOP1.setText("Opening 1");
@@ -72,6 +79,7 @@ public class FenetreMusique extends javax.swing.JFrame {
                 BtnOP1ActionPerformed(evt);
             }
         });
+        getContentPane().add(BtnOP1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, -1, -1));
 
         BtnOP2.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
         BtnOP2.setText("Opening 2");
@@ -80,6 +88,7 @@ public class FenetreMusique extends javax.swing.JFrame {
                 BtnOP2ActionPerformed(evt);
             }
         });
+        getContentPane().add(BtnOP2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 160, -1, -1));
 
         BtnOP3.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
         BtnOP3.setText("Opening 3");
@@ -88,6 +97,7 @@ public class FenetreMusique extends javax.swing.JFrame {
                 BtnOP3ActionPerformed(evt);
             }
         });
+        getContentPane().add(BtnOP3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 230, -1, -1));
 
         BtnOP4.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
         BtnOP4.setText("Opening 4");
@@ -96,6 +106,7 @@ public class FenetreMusique extends javax.swing.JFrame {
                 BtnOP4ActionPerformed(evt);
             }
         });
+        getContentPane().add(BtnOP4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 300, -1, -1));
 
         BtnOP5.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
         BtnOP5.setText("Opening 5");
@@ -104,6 +115,7 @@ public class FenetreMusique extends javax.swing.JFrame {
                 BtnOP5ActionPerformed(evt);
             }
         });
+        getContentPane().add(BtnOP5, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 370, -1, -1));
 
         BtnOP6.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
         BtnOP6.setText("Opening 6");
@@ -112,6 +124,7 @@ public class FenetreMusique extends javax.swing.JFrame {
                 BtnOP6ActionPerformed(evt);
             }
         });
+        getContentPane().add(BtnOP6, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 440, -1, -1));
 
         BtnOP7.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
         BtnOP7.setText("Opening 7");
@@ -120,6 +133,7 @@ public class FenetreMusique extends javax.swing.JFrame {
                 BtnOP7ActionPerformed(evt);
             }
         });
+        getContentPane().add(BtnOP7, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 510, -1, -1));
 
         BtnOP8.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
         BtnOP8.setText("Opening 8");
@@ -128,30 +142,39 @@ public class FenetreMusique extends javax.swing.JFrame {
                 BtnOP8ActionPerformed(evt);
             }
         });
+        getContentPane().add(BtnOP8, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 580, -1, -1));
 
         jLabel1.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
         jLabel1.setText("Sono Chi no Sadame");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 90, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
         jLabel2.setText("Bloody Stream");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 160, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
         jLabel3.setText("Stand Proud");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 230, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
         jLabel4.setText("Sono Chi no Kioku");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 300, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
         jLabel5.setText("Crazy Noisy Bizarre Town");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 370, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
         jLabel6.setText("Chase");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 440, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
         jLabel7.setText("Fighting gold");
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 580, -1, -1));
 
         jLabel8.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
         jLabel8.setText("Great Days");
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 510, -1, -1));
 
         BtnOP9.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
         BtnOP9.setText("Opening 9");
@@ -160,6 +183,7 @@ public class FenetreMusique extends javax.swing.JFrame {
                 BtnOP9ActionPerformed(evt);
             }
         });
+        getContentPane().add(BtnOP9, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 650, -1, -1));
 
         BtnOP10.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
         BtnOP10.setText("Opening 10");
@@ -168,12 +192,15 @@ public class FenetreMusique extends javax.swing.JFrame {
                 BtnOP10ActionPerformed(evt);
             }
         });
+        getContentPane().add(BtnOP10, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 720, -1, -1));
 
         jLabel9.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
         jLabel9.setText("Uragirimono requiem");
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 650, -1, -1));
 
         jLabel10.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
         jLabel10.setText("Stone Ocean");
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 720, -1, -1));
 
         BtnThemeJonathan.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
         BtnThemeJonathan.setText("Jonathan's Theme");
@@ -182,6 +209,7 @@ public class FenetreMusique extends javax.swing.JFrame {
                 BtnThemeJonathanActionPerformed(evt);
             }
         });
+        getContentPane().add(BtnThemeJonathan, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 90, 200, -1));
 
         BtnThemeJoseph.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
         BtnThemeJoseph.setText("Joseph's Theme");
@@ -190,6 +218,7 @@ public class FenetreMusique extends javax.swing.JFrame {
                 BtnThemeJosephActionPerformed(evt);
             }
         });
+        getContentPane().add(BtnThemeJoseph, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 160, 200, -1));
 
         BtnThemeJotaro.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
         BtnThemeJotaro.setText("Jotaro's Theme");
@@ -198,6 +227,7 @@ public class FenetreMusique extends javax.swing.JFrame {
                 BtnThemeJotaroActionPerformed(evt);
             }
         });
+        getContentPane().add(BtnThemeJotaro, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 230, 200, -1));
 
         BtnThemeJosuke.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
         BtnThemeJosuke.setText("Josuke's Theme");
@@ -206,6 +236,7 @@ public class FenetreMusique extends javax.swing.JFrame {
                 BtnThemeJosukeActionPerformed(evt);
             }
         });
+        getContentPane().add(BtnThemeJosuke, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 300, 200, -1));
 
         BtnThemeGiorno.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
         BtnThemeGiorno.setText("Giorno's Theme");
@@ -214,6 +245,7 @@ public class FenetreMusique extends javax.swing.JFrame {
                 BtnThemeGiornoActionPerformed(evt);
             }
         });
+        getContentPane().add(BtnThemeGiorno, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 370, 200, -1));
 
         BtnThemeJolyne.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
         BtnThemeJolyne.setText("Jolyne's Theme");
@@ -222,6 +254,7 @@ public class FenetreMusique extends javax.swing.JFrame {
                 BtnThemeJolyneActionPerformed(evt);
             }
         });
+        getContentPane().add(BtnThemeJolyne, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 440, 200, -1));
 
         jButton1.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
         jButton1.setText("Opening 11");
@@ -230,12 +263,15 @@ public class FenetreMusique extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 790, -1, -1));
 
         jLabel11.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
         jLabel11.setText("Heaven's Falling Down");
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 790, -1, -1));
 
         jLabel12.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
         jLabel12.setText("Jojo's Bizarre Adventure OST");
+        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(428, 24, -1, -1));
 
         BtnQuitter.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
         BtnQuitter.setText("Quitter");
@@ -244,137 +280,52 @@ public class FenetreMusique extends javax.swing.JFrame {
                 BtnQuitterActionPerformed(evt);
             }
         });
+        getContentPane().add(BtnQuitter, new org.netbeans.lib.awtextra.AbsoluteConstraints(978, 827, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(126, 126, 126)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(BtnOP1)
-                    .addComponent(BtnOP2)
-                    .addComponent(BtnOP3)
-                    .addComponent(BtnOP4)
-                    .addComponent(BtnOP5)
-                    .addComponent(BtnOP6)
-                    .addComponent(BtnOP7)
-                    .addComponent(BtnOP8)
-                    .addComponent(BtnOP9)
-                    .addComponent(BtnOP10)
-                    .addComponent(jButton1))
-                .addGap(22, 22, 22)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel11)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel9)
-                            .addComponent(jLabel8))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 162, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(BtnThemeJolyne)
-                            .addComponent(BtnThemeGiorno)
-                            .addComponent(BtnThemeJotaro)
-                            .addComponent(BtnThemeJoseph)
-                            .addComponent(BtnThemeJonathan)
-                            .addComponent(BtnThemeJosuke))
-                        .addGap(347, 347, 347))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel10)
-                        .addGap(311, 311, 311)
-                        .addComponent(BtnQuitter)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(428, 428, 428)
-                .addComponent(jLabel12)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addComponent(jLabel12)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(43, 43, 43)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(BtnOP1)
-                            .addComponent(jLabel1))
-                        .addGap(27, 27, 27))
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(BtnThemeJonathan)
-                        .addGap(10, 10, 10)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(24, 24, 24)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(BtnOP2)
-                            .addComponent(jLabel2))
-                        .addGap(42, 42, 42)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(BtnOP3)
-                            .addComponent(jLabel3)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(BtnThemeJoseph)
-                        .addGap(47, 47, 47)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(48, 48, 48)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(BtnOP4)
-                            .addComponent(jLabel4)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(BtnThemeJotaro)
-                        .addGap(25, 25, 25)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(44, 44, 44)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(BtnOP5)
-                            .addComponent(jLabel5))
-                        .addGap(44, 44, 44))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(BtnThemeJosuke)
-                        .addGap(33, 33, 33)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BtnOP6)
-                    .addComponent(jLabel6))
-                .addGap(7, 7, 7)
-                .addComponent(BtnThemeGiorno)
-                .addGap(5, 5, 5)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BtnOP7)
-                    .addComponent(jLabel8))
-                .addGap(39, 39, 39)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BtnOP8)
-                    .addComponent(jLabel7)
-                    .addComponent(BtnThemeJolyne))
-                .addGap(41, 41, 41)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BtnOP9)
-                    .addComponent(jLabel9))
-                .addGap(53, 53, 53)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BtnOP10)
-                    .addComponent(jLabel10)
-                    .addComponent(BtnQuitter))
-                .addGap(41, 41, 41)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jLabel11))
-                .addContainerGap(37, Short.MAX_VALUE))
-        );
+        BtnThemeDio.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
+        BtnThemeDio.setText("Dio's Theme");
+        BtnThemeDio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnThemeDioActionPerformed(evt);
+            }
+        });
+        getContentPane().add(BtnThemeDio, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 510, 200, -1));
+
+        BtnThemeKars.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
+        BtnThemeKars.setText("Kars's Theme");
+        BtnThemeKars.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnThemeKarsActionPerformed(evt);
+            }
+        });
+        getContentPane().add(BtnThemeKars, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 580, 200, -1));
+
+        BtnThemeKira.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
+        BtnThemeKira.setText("Kira's Theme");
+        BtnThemeKira.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnThemeKiraActionPerformed(evt);
+            }
+        });
+        getContentPane().add(BtnThemeKira, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 650, 200, -1));
+
+        BtnThemeDiavolo.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
+        BtnThemeDiavolo.setText("Diavolo's Theme");
+        BtnThemeDiavolo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnThemeDiavoloActionPerformed(evt);
+            }
+        });
+        getContentPane().add(BtnThemeDiavolo, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 720, 200, -1));
+
+        BtnThemePucci.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
+        BtnThemePucci.setText("Pucci's Theme");
+        BtnThemePucci.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnThemePucciActionPerformed(evt);
+            }
+        });
+        getContentPane().add(BtnThemePucci, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 790, 200, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -469,6 +420,31 @@ public class FenetreMusique extends javax.swing.JFrame {
         FenetreMusique.super.dispose();
     }//GEN-LAST:event_BtnQuitterActionPerformed
 
+    private void BtnThemeDioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnThemeDioActionPerformed
+        // TODO add your handling code here:
+        PlayMusic("Dio's Theme.wav");
+    }//GEN-LAST:event_BtnThemeDioActionPerformed
+
+    private void BtnThemeKarsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnThemeKarsActionPerformed
+        // TODO add your handling code here:
+        PlayMusic("Kars's Theme.wav");
+    }//GEN-LAST:event_BtnThemeKarsActionPerformed
+
+    private void BtnThemeKiraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnThemeKiraActionPerformed
+        // TODO add your handling code here:
+        PlayMusic("Kira's Theme.wav");
+    }//GEN-LAST:event_BtnThemeKiraActionPerformed
+
+    private void BtnThemeDiavoloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnThemeDiavoloActionPerformed
+        // TODO add your handling code here:
+        PlayMusic("Diavolo's Theme.wav");
+    }//GEN-LAST:event_BtnThemeDiavoloActionPerformed
+
+    private void BtnThemePucciActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnThemePucciActionPerformed
+        // TODO add your handling code here:
+        PlayMusic("Pucci's Theme.wav");
+    }//GEN-LAST:event_BtnThemePucciActionPerformed
+
     
     public static void PlayMusic(String location) {
         try {
@@ -535,12 +511,17 @@ public class FenetreMusique extends javax.swing.JFrame {
     private javax.swing.JButton BtnOP8;
     private javax.swing.JButton BtnOP9;
     private javax.swing.JButton BtnQuitter;
+    private javax.swing.JButton BtnThemeDiavolo;
+    private javax.swing.JButton BtnThemeDio;
     private javax.swing.JButton BtnThemeGiorno;
     private javax.swing.JButton BtnThemeJolyne;
     private javax.swing.JButton BtnThemeJonathan;
     private javax.swing.JButton BtnThemeJoseph;
     private javax.swing.JButton BtnThemeJosuke;
     private javax.swing.JButton BtnThemeJotaro;
+    private javax.swing.JButton BtnThemeKars;
+    private javax.swing.JButton BtnThemeKira;
+    private javax.swing.JButton BtnThemePucci;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
