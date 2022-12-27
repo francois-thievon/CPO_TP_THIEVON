@@ -1189,7 +1189,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
             }
         });
         getContentPane().add(CartePioche);
-        CartePioche.setBounds(1460, 710, 374, 211);
+        CartePioche.setBounds(1460, 720, 374, 211);
 
         InfoPartie.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
         InfoPartie.setForeground(new java.awt.Color(255, 255, 255));
@@ -1232,7 +1232,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Carte Volante");
+        jLabel3.setText("Carte Volante :");
         getContentPane().add(jLabel3);
         jLabel3.setBounds(1460, 680, 190, 29);
 

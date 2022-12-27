@@ -4,6 +4,13 @@
  */
 package onitama_thievon;
 
+import java.io.File;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+
 /**
  *
  * @author thiev
@@ -72,6 +79,7 @@ public class VictoireKoichi extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        PlayMusic("TimeStop.wav");
         Fenetre_Accueil fenetre = new Fenetre_Accueil();
         fenetre.setVisible(true);
         VictoireKoichi.super.dispose();
@@ -79,9 +87,32 @@ public class VictoireKoichi extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        PlayMusic("TimeStop.wav");
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(VictoirePucci.class.getName()).log(Level.SEVERE, null, ex);
+        }
         VictoireKoichi.super.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    public static void PlayMusic(String location) {
+        try {
+            File musicPath = new File(location);
+            if(musicPath.exists()) {
+                AudioInputStream audioInput = AudioSystem.getAudioInputStream(musicPath);
+                Clip clip = AudioSystem.getClip();
+                clip.open(audioInput);
+                clip.start();
+            }
+            else {
+                System.out.println("Trouve pas le fichier");
+            }
+        }catch(Exception e) {
+            
+        }
+    }
+    
     /**
      * @param args the command line arguments
      */
