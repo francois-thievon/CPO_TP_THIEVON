@@ -113,6 +113,8 @@ public class Fenetre_Accueil extends javax.swing.JFrame {
     private void BoutonRegleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonRegleActionPerformed
         // TODO add your handling code here:
         PlayMusic("TimeStop.wav");
+        FenetreRegle regle = new FenetreRegle();
+        regle.setVisible(true);
     }//GEN-LAST:event_BoutonRegleActionPerformed
 
     private void BoutonMusiqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonMusiqueActionPerformed
