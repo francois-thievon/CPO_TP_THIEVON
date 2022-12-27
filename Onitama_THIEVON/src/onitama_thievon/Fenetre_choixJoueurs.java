@@ -73,6 +73,8 @@ public class Fenetre_choixJoueurs extends javax.swing.JFrame {
         Wallpaper = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(1920, 1080));
+        setSize(new java.awt.Dimension(1920, 1080));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Bouton_Jolyne.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Jolyne_pt.jpg"))); // NOI18N

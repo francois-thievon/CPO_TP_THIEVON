@@ -1081,9 +1081,11 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         BoutonMusique = new javax.swing.JButton();
         LabelTimeJ1 = new javax.swing.JLabel();
         LabelTimeJ2 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(1920, 1080));
+        setMinimumSize(new java.awt.Dimension(1920, 1080));
         setPreferredSize(new java.awt.Dimension(1920, 1080));
         setSize(new java.awt.Dimension(1920, 1080));
         getContentPane().setLayout(null);
@@ -1122,7 +1124,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         LabelJ1.setForeground(new java.awt.Color(255, 255, 255));
         LabelJ1.setText("J1");
         getContentPane().add(LabelJ1);
-        LabelJ1.setBounds(180, 100, 320, 29);
+        LabelJ1.setBounds(180, 100, 300, 29);
 
         LabelJ2.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
         LabelJ2.setForeground(new java.awt.Color(255, 255, 255));
@@ -1134,13 +1136,13 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("A toi de jouer :");
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(710, 40, 197, 29);
+        jLabel5.setBounds(750, 50, 197, 29);
 
         LabelJC.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
         LabelJC.setForeground(new java.awt.Color(255, 255, 255));
         LabelJC.setText("JC");
         getContentPane().add(LabelJC);
-        LabelJC.setBounds(910, 40, 350, 29);
+        LabelJC.setBounds(940, 50, 350, 29);
 
         Carte1J1.setBackground(new java.awt.Color(0, 0, 0));
         Carte1J1.addActionListener(new java.awt.event.ActionListener() {
@@ -1184,11 +1186,12 @@ public class FenetreDeJeu extends javax.swing.JFrame {
             }
         });
         getContentPane().add(CartePioche);
-        CartePioche.setBounds(1400, 720, 374, 211);
+        CartePioche.setBounds(1390, 720, 374, 211);
 
-        InfoPartie.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
+        InfoPartie.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
+        InfoPartie.setForeground(new java.awt.Color(255, 255, 255));
         getContentPane().add(InfoPartie);
-        InfoPartie.setBounds(150, 30, 0, 0);
+        InfoPartie.setBounds(630, 930, 610, 40);
 
         Bouton_retournerPlateau.setBackground(new java.awt.Color(0, 0, 0));
         Bouton_retournerPlateau.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
@@ -1224,9 +1227,9 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         getContentPane().add(LabelTimeJ2);
         LabelTimeJ2.setBounds(1330, 100, 50, 40);
 
-        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
-        getContentPane().add(jPanel1);
-        jPanel1.setBounds(0, 0, 1920, 1080);
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Modern Wallpaper.jpg"))); // NOI18N
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(0, 0, 1920, 1080);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -1885,7 +1888,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
     private javax.swing.JPanel Panel_PlateauDeJeu;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

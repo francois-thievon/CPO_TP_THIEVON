@@ -67,9 +67,12 @@ public class FenetreMusique extends javax.swing.JFrame {
         BtnThemeKira = new javax.swing.JButton();
         BtnThemeDiavolo = new javax.swing.JButton();
         BtnThemePucci = new javax.swing.JButton();
+        jLabel13 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1200, 1000));
+        setMaximumSize(new java.awt.Dimension(1160, 900));
+        setPreferredSize(new java.awt.Dimension(1160, 900));
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         BtnOP1.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
@@ -145,34 +148,42 @@ public class FenetreMusique extends javax.swing.JFrame {
         getContentPane().add(BtnOP8, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 580, -1, -1));
 
         jLabel1.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Sono Chi no Sadame");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 90, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Bloody Stream");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 160, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Stand Proud");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 230, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Sono Chi no Kioku");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 300, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Crazy Noisy Bizarre Town");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 370, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Chase");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 440, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Fighting gold");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 580, -1, -1));
 
         jLabel8.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Great Days");
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 510, -1, -1));
 
@@ -195,10 +206,12 @@ public class FenetreMusique extends javax.swing.JFrame {
         getContentPane().add(BtnOP10, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 720, -1, -1));
 
         jLabel9.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Uragirimono requiem");
         getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 650, -1, -1));
 
         jLabel10.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Stone Ocean");
         getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 720, -1, -1));
 
@@ -266,10 +279,12 @@ public class FenetreMusique extends javax.swing.JFrame {
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 790, -1, -1));
 
         jLabel11.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("Heaven's Falling Down");
         getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 790, -1, -1));
 
         jLabel12.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("Jojo's Bizarre Adventure OST");
         getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(428, 24, -1, -1));
 
@@ -280,7 +295,7 @@ public class FenetreMusique extends javax.swing.JFrame {
                 BtnQuitterActionPerformed(evt);
             }
         });
-        getContentPane().add(BtnQuitter, new org.netbeans.lib.awtextra.AbsoluteConstraints(978, 827, -1, -1));
+        getContentPane().add(BtnQuitter, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 790, -1, -1));
 
         BtnThemeDio.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
         BtnThemeDio.setText("Dio's Theme");
@@ -326,6 +341,9 @@ public class FenetreMusique extends javax.swing.JFrame {
             }
         });
         getContentPane().add(BtnThemePucci, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 790, 200, -1));
+
+        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Modern Wallpaper.jpg"))); // NOI18N
+        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1160, 900));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -527,6 +545,7 @@ public class FenetreMusique extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
