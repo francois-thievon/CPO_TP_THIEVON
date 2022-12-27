@@ -4,6 +4,11 @@
  */
 package onitama_thievon;
 
+import java.io.File;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+
 /**
  *
  * @author thiev
@@ -48,7 +53,7 @@ public class Fenetre_Accueil extends javax.swing.JFrame {
         Jojo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Jojo.png"))); // NOI18N
         getContentPane().add(Jojo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel1.setBackground(new java.awt.Color(0, 0, 0, 230));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         BoutonMusique.setBackground(new java.awt.Color(0, 0, 0));
@@ -89,7 +94,7 @@ public class Fenetre_Accueil extends javax.swing.JFrame {
         jLabel2.setText("Jojo'nitama");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 10, -1, -1));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 580, 450, 290));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 580, 450, 290));
 
         FondEcran.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Wallpaper jojo.jpg"))); // NOI18N
         getContentPane().add(FondEcran, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -99,6 +104,7 @@ public class Fenetre_Accueil extends javax.swing.JFrame {
 
     private void BoutonChoixPersosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonChoixPersosActionPerformed
         // TODO add your handling code here:
+        PlayMusic("TimeStop.wav");
         Fenetre_choixJoueurs fenetre = new Fenetre_choixJoueurs();
         fenetre.setVisible(true);
         Fenetre_Accueil.super.dispose();
@@ -106,14 +112,32 @@ public class Fenetre_Accueil extends javax.swing.JFrame {
 
     private void BoutonRegleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonRegleActionPerformed
         // TODO add your handling code here:
+        PlayMusic("TimeStop.wav");
     }//GEN-LAST:event_BoutonRegleActionPerformed
 
     private void BoutonMusiqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonMusiqueActionPerformed
         // TODO add your handling code here:
+        PlayMusic("TimeStop.wav");
         FenetreMusique musique = new FenetreMusique();
         musique.setVisible(true);
     }//GEN-LAST:event_BoutonMusiqueActionPerformed
 
+    public static void PlayMusic(String location) {
+        try {
+            File musicPath = new File(location);
+            if(musicPath.exists()) {
+                AudioInputStream audioInput = AudioSystem.getAudioInputStream(musicPath);
+                Clip clip = AudioSystem.getClip();
+                clip.open(audioInput);
+                clip.start();
+            }
+            else {
+                System.out.println("Trouve pas le fichier");
+            }
+        }catch(Exception e) {
+            
+        }
+    }
     
     
     /**

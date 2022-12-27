@@ -930,19 +930,19 @@ public class FenetreDeJeu extends javax.swing.JFrame {
                                 }
                                 
                                 if (Ytmp == 0) {
-                                    X = 500;
+                                    X = 550;
                                 }
                                 if (Ytmp == 1) {
-                                    X = 664;
+                                    X = 714;
                                 }
                                 if (Ytmp == 2) {
-                                    X = 828;
+                                    X = 878;
                                 }
                                 if (Ytmp == 3) {
-                                    X = 992;
+                                    X = 1042;
                                 }
                                 if (Ytmp == 4) {
-                                    X = 1156;
+                                    X = 1206;
                                 }
                                 
                                 Xi = x + X;
@@ -965,19 +965,19 @@ public class FenetreDeJeu extends javax.swing.JFrame {
                                 }
                                 
                                 if (caseGraph.Y == 0) {
-                                    X2 = 500;
+                                    X2 = 550;
                                 }
                                 if (caseGraph.Y == 1) {
-                                    X2 = 664;
+                                    X2 = 714;
                                 }
                                 if (caseGraph.Y == 2) {
-                                    X2 = 828;
+                                    X2 = 878;
                                 }
                                 if (caseGraph.Y == 3) {
-                                    X2 = 992;
+                                    X2 = 1042;
                                 }
                                 if (caseGraph.Y == 4) {
-                                    X2 = 1156;
+                                    X2 = 1206;
                                 }
                                 
                                 Xf = x + X2;
@@ -1042,8 +1042,8 @@ public class FenetreDeJeu extends javax.swing.JFrame {
                                 cartetmp = null;
                                 PlateauDeJeu.supprimerCibles();
                                 PlateauDeJeu.supprimerViser();
+                                PlayMusic("TimeSkip.wav");
                             }
-                            //Victoire(reverse);
                         }                        
                     }
                 });
@@ -1082,6 +1082,9 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         LabelTimeJ1 = new javax.swing.JLabel();
         LabelTimeJ2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(1920, 1080));
@@ -1100,37 +1103,37 @@ public class FenetreDeJeu extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Bouton_Arreter);
-        Bouton_Arreter.setBounds(130, 860, 230, 60);
+        Bouton_Arreter.setBounds(80, 860, 390, 60);
 
         Panel_PlateauDeJeu.setBackground(new java.awt.Color(102, 102, 102));
         Panel_PlateauDeJeu.setPreferredSize(new java.awt.Dimension(820, 820));
         Panel_PlateauDeJeu.setLayout(new java.awt.GridLayout(5, 5));
         getContentPane().add(Panel_PlateauDeJeu);
-        Panel_PlateauDeJeu.setBounds(500, 100, 820, 820);
+        Panel_PlateauDeJeu.setBounds(550, 100, 820, 820);
 
         jLabel1.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Joueur  1:");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(50, 100, 118, 29);
+        jLabel1.setBounds(80, 100, 118, 29);
 
         jLabel2.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Joueur 2:");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(1420, 100, 112, 29);
+        jLabel2.setBounds(1450, 100, 112, 29);
 
         LabelJ1.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
         LabelJ1.setForeground(new java.awt.Color(255, 255, 255));
         LabelJ1.setText("J1");
         getContentPane().add(LabelJ1);
-        LabelJ1.setBounds(180, 100, 300, 29);
+        LabelJ1.setBounds(210, 100, 300, 29);
 
         LabelJ2.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
         LabelJ2.setForeground(new java.awt.Color(255, 255, 255));
         LabelJ2.setText("J2");
         getContentPane().add(LabelJ2);
-        LabelJ2.setBounds(1550, 100, 250, 29);
+        LabelJ2.setBounds(1570, 100, 310, 29);
 
         jLabel5.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
@@ -1151,7 +1154,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Carte1J1);
-        Carte1J1.setBounds(50, 160, 390, 225);
+        Carte1J1.setBounds(80, 180, 390, 225);
 
         Carte2J1.setBackground(new java.awt.Color(0, 0, 0));
         Carte2J1.addActionListener(new java.awt.event.ActionListener() {
@@ -1160,7 +1163,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Carte2J1);
-        Carte2J1.setBounds(50, 430, 390, 225);
+        Carte2J1.setBounds(80, 430, 390, 225);
 
         Carte1J2.setBackground(new java.awt.Color(0, 0, 0));
         Carte1J2.addActionListener(new java.awt.event.ActionListener() {
@@ -1169,7 +1172,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Carte1J2);
-        Carte1J2.setBounds(1390, 160, 390, 225);
+        Carte1J2.setBounds(1450, 180, 390, 225);
 
         Carte2J2.setBackground(new java.awt.Color(0, 0, 0));
         Carte2J2.addActionListener(new java.awt.event.ActionListener() {
@@ -1178,7 +1181,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Carte2J2);
-        Carte2J2.setBounds(1390, 430, 390, 225);
+        Carte2J2.setBounds(1450, 430, 390, 225);
 
         CartePioche.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1186,7 +1189,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
             }
         });
         getContentPane().add(CartePioche);
-        CartePioche.setBounds(1390, 720, 374, 211);
+        CartePioche.setBounds(1460, 710, 374, 211);
 
         InfoPartie.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
         InfoPartie.setForeground(new java.awt.Color(255, 255, 255));
@@ -1203,7 +1206,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Bouton_retournerPlateau);
-        Bouton_retournerPlateau.setBounds(130, 700, 230, 60);
+        Bouton_retournerPlateau.setBounds(80, 700, 390, 60);
 
         BoutonMusique.setBackground(new java.awt.Color(0, 0, 0));
         BoutonMusique.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
@@ -1215,21 +1218,39 @@ public class FenetreDeJeu extends javax.swing.JFrame {
             }
         });
         getContentPane().add(BoutonMusique);
-        BoutonMusique.setBounds(130, 780, 230, 60);
+        BoutonMusique.setBounds(80, 780, 390, 60);
 
         LabelTimeJ1.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
         LabelTimeJ1.setForeground(new java.awt.Color(255, 255, 255));
         getContentPane().add(LabelTimeJ1);
-        LabelTimeJ1.setBounds(440, 100, 50, 40);
+        LabelTimeJ1.setBounds(500, 100, 50, 30);
 
         LabelTimeJ2.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
         LabelTimeJ2.setForeground(new java.awt.Color(255, 255, 255));
         getContentPane().add(LabelTimeJ2);
-        LabelTimeJ2.setBounds(1330, 100, 50, 40);
+        LabelTimeJ2.setBounds(1380, 100, 50, 30);
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Modern Wallpaper.jpg"))); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Carte Volante");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(0, 0, 1920, 1080);
+        jLabel3.setBounds(1460, 680, 190, 29);
+
+        jLabel4.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("Cartes :");
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(80, 140, 170, 29);
+
+        jLabel6.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("Cartes :");
+        getContentPane().add(jLabel6);
+        jLabel6.setBounds(1450, 140, 170, 29);
+
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Modern Wallpaper.jpg"))); // NOI18N
+        getContentPane().add(jLabel7);
+        jLabel7.setBounds(0, 0, 1920, 1080);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -1319,12 +1340,14 @@ public class FenetreDeJeu extends javax.swing.JFrame {
 
     private void Bouton_retournerPlateauActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bouton_retournerPlateauActionPerformed
         // TODO add your handling code here:
+        PlayMusic("TimeStop.wav");
         nettoyerPlateau();
         retournerPlateau(); 
     }//GEN-LAST:event_Bouton_retournerPlateauActionPerformed
 
     private void BoutonMusiqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonMusiqueActionPerformed
         // TODO add your handling code here:
+        PlayMusic("TimeStop.wav");
         FenetreMusique musique = new FenetreMusique();
         musique.setVisible(true);
     }//GEN-LAST:event_BoutonMusiqueActionPerformed
@@ -1889,6 +1912,9 @@ public class FenetreDeJeu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     // End of variables declaration//GEN-END:variables
 }

@@ -237,7 +237,7 @@ public class Fenetre_choixJoueurs extends javax.swing.JFrame {
         getContentPane().add(LabelNomJoueurCourant, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 0, 500, 40));
         getContentPane().add(LabelVS, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 250, -1, -1));
 
-        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel1.setBackground(new java.awt.Color(0, 0, 0, 230));
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -726,6 +726,7 @@ public class Fenetre_choixJoueurs extends javax.swing.JFrame {
             LabelIndication.setText("Veuillez saisir un timer");
         }
         if (a != 0) {
+            PlayMusic("TimeStop.wav");
             FenetreDeJeu jeu = new FenetreDeJeu(ListeJoueurs[0], ListeJoueurs[1], a);
             jeu.setVisible(true);
             Fenetre_choixJoueurs.super.dispose();
