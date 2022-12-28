@@ -421,6 +421,7 @@ public class FenetreMusique extends javax.swing.JFrame {
         });
         getContentPane().add(BtnThemePucci, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 790, 200, -1));
 
+        BtnPlayResume.setBackground(new java.awt.Color(153, 153, 153));
         BtnPlayResume.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Play.png"))); // NOI18N
         BtnPlayResume.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
