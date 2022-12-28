@@ -97,6 +97,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
     
     Timer ChronoJ1;
     Timer ChronoJ2;
+    Timer ChronoTP;
     
     int timerJ1;
     int timerJ2;
@@ -115,6 +116,32 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         timerJ2 = unTimer;
         
         initComponents();
+        
+        
+        ActionListener tache_recurTP = new ActionListener() {
+            int timeTP = 1;
+            
+            @Override
+            public void actionPerformed(ActionEvent e1) {
+                
+                if (timeTP == 0) {
+                    PlateauDeJeu.Plateau[Xtmp2][Ytmp2].affecterPion(piontmp);
+                    Panel_PlateauDeJeu.repaint();
+                    timeTP = 1;
+                    changerJoueurCourant();
+                    Victoire(reverse);
+                    changerJoueurCourant();
+                    ChronoTP.stop();
+                }
+                
+                else{
+                    timeTP --;
+                }
+                
+            }
+        ;};
+        
+        
         
         
         ActionListener tache_recurJ1 = new ActionListener() {
@@ -289,6 +316,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
             ChronoJ1 = new Timer(1000, tache_recurJ1);
             ChronoJ2 = new Timer(1000, tache_recurJ2);
         }
+        ChronoTP = new Timer(500, tache_recurTP);
         
 
         
@@ -1028,15 +1056,16 @@ public class FenetreDeJeu extends javax.swing.JFrame {
                                 if (Xf < Xi && Yf == Yi) {
                                     animate.jLabelXLeft(Xi, Xf, 1, 1, labeltmp);
                                 }
-
-
-                                c.affecterPion(piontmp);  
+                                
+                                
                                 Xtmp2 = caseGraph.X;
                                 Ytmp2 = caseGraph.Y;
                                 
+                                ChronoTP.start();
+                                
                                 Panel_PlateauDeJeu.repaint();
                                 deplacer = false;
-                                Victoire(reverse);
+                                //Victoire(reverse);
                                 changerJoueurCourant();
                                 changerCarte(cartetmp);
                                 cartetmp = null;
