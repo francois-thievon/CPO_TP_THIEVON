@@ -102,18 +102,21 @@ public class FenetreDeJeu extends javax.swing.JFrame {
     int timerJ1;
     int timerJ2;
     
+    static boolean sec;
+    
   
     
     /**
      * Creates new form FenetreDeJeu
      */
-    public FenetreDeJeu(Joueur J1, Joueur J2, int unTimer) {
+    public FenetreDeJeu(Joueur J1, Joueur J2, int unTimer, boolean plus2sec) {
         
         ListeJoueurs[0] = J1;
         ListeJoueurs[1] = J2;
         timer = unTimer;
         timerJ1 = unTimer;
         timerJ2 = unTimer;
+        sec = plus2sec;
         
         initComponents();
         
@@ -145,13 +148,12 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         
         
         ActionListener tache_recurJ1 = new ActionListener() {
-            int timeJ1 = timerJ1;
             
             @Override
             public void actionPerformed(ActionEvent e1) {
                 
-                if (timeJ1 == 0) {
-                    timeJ1 = 1000000;
+                if (timerJ1 == 0) {
+                    timerJ1 = 1000000;
                     ChronoJ1.stop();
                     ChronoJ2.stop();
                     changerJoueurCourant();
@@ -224,21 +226,20 @@ public class FenetreDeJeu extends javax.swing.JFrame {
                 }
                 
                 else{
-                    timeJ1 --;
-                    LabelTimeJ1.setText(timeJ1 + "");
+                    timerJ1 --;
+                    LabelTimeJ1.setText(timerJ1 + "");
                 }
                 
             }
         ;};
         
         ActionListener tache_recurJ2 = new ActionListener() {
-            int timeJ2 = timerJ2;
             
             @Override
             public void actionPerformed(ActionEvent e1) {
                 
-                if (timeJ2 == 0) {
-                    timeJ2 = 1000000;
+                if (timerJ2 == 0) {
+                    timerJ2 = 1000000;
                     ChronoJ2.stop();
                     ChronoJ1.stop();
                     changerJoueurCourant();
@@ -311,8 +312,8 @@ public class FenetreDeJeu extends javax.swing.JFrame {
                 }
                 
                 else{
-                    timeJ2 --;
-                    LabelTimeJ2.setText(timeJ2 + "");
+                    timerJ2 --;
+                    LabelTimeJ2.setText(timerJ2 + "");
                 }
                 
             }
@@ -1071,7 +1072,16 @@ public class FenetreDeJeu extends javax.swing.JFrame {
                                 
                                 Panel_PlateauDeJeu.repaint();
                                 deplacer = false;
-                                //Victoire(reverse);
+                                if (sec == true) {
+                                    if (joueurCourant == J1) {
+                                        timerJ1 += 2;
+                                        LabelTimeJ1.setText(timerJ1 + "");
+                                    }
+                                    if (joueurCourant == J2) {
+                                        timerJ2 += 2;
+                                        LabelTimeJ2.setText(timerJ2 + "");
+                                    }
+                                }
                                 changerJoueurCourant();
                                 changerCarte(cartetmp);
                                 cartetmp = null;
@@ -1403,6 +1413,8 @@ public class FenetreDeJeu extends javax.swing.JFrame {
             if (ChronoJ1 != null && ChronoJ2 != null) {
                 ChronoJ1.stop();
                 ChronoJ2.stop();
+                timerJ1 = 1000000;
+                timerJ2 = 1000000;
             }
             
             if (joueurCourant.prenom == "Jonathan") {
@@ -1477,6 +1489,8 @@ public class FenetreDeJeu extends javax.swing.JFrame {
             if (ChronoJ1 != null && ChronoJ2 != null) {
                 ChronoJ1.stop();
                 ChronoJ2.stop();
+                timerJ1 = 1000000;
+                timerJ2 = 1000000;
             }
             
             if (joueurCourant.prenom == "Jonathan") {
@@ -1935,7 +1949,7 @@ public class FenetreDeJeu extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FenetreDeJeu(ListeJoueurs[0], ListeJoueurs[1], timer).setVisible(true);
+                new FenetreDeJeu(ListeJoueurs[0], ListeJoueurs[1], timer, sec).setVisible(true);
             }
         });
     }

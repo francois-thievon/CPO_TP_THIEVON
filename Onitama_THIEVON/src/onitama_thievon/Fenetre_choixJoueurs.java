@@ -65,6 +65,7 @@ public class Fenetre_choixJoueurs extends javax.swing.JFrame {
         Btn5min = new javax.swing.JRadioButton();
         BtnInfini = new javax.swing.JRadioButton();
         LabelIndication = new javax.swing.JLabel();
+        Btn2sec = new javax.swing.JRadioButton();
         Bouton_Bucciarati = new javax.swing.JButton();
         Bouton_Cesear = new javax.swing.JButton();
         Bouton_Ermes = new javax.swing.JButton();
@@ -301,11 +302,16 @@ public class Fenetre_choixJoueurs extends javax.swing.JFrame {
                 BtnInfiniActionPerformed(evt);
             }
         });
-        jPanel1.add(BtnInfini, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 150, -1, -1));
+        jPanel1.add(BtnInfini, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, -1, -1));
 
         LabelIndication.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
         LabelIndication.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.add(LabelIndication, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 90, 220, 30));
+
+        Btn2sec.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 18)); // NOI18N
+        Btn2sec.setForeground(new java.awt.Color(255, 255, 255));
+        Btn2sec.setText(" + 2sec");
+        jPanel1.add(Btn2sec, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 150, -1, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 550, 480, 190));
 
@@ -713,6 +719,11 @@ public class Fenetre_choixJoueurs extends javax.swing.JFrame {
     private void BoutonLancerPartieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonLancerPartieActionPerformed
         // TODO add your handling code here:
         int a = 0;
+        boolean sec = false;
+        
+        if (Btn2sec.isSelected() == true) {
+            sec = true;
+        }        
         if (Btn1min.isSelected() == true) {
             a = 60;
         }
@@ -727,7 +738,7 @@ public class Fenetre_choixJoueurs extends javax.swing.JFrame {
         }
         if (a != 0) {
             PlayMusic("TimeStop.wav");
-            FenetreDeJeu jeu = new FenetreDeJeu(ListeJoueurs[0], ListeJoueurs[1], a);
+            FenetreDeJeu jeu = new FenetreDeJeu(ListeJoueurs[0], ListeJoueurs[1], a, sec);
             jeu.setVisible(true);
             Fenetre_choixJoueurs.super.dispose();
         }
@@ -987,6 +998,7 @@ public class Fenetre_choixJoueurs extends javax.swing.JFrame {
     private javax.swing.JButton Bouton_Polnareff;
     private javax.swing.JButton Bouton_Pucci;
     private javax.swing.JRadioButton Btn1min;
+    private javax.swing.JRadioButton Btn2sec;
     private javax.swing.JRadioButton Btn5min;
     private javax.swing.JRadioButton BtnInfini;
     private javax.swing.JLabel LabelGifJ1;
