@@ -1,6 +1,6 @@
-# 💻 Projets Java – 2ème année d’ingénierie
+# 💻 Projets Java – 2ème année à l'EPF
 
-Ce dépôt regroupe mes **travaux pratiques (TP)** réalisés en **Java** durant ma **2ème année d’études d’ingénierie**.  
+Ce dépôt regroupe mes **travaux pratiques (TP)** réalisés en **Java**
 Il contient une sélection des **deux projets les plus aboutis**, illustrant mes compétences en **programmation orientée objet**, **architecture logicielle** et **développement de jeux**.
 
 ---
